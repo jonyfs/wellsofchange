@@ -2,6 +2,7 @@
 import i18next from 'https://cdn.jsdelivr.net/npm/i18next@23.7.3/+esm';
 import HttpBackend from 'https://cdn.jsdelivr.net/npm/i18next-http-backend@2.4.1/+esm';
 import LanguageDetector from 'https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/+esm';
+import { getBasePath } from './path-utils.js';
 
 // Initialize i18next
 const i18nextInit = async () => {
@@ -14,7 +15,7 @@ const i18nextInit = async () => {
       ns: ['translation'],
       defaultNS: 'translation',
       backend: {
-        loadPath: '/locales/{{lng}}/{{ns}}.json',
+        loadPath: `${getBasePath()}/locales/{{lng}}/{{ns}}.json`,
       },
       detection: {
         order: ['querystring', 'navigator', 'localStorage', 'sessionStorage', 'htmlTag'],
