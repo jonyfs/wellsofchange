@@ -4,8 +4,12 @@
 export const getBasePath = () => {
   // Check if we're on GitHub Pages
   const isGitHubPages = window.location.hostname.includes('github.io');
+  // Check alternative domains that might be used for GitHub Pages
+  const isGitHubDomain = window.location.hostname.endsWith('github.io') || 
+                         window.location.hostname.endsWith('githubusercontent.com');
+  
   // Use repository name for GitHub Pages, empty string for local development
-  return isGitHubPages ? '/wellsofchange' : '';
+  return (isGitHubPages || isGitHubDomain) ? '/wellsofchange' : '';
 };
 
 // Fix links in the DOM to include the base path when on GitHub Pages
@@ -21,6 +25,11 @@ export const fixLinks = () => {
     if (!link.getAttribute('href').startsWith(basePath)) {
       link.href = `${basePath}${link.getAttribute('href')}`;
     }
+  });
+  
+  // Fix relative links to index.html
+  document.querySelectorAll('a[href="index.html"]').forEach(link => {
+    link.href = `${basePath}/index.html`;
   });
   
   // Fix CSS links

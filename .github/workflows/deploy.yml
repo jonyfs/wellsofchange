@@ -15,10 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,12 +24,36 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Create .nojekyll file
+        run: touch .nojekyll
+      
+      - name: Log repository information
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Owner: ${{ github.repository_owner }}"
+          echo "Repo Name: ${{ github.event.repository.name }}"
+      
+      - name: Verify file structure
+        run: |
+          echo "File structure:"
+          ls -la
+          echo "JS directory:"
+          ls -la js/
+          echo "Locales directory:"
+          ls -la locales/
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: '.'
-      
+  
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

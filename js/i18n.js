@@ -2,35 +2,43 @@
 import i18next from 'https://cdn.jsdelivr.net/npm/i18next@23.7.3/+esm';
 import HttpBackend from 'https://cdn.jsdelivr.net/npm/i18next-http-backend@2.4.1/+esm';
 import LanguageDetector from 'https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@7.2.0/+esm';
-import { getBasePath } from './path-utils.js';
 
 // Initialize i18next
 const i18nextInit = async () => {
-  await i18next
-    .use(HttpBackend)
-    .use(LanguageDetector)
-    .init({
-      fallbackLng: 'en',
-      supportedLngs: ['en', 'fr', 'es', 'pt-BR'],
-      ns: ['translation'],
-      defaultNS: 'translation',
-      backend: {
-        loadPath: `${getBasePath()}/locales/{{lng}}/{{ns}}.json`,
-      },
-      detection: {
-        order: ['querystring', 'navigator', 'localStorage', 'sessionStorage', 'htmlTag'],
-        lookupQuerystring: 'lng',
-        lookupLocalStorage: 'i18nextLng',
-        lookupSessionStorage: 'i18nextLng',
-        caches: ['localStorage', 'sessionStorage'],
-      }
-    });
-
-  // Update all elements with i18n attributes
-  updateContent();
+  // Get the base path from the global config
+  const basePath = window.wellsOfChangeConfig?.basePath || '';
   
-  // Add language switcher functionality
-  setupLanguageSwitcher();
+  try {
+    await i18next
+      .use(HttpBackend)
+      .use(LanguageDetector)
+      .init({
+        fallbackLng: 'en',
+        supportedLngs: ['en', 'fr', 'es', 'pt-BR'],
+        ns: ['translation'],
+        defaultNS: 'translation',
+        backend: {
+          loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`,
+        },
+        detection: {
+          order: ['querystring', 'navigator', 'localStorage', 'sessionStorage', 'htmlTag'],
+          lookupQuerystring: 'lng',
+          lookupLocalStorage: 'i18nextLng',
+          lookupSessionStorage: 'i18nextLng',
+          caches: ['localStorage', 'sessionStorage'],
+        }
+      });
+
+    console.log(`i18next initialized with basePath: ${basePath}`);
+    
+    // Update all elements with i18n attributes
+    updateContent();
+    
+    // Add language switcher functionality
+    setupLanguageSwitcher();
+  } catch (error) {
+    console.error('i18next initialization failed:', error);
+  }
 };
 
 // Function to update content with translations
