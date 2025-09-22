@@ -16,6 +16,8 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/language-switcher.css">
+    <link rel="stylesheet" href="css/navigation.css">
     
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
@@ -29,11 +31,32 @@
                 <span class="mdc-top-app-bar__title">Wells of Change</span>
             </section>
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <div class="language-switcher">
+                    <button class="active" data-lang="en">EN</button>
+                    <button data-lang="fr">FR</button>
+                    <button data-lang="es">ES</button>
+                    <button data-lang="pt-BR">PT</button>
+                </div>
                 <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">search</button>
                 <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">favorite</button>
             </section>
         </div>
     </header>
+
+    <!-- Main Navigation Menu -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li class="nav-item active"><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li class="nav-item"><a href="pages/about.html" data-i18n="nav.about">About Us</a></li>
+                <li class="nav-item"><a href="pages/programs.html" data-i18n="nav.programs">Programs</a></li>
+                <li class="nav-item"><a href="pages/get-involved.html" data-i18n="nav.getInvolved">Get Involved</a></li>
+                <li class="nav-item"><a href="pages/resources.html" data-i18n="nav.resources">Resources</a></li>
+                <li class="nav-item"><a href="pages/contact.html" data-i18n="nav.contact">Contact</a></li>
+                <li class="nav-item"><a href="pages/donate.html" class="donate-btn" data-i18n="nav.donate">Donate</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Main content -->
     <main class="main-content">
@@ -41,14 +64,16 @@
             <!-- Hero Section -->
             <section class="hero-section">
                 <div class="hero-content">
-                    <h1 class="mdc-typography--headline2">Making a Difference Together</h1>
-                    <p class="mdc-typography--body1">Join us in our mission to create sustainable change for communities in need.</p>
+                    <h1 class="mdc-typography--headline2" data-i18n="home.hero.title">Making a Difference Together</h1>
+                    <p class="mdc-typography--body1" data-i18n="home.hero.subtitle">Join us in our mission to create sustainable change for communities in need.</p>
                     <div class="hero-buttons">
                         <button class="mdc-button mdc-button--raised">
-                            <span class="mdc-button__label">Donate Now</span>
+                            <span class="mdc-button__label" data-i18n="home.hero.button2">Donate Now</span>
                         </button>
                         <button class="mdc-button">
-                            <span class="mdc-button__label">Learn More</span>
+                            <a href="pages/about.html" style="text-decoration: none; color: inherit;">
+                                <span class="mdc-button__label" data-i18n="home.hero.button1">Learn More</span>
+                            </a>
                         </button>
                     </div>
                 </div>
@@ -57,15 +82,15 @@
             <!-- Mission Section -->
             <section class="mission-section">
                 <div class="container">
-                    <h2 class="mdc-typography--headline4 section-title">Our Mission</h2>
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="home.mission.title">Our Mission</h2>
                     <div class="mission-content">
                         <div class="mission-text">
-                            <p class="mdc-typography--body1">Wells of Change is dedicated to providing clean water solutions and sustainable development to communities facing water scarcity. We believe access to clean water is a fundamental right and essential for community prosperity.</p>
+                            <p class="mdc-typography--body1" data-i18n="home.mission.description">Wells of Change is dedicated to providing clean water solutions and sustainable development to communities facing water scarcity. We believe access to clean water is a fundamental right and essential for community prosperity.</p>
                         </div>
                         <div class="mission-stats">
                             <div class="stat-card">
                                 <span class="stat-number">50+</span>
-                                <span class="stat-label">Communities Served</span>
+                                <span class="stat-label" data-i18n="home.mission.stats.communities">Communities Served</span>
                             </div>
                             <div class="stat-card">
                                 <span class="stat-number">100,000+</span>
@@ -73,12 +98,286 @@
                             </div>
                             <div class="stat-card">
                                 <span class="stat-number">200+</span>
-                                <span class="stat-label">Water Projects</span>
+                                <span class="stat-label" data-i18n="home.mission.stats.projects">Water Projects</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- Programs Section -->
+            <section class="programs-section">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="home.programs.title">Our Programs</h2>
+                    <div class="programs-grid">
+                        <!-- Program Card 1 -->
+                        <div class="mdc-card program-card">
+                            <div class="mdc-card__primary-action">
+                                <div class="card-media"></div>
+                                <div class="card-content">
+                                    <h3 class="mdc-typography--headline6" data-i18n="home.programs.clean_water.title">Water Wells Initiative</h3>
+                                    <p class="mdc-typography--body2" data-i18n="home.programs.clean_water.description">Building sustainable water wells in rural communities to provide access to clean drinking water.</p>
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label" data-i18n="home.hero.button1">Learn More</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Program Card 2 -->
+                        <div class="mdc-card program-card">
+                            <div class="mdc-card__primary-action">
+                                <div class="card-media"></div>
+                                <div class="card-content">
+                                    <h3 class="mdc-typography--headline6">Sanitation Education</h3>
+                                    <p class="mdc-typography--body2">Teaching communities about proper sanitation practices and hygiene to prevent disease.</p>
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label" data-i18n="home.hero.button1">Learn More</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Program Card 3 -->
+                        <div class="mdc-card program-card">
+                            <div class="mdc-card__primary-action">
+                                <div class="card-media"></div>
+                                <div class="card-content">
+                                    <h3 class="mdc-typography--headline6" data-i18n="home.programs.education.title">Agricultural Support</h3>
+                                    <p class="mdc-typography--body2" data-i18n="home.programs.education.description">Helping communities establish sustainable farming practices with reliable water sources.</p>
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label" data-i18n="home.hero.button1">Learn More</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Get Involved Section -->
+            <section class="get-involved-section">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="home.getInvolved.title">Get Involved</h2>
+                    <div class="involvement-options">
+                        <div class="involvement-card">
+                            <span class="material-icons">volunteer_activism</span>
+                            <h3 class="mdc-typography--headline6" data-i18n="home.getInvolved.volunteer.title">Volunteer</h3>
+                            <p class="mdc-typography--body2" data-i18n="home.getInvolved.volunteer.description">Join our team of dedicated volunteers making a difference on the ground.</p>
+                            <a href="pages/get-involved.html#volunteer" style="text-decoration: none;">
+                                <button class="mdc-button">
+                                    <span class="mdc-button__label" data-i18n="home.getInvolved.volunteer.button">Join Us</span>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="involvement-card">
+                            <span class="material-icons">favorite</span>
+                            <h3 class="mdc-typography--headline6" data-i18n="home.getInvolved.donate.title">Donate</h3>
+                            <p class="mdc-typography--body2" data-i18n="home.getInvolved.donate.description">Your contributions directly fund our clean water initiatives worldwide.</p>
+                            <a href="pages/donate.html" style="text-decoration: none;">
+                                <button class="mdc-button mdc-button--raised">
+                                    <span class="mdc-button__label" data-i18n="home.getInvolved.donate.button">Donate Now</span>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="involvement-card">
+                            <span class="material-icons">campaign</span>
+                            <h3 class="mdc-typography--headline6">Spread the Word</h3>
+                            <p class="mdc-typography--body2">Help raise awareness about the global water crisis through social media.</p>
+                            <button class="mdc-button">
+                                <span class="mdc-button__label">Share</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Latest News Section -->
+            <section class="news-section">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="home.news.title">Latest News</h2>
+                    <div class="news-grid">
+                        <!-- News Card 1 -->
+                        <div class="mdc-card news-card">
+                            <div class="mdc-card__primary-action">
+                                <div class="card-media"></div>
+                                <div class="card-content">
+                                    <span class="news-date mdc-typography--caption">September 15, 2025</span>
+                                    <h3 class="mdc-typography--headline6">New Water Project Launched in East Africa</h3>
+                                    <p class="mdc-typography--body2">Our team has successfully initiated a new water well project that will serve over 5,000 people.</p>
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label" data-i18n="home.news.readMore">Read More</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- News Card 2 -->
+                        <div class="mdc-card news-card">
+                            <div class="mdc-card__primary-action">
+                                <div class="card-media"></div>
+                                <div class="card-content">
+                                    <span class="news-date mdc-typography--caption">September 3, 2025</span>
+                                    <h3 class="mdc-typography--headline6">Annual Fundraising Gala Raises Record Amount</h3>
+                                    <p class="mdc-typography--body2">This year's gala exceeded expectations, raising enough funds to support 20 new water projects.</p>
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label" data-i18n="home.news.readMore">Read More</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center-button">
+                        <a href="pages/resources.html#news" style="text-decoration: none;">
+                            <button class="mdc-button">
+                                <span class="mdc-button__label" data-i18n="home.news.viewAll">View All News</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-section">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="home.contact.title">Contact Us</h2>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="material-icons">location_on</span>
+                                <p class="mdc-typography--body1">123 Change Street, Global City, 12345</p>
+                            </div>
+                            <div class="contact-item">
+                                <span class="material-icons">email</span>
+                                <p class="mdc-typography--body1">info@wellsofchange.org</p>
+                            </div>
+                            <div class="contact-item">
+                                <span class="material-icons">phone</span>
+                                <p class="mdc-typography--body1">+1 (555) 123-4567</p>
+                            </div>
+                            <div class="social-media">
+                                <a href="#" class="social-icon"><span class="material-icons">facebook</span></a>
+                                <a href="#" class="social-icon"><span class="material-icons">thumb_up</span></a>
+                                <a href="#" class="social-icon"><span class="material-icons">public</span></a>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <div class="mdc-text-field mdc-text-field--outlined">
+                                <input class="mdc-text-field__input" id="name-input">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="name-input" class="mdc-floating-label" data-i18n="home.contact.formName">Name</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined">
+                                <input class="mdc-text-field__input" id="email-input" type="email">
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="email-input" class="mdc-floating-label" data-i18n="home.contact.formEmail">Email</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea">
+                                <textarea class="mdc-text-field__input" id="message-input" rows="4"></textarea>
+                                <div class="mdc-notched-outline">
+                                    <div class="mdc-notched-outline__leading"></div>
+                                    <div class="mdc-notched-outline__notch">
+                                        <label for="message-input" class="mdc-floating-label" data-i18n="home.contact.formMessage">Message</label>
+                                    </div>
+                                    <div class="mdc-notched-outline__trailing"></div>
+                                </div>
+                            </div>
+                            <button class="mdc-button mdc-button--raised">
+                                <span class="mdc-button__label" data-i18n="home.contact.formSubmit">Send Message</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="mdc-typography--headline6">Wells of Change</h3>
+                    <p class="mdc-typography--body2" data-i18n="footer.aboutText">Making clean water accessible to everyone, everywhere.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="mdc-typography--subtitle1" data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="pages/about.html" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="pages/programs.html" data-i18n="nav.programs">Programs</a></li>
+                        <li><a href="pages/get-involved.html" data-i18n="nav.getInvolved">Get Involved</a></li>
+                        <li><a href="pages/resources.html" data-i18n="nav.resources">Resources</a></li>
+                        <li><a href="pages/contact.html" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="pages/donate.html" data-i18n="nav.donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="mdc-typography--subtitle1" data-i18n="footer.newsletter.title">Newsletter</h3>
+                    <p class="mdc-typography--body2">Stay updated with our latest news and projects.</p>
+                    <div class="newsletter-form">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input class="mdc-text-field__input" id="newsletter-input" type="email">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="newsletter-input" class="mdc-floating-label" data-i18n-attr='{"placeholder": "footer.newsletter.placeholder"}'>Email</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <button class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label" data-i18n="footer.newsletter.button">Subscribe</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mdc-typography--caption" data-i18n="footer.copyright">&copy; 2025 Wells of Change. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Material Design JavaScript -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- i18next Libraries -->
+    <script type="module" src="js/i18n.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
 
             <!-- Programs Section -->
             <section class="programs-section">

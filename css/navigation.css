@@ -1,0 +1,77 @@
+/* Main Navigation Styles */
+.main-nav {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 64px; /* Height of the top app bar */
+    z-index: 98;
+}
+
+.main-nav .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.nav-item {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item a {
+    display: block;
+    color: var(--on-primary);
+    text-decoration: none;
+    padding: 15px 20px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.nav-item a:hover,
+.nav-item.active a {
+    background-color: var(--primary-dark);
+}
+
+.nav-item .donate-btn {
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    margin: 8px 0;
+    padding: 7px 20px;
+}
+
+.nav-item .donate-btn:hover {
+    background-color: var(--secondary-dark);
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        z-index: 99;
+    }
+    
+    .main-nav.mobile-nav-open {
+        display: block;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+    }
+    
+    .nav-item a {
+        padding: 12px 16px;
+    }
+}

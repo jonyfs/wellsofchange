@@ -1,0 +1,210 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "programs": "Programas",
+    "getInvolved": "Participa",
+    "resources": "Recursos",
+    "contact": "Contacto",
+    "donate": "Donar"
+  },
+  "home": {
+    "hero": {
+      "title": "Haciendo la Diferencia Juntos",
+      "subtitle": "Únete a nuestra misión para crear un cambio positivo en comunidades de todo el mundo",
+      "button1": "Aprende Más",
+      "button2": "Participa"
+    },
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Wells of Change se dedica a proporcionar agua limpia, agricultura sostenible y educación a comunidades desatendidas de todo el mundo. A través de la colaboración con socios locales, empoderamos a las comunidades para crear un cambio duradero.",
+      "stats": {
+        "communities": "Comunidades",
+        "projects": "Proyectos",
+        "volunteers": "Voluntarios",
+        "countries": "Países"
+      }
+    },
+    "programs": {
+      "title": "Nuestros Programas",
+      "subtitle": "Descubre cómo estamos generando impacto",
+      "clean_water": {
+        "title": "Acceso a Agua Limpia",
+        "description": "Construimos pozos y sistemas de agua para proporcionar agua potable limpia y segura a comunidades necesitadas."
+      },
+      "sustainable_agriculture": {
+        "title": "Agricultura Sostenible",
+        "description": "Enseñamos técnicas agrícolas que mejoran los rendimientos de los cultivos mientras protegen el medio ambiente."
+      },
+      "education": {
+        "title": "Iniciativas Educativas",
+        "description": "Apoyamos escuelas y programas educativos para crear oportunidades para las generaciones futuras."
+      },
+      "button": "Ver Todos los Programas"
+    },
+    "getInvolved": {
+      "title": "Participa",
+      "subtitle": "Únete a nosotros para hacer la diferencia",
+      "volunteer": {
+        "title": "Voluntariado",
+        "description": "Dona tu tiempo y habilidades para apoyar nuestra misión",
+        "button": "Aprende Más"
+      },
+      "donate": {
+        "title": "Donar",
+        "description": "Apoya nuestro trabajo con una donación única o mensual",
+        "button": "Donar Ahora"
+      },
+      "fundraise": {
+        "title": "Recaudar Fondos",
+        "description": "Inicia tu propia campaña para recaudar fondos para nuestra causa",
+        "button": "Comienza a Recaudar"
+      }
+    },
+    "news": {
+      "title": "Últimas Noticias",
+      "viewAll": "Ver Todas las Noticias",
+      "readMore": "Leer Más"
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "address": "Dirección",
+      "phone": "Teléfono",
+      "email": "Correo Electrónico",
+      "formName": "Nombre",
+      "formEmail": "Correo Electrónico",
+      "formMessage": "Mensaje",
+      "formSubmit": "Enviar Mensaje"
+    }
+  },
+  "getInvolved": {
+    "pageTitle": "Participa",
+    "pageIntro": "Hay muchas formas de apoyar nuestra misión y marcar la diferencia. Ya sea que busques ofrecer tu tiempo como voluntario, hacer una donación o iniciar tu propia campaña de recaudación de fondos, tu contribución nos ayuda a crear un cambio duradero en comunidades de todo el mundo.",
+    "volunteer": {
+      "title": "Voluntariado",
+      "intro": "Ser voluntario con Wells of Change es una experiencia gratificante que te permite contribuir directamente a nuestra misión mientras desarrollas habilidades y conexiones valiosas.",
+      "options": {
+        "title": "Oportunidades de Voluntariado",
+        "field": {
+          "title": "Voluntario de Campo",
+          "description": "Únete a nosotros en el terreno en comunidades de todo el mundo, ayudando con la construcción de pozos, la capacitación agrícola o los programas educativos.",
+          "button": "Aplicar Ahora"
+        },
+        "remote": {
+          "title": "Voluntario Remoto",
+          "description": "Apoya nuestra misión desde cualquier lugar contribuyendo con tus habilidades en áreas como diseño gráfico, traducción, redes sociales o redacción de subvenciones.",
+          "button": "Aplicar Ahora"
+        },
+        "event": {
+          "title": "Voluntario de Eventos",
+          "description": "Ayúdanos a organizar y llevar a cabo eventos de recaudación de fondos, campañas de concientización y programas de divulgación comunitaria en tu área local.",
+          "button": "Aplicar Ahora"
+        }
+      },
+      "process": {
+        "title": "Proceso de Aplicación",
+        "step1": "Envía una solicitud a través de nuestro formulario en línea",
+        "step2": "Entrevista con nuestro coordinador de voluntarios",
+        "step3": "Completa la orientación y capacitación",
+        "step4": "Comienza tu viaje como voluntario"
+      },
+      "stories": {
+        "title": "Historias de Voluntarios",
+        "readMore": "Leer Más Historias"
+      }
+    },
+    "donate": {
+      "title": "Donar",
+      "intro": "Tu apoyo financiero nos permite continuar nuestro trabajo vital en comunidades de todo el mundo. Cada donación, independientemente de su tamaño, marca una diferencia significativa.",
+      "impact": {
+        "title": "Tu Impacto",
+        "water": "$25 proporciona agua limpia a una familia durante un mes",
+        "training": "$100 financia la capacitación agrícola para un agricultor",
+        "school": "$500 ayuda a mantener una escuela comunitaria durante un mes",
+        "well": "$2,500 construye un pozo que sirve a toda una comunidad"
+      },
+      "options": {
+        "title": "Formas de Donar",
+        "monthly": {
+          "title": "Donación Mensual",
+          "description": "Conviértete en un apoyo sostenible con una donación mensual recurrente que proporciona financiamiento confiable para nuestros programas.",
+          "button": "Conviértete en Donante Mensual"
+        },
+        "oneTime": {
+          "title": "Donación Única",
+          "description": "Haz una donación única para apoyar nuestro trabajo y ayudarnos a alcanzar nuestras metas.",
+          "button": "Donar Ahora"
+        },
+        "honorary": {
+          "title": "Regalos Honorarios y Conmemorativos",
+          "description": "Haz una donación en honor o memoria de alguien especial.",
+          "button": "Dar un Regalo en Tributo"
+        }
+      },
+      "other": {
+        "title": "Otras Formas de Donar",
+        "corporate": {
+          "title": "Donaciones Corporativas",
+          "description": "Asóciate con nosotros a través de donaciones corporativas igualadas, patrocinios o programas de participación de empleados."
+        },
+        "planned": {
+          "title": "Donaciones Planificadas",
+          "description": "Incluye a Wells of Change en tu planificación patrimonial para crear un legado duradero."
+        }
+      }
+    },
+    "fundraise": {
+      "title": "Recaudar Fondos",
+      "intro": "Inicia tu propia campaña de recaudación de fondos para apoyar a Wells of Change. Ya sea un cumpleaños, un evento especial o un desafío personal, tu recaudación de fondos puede tener un impacto significativo.",
+      "howTo": {
+        "title": "Cómo Funciona",
+        "step1": "Crea tu página de recaudación de fondos en nuestra plataforma",
+        "step2": "Establece una meta y comparte tu historia",
+        "step3": "Comparte con amigos, familia y redes sociales",
+        "step4": "Sigue tu progreso y agradece a tus donantes"
+      },
+      "ideas": {
+        "title": "Ideas para Recaudar Fondos",
+        "birthday": {
+          "title": "Campaña de Cumpleaños",
+          "description": "Pide donaciones en lugar de regalos para tu cumpleaños."
+        },
+        "athletic": {
+          "title": "Desafío Atlético",
+          "description": "Corre, camina, anda en bicicleta o nada para recaudar fondos para agua limpia."
+        },
+        "event": {
+          "title": "Evento Comunitario",
+          "description": "Organiza una cena, concierto o subasta para apoyar nuestra causa."
+        },
+        "school": {
+          "title": "Recaudación Escolar",
+          "description": "Involucra a estudiantes en la sensibilización y recaudación de fondos para problemas globales."
+        }
+      },
+      "start": "Inicia Tu Recaudación de Fondos",
+      "stories": {
+        "title": "Historias de Éxito en Recaudación",
+        "readMore": "Leer Más Historias"
+      }
+    }
+  },
+  "footer": {
+    "about": "Sobre Wells of Change",
+    "aboutText": "Somos una organización sin fines de lucro dedicada a proporcionar agua limpia, agricultura sostenible y educación a comunidades en todo el mundo.",
+    "quickLinks": "Enlaces Rápidos",
+    "programs": "Programas",
+    "news": "Noticias y Actualizaciones",
+    "careers": "Carreras",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "contact": "Contáctanos",
+    "newsletter": {
+      "title": "Mantente Actualizado",
+      "placeholder": "Tu dirección de correo electrónico",
+      "button": "Suscribirse"
+    },
+    "copyright": "© 2025 Wells of Change. Todos los derechos reservados.",
+    "charity": "Wells of Change es una organización sin fines de lucro registrada 501(c)(3)."
+  }
+}

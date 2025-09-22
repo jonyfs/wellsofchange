@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Switcher Example - Wells of Change</title>
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: #2196F3;
+        }
+        
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .language-switcher button {
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .language-switcher button.active {
+            background-color: #2196F3;
+            color: white;
+        }
+        
+        .example-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        pre {
+            background-color: #263238;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>i18next Language Switcher Example</h1>
+    
+    <div class="language-switcher">
+        <button class="active" data-lang="en">English</button>
+        <button data-lang="fr">Français</button>
+        <button data-lang="es">Español</button>
+        <button data-lang="pt-BR">Português</button>
+    </div>
+    
+    <p data-i18n="home.hero.title">Making a Difference Together</p>
+    <p data-i18n="home.hero.subtitle">Join us in our mission to create positive change in communities worldwide</p>
+    <p data-i18n="home.mission.description">Wells of Change is dedicated to providing clean water, sustainable agriculture, and education to underserved communities around the world. Through collaboration with local partners, we empower communities to create lasting change.</p>
+    
+    <div class="example-section">
+        <h2>How to Use i18next in Your Pages</h2>
+        <p>1. Add the language switcher to your header:</p>
+        <pre>&lt;div class="language-switcher"&gt;
+    &lt;button class="active" data-lang="en"&gt;EN&lt;/button&gt;
+    &lt;button data-lang="fr"&gt;FR&lt;/button&gt;
+    &lt;button data-lang="es"&gt;ES&lt;/button&gt;
+    &lt;button data-lang="pt-BR"&gt;PT&lt;/button&gt;
+&lt;/div&gt;</pre>
+        
+        <p>2. Mark elements with translation keys:</p>
+        <pre>&lt;h1 data-i18n="home.hero.title"&gt;Making a Difference Together&lt;/h1&gt;</pre>
+        
+        <p>3. For attributes like placeholders:</p>
+        <pre>&lt;input placeholder="Email" data-i18n-attr='{"placeholder": "footer.newsletter.placeholder"}'&gt;</pre>
+        
+        <p>4. Include the i18next script in your page:</p>
+        <pre>&lt;script type="module" src="../js/i18n.js"&gt;&lt;/script&gt;</pre>
+    </div>
+    
+    <!-- i18next Libraries -->
+    <script type="module" src="../js/i18n.js"></script>
+</body>
+</html>

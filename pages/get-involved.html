@@ -16,6 +16,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/language-switcher.css">
     
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico">
@@ -29,6 +30,12 @@
                 <span class="mdc-top-app-bar__title">Wells of Change</span>
             </section>
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <div class="language-switcher">
+                    <button class="active" data-lang="en">EN</button>
+                    <button data-lang="fr">FR</button>
+                    <button data-lang="es">ES</button>
+                    <button data-lang="pt-BR">PT</button>
+                </div>
                 <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">search</button>
                 <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">favorite</button>
             </section>
@@ -41,10 +48,358 @@
             <!-- Page Header -->
             <section class="page-header">
                 <div class="container">
-                    <h1 class="mdc-typography--headline3">Get Involved</h1>
-                    <p class="mdc-typography--body1">Join our mission to bring clean water to communities around the world. There are many ways you can make a difference.</p>
+                    <h1 class="mdc-typography--headline3" data-i18n="getInvolved.pageTitle">Get Involved</h1>
+                    <p class="mdc-typography--body1" data-i18n="getInvolved.pageIntro">Join our mission to bring clean water to communities around the world. There are many ways you can make a difference.</p>
                 </div>
             </section>
+
+            <!-- Volunteer Section -->
+            <section class="volunteer-section">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="getInvolved.volunteer.title">Volunteer</h2>
+                    <div class="volunteer-content">
+                        <div class="volunteer-image">
+                            <!-- Placeholder for volunteer image -->
+                        </div>
+                        <div class="volunteer-text">
+                            <p class="mdc-typography--body1" data-i18n="getInvolved.volunteer.intro">Volunteers are the backbone of our organization. Whether you have specialized skills or simply a willingness to help, we have opportunities for you to make a meaningful contribution to our mission.</p>
+                            
+                            <div class="volunteer-options">
+                                <div class="mdc-card volunteer-card">
+                                    <div class="mdc-card__primary-action">
+                                        <div class="card-content">
+                                            <h3 class="mdc-typography--headline6" data-i18n="getInvolved.volunteer.options.title">Current Opportunities</h3>
+                                            <ul class="mdc-list">
+                                                <li class="mdc-list-item">
+                                                    <span class="mdc-list-item__text">Well Construction Assistants (East Africa)</span>
+                                                </li>
+                                                <li class="mdc-list-item">
+                                                    <span class="mdc-list-item__text">Remote Graphic Designers</span>
+                                                </li>
+                                                <li class="mdc-list-item">
+                                                    <span class="mdc-list-item__text">Water Quality Testing Volunteers</span>
+                                                </li>
+                                                <li class="mdc-list-item">
+                                                    <span class="mdc-list-item__text">Education Program Assistants</span>
+                                                </li>
+                                                <li class="mdc-list-item">
+                                                    <span class="mdc-list-item__text">Administrative Support (Virtual)</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mdc-card__actions">
+                                        <div class="mdc-card__action-buttons">
+                                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                                <span class="mdc-button__label">View All Opportunities</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mdc-card volunteer-card">
+                                    <div class="mdc-card__primary-action">
+                                        <div class="card-content">
+                                            <h3 class="mdc-typography--headline6" data-i18n="getInvolved.volunteer.process.title">Application Process</h3>
+                                            <ol class="application-steps">
+                                                <li>
+                                                    <span class="step-number">1</span>
+                                                    <div class="step-content">
+                                                        <h4 class="mdc-typography--subtitle1">Submit Application</h4>
+                                                        <p class="mdc-typography--body2" data-i18n="getInvolved.volunteer.process.step1">Fill out our online volunteer application form with your skills and interests.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="step-number">2</span>
+                                                    <div class="step-content">
+                                                        <h4 class="mdc-typography--subtitle1">Interview</h4>
+                                                        <p class="mdc-typography--body2" data-i18n="getInvolved.volunteer.process.step2">Meet with our volunteer coordinator to discuss potential roles.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="step-number">3</span>
+                                                    <div class="step-content">
+                                                        <h4 class="mdc-typography--subtitle1">Orientation</h4>
+                                                        <p class="mdc-typography--body2" data-i18n="getInvolved.volunteer.process.step3">Attend a virtual or in-person orientation session.</p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <span class="step-number">4</span>
+                                                    <div class="step-content">
+                                                        <h4 class="mdc-typography--subtitle1">Begin Volunteering</h4>
+                                                        <p class="mdc-typography--body2" data-i18n="getInvolved.volunteer.process.step4">Start making a difference with Wells of Change!</p>
+                                                    </div>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <div class="mdc-card__actions">
+                                        <div class="mdc-card__action-buttons">
+                                            <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                                <span class="mdc-button__label" data-i18n="getInvolved.volunteer.options.field.button">Apply Now</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Volunteer Stories -->
+                    <div class="volunteer-stories">
+                        <h3 class="mdc-typography--headline5" data-i18n="getInvolved.volunteer.stories.title">Volunteer Stories</h3>
+                        <div class="stories-carousel">
+                            <div class="story-slide">
+                                <div class="story-image"></div>
+                                <div class="story-text">
+                                    <h4 class="mdc-typography--headline6">Maria's Experience in Kenya</h4>
+                                    <p class="mdc-typography--body2">"Volunteering with Wells of Change in Kenya was the most rewarding experience of my life. Seeing the joy on people's faces when clean water flowed from the new well is something I'll never forget."</p>
+                                    <p class="volunteer-name">- Maria Johnson, Well Construction Volunteer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donate Section -->
+            <section class="donate-section alternate-bg">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="getInvolved.donate.title">Donate</h2>
+                    <div class="donate-content">
+                        <div class="donate-text">
+                            <p class="mdc-typography--body1" data-i18n="getInvolved.donate.intro">Your financial support enables us to build wells, implement sanitation programs, and provide agricultural support to communities in need. Every contribution, no matter the size, helps us extend our reach and impact.</p>
+                        </div>
+                        <div class="donate-image">
+                            <!-- Placeholder for donate image -->
+                        </div>
+                    </div>
+                    
+                    <div class="donation-options">
+                        <div class="mdc-card donation-card">
+                            <div class="card-content">
+                                <h3 class="mdc-typography--headline6" data-i18n="getInvolved.donate.options.oneTime.title">One-time Donation</h3>
+                                <p class="mdc-typography--body2" data-i18n="getInvolved.donate.options.oneTime.description">Make a single contribution to support our clean water initiatives. Every dollar helps bring clean water to those who need it most.</p>
+                                <div class="donation-amounts">
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">$25</span>
+                                    </button>
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">$50</span>
+                                    </button>
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">$100</span>
+                                    </button>
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">$250</span>
+                                    </button>
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">Other</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label" data-i18n="getInvolved.donate.options.oneTime.button">Donate Now</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mdc-card donation-card">
+                            <div class="card-content">
+                                <h3 class="mdc-typography--headline6" data-i18n="getInvolved.donate.options.monthly.title">Monthly Giving</h3>
+                                <p class="mdc-typography--body2" data-i18n="getInvolved.donate.options.monthly.description">Join our Wells of Life monthly giving program to provide sustainable support for our ongoing projects. Monthly donors receive special updates and recognition.</p>
+                                <div class="donation-amounts">
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">$10/mo</span>
+                                    </button>
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">$25/mo</span>
+                                    </button>
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">$50/mo</span>
+                                    </button>
+                                    <button class="mdc-button amount-button">
+                                        <span class="mdc-button__label">Other</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label" data-i18n="getInvolved.donate.options.monthly.button">Become a Monthly Donor</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="other-donation-options">
+                        <div class="corporate-giving">
+                            <h3 class="mdc-typography--headline5" data-i18n="getInvolved.donate.other.corporate.title">Corporate Giving</h3>
+                            <p class="mdc-typography--body1" data-i18n="getInvolved.donate.other.corporate.description">Partner with Wells of Change to align your business with a meaningful cause. We offer corporate sponsorship opportunities, matching gift programs, and employee engagement initiatives.</p>
+                            <button class="mdc-button">
+                                <span class="mdc-button__label" data-i18n="home.hero.button1">Learn More</span>
+                            </button>
+                        </div>
+                        
+                        <div class="planned-giving">
+                            <h3 class="mdc-typography--headline5" data-i18n="getInvolved.donate.other.planned.title">Planned Giving</h3>
+                            <p class="mdc-typography--body1" data-i18n="getInvolved.donate.other.planned.description">Create a lasting legacy by including Wells of Change in your estate planning. Planned gifts help ensure our work continues for generations to come.</p>
+                            <button class="mdc-button">
+                                <span class="mdc-button__label" data-i18n="home.hero.button1">Learn More</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fundraise Section -->
+            <section class="fundraise-section">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="getInvolved.fundraise.title">Fundraise</h2>
+                    <div class="fundraise-content">
+                        <div class="fundraise-image">
+                            <!-- Placeholder for fundraise image -->
+                        </div>
+                        <div class="fundraise-text">
+                            <p class="mdc-typography--body1" data-i18n="getInvolved.fundraise.intro">Become a champion for clean water by starting your own fundraising campaign. Whether it's a birthday, special event, or athletic challenge, you can turn any occasion into an opportunity to make a difference.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fundraising-options">
+                        <div class="mdc-card fundraising-card">
+                            <div class="card-content">
+                                <h3 class="mdc-typography--headline6" data-i18n="getInvolved.fundraise.howTo.title">Start a Campaign</h3>
+                                <p class="mdc-typography--body2">Create your own fundraising campaign in just a few minutes. Set a goal, share your story, and invite friends and family to support your cause.</p>
+                                <ul class="mdc-list">
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__text">Personal Campaigns (birthdays, weddings, etc.)</span>
+                                    </li>
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__text">Athletic Challenges (runs, walks, etc.)</span>
+                                    </li>
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__text">School and Community Fundraisers</span>
+                                    </li>
+                                    <li class="mdc-list-item">
+                                        <span class="mdc-list-item__text">In Memory/Honor Tributes</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label" data-i18n="getInvolved.fundraise.start">Start Fundraising</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mdc-card fundraising-card">
+                            <div class="card-content">
+                                <h3 class="mdc-typography--headline6" data-i18n="getInvolved.fundraise.ideas.title">Fundraising Ideas</h3>
+                                <div class="idea-list">
+                                    <div class="fundraising-idea">
+                                        <h4 class="mdc-typography--subtitle1" data-i18n="getInvolved.fundraise.ideas.athletic.title">Water Walk Challenge</h4>
+                                        <p class="mdc-typography--body2" data-i18n="getInvolved.fundraise.ideas.athletic.description">Walk 6km (the average distance many people walk for water daily) and ask for sponsorships.</p>
+                                    </div>
+                                    <div class="fundraising-idea">
+                                        <h4 class="mdc-typography--subtitle1" data-i18n="getInvolved.fundraise.ideas.school.title">School Coin Drive</h4>
+                                        <p class="mdc-typography--body2" data-i18n="getInvolved.fundraise.ideas.school.description">Organize a friendly competition between classrooms to collect coins for clean water.</p>
+                                    </div>
+                                    <div class="fundraising-idea">
+                                        <h4 class="mdc-typography--subtitle1" data-i18n="getInvolved.fundraise.ideas.birthday.title">Birthday Pledge</h4>
+                                        <p class="mdc-typography--body2" data-i18n="getInvolved.fundraise.ideas.birthday.description">Ask for donations instead of gifts for your next birthday.</p>
+                                    </div>
+                                    <div class="fundraising-idea">
+                                        <h4 class="mdc-typography--subtitle1" data-i18n="getInvolved.fundraise.ideas.event.title">Community Car Wash</h4>
+                                        <p class="mdc-typography--body2" data-i18n="getInvolved.fundraise.ideas.event.description">Organize a car wash event and donate the proceeds to Wells of Change.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                        <span class="mdc-button__label">More Fundraising Ideas</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Success Stories -->
+                    <div class="fundraising-stories">
+                        <h3 class="mdc-typography--headline5" data-i18n="getInvolved.fundraise.stories.title">Success Stories</h3>
+                        <div class="story-card">
+                            <div class="story-image"></div>
+                            <div class="story-content">
+                                <h4 class="mdc-typography--headline6">Emma's Marathon Fundraiser</h4>
+                                <p class="mdc-typography--body2">"Every mile I ran, I thought about the miles people walk for water every day."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="mdc-typography--headline6">Wells of Change</h3>
+                    <p class="mdc-typography--body2" data-i18n="footer.aboutText">Making clean water accessible to everyone, everywhere.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="mdc-typography--subtitle1" data-i18n="footer.quickLinks">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="programs.html" data-i18n="nav.programs">Programs</a></li>
+                        <li><a href="get-involved.html" data-i18n="nav.getInvolved">Get Involved</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="mdc-typography--subtitle1" data-i18n="footer.newsletter.title">Newsletter</h3>
+                    <p class="mdc-typography--body2">Stay updated with our latest news and projects.</p>
+                    <div class="newsletter-form">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input class="mdc-text-field__input" id="newsletter-input" type="email">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="newsletter-input" class="mdc-floating-label" data-i18n-attr='{"placeholder": "footer.newsletter.placeholder"}'>Email</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <button class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label" data-i18n="footer.newsletter.button">Subscribe</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mdc-typography--caption" data-i18n="footer.copyright">&copy; 2025 Wells of Change. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Material Design JavaScript -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- i18next Libraries -->
+    <script type="module" src="../js/i18n.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
 
             <!-- Volunteer Section -->
             <section class="volunteer-section">

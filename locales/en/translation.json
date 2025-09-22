@@ -1,0 +1,210 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "programs": "Programs",
+    "getInvolved": "Get Involved",
+    "resources": "Resources",
+    "contact": "Contact",
+    "donate": "Donate"
+  },
+  "home": {
+    "hero": {
+      "title": "Making a Difference Together",
+      "subtitle": "Join us in our mission to create positive change in communities worldwide",
+      "button1": "Learn More",
+      "button2": "Get Involved"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Wells of Change is dedicated to providing clean water, sustainable agriculture, and education to underserved communities around the world. Through collaboration with local partners, we empower communities to create lasting change.",
+      "stats": {
+        "communities": "Communities",
+        "projects": "Projects",
+        "volunteers": "Volunteers",
+        "countries": "Countries"
+      }
+    },
+    "programs": {
+      "title": "Our Programs",
+      "subtitle": "Discover how we're making an impact",
+      "clean_water": {
+        "title": "Clean Water Access",
+        "description": "We build wells and water systems to provide clean, safe drinking water to communities in need."
+      },
+      "sustainable_agriculture": {
+        "title": "Sustainable Agriculture",
+        "description": "Teaching farming techniques that improve crop yields while protecting the environment."
+      },
+      "education": {
+        "title": "Education Initiatives",
+        "description": "Supporting schools and educational programs to create opportunities for future generations."
+      },
+      "button": "View All Programs"
+    },
+    "getInvolved": {
+      "title": "Get Involved",
+      "subtitle": "Join us in making a difference",
+      "volunteer": {
+        "title": "Volunteer",
+        "description": "Donate your time and skills to support our mission",
+        "button": "Learn More"
+      },
+      "donate": {
+        "title": "Donate",
+        "description": "Support our work with a one-time or monthly donation",
+        "button": "Donate Now"
+      },
+      "fundraise": {
+        "title": "Fundraise",
+        "description": "Start your own campaign to raise funds for our cause",
+        "button": "Start Fundraising"
+      }
+    },
+    "news": {
+      "title": "Latest News",
+      "viewAll": "View All News",
+      "readMore": "Read More"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "formName": "Name",
+      "formEmail": "Email",
+      "formMessage": "Message",
+      "formSubmit": "Send Message"
+    }
+  },
+  "getInvolved": {
+    "pageTitle": "Get Involved",
+    "pageIntro": "There are many ways to support our mission and make a difference. Whether you're looking to volunteer your time, make a donation, or start your own fundraising campaign, your contribution helps us create lasting change in communities worldwide.",
+    "volunteer": {
+      "title": "Volunteer",
+      "intro": "Volunteering with Wells of Change is a rewarding experience that allows you to directly contribute to our mission while developing valuable skills and connections.",
+      "options": {
+        "title": "Volunteer Opportunities",
+        "field": {
+          "title": "Field Volunteer",
+          "description": "Join us on the ground in communities around the world, helping with well construction, agricultural training, or educational programs.",
+          "button": "Apply Now"
+        },
+        "remote": {
+          "title": "Remote Volunteer",
+          "description": "Support our mission from anywhere by contributing your skills in areas such as graphic design, translation, social media, or grant writing.",
+          "button": "Apply Now"
+        },
+        "event": {
+          "title": "Event Volunteer",
+          "description": "Help us organize and run fundraising events, awareness campaigns, and community outreach programs in your local area.",
+          "button": "Apply Now"
+        }
+      },
+      "process": {
+        "title": "Application Process",
+        "step1": "Submit an application through our online form",
+        "step2": "Interview with our volunteer coordinator",
+        "step3": "Complete orientation and training",
+        "step4": "Begin your volunteer journey"
+      },
+      "stories": {
+        "title": "Volunteer Stories",
+        "readMore": "Read More Stories"
+      }
+    },
+    "donate": {
+      "title": "Donate",
+      "intro": "Your financial support enables us to continue our vital work in communities around the world. Every donation, regardless of size, makes a meaningful difference.",
+      "impact": {
+        "title": "Your Impact",
+        "water": "$25 provides clean water to a family for a month",
+        "training": "$100 funds agricultural training for a farmer",
+        "school": "$500 helps support a community school for a month",
+        "well": "$2,500 builds a well serving an entire community"
+      },
+      "options": {
+        "title": "Ways to Give",
+        "monthly": {
+          "title": "Monthly Giving",
+          "description": "Become a sustaining supporter with a recurring monthly donation that provides reliable funding for our programs.",
+          "button": "Become a Monthly Donor"
+        },
+        "oneTime": {
+          "title": "One-time Donation",
+          "description": "Make a single donation to support our work and help us reach our goals.",
+          "button": "Donate Now"
+        },
+        "honorary": {
+          "title": "Honorary & Memorial Gifts",
+          "description": "Make a donation in honor or memory of someone special.",
+          "button": "Give a Tribute Gift"
+        }
+      },
+      "other": {
+        "title": "Other Ways to Give",
+        "corporate": {
+          "title": "Corporate Giving",
+          "description": "Partner with us through corporate matching gifts, sponsorships, or employee engagement programs."
+        },
+        "planned": {
+          "title": "Planned Giving",
+          "description": "Include Wells of Change in your estate planning to create a lasting legacy."
+        }
+      }
+    },
+    "fundraise": {
+      "title": "Fundraise",
+      "intro": "Start your own fundraising campaign to support Wells of Change. Whether it's a birthday, special event, or personal challenge, your fundraiser can make a significant impact.",
+      "howTo": {
+        "title": "How It Works",
+        "step1": "Create your fundraising page on our platform",
+        "step2": "Set a goal and share your story",
+        "step3": "Share with friends, family, and social networks",
+        "step4": "Track your progress and thank your donors"
+      },
+      "ideas": {
+        "title": "Fundraising Ideas",
+        "birthday": {
+          "title": "Birthday Campaign",
+          "description": "Ask for donations instead of gifts for your birthday."
+        },
+        "athletic": {
+          "title": "Athletic Challenge",
+          "description": "Run, walk, bike, or swim to raise funds for clean water."
+        },
+        "event": {
+          "title": "Community Event",
+          "description": "Host a dinner, concert, or auction to support our cause."
+        },
+        "school": {
+          "title": "School Fundraiser",
+          "description": "Engage students in raising awareness and funds for global issues."
+        }
+      },
+      "start": "Start Your Fundraiser",
+      "stories": {
+        "title": "Fundraiser Success Stories",
+        "readMore": "Read More Stories"
+      }
+    }
+  },
+  "footer": {
+    "about": "About Wells of Change",
+    "aboutText": "We are a non-profit organization dedicated to providing clean water, sustainable agriculture, and education to communities worldwide.",
+    "quickLinks": "Quick Links",
+    "programs": "Programs",
+    "news": "News & Updates",
+    "careers": "Careers",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Us",
+    "newsletter": {
+      "title": "Stay Updated",
+      "placeholder": "Your email address",
+      "button": "Subscribe"
+    },
+    "copyright": "© 2025 Wells of Change. All rights reserved.",
+    "charity": "Wells of Change is a registered 501(c)(3) non-profit organization."
+  }
+}

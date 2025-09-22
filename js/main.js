@@ -1,3 +1,6 @@
+// Import i18n configuration (this will be handled by the module system)
+// import { i18next, changeLanguage } from './i18n.js';
+
 // Initialize Material Design Components
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize Top App Bar
@@ -42,6 +45,13 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Mobile menu toggle
     const menuButton = document.querySelector('.mdc-top-app-bar__navigation-icon');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (menuButton && mainNav) {
+        menuButton.addEventListener('click', function() {
+            mainNav.classList.toggle('mobile-nav-open');
+        });
+    }
     
     // Counter animation for stat numbers
     const statNumbers = document.querySelectorAll('.stat-number');

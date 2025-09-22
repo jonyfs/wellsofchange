@@ -1,0 +1,33 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.language-switcher button {
+  background: none;
+  border: none;
+  color: var(--on-primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.language-switcher button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-switcher button.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    margin: 0.5rem 0;
+    justify-content: center;
+  }
+}
