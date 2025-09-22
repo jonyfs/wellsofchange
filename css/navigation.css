@@ -52,26 +52,53 @@
     background-color: var(--secondary-dark);
 }
 
+/* Material Design Drawer Customizations */
+.mdc-drawer {
+    width: 280px;
+    border-radius: 0;
+}
+
+.mdc-drawer__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 16px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mdc-drawer__title {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.mdc-drawer__subtitle {
+    margin: 4px 0 0;
+    color: var(--on-surface);
+    opacity: 0.6;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mdc-drawer .mdc-list-item--highlighted {
+    background-color: var(--secondary-color);
+    color: var(--on-secondary);
+    margin: 8px 16px;
+    border-radius: 4px;
+}
+
+.mdc-drawer .mdc-list-item--highlighted .mdc-list-item__text,
+.mdc-drawer .mdc-list-item--highlighted .mdc-list-item__graphic {
+    color: var(--on-secondary);
+}
+
+.mdc-drawer .mdc-list-item--activated {
+    background-color: rgba(33, 150, 243, 0.12);
+}
+
 @media (max-width: 768px) {
     .main-nav {
         display: none;
-        position: fixed;
-        top: 64px;
-        left: 0;
-        right: 0;
-        background-color: var(--primary-color);
-        z-index: 99;
-    }
-    
-    .main-nav.mobile-nav-open {
-        display: block;
-    }
-    
-    .nav-list {
-        flex-direction: column;
-    }
-    
-    .nav-item a {
-        padding: 12px 16px;
     }
 }

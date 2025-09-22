@@ -7,6 +7,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const topAppBar = document.querySelector('.mdc-top-app-bar');
     const topAppBarInstance = new mdc.topAppBar.MDCTopAppBar(topAppBar);
     
+    // Initialize the drawer
+    const drawerEl = document.querySelector('.mdc-drawer');
+    const drawer = drawerEl ? new mdc.drawer.MDCDrawer(drawerEl) : null;
+    
+    // Set up the drawer toggle
+    if (drawer) {
+        const menuButton = document.querySelector('.mdc-top-app-bar__navigation-icon');
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                drawer.open = !drawer.open;
+            });
+        }
+        
+        // Close the drawer when a link is clicked
+        const drawerLinks = drawerEl.querySelectorAll('.mdc-list-item');
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                drawer.open = false;
+            });
+        });
+    }
+    
     // Initialize all buttons
     const buttons = document.querySelectorAll('.mdc-button');
     buttons.forEach(button => {
@@ -23,6 +45,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const cardPrimaryActionElements = document.querySelectorAll('.mdc-card__primary-action');
     cardPrimaryActionElements.forEach(cardPrimaryActionElement => {
         new mdc.ripple.MDCRipple(cardPrimaryActionElement);
+    });
+    
+    // Initialize list items for ripple effect
+    const listItems = document.querySelectorAll('.mdc-list-item');
+    listItems.forEach(item => {
+        new mdc.ripple.MDCRipple(item);
     });
     
     // Smooth scrolling for anchor links
@@ -42,16 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Mobile menu toggle
-    const menuButton = document.querySelector('.mdc-top-app-bar__navigation-icon');
-    const mainNav = document.querySelector('.main-nav');
-    
-    if (menuButton && mainNav) {
-        menuButton.addEventListener('click', function() {
-            mainNav.classList.toggle('mobile-nav-open');
-        });
-    }
     
     // Counter animation for stat numbers
     const statNumbers = document.querySelectorAll('.stat-number');
