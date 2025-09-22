@@ -29,6 +29,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Initialize the tab bar
+    const tabBar = document.querySelector('.mdc-tab-bar');
+    if (tabBar) {
+        const tabBarInstance = new mdc.tabBar.MDCTabBar(tabBar);
+        
+        // Set the active tab based on current page
+        const currentPath = window.location.pathname;
+        const tabs = tabBar.querySelectorAll('.mdc-tab');
+        tabs.forEach((tab, index) => {
+            const href = tab.getAttribute('href');
+            if (href) {
+                // Check if the current path matches the tab's href
+                // or if we're on the home page and this is the home tab
+                if ((currentPath.endsWith(href) && href !== '#') || 
+                    (currentPath.endsWith('/') && index === 0)) {
+                    tabBarInstance.activateTab(index);
+                }
+            }
+        });
+        
+        // Add click event to tabs for navigation
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                const href = tab.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    // For anchor links, prevent default behavior and handle with smooth scroll
+                    e.preventDefault();
+                    if (href === '#') return;
+                    
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+                // For regular links, let the default behavior work
+            });
+        });
+    }
+    
     // Initialize all buttons
     const buttons = document.querySelectorAll('.mdc-button');
     buttons.forEach(button => {
@@ -53,8 +95,16 @@ document.addEventListener('DOMContentLoaded', function() {
         new mdc.ripple.MDCRipple(item);
     });
     
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Initialize tab items for ripple effect (if not already handled by tab bar)
+    const tabItems = document.querySelectorAll('.mdc-tab');
+    tabItems.forEach(item => {
+        if (!item.classList.contains('mdc-ripple-upgraded')) {
+            new mdc.ripple.MDCRipple(item);
+        }
+    });
+    
+    // Smooth scrolling for anchor links (non-tab links)
+    document.querySelectorAll('a[href^="#"]:not(.mdc-tab)').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             

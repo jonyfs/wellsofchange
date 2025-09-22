@@ -13,43 +13,62 @@
     padding: 0 16px;
 }
 
-.nav-list {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Material Design Tab Bar Styles */
+.mdc-tab-bar {
+    width: 100%;
+    background-color: var(--primary-color);
+}
+
+.mdc-tab {
+    height: 56px;
+    padding: 0 12px;
+    color: var(--on-primary);
+    --mdc-theme-primary: white; /* This sets the indicator color */
+    opacity: 0.8;
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mdc-tab--active {
+    opacity: 1;
+}
+
+.mdc-tab:hover {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.mdc-tab__content {
     justify-content: center;
 }
 
-.nav-item {
-    margin: 0;
-    padding: 0;
+.mdc-tab__icon {
+    margin-right: 8px;
 }
 
-.nav-item a {
-    display: block;
-    color: var(--on-primary);
-    text-decoration: none;
-    padding: 15px 20px;
-    font-weight: 500;
-    font-size: 16px;
-    transition: background-color 0.3s;
+.mdc-tab__text-label {
+    color: inherit;
 }
 
-.nav-item a:hover,
-.nav-item.active a {
-    background-color: var(--primary-dark);
-}
-
-.nav-item .donate-btn {
+.mdc-tab--donate {
     background-color: var(--secondary-color);
     border-radius: 4px;
-    margin: 8px 0;
-    padding: 7px 20px;
+    margin: 8px 4px;
+    height: 40px;
+    color: var(--on-secondary);
+    opacity: 1;
 }
 
-.nav-item .donate-btn:hover {
+.mdc-tab--donate .mdc-tab__text-label {
+    font-weight: 500;
+}
+
+.mdc-tab--donate:hover {
     background-color: var(--secondary-dark);
+}
+
+/* Adjust indicator for donate tab */
+.mdc-tab--donate .mdc-tab-indicator__content--underline {
+    display: none;
 }
 
 /* Material Design Drawer Customizations */
