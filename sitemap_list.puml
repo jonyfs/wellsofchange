@@ -1,0 +1,65 @@
+@startsalt NGO_Sitemap_List
+{
+  {T
+   + NGO Website Structure
+   ++ Home
+   +++ Mission Statement
+   +++ Impact Numbers
+   +++ Latest News
+   +++ Upcoming Events
+   +++ Donation CTA
+   ++ About Us
+   +++ Our Story
+   +++ Vision & Mission
+   +++ Team
+   ++++ Leadership
+   ++++ Staff
+   ++++ Board of Directors
+   +++ Partners
+   +++ Annual Reports
+   ++ Programs
+   +++ Program Area 1
+   ++++ Projects
+   ++++ Success Stories
+   ++++ Resources
+   +++ Program Area 2
+   ++++ Projects
+   ++++ Success Stories
+   ++++ Resources
+   +++ Program Area 3
+   ++++ Projects
+   ++++ Success Stories
+   ++++ Resources
+   ++ Get Involved
+   +++ Volunteer
+   ++++ Current Opportunities
+   ++++ Application Process
+   ++++ Volunteer Stories
+   +++ Donate
+   ++++ One-time Donation
+   ++++ Monthly Giving
+   ++++ Corporate Giving
+   ++++ Planned Giving
+   +++ Fundraise
+   ++++ Start a Campaign
+   ++++ Fundraising Ideas
+   ++++ Success Stories
+   ++ Resources
+   +++ Blog
+   +++ Publications
+   +++ Research
+   +++ Media Library
+   ++++ Photos
+   ++++ Videos
+   ++++ Press Releases
+   ++ Contact
+   +++ Contact Form
+   +++ Office Locations
+   +++ FAQ
+   ++ Donation Portal
+   +++ Donation Form
+   +++ Payment Processing
+   +++ Thank You Page
+  }
+}
+@endsalt
