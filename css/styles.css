@@ -52,6 +52,16 @@ section {
     margin: 10px auto 0;
 }
 
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.alternate-bg {
+    background-color: #f5f5f5;
+}
+
 /* Header and Navigation */
 .mdc-top-app-bar {
     background-color: var(--primary-color);
@@ -60,6 +70,17 @@ section {
 /* Main Content Styles */
 .main-content {
     min-height: 100vh;
+}
+
+/* Page Header */
+.page-header {
+    background-color: var(--primary-light);
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.page-header h1 {
+    margin-bottom: 1rem;
 }
 
 /* Hero Section */
@@ -180,6 +201,104 @@ section {
     padding: 1rem;
 }
 
+/* Program Area Page Styles */
+.program-area-section {
+    padding: 4rem 0;
+}
+
+.program-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.program-image {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+}
+
+.program-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.program-tabs {
+    margin-top: 3rem;
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem 0;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.success-stories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.story-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.story-image {
+    flex: 0 0 200px;
+    height: 200px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.story-content {
+    flex: 1;
+    min-width: 250px;
+}
+
+.resources-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.resource-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.resource-item .material-icons {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.resource-content {
+    flex: 1;
+}
+
 /* Get Involved Section */
 .get-involved-section {
     background-color: var(--primary-light);
@@ -214,6 +333,147 @@ section {
 
 .involvement-card .mdc-button--raised {
     background-color: var(--secondary-color);
+}
+
+/* Get Involved Page Styles */
+.volunteer-section, .donate-section, .fundraise-section {
+    padding: 4rem 0;
+}
+
+.volunteer-content, .donate-content, .fundraise-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.volunteer-image, .donate-image, .fundraise-image {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+}
+
+.volunteer-text, .donate-text, .fundraise-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.volunteer-options, .donation-options, .fundraising-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.volunteer-card, .donation-card, .fundraising-card {
+    flex: 1;
+    min-width: 300px;
+}
+
+.application-steps {
+    counter-reset: step-counter;
+    list-style: none;
+    padding: 0;
+}
+
+.application-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.volunteer-stories, .fundraising-stories {
+    margin-top: 3rem;
+}
+
+.stories-carousel {
+    margin-top: 2rem;
+}
+
+.story-slide {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.volunteer-name {
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.donation-amounts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.amount-button {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    min-width: 70px;
+}
+
+.amount-button.active-amount {
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+.other-donation-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.corporate-giving, .planned-giving {
+    flex: 1;
+    min-width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.idea-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.fundraising-idea {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.fundraising-idea:last-child {
+    border-bottom: none;
 }
 
 /* News Section */
@@ -302,6 +562,494 @@ section {
     margin-top: 1rem;
 }
 
+/* Contact Page Styles */
+.contact-form-section {
+    padding: 4rem 0;
+}
+
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.contact-form-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-row {
+    margin-bottom: 1.5rem;
+}
+
+.form-row .mdc-text-field {
+    width: 100%;
+}
+
+.form-row .mdc-select {
+    width: 100%;
+}
+
+.address-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.city-field {
+    flex: 2;
+}
+
+.state-field {
+    flex: 1;
+}
+
+.zip-field {
+    flex: 1;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.office-locations-section {
+    padding: 4rem 0;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.location-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.location-image {
+    height: 200px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+}
+
+.location-info {
+    padding: 1.5rem;
+}
+
+.faq-section {
+    padding: 4rem 0;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    margin: 0;
+}
+
+.toggle-icon {
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
+}
+
+.faq-item.active .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Resources Page Styles */
+.blog-section, .publications-section, .research-section, .media-library-section {
+    padding: 4rem 0;
+}
+
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.blog-card .card-media {
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    color: #757575;
+    font-size: 0.9rem;
+}
+
+.publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.publication-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.publication-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-light);
+    border-radius: 8px;
+}
+
+.publication-icon .material-icons {
+    font-size: 2rem;
+    color: var(--primary-dark);
+}
+
+.publication-content {
+    flex: 1;
+}
+
+.publication-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    color: #757575;
+    font-size: 0.9rem;
+}
+
+.research-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.research-category-card {
+    flex: 1;
+    min-width: 300px;
+}
+
+.research-papers {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.research-papers li {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.research-papers li:last-child {
+    border-bottom: none;
+}
+
+.research-papers a {
+    display: block;
+    color: var(--primary-dark);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.paper-details {
+    color: #757575;
+    font-size: 0.9rem;
+}
+
+.research-partnerships {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.partners-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.media-tabs {
+    margin-top: 2rem;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery-item {
+    height: 200px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.video-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.video-thumbnail {
+    height: 160px;
+    background-color: #eee;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play-icon {
+    font-size: 3rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.video-item h3 {
+    padding: 1rem 1rem 0.5rem;
+    margin: 0;
+}
+
+.video-duration {
+    padding: 0 1rem 1rem;
+    margin: 0;
+    color: #757575;
+}
+
+.press-releases {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.press-release {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.release-date {
+    color: #757575;
+    font-size: 0.9rem;
+}
+
+/* Donation Portal Styles */
+.donation-form-section {
+    padding: 4rem 0;
+}
+
+.donation-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.donation-form-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.payment-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.donation-card, .payment-card {
+    height: 100%;
+}
+
+.donation-type-toggle {
+    margin-bottom: 2rem;
+}
+
+.mdc-button-toggle {
+    display: inline-flex;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.mdc-button-toggle .mdc-button {
+    border-radius: 0;
+    margin: 0;
+}
+
+.active-toggle {
+    background-color: var(--primary-color);
+}
+
+.donation-amount {
+    margin-bottom: 2rem;
+}
+
+.donation-designation, .donation-tribute, .personal-info, .donation-preferences {
+    margin-bottom: 2rem;
+}
+
+.tribute-type {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card-details {
+    display: flex;
+    gap: 1rem;
+}
+
+.expiry-field {
+    flex: 1;
+}
+
+.cvc-field {
+    flex: 1;
+}
+
+.donation-summary {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.summary-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-row {
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.donate-button {
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+.secure-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: #757575;
+}
+
+.secure-info .material-icons {
+    font-size: 1rem;
+}
+
+.thank-you-section {
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.thank-you-icon {
+    font-size: 5rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.donation-details {
+    max-width: 400px;
+    margin: 2rem auto;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.thank-you-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.impact-message {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--primary-light);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
 /* Footer */
 .footer {
     background-color: #263238;
@@ -363,6 +1111,159 @@ section {
     text-align: center;
 }
 
+/* About Page Styles */
+.our-story-section, .vision-mission-section, .values-section, .team-section, .reports-section {
+    padding: 4rem 0;
+}
+
+.story-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.story-image {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+}
+
+.story-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.vision-mission-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.vision-card, .mission-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.vision-card {
+    background-color: var(--primary-light);
+}
+
+.mission-card {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+.value-card .material-icons {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.team-category {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.team-category::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.team-member {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.member-photo {
+    height: 250px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+}
+
+.team-member h4 {
+    margin: 1.5rem 0 0.5rem;
+}
+
+.member-title {
+    color: var(--primary-color);
+    margin: 0 0 1rem;
+    font-weight: 500;
+}
+
+.reports-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.report-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+.report-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-light);
+    border-radius: 8px;
+}
+
+.report-icon .material-icons {
+    font-size: 2rem;
+    color: var(--primary-dark);
+}
+
+.report-info {
+    flex: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {
@@ -374,7 +1275,12 @@ section {
     }
     
     .mission-content, 
-    .contact-content {
+    .contact-content,
+    .program-content,
+    .volunteer-content,
+    .donate-content,
+    .fundraise-content,
+    .story-content {
         flex-direction: column;
     }
     
@@ -384,6 +1290,11 @@ section {
     }
     
     .footer-content {
+        flex-direction: column;
+    }
+    
+    .contact-grid,
+    .donation-grid {
         flex-direction: column;
     }
 }

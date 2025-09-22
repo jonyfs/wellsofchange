@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Wells of Change</title>
+    
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Material Design Components Web -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body class="mdc-typography">
+    <!-- Header with top app bar -->
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+                <span class="mdc-top-app-bar__title">Wells of Change</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">search</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">favorite</button>
+            </section>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <div class="mdc-top-app-bar--fixed-adjust">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="container">
+                    <h1 class="mdc-typography--headline3">Contact Us</h1>
+                    <p class="mdc-typography--body1">Have questions, comments, or want to learn more about our work? Reach out to our team—we're here to help.</p>
+                </div>
+            </section>
+
+            <!-- Contact Form Section -->
+            <section class="contact-form-section">
+                <div class="container">
+                    <div class="contact-grid">
+                        <div class="contact-form-container">
+                            <h2 class="mdc-typography--headline5">Send Us a Message</h2>
+                            <form class="contact-form">
+                                <div class="form-row">
+                                    <div class="mdc-text-field mdc-text-field--outlined">
+                                        <input class="mdc-text-field__input" id="name-input" required>
+                                        <div class="mdc-notched-outline">
+                                            <div class="mdc-notched-outline__leading"></div>
+                                            <div class="mdc-notched-outline__notch">
+                                                <label for="name-input" class="mdc-floating-label">Full Name*</label>
+                                            </div>
+                                            <div class="mdc-notched-outline__trailing"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="mdc-text-field mdc-text-field--outlined">
+                                        <input class="mdc-text-field__input" id="email-input" type="email" required>
+                                        <div class="mdc-notched-outline">
+                                            <div class="mdc-notched-outline__leading"></div>
+                                            <div class="mdc-notched-outline__notch">
+                                                <label for="email-input" class="mdc-floating-label">Email Address*</label>
+                                            </div>
+                                            <div class="mdc-notched-outline__trailing"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="mdc-text-field mdc-text-field--outlined">
+                                        <input class="mdc-text-field__input" id="subject-input">
+                                        <div class="mdc-notched-outline">
+                                            <div class="mdc-notched-outline__leading"></div>
+                                            <div class="mdc-notched-outline__notch">
+                                                <label for="subject-input" class="mdc-floating-label">Subject</label>
+                                            </div>
+                                            <div class="mdc-notched-outline__trailing"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--textarea">
+                                        <textarea class="mdc-text-field__input" id="message-input" rows="6" required></textarea>
+                                        <div class="mdc-notched-outline">
+                                            <div class="mdc-notched-outline__leading"></div>
+                                            <div class="mdc-notched-outline__notch">
+                                                <label for="message-input" class="mdc-floating-label">Message*</label>
+                                            </div>
+                                            <div class="mdc-notched-outline__trailing"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="mdc-select mdc-select--outlined">
+                                        <div class="mdc-select__anchor">
+                                            <span class="mdc-notched-outline">
+                                                <span class="mdc-notched-outline__leading"></span>
+                                                <span class="mdc-notched-outline__notch">
+                                                    <span class="mdc-floating-label">I'm interested in...</span>
+                                                </span>
+                                                <span class="mdc-notched-outline__trailing"></span>
+                                            </span>
+                                            <span class="mdc-select__selected-text-container">
+                                                <span class="mdc-select__selected-text"></span>
+                                            </span>
+                                            <span class="mdc-select__dropdown-icon">
+                                                <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
+                                                    <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
+                                                    <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+                                            <ul class="mdc-list">
+                                                <li class="mdc-list-item" data-value="general">
+                                                    <span class="mdc-list-item__text">General Inquiry</span>
+                                                </li>
+                                                <li class="mdc-list-item" data-value="volunteer">
+                                                    <span class="mdc-list-item__text">Volunteering</span>
+                                                </li>
+                                                <li class="mdc-list-item" data-value="donate">
+                                                    <span class="mdc-list-item__text">Donations</span>
+                                                </li>
+                                                <li class="mdc-list-item" data-value="partnership">
+                                                    <span class="mdc-list-item__text">Partnerships</span>
+                                                </li>
+                                                <li class="mdc-list-item" data-value="media">
+                                                    <span class="mdc-list-item__text">Media Inquiry</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <button class="mdc-button mdc-button--raised">
+                                        <span class="mdc-button__label">Send Message</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="contact-info-container">
+                            <h2 class="mdc-typography--headline5">Contact Information</h2>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <span class="material-icons">location_on</span>
+                                    <div class="contact-text">
+                                        <h3 class="mdc-typography--subtitle1">Headquarters</h3>
+                                        <p class="mdc-typography--body2">123 Change Street<br>Global City, 12345<br>United States</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <span class="material-icons">email</span>
+                                    <div class="contact-text">
+                                        <h3 class="mdc-typography--subtitle1">Email</h3>
+                                        <p class="mdc-typography--body2">info@wellsofchange.org</p>
+                                        <p class="mdc-typography--body2">donations@wellsofchange.org</p>
+                                        <p class="mdc-typography--body2">volunteer@wellsofchange.org</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <span class="material-icons">phone</span>
+                                    <div class="contact-text">
+                                        <h3 class="mdc-typography--subtitle1">Phone</h3>
+                                        <p class="mdc-typography--body2">Main: +1 (555) 123-4567</p>
+                                        <p class="mdc-typography--body2">Donations: +1 (555) 123-4568</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="contact-item">
+                                    <span class="material-icons">schedule</span>
+                                    <div class="contact-text">
+                                        <h3 class="mdc-typography--subtitle1">Office Hours</h3>
+                                        <p class="mdc-typography--body2">Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                        <p class="mdc-typography--body2">Saturday - Sunday: Closed</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="social-media">
+                                    <h3 class="mdc-typography--subtitle1">Connect With Us</h3>
+                                    <div class="social-icons">
+                                        <a href="#" class="social-icon"><span class="material-icons">facebook</span></a>
+                                        <a href="#" class="social-icon"><span class="material-icons">thumb_up</span></a>
+                                        <a href="#" class="social-icon"><span class="material-icons">public</span></a>
+                                        <a href="#" class="social-icon"><span class="material-icons">camera_alt</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Office Locations Section -->
+            <section class="office-locations-section alternate-bg">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title">Our Office Locations</h2>
+                    <div class="locations-grid">
+                        <div class="location-card">
+                            <div class="location-image"></div>
+                            <div class="location-info">
+                                <h3 class="mdc-typography--headline6">Global Headquarters</h3>
+                                <p class="mdc-typography--body2">123 Change Street<br>Global City, 12345<br>United States</p>
+                                <p class="mdc-typography--body2">Phone: +1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-card">
+                            <div class="location-image"></div>
+                            <div class="location-info">
+                                <h3 class="mdc-typography--headline6">East Africa Regional Office</h3>
+                                <p class="mdc-typography--body2">45 Maji Avenue<br>Nairobi, Kenya</p>
+                                <p class="mdc-typography--body2">Phone: +254 (20) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-card">
+                            <div class="location-image"></div>
+                            <div class="location-info">
+                                <h3 class="mdc-typography--headline6">South Asia Regional Office</h3>
+                                <p class="mdc-typography--body2">78 Water Street<br>New Delhi, India</p>
+                                <p class="mdc-typography--body2">Phone: +91 (11) 1234-5678</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <div class="container">
+                    <h2 class="mdc-typography--headline4 section-title">Frequently Asked Questions</h2>
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3 class="mdc-typography--headline6">How are donations used?</h3>
+                                <span class="material-icons toggle-icon">expand_more</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="mdc-typography--body2">We allocate approximately 85% of all donations directly to our field programs, which include well construction, sanitation education, and agricultural support. The remaining 15% covers essential administrative costs and fundraising efforts to expand our reach. Our annual reports provide detailed financial breakdowns.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3 class="mdc-typography--headline6">How can I volunteer if I don't have specialized skills?</h3>
+                                <span class="material-icons toggle-icon">expand_more</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="mdc-typography--body2">We welcome volunteers with all skill sets! Many of our volunteer opportunities don't require specialized knowledge. You can help with event planning, administrative tasks, community outreach, or social media. We also provide training for certain field positions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3 class="mdc-typography--headline6">How does Wells of Change ensure project sustainability?</h3>
+                                <span class="material-icons toggle-icon">expand_more</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="mdc-typography--body2">Sustainability is central to our approach. We work closely with communities to ensure local ownership of each project. We provide training in maintenance and repair, establish local water committees, and implement usage fee systems that fund ongoing maintenance. We also conduct regular follow-up visits to monitor projects.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3 class="mdc-typography--headline6">Can I specify which project my donation supports?</h3>
+                                <span class="material-icons toggle-icon">expand_more</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="mdc-typography--body2">Yes! When making a donation, you can designate your gift to support a specific program area or region. If you're interested in funding a particular project, please contact our development team to discuss options for restricted giving.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question">
+                                <h3 class="mdc-typography--headline6">How can I organize a fundraiser for Wells of Change?</h3>
+                                <span class="material-icons toggle-icon">expand_more</span>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="mdc-typography--body2">We'd love to help you organize a fundraiser! You can use our online platform to create a personal fundraising page, or contact our team for support with larger events. We provide resources such as logos, fact sheets, and presentation materials to help make your fundraiser a success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="mdc-typography--headline6">Wells of Change</h3>
+                    <p class="mdc-typography--body2">Making clean water accessible to everyone, everywhere.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="mdc-typography--subtitle1">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="mdc-typography--subtitle1">Newsletter</h3>
+                    <p class="mdc-typography--body2">Stay updated with our latest news and projects.</p>
+                    <div class="newsletter-form">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input class="mdc-text-field__input" id="newsletter-input" type="email">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="newsletter-input" class="mdc-floating-label">Email</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <button class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label">Subscribe</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mdc-typography--caption">&copy; 2025 Wells of Change. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Material Design JavaScript -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

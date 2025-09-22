@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Portal - Wells of Change</title>
+    
+    <!-- Material Design Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Material Design Components Web -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.ico">
+</head>
+<body class="mdc-typography">
+    <!-- Header with top app bar -->
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+                <span class="mdc-top-app-bar__title">Wells of Change</span>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">search</button>
+                <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">favorite</button>
+            </section>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-content">
+        <div class="mdc-top-app-bar--fixed-adjust">
+            <!-- Page Header -->
+            <section class="page-header">
+                <div class="container">
+                    <h1 class="mdc-typography--headline3">Donation Portal</h1>
+                    <p class="mdc-typography--body1">Your generosity brings clean water to communities in need. Every donation, no matter the size, makes a difference.</p>
+                </div>
+            </section>
+
+            <!-- Donation Form Section -->
+            <section class="donation-form-section">
+                <div class="container">
+                    <div class="donation-grid">
+                        <div class="donation-form-container">
+                            <div class="mdc-card donation-card">
+                                <div class="card-content">
+                                    <h2 class="mdc-typography--headline5">Make a Donation</h2>
+                                    
+                                    <div class="donation-type-toggle">
+                                        <div class="mdc-button-toggle">
+                                            <button class="mdc-button mdc-button--raised active-toggle">
+                                                <span class="mdc-button__label">One-time</span>
+                                            </button>
+                                            <button class="mdc-button">
+                                                <span class="mdc-button__label">Monthly</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="donation-amount">
+                                        <h3 class="mdc-typography--subtitle1">Select an amount</h3>
+                                        <div class="amount-options">
+                                            <button class="mdc-button amount-button">
+                                                <span class="mdc-button__label">$25</span>
+                                            </button>
+                                            <button class="mdc-button amount-button active-amount">
+                                                <span class="mdc-button__label">$50</span>
+                                            </button>
+                                            <button class="mdc-button amount-button">
+                                                <span class="mdc-button__label">$100</span>
+                                            </button>
+                                            <button class="mdc-button amount-button">
+                                                <span class="mdc-button__label">$250</span>
+                                            </button>
+                                            <button class="mdc-button amount-button">
+                                                <span class="mdc-button__label">$500</span>
+                                            </button>
+                                            <button class="mdc-button amount-button">
+                                                <span class="mdc-button__label">Other</span>
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="custom-amount" style="display: none;">
+                                            <div class="mdc-text-field mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input" id="custom-amount-input" type="number" min="1">
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="custom-amount-input" class="mdc-floating-label">Custom Amount ($)</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="donation-designation">
+                                        <h3 class="mdc-typography--subtitle1">Designate your gift (optional)</h3>
+                                        <div class="mdc-select mdc-select--outlined">
+                                            <div class="mdc-select__anchor">
+                                                <span class="mdc-notched-outline">
+                                                    <span class="mdc-notched-outline__leading"></span>
+                                                    <span class="mdc-notched-outline__notch">
+                                                        <span class="mdc-floating-label">Select a program</span>
+                                                    </span>
+                                                    <span class="mdc-notched-outline__trailing"></span>
+                                                </span>
+                                                <span class="mdc-select__selected-text-container">
+                                                    <span class="mdc-select__selected-text"></span>
+                                                </span>
+                                                <span class="mdc-select__dropdown-icon">
+                                                    <svg class="mdc-select__dropdown-icon-graphic" viewBox="7 10 10 5">
+                                                        <polygon class="mdc-select__dropdown-icon-inactive" stroke="none" fill-rule="evenodd" points="7 10 12 15 17 10"></polygon>
+                                                        <polygon class="mdc-select__dropdown-icon-active" stroke="none" fill-rule="evenodd" points="7 15 12 10 17 15"></polygon>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
+                                                <ul class="mdc-list">
+                                                    <li class="mdc-list-item" data-value="general">
+                                                        <span class="mdc-list-item__text">Where Needed Most</span>
+                                                    </li>
+                                                    <li class="mdc-list-item" data-value="wells">
+                                                        <span class="mdc-list-item__text">Water Wells Initiative</span>
+                                                    </li>
+                                                    <li class="mdc-list-item" data-value="sanitation">
+                                                        <span class="mdc-list-item__text">Sanitation Education</span>
+                                                    </li>
+                                                    <li class="mdc-list-item" data-value="agriculture">
+                                                        <span class="mdc-list-item__text">Agricultural Support</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="donation-tribute">
+                                        <h3 class="mdc-typography--subtitle1">Tribute information (optional)</h3>
+                                        <div class="mdc-form-field">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" id="tribute-checkbox"/>
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                            <label for="tribute-checkbox">Make this donation in honor or memory of someone</label>
+                                        </div>
+                                        
+                                        <div class="tribute-fields" style="display: none;">
+                                            <div class="tribute-type">
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" type="radio" id="tribute-honor" name="tribute-type" value="honor" checked>
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label for="tribute-honor">In Honor Of</label>
+                                                </div>
+                                                
+                                                <div class="mdc-form-field">
+                                                    <div class="mdc-radio">
+                                                        <input class="mdc-radio__native-control" type="radio" id="tribute-memory" name="tribute-type" value="memory">
+                                                        <div class="mdc-radio__background">
+                                                            <div class="mdc-radio__outer-circle"></div>
+                                                            <div class="mdc-radio__inner-circle"></div>
+                                                        </div>
+                                                        <div class="mdc-radio__ripple"></div>
+                                                    </div>
+                                                    <label for="tribute-memory">In Memory Of</label>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mdc-text-field mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input" id="tribute-name">
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="tribute-name" class="mdc-floating-label">Honoree's Name</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="personal-info">
+                                        <h3 class="mdc-typography--subtitle1">Your Information</h3>
+                                        
+                                        <div class="form-row">
+                                            <div class="mdc-text-field mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input" id="donor-name" required>
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="donor-name" class="mdc-floating-label">Full Name*</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="mdc-text-field mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input" id="donor-email" type="email" required>
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="donor-email" class="mdc-floating-label">Email*</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="mdc-text-field mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input" id="donor-phone">
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="donor-phone" class="mdc-floating-label">Phone (optional)</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="mdc-text-field mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input" id="donor-address">
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="donor-address" class="mdc-floating-label">Address (optional)</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row address-details">
+                                            <div class="mdc-text-field mdc-text-field--outlined city-field">
+                                                <input class="mdc-text-field__input" id="donor-city">
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="donor-city" class="mdc-floating-label">City</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mdc-text-field mdc-text-field--outlined state-field">
+                                                <input class="mdc-text-field__input" id="donor-state">
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="donor-state" class="mdc-floating-label">State</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mdc-text-field mdc-text-field--outlined zip-field">
+                                                <input class="mdc-text-field__input" id="donor-zip">
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="donor-zip" class="mdc-floating-label">ZIP</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="donation-preferences">
+                                        <div class="mdc-form-field">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" id="newsletter-checkbox" checked/>
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                            <label for="newsletter-checkbox">Yes, I would like to receive the Wells of Change newsletter</label>
+                                        </div>
+                                        
+                                        <div class="mdc-form-field">
+                                            <div class="mdc-checkbox">
+                                                <input type="checkbox" class="mdc-checkbox__native-control" id="anonymous-checkbox"/>
+                                                <div class="mdc-checkbox__background">
+                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                                    </svg>
+                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                </div>
+                                                <div class="mdc-checkbox__ripple"></div>
+                                            </div>
+                                            <label for="anonymous-checkbox">Make my donation anonymous</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-container">
+                            <div class="mdc-card payment-card">
+                                <div class="card-content">
+                                    <h2 class="mdc-typography--headline5">Payment Information</h2>
+                                    
+                                    <div class="payment-method">
+                                        <h3 class="mdc-typography--subtitle1">Payment Method</h3>
+                                        <div class="payment-options">
+                                            <div class="mdc-form-field">
+                                                <div class="mdc-radio">
+                                                    <input class="mdc-radio__native-control" type="radio" id="payment-credit" name="payment-method" value="credit" checked>
+                                                    <div class="mdc-radio__background">
+                                                        <div class="mdc-radio__outer-circle"></div>
+                                                        <div class="mdc-radio__inner-circle"></div>
+                                                    </div>
+                                                    <div class="mdc-radio__ripple"></div>
+                                                </div>
+                                                <label for="payment-credit">Credit / Debit Card</label>
+                                            </div>
+                                            
+                                            <div class="mdc-form-field">
+                                                <div class="mdc-radio">
+                                                    <input class="mdc-radio__native-control" type="radio" id="payment-paypal" name="payment-method" value="paypal">
+                                                    <div class="mdc-radio__background">
+                                                        <div class="mdc-radio__outer-circle"></div>
+                                                        <div class="mdc-radio__inner-circle"></div>
+                                                    </div>
+                                                    <div class="mdc-radio__ripple"></div>
+                                                </div>
+                                                <label for="payment-paypal">PayPal</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="credit-card-fields">
+                                        <div class="form-row">
+                                            <div class="mdc-text-field mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input" id="card-number" required>
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="card-number" class="mdc-floating-label">Card Number*</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row card-details">
+                                            <div class="mdc-text-field mdc-text-field--outlined expiry-field">
+                                                <input class="mdc-text-field__input" id="card-expiry" placeholder="MM/YY" required>
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="card-expiry" class="mdc-floating-label">Expiration*</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="mdc-text-field mdc-text-field--outlined cvc-field">
+                                                <input class="mdc-text-field__input" id="card-cvc" required>
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="card-cvc" class="mdc-floating-label">CVC*</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="mdc-text-field mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input" id="card-name" required>
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label for="card-name" class="mdc-floating-label">Name on Card*</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="paypal-fields" style="display: none;">
+                                        <p class="mdc-typography--body2">You will be redirected to PayPal to complete your donation after clicking the "Donate Now" button.</p>
+                                    </div>
+                                    
+                                    <div class="donation-summary">
+                                        <h3 class="mdc-typography--subtitle1">Donation Summary</h3>
+                                        <div class="summary-table">
+                                            <div class="summary-row">
+                                                <span class="summary-label">Donation Amount:</span>
+                                                <span class="summary-value">$50.00</span>
+                                            </div>
+                                            <div class="summary-row total-row">
+                                                <span class="summary-label">Total:</span>
+                                                <span class="summary-value">$50.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <button class="mdc-button mdc-button--raised donate-button">
+                                            <span class="mdc-button__label">Donate Now</span>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="secure-info">
+                                        <span class="material-icons">lock</span>
+                                        <p class="mdc-typography--caption">Your transaction is secure. We use SSL encryption to protect your personal information.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Thank You Section (normally hidden, shown after successful donation) -->
+            <section class="thank-you-section" style="display: none;">
+                <div class="container">
+                    <div class="thank-you-content">
+                        <span class="material-icons thank-you-icon">favorite</span>
+                        <h2 class="mdc-typography--headline4">Thank You for Your Donation!</h2>
+                        <p class="mdc-typography--body1">Your generosity will help bring clean water to communities in need. We've sent a receipt to your email address.</p>
+                        <div class="donation-details">
+                            <div class="detail-row">
+                                <span class="detail-label">Donation Amount:</span>
+                                <span class="detail-value">$50.00</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Donation Date:</span>
+                                <span class="detail-value">September 22, 2025</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">Transaction ID:</span>
+                                <span class="detail-value">WOC2509221234</span>
+                            </div>
+                        </div>
+                        <div class="thank-you-actions">
+                            <button class="mdc-button mdc-button--raised">
+                                <span class="mdc-button__label">Return to Home</span>
+                            </button>
+                            <button class="mdc-button">
+                                <span class="mdc-button__label">Share Your Support</span>
+                            </button>
+                        </div>
+                        <div class="impact-message">
+                            <h3 class="mdc-typography--headline6">Your Impact</h3>
+                            <p class="mdc-typography--body2">Your donation of $50 can provide clean water to a family for an entire year. Thank you for making a difference!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="mdc-typography--headline6">Wells of Change</h3>
+                    <p class="mdc-typography--body2">Making clean water accessible to everyone, everywhere.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="mdc-typography--subtitle1">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="get-involved.html">Get Involved</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="mdc-typography--subtitle1">Newsletter</h3>
+                    <p class="mdc-typography--body2">Stay updated with our latest news and projects.</p>
+                    <div class="newsletter-form">
+                        <div class="mdc-text-field mdc-text-field--outlined">
+                            <input class="mdc-text-field__input" id="newsletter-input" type="email">
+                            <div class="mdc-notched-outline">
+                                <div class="mdc-notched-outline__leading"></div>
+                                <div class="mdc-notched-outline__notch">
+                                    <label for="newsletter-input" class="mdc-floating-label">Email</label>
+                                </div>
+                                <div class="mdc-notched-outline__trailing"></div>
+                            </div>
+                        </div>
+                        <button class="mdc-button mdc-button--raised">
+                            <span class="mdc-button__label">Subscribe</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mdc-typography--caption">&copy; 2025 Wells of Change. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Material Design JavaScript -->
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
