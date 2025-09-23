@@ -16,11 +16,62 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/language-switcher.css">
+    <link rel="stylesheet" href="../css/navigation.css">
     
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico">
 </head>
 <body class="mdc-typography">
+    <!-- Material Design Drawer -->
+    <aside class="mdc-drawer mdc-drawer--modal">
+        <div class="mdc-drawer__header">
+            <h3 class="mdc-drawer__title">Wells of Change</h3>
+            <h6 class="mdc-drawer__subtitle">Making a Difference</h6>
+        </div>
+        <div class="mdc-drawer__content">
+            <nav class="mdc-list">
+                <a class="mdc-list-item" href="../index.html">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+                    <span class="mdc-list-item__text" data-i18n="nav.home">Home</span>
+                </a>
+                <a class="mdc-list-item" href="about.html">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">info</i>
+                    <span class="mdc-list-item__text" data-i18n="nav.about">About Us</span>
+                </a>
+                <a class="mdc-list-item mdc-list-item--activated" href="programs.html" aria-current="page">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">lightbulb</i>
+                    <span class="mdc-list-item__text" data-i18n="nav.programs">Programs</span>
+                </a>
+                <a class="mdc-list-item" href="get-involved.html">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">people</i>
+                    <span class="mdc-list-item__text" data-i18n="nav.getInvolved">Get Involved</span>
+                </a>
+                <a class="mdc-list-item" href="resources.html">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">library_books</i>
+                    <span class="mdc-list-item__text" data-i18n="nav.resources">Resources</span>
+                </a>
+                <a class="mdc-list-item" href="contact.html">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">email</i>
+                    <span class="mdc-list-item__text" data-i18n="nav.contact">Contact</span>
+                </a>
+                <div class="mdc-list-divider" role="separator"></div>
+                <a class="mdc-list-item mdc-list-item--highlighted" href="donate.html">
+                    <span class="mdc-list-item__ripple"></span>
+                    <i class="material-icons mdc-list-item__graphic" aria-hidden="true">favorite</i>
+                    <span class="mdc-list-item__text" data-i18n="nav.donate">Donate</span>
+                </a>
+            </nav>
+        </div>
+    </aside>
+    <div class="mdc-drawer-scrim"></div>
+
     <!-- Header with top app bar -->
     <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
         <div class="mdc-top-app-bar__row">
@@ -29,6 +80,12 @@
                 <span class="mdc-top-app-bar__title">Wells of Change</span>
             </section>
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <div class="language-switcher">
+                    <button class="active" data-lang="en">🇺🇸</button>
+                    <button data-lang="fr">🇫🇷</button>
+                    <button data-lang="es">🇪🇸</button>
+                    <button data-lang="pt-BR">🇧🇷</button>
+                </div>
                 <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">search</button>
                 <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button">favorite</button>
             </section>
@@ -41,58 +98,39 @@
             <!-- Page Header -->
             <section class="page-header">
                 <div class="container">
-                    <h1 class="mdc-typography--headline3">Our Programs</h1>
-                    <p class="mdc-typography--body1">Discover how Wells of Change is making a difference through our various water initiatives.</p>
+                    <h1 class="mdc-typography--headline3" data-i18n="programs.header.title">Our Programs</h1>
+                    <p class="mdc-typography--body1" data-i18n="programs.header.subtitle">Discover how Wells of Change is making a difference through our various water initiatives.</p>
                 </div>
             </section>
 
             <!-- Program Area 1 Section -->
             <section class="program-area-section">
                 <div class="container">
-                    <h2 class="mdc-typography--headline4 section-title">Water Wells Initiative</h2>
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="programs.waterWells.title">Water Wells Initiative</h2>
                     <div class="program-content">
                         <div class="program-image">
                             <!-- Placeholder for program image -->
                         </div>
                         <div class="program-text">
-                            <p class="mdc-typography--body1">Our flagship program focuses on building sustainable water wells in communities facing severe water scarcity. We work with local partners to identify areas of greatest need and implement solutions that provide reliable access to clean water.</p>
-                            <p class="mdc-typography--body1">Each well is designed to serve an entire community, with special attention to durability, ease of maintenance, and water quality. Our wells are built using locally available materials whenever possible, and we train community members in maintenance and repair.</p>
+                            <p class="mdc-typography--body1" data-i18n="programs.waterWells.description1">Our flagship program focuses on building sustainable water wells in communities facing severe water scarcity. We work with local partners to identify areas of greatest need and implement solutions that provide reliable access to clean water.</p>
+                            <p class="mdc-typography--body1" data-i18n="programs.waterWells.description2">Each well is designed to serve an entire community, with special attention to durability, ease of maintenance, and water quality. Our wells are built using locally available materials whenever possible, and we train community members in maintenance and repair.</p>
                         </div>
                     </div>
                     
                     <div class="program-tabs">
-                        <div class="mdc-tab-bar" role="tablist">
-                            <div class="mdc-tab-scroller">
-                                <div class="mdc-tab-scroller__scroll-area">
-                                    <div class="mdc-tab-scroller__scroll-content">
-                                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Projects</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                        <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Success Stories</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                        <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Resources</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                    </div>
+                        <div class="program-nav">
+                            <div class="mdc-chip-set" role="grid">
+                                <div class="mdc-chip mdc-chip--selected" role="row" data-section="projects">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.waterWells.projects">Projects</span>
+                                </div>
+                                <div class="mdc-chip" role="row" data-section="success-stories">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.waterWells.success">Success Stories</span>
+                                </div>
+                                <div class="mdc-chip" role="row" data-section="resources">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.waterWells.resources">Resources</span>
                                 </div>
                             </div>
                         </div>
@@ -205,11 +243,11 @@
             <!-- Program Area 2 Section -->
             <section class="program-area-section alternate-bg">
                 <div class="container">
-                    <h2 class="mdc-typography--headline4 section-title">Sanitation Education</h2>
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="programs.sanitation.title">Sanitation Education</h2>
                     <div class="program-content">
                         <div class="program-text">
-                            <p class="mdc-typography--body1">Clean water is only part of the solution. Our Sanitation Education program teaches communities about proper hygiene practices, sanitation facilities, and disease prevention techniques that maximize the health benefits of clean water access.</p>
-                            <p class="mdc-typography--body1">Working with schools, community centers, and local health workers, we provide culturally appropriate education about handwashing, safe water storage, and sanitation infrastructure. Our workshops are interactive and designed for all ages.</p>
+                            <p class="mdc-typography--body1" data-i18n="programs.sanitation.description1">Clean water is only part of the solution. Our Sanitation Education program teaches communities about proper hygiene practices, sanitation facilities, and disease prevention techniques that maximize the health benefits of clean water access.</p>
+                            <p class="mdc-typography--body1" data-i18n="programs.sanitation.description2">Working with schools, community centers, and local health workers, we provide culturally appropriate education about handwashing, safe water storage, and sanitation infrastructure. Our workshops are interactive and designed for all ages.</p>
                         </div>
                         <div class="program-image">
                             <!-- Placeholder for program image -->
@@ -217,38 +255,19 @@
                     </div>
                     
                     <div class="program-tabs">
-                        <div class="mdc-tab-bar" role="tablist">
-                            <div class="mdc-tab-scroller">
-                                <div class="mdc-tab-scroller__scroll-area">
-                                    <div class="mdc-tab-scroller__scroll-content">
-                                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Projects</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                        <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Success Stories</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                        <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Resources</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                    </div>
+                        <div class="program-nav">
+                            <div class="mdc-chip-set" role="grid">
+                                <div class="mdc-chip mdc-chip--selected" role="row" data-section="projects">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.sanitation.projects">Projects</span>
+                                </div>
+                                <div class="mdc-chip" role="row" data-section="success-stories">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.sanitation.success">Success Stories</span>
+                                </div>
+                                <div class="mdc-chip" role="row" data-section="resources">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.sanitation.resources">Resources</span>
                                 </div>
                             </div>
                         </div>
@@ -264,50 +283,31 @@
             <!-- Program Area 3 Section -->
             <section class="program-area-section">
                 <div class="container">
-                    <h2 class="mdc-typography--headline4 section-title">Agricultural Support</h2>
+                    <h2 class="mdc-typography--headline4 section-title" data-i18n="programs.agriculture.title">Agricultural Support</h2>
                     <div class="program-content">
                         <div class="program-image">
                             <!-- Placeholder for program image -->
                         </div>
                         <div class="program-text">
-                            <p class="mdc-typography--body1">With reliable water access, communities can transform their agricultural practices. Our Agricultural Support program helps farmers implement sustainable irrigation systems, cultivate drought-resistant crops, and develop farming techniques that conserve water while increasing yields.</p>
-                            <p class="mdc-typography--body1">We provide training, tools, and resources that enable communities to achieve food security and economic growth through improved agricultural practices. Special attention is given to supporting women farmers, who often play crucial roles in rural agriculture.</p>
+                            <p class="mdc-typography--body1" data-i18n="programs.agriculture.description1">With reliable water access, communities can transform their agricultural practices. Our Agricultural Support program helps farmers implement sustainable irrigation systems, cultivate drought-resistant crops, and develop farming techniques that conserve water while increasing yields.</p>
+                            <p class="mdc-typography--body1" data-i18n="programs.agriculture.description2">We provide training, tools, and resources that enable communities to achieve food security and economic growth through improved agricultural practices. Special attention is given to supporting women farmers, who often play crucial roles in rural agriculture.</p>
                         </div>
                     </div>
                     
                     <div class="program-tabs">
-                        <div class="mdc-tab-bar" role="tablist">
-                            <div class="mdc-tab-scroller">
-                                <div class="mdc-tab-scroller__scroll-area">
-                                    <div class="mdc-tab-scroller__scroll-content">
-                                        <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Projects</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator mdc-tab-indicator--active">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                        <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Success Stories</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                        <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
-                                            <span class="mdc-tab__content">
-                                                <span class="mdc-tab__text-label">Resources</span>
-                                            </span>
-                                            <span class="mdc-tab-indicator">
-                                                <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
-                                            </span>
-                                            <span class="mdc-tab__ripple"></span>
-                                        </button>
-                                    </div>
+                        <div class="program-nav">
+                            <div class="mdc-chip-set" role="grid">
+                                <div class="mdc-chip mdc-chip--selected" role="row" data-section="projects">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.agriculture.projects">Projects</span>
+                                </div>
+                                <div class="mdc-chip" role="row" data-section="success-stories">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.agriculture.success">Success Stories</span>
+                                </div>
+                                <div class="mdc-chip" role="row" data-section="resources">
+                                    <div class="mdc-chip__ripple"></div>
+                                    <span class="mdc-chip__text" data-i18n="programs.agriculture.resources">Resources</span>
                                 </div>
                             </div>
                         </div>
@@ -328,46 +328,60 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 class="mdc-typography--headline6">Wells of Change</h3>
-                    <p class="mdc-typography--body2">Making clean water accessible to everyone, everywhere.</p>
+                    <p class="mdc-typography--body2" data-i18n="footer.aboutText">Making clean water accessible to everyone, everywhere.</p>
                 </div>
                 <div class="footer-section">
-                    <h3 class="mdc-typography--subtitle1">Quick Links</h3>
+                    <h3 class="mdc-typography--subtitle1" data-i18n="footer.quickLinks">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-                        <li><a href="get-involved.html">Get Involved</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="../index.html" data-i18n="nav.home">Home</a></li>
+                        <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="programs.html" data-i18n="nav.programs">Programs</a></li>
+                        <li><a href="get-involved.html" data-i18n="nav.getInvolved">Get Involved</a></li>
+                        <li><a href="resources.html" data-i18n="nav.resources">Resources</a></li>
+                        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="donate.html" data-i18n="nav.donate">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3 class="mdc-typography--subtitle1">Newsletter</h3>
-                    <p class="mdc-typography--body2">Stay updated with our latest news and projects.</p>
+                    <h3 class="mdc-typography--subtitle1" data-i18n="footer.newsletter.title">Newsletter</h3>
+                    <p class="mdc-typography--body2" data-i18n="footer.newsletter.description">Stay updated with our latest news and projects.</p>
                     <div class="newsletter-form">
                         <div class="mdc-text-field mdc-text-field--outlined">
                             <input class="mdc-text-field__input" id="newsletter-input" type="email">
                             <div class="mdc-notched-outline">
                                 <div class="mdc-notched-outline__leading"></div>
                                 <div class="mdc-notched-outline__notch">
-                                    <label for="newsletter-input" class="mdc-floating-label">Email</label>
+                                    <label for="newsletter-input" class="mdc-floating-label" data-i18n-attr='{"placeholder": "footer.newsletter.placeholder"}'>Email</label>
                                 </div>
                                 <div class="mdc-notched-outline__trailing"></div>
                             </div>
                         </div>
                         <button class="mdc-button mdc-button--raised">
-                            <span class="mdc-button__label">Subscribe</span>
+                            <span class="mdc-button__label" data-i18n="footer.newsletter.button">Subscribe</span>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="mdc-typography--caption">&copy; 2025 Wells of Change. All rights reserved.</p>
+                <p class="mdc-typography--caption" data-i18n="footer.copyright">&copy; 2025 Wells of Change. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Material Design JavaScript -->
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    
+    <!-- Global Config -->
+    <script src="../js/config.js"></script>
+    
+    <!-- GitHub Pages Debug -->
+    <script src="../js/github-pages-debug.js"></script>
+    
+    <!-- Path Utilities for GitHub Pages -->
+    <script type="module" src="../js/path-utils.js"></script>
+    
+    <!-- i18next Libraries -->
+    <script type="module" src="../js/i18n.js"></script>
     
     <!-- Custom JavaScript -->
     <script src="../js/main.js"></script>
