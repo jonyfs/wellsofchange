@@ -113,7 +113,10 @@ const setupLanguageSwitcher = () => {
   // First handle any remaining select dropdowns (for backward compatibility)
   const languageSelects = document.querySelectorAll('.language-select');
   
-  // Then handle the new flag links
+  // Then handle the new flag buttons
+  const languageButtons = document.querySelectorAll('.language-btn');
+  
+  // Also handle the flag links (for backward compatibility)
   const languageFlags = document.querySelectorAll('.language-flag');
   
   // If no language is explicitly set (or it's not in our supported list), use browser language
@@ -149,7 +152,24 @@ const setupLanguageSwitcher = () => {
     });
   });
   
-  // Setup for flag links
+  // Setup for flag buttons
+  languageButtons.forEach(button => {
+    // Mark the current language as active
+    const buttonLang = button.getAttribute('data-lang');
+    if (buttonLang === i18next.language) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
+    
+    // Add click event listener
+    button.addEventListener('click', () => {
+      const lang = button.getAttribute('data-lang');
+      changeLanguage(lang);
+    });
+  });
+  
+  // Setup for flag links (for backward compatibility)
   languageFlags.forEach(flag => {
     // Mark the current language as active
     const flagLang = flag.getAttribute('data-lang');
@@ -192,7 +212,17 @@ const updateLanguageUI = (lang) => {
     }
   });
   
-  // Update flag links to show current language
+  // Update flag buttons to show current language
+  document.querySelectorAll('.language-btn').forEach(button => {
+    const buttonLang = button.getAttribute('data-lang');
+    if (buttonLang === lang) {
+      button.classList.add('active');
+    } else {
+      button.classList.remove('active');
+    }
+  });
+  
+  // Update flag links to show current language (for backward compatibility)
   document.querySelectorAll('.language-flag').forEach(flag => {
     const flagLang = flag.getAttribute('data-lang');
     if (flagLang === lang) {

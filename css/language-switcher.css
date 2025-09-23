@@ -5,9 +5,8 @@
   gap: 0.5rem;
 }
 
-.language-flag {
+.language-btn {
   font-size: 1.2rem;
-  text-decoration: none;
   padding: 0.25rem;
   border-radius: 4px;
   transition: all 0.3s;
@@ -15,22 +14,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
 }
 
-.language-flag:hover {
+.language-btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.language-flag.active {
+.language-btn.active {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
-}
-
-@media (max-width: 768px) {
-  .language-switcher {
-    margin: 0.5rem 0;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 768px) {
