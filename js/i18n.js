@@ -130,6 +130,13 @@ const setupLanguageSwitcher = () => {
     // Set initial value based on current language
     select.value = i18next.language;
     
+    // Set the flag for the current language
+    const selectedOption = Array.from(select.options).find(option => option.value === i18next.language);
+    if (selectedOption) {
+      const flagText = selectedOption.textContent.trim().split(' ')[0];
+      select.setAttribute('data-flag', flagText);
+    }
+    
     // Add change event listener
     select.addEventListener('change', (event) => {
       const lang = event.target.value;
@@ -153,6 +160,13 @@ const updateLanguageUI = (lang) => {
   // Update select boxes to show current language
   document.querySelectorAll('.language-select').forEach(select => {
     select.value = lang;
+    
+    // Update the flag in the main display
+    const selectedOption = Array.from(select.options).find(option => option.value === lang);
+    if (selectedOption) {
+      const flagText = selectedOption.textContent.trim().split(' ')[0];
+      select.setAttribute('data-flag', flagText);
+    }
   });
   
   console.log(`Language set to: ${lang}`);
