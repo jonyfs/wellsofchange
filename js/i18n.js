@@ -5,23 +5,26 @@ import LanguageDetector from 'https://cdn.jsdelivr.net/npm/i18next-browser-langu
 
 // Initialize i18next
 const i18nextInit = async () => {
-  // Get the base path from the global config
+  // Get the base path and language settings from the global config
   const basePath = window.wellsOfChangeConfig?.basePath || '';
+  const langConfig = window.wellsOfChangeConfig?.language || { default: 'en', supported: ['en', 'fr', 'es', 'pt-BR'], useBrowserLanguage: true };
   
   try {
     await i18next
       .use(HttpBackend)
       .use(LanguageDetector)
       .init({
-        fallbackLng: 'en',
-        supportedLngs: ['en', 'fr', 'es', 'pt-BR'],
+        fallbackLng: langConfig.default,
+        supportedLngs: langConfig.supported,
         ns: ['translation'],
         defaultNS: 'translation',
         backend: {
           loadPath: `${basePath}/locales/{{lng}}/{{ns}}.json`,
         },
         detection: {
-          order: ['querystring', 'navigator', 'localStorage', 'sessionStorage', 'htmlTag'],
+          order: langConfig.useBrowserLanguage 
+            ? ['navigator', 'querystring', 'localStorage', 'sessionStorage', 'htmlTag'] 
+            : ['querystring', 'localStorage', 'sessionStorage', 'htmlTag'],
           lookupQuerystring: 'lng',
           lookupLocalStorage: 'i18nextLng',
           lookupSessionStorage: 'i18nextLng',
@@ -36,6 +39,9 @@ const i18nextInit = async () => {
     
     // Add language switcher functionality
     setupLanguageSwitcher();
+    
+    // Update UI to show the current language
+    updateLanguageUI(i18next.language);
   } catch (error) {
     console.error('i18next initialization failed:', error);
   }
@@ -65,9 +71,60 @@ const updateContent = () => {
   });
 };
 
+// Get the best matching language based on browser language
+const getBestMatchingLanguage = () => {
+  // Get config settings
+  const langConfig = window.wellsOfChangeConfig?.language || { 
+    default: 'en', 
+    supported: ['en', 'fr', 'es', 'pt-BR'], 
+    useBrowserLanguage: true 
+  };
+  
+  // If browser language detection is disabled, use default
+  if (!langConfig.useBrowserLanguage) {
+    return langConfig.default;
+  }
+  
+  const browserLang = navigator.language || navigator.userLanguage;
+  const supportedLangs = langConfig.supported;
+  
+  // Check for exact match
+  if (supportedLangs.includes(browserLang)) {
+    return browserLang;
+  }
+  
+  // Check for language code match (e.g., 'en-US' should match 'en')
+  const langCode = browserLang.split('-')[0];
+  if (supportedLangs.includes(langCode)) {
+    return langCode;
+  }
+  
+  // Special case for Portuguese variants
+  if (langCode === 'pt') {
+    return 'pt-BR';
+  }
+  
+  // Default to config default
+  return langConfig.default;
+};
+
 // Set up language switcher
 const setupLanguageSwitcher = () => {
   const languageSwitchers = document.querySelectorAll('.language-switcher');
+  
+  // If no language is explicitly set (or it's not in our supported list), use browser language
+  const currentLang = i18next.language;
+  const langConfig = window.wellsOfChangeConfig?.language || {
+    default: 'en',
+    supported: ['en', 'fr', 'es', 'pt-BR'],
+    useBrowserLanguage: true
+  };
+  
+  if (!langConfig.supported.includes(currentLang)) {
+    const bestLang = getBestMatchingLanguage();
+    console.log(`Current language "${currentLang}" not supported, switching to "${bestLang}"`);
+    changeLanguage(bestLang);
+  }
   
   languageSwitchers.forEach(switcher => {
     switcher.addEventListener('click', (event) => {
@@ -83,21 +140,28 @@ const setupLanguageSwitcher = () => {
 const changeLanguage = (lang) => {
   i18next.changeLanguage(lang).then(() => {
     updateContent();
-    document.documentElement.lang = lang;
-    
-    // Update active state in language switchers
-    document.querySelectorAll('.language-switcher button').forEach(btn => {
-      if (btn.getAttribute('data-lang') === lang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
+    updateLanguageUI(lang);
   });
+};
+
+// Update language UI elements
+const updateLanguageUI = (lang) => {
+  document.documentElement.lang = lang;
+  
+  // Update active state in language switchers
+  document.querySelectorAll('.language-switcher button').forEach(btn => {
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+  
+  console.log(`Language set to: ${lang}`);
 };
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', i18nextInit);
 
 // Export for use in other scripts if needed
-export { i18next, changeLanguage };
+export { i18next, changeLanguage, getBestMatchingLanguage };

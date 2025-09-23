@@ -2,6 +2,13 @@
 window.wellsOfChangeConfig = {
   basePath: location.hostname.includes('github.io') ? '/wellsofchange' : '',
   
+  // Language settings
+  language: {
+    default: 'en',
+    supported: ['en', 'fr', 'es', 'pt-BR'],
+    useBrowserLanguage: true // Set to false to always use default language
+  },
+  
   // Helper to get the correct path for resources
   getPath: function(path) {
     // If path already starts with the base path, don't modify it
