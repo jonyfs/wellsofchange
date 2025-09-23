@@ -2,63 +2,35 @@
   display: flex;
   align-items: center;
   margin-left: 1rem;
+  gap: 0.5rem;
 }
 
-.language-select {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: transparent;
-  border: none;
+.language-flag {
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.25rem;
   border-radius: 4px;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  cursor: pointer;
   transition: all 0.3s;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 0.1rem center;
-  background-size: 1rem;
-  padding-right: 1.5rem;
-  width: 3rem;
-  text-align: left;
-  text-indent: -9999px;
-  position: relative;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Show flag in main select */
-.language-select::before {
-  content: attr(data-flag);
-  position: absolute;
-  left: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  text-indent: 0;
-  pointer-events: none;
-}
-
-.language-select:hover {
+.language-flag:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.language-select:focus {
-  outline: none;
+.language-flag.active {
   background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
-.language-select option {
-  background-color: #2196F3;
-  color: black;
-  padding: 0.75rem;
-  text-indent: 0;
-  font-size: 0.9rem;
-}
-
-/* Add flag icons before the text in dropdown */
-.language-select option::before {
-  margin-right: 0.5rem;
+@media (max-width: 768px) {
+  .language-switcher {
+    margin: 0.5rem 0;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {

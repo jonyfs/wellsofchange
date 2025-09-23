@@ -110,7 +110,11 @@ const getBestMatchingLanguage = () => {
 
 // Set up language switcher
 const setupLanguageSwitcher = () => {
+  // First handle any remaining select dropdowns (for backward compatibility)
   const languageSelects = document.querySelectorAll('.language-select');
+  
+  // Then handle the new flag links
+  const languageFlags = document.querySelectorAll('.language-flag');
   
   // If no language is explicitly set (or it's not in our supported list), use browser language
   const currentLang = i18next.language;
@@ -126,6 +130,7 @@ const setupLanguageSwitcher = () => {
     changeLanguage(bestLang);
   }
   
+  // Setup for select dropdowns (if any still exist)
   languageSelects.forEach(select => {
     // Set initial value based on current language
     select.value = i18next.language;
@@ -143,6 +148,24 @@ const setupLanguageSwitcher = () => {
       changeLanguage(lang);
     });
   });
+  
+  // Setup for flag links
+  languageFlags.forEach(flag => {
+    // Mark the current language as active
+    const flagLang = flag.getAttribute('data-lang');
+    if (flagLang === i18next.language) {
+      flag.classList.add('active');
+    } else {
+      flag.classList.remove('active');
+    }
+    
+    // Add click event listener
+    flag.addEventListener('click', (event) => {
+      event.preventDefault();
+      const lang = flag.getAttribute('data-lang');
+      changeLanguage(lang);
+    });
+  });
 };
 
 // Change language function
@@ -157,7 +180,7 @@ const changeLanguage = (lang) => {
 const updateLanguageUI = (lang) => {
   document.documentElement.lang = lang;
   
-  // Update select boxes to show current language
+  // Update select boxes to show current language (for backward compatibility)
   document.querySelectorAll('.language-select').forEach(select => {
     select.value = lang;
     
@@ -166,6 +189,16 @@ const updateLanguageUI = (lang) => {
     if (selectedOption) {
       const flagText = selectedOption.textContent.trim().split(' ')[0];
       select.setAttribute('data-flag', flagText);
+    }
+  });
+  
+  // Update flag links to show current language
+  document.querySelectorAll('.language-flag').forEach(flag => {
+    const flagLang = flag.getAttribute('data-lang');
+    if (flagLang === lang) {
+      flag.classList.add('active');
+    } else {
+      flag.classList.remove('active');
     }
   });
   
