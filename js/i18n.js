@@ -110,7 +110,7 @@ const getBestMatchingLanguage = () => {
 
 // Set up language switcher
 const setupLanguageSwitcher = () => {
-  const languageSwitchers = document.querySelectorAll('.language-switcher');
+  const languageSelects = document.querySelectorAll('.language-select');
   
   // If no language is explicitly set (or it's not in our supported list), use browser language
   const currentLang = i18next.language;
@@ -126,12 +126,14 @@ const setupLanguageSwitcher = () => {
     changeLanguage(bestLang);
   }
   
-  languageSwitchers.forEach(switcher => {
-    switcher.addEventListener('click', (event) => {
-      if (event.target.tagName === 'BUTTON') {
-        const lang = event.target.getAttribute('data-lang');
-        changeLanguage(lang);
-      }
+  languageSelects.forEach(select => {
+    // Set initial value based on current language
+    select.value = i18next.language;
+    
+    // Add change event listener
+    select.addEventListener('change', (event) => {
+      const lang = event.target.value;
+      changeLanguage(lang);
     });
   });
 };
@@ -148,13 +150,9 @@ const changeLanguage = (lang) => {
 const updateLanguageUI = (lang) => {
   document.documentElement.lang = lang;
   
-  // Update active state in language switchers
-  document.querySelectorAll('.language-switcher button').forEach(btn => {
-    if (btn.getAttribute('data-lang') === lang) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
+  // Update select boxes to show current language
+  document.querySelectorAll('.language-select').forEach(select => {
+    select.value = lang;
   });
   
   console.log(`Language set to: ${lang}`);

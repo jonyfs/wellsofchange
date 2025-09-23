@@ -24,17 +24,22 @@
             margin-bottom: 20px;
         }
         
-        .language-switcher button {
-            padding: 8px 16px;
-            background-color: #f0f0f0;
-            border: none;
+        .language-select {
+            padding: 8px 32px 8px 10px;
+            border: 1px solid #ddd;
             border-radius: 4px;
+            background-color: white;
+            font-size: 14px;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 12px auto;
             cursor: pointer;
         }
         
-        .language-switcher button.active {
-            background-color: #2196F3;
-            color: white;
+        .language-select:hover {
+            border-color: #aaa;
         }
         
         .example-section {
@@ -57,10 +62,12 @@
     <h1>i18next Language Switcher Example</h1>
     
     <div class="language-switcher">
-        <button class="active" data-lang="en">English</button>
-        <button data-lang="fr">Français</button>
-        <button data-lang="es">Español</button>
-        <button data-lang="pt-BR">Português</button>
+        <select id="language-select" class="language-select">
+            <option value="en" data-icon="🇺🇸">English</option>
+            <option value="fr" data-icon="🇫🇷">Français</option>
+            <option value="es" data-icon="🇪🇸">Español</option>
+            <option value="pt-BR" data-icon="🇧🇷">Português</option>
+        </select>
     </div>
     
     <p data-i18n="home.hero.title">Making a Difference Together</p>
@@ -71,10 +78,12 @@
         <h2>How to Use i18next in Your Pages</h2>
         <p>1. Add the language switcher to your header:</p>
         <pre>&lt;div class="language-switcher"&gt;
-    &lt;button class="active" data-lang="en"&gt;EN&lt;/button&gt;
-    &lt;button data-lang="fr"&gt;FR&lt;/button&gt;
-    &lt;button data-lang="es"&gt;ES&lt;/button&gt;
-    &lt;button data-lang="pt-BR"&gt;PT&lt;/button&gt;
+    &lt;select id="language-select" class="language-select"&gt;
+        &lt;option value="en" data-icon="🇺🇸"&gt;English&lt;/option&gt;
+        &lt;option value="fr" data-icon="🇫🇷"&gt;Français&lt;/option&gt;
+        &lt;option value="es" data-icon="🇪🇸"&gt;Español&lt;/option&gt;
+        &lt;option value="pt-BR" data-icon="🇧🇷"&gt;Português&lt;/option&gt;
+    &lt;/select&gt;
 &lt;/div&gt;</pre>
         
         <p>2. Mark elements with translation keys:</p>
