@@ -190,6 +190,11 @@ const translations: Record<Language, any> = {
       nonPartisanTitle: "Declaration of Non-Partisanship",
       nonPartisanText: "Wells of Change declares itself completely independent of any political party, political movement, or partisan ideology. Our work is guided exclusively by humanitarian and social values. We do not support candidates, parties, or political causes. Our mission is to serve communities in need, regardless of their political affiliations or beliefs.",
     },
+    partners: {
+      title: "Our Partners",
+      subtitle: "Organizations that believe in our mission and support our work to bring clean water to those who need it most.",
+      thanks: "Thank you for making our work possible.",
+    },
     footer: {
       description: "Changing lives, one well at a time. Bringing clean water and sustainable technology to communities that need it most.",
       navTitle: "Navigation",
@@ -337,6 +342,11 @@ const translations: Record<Language, any> = {
       
       nonPartisanTitle: "Declaração de Apartidarismo",
       nonPartisanText: "A Wells of Change declara-se completamente independente de qualquer partido político, movimento político ou ideologia partidária. Nosso trabalho é guiado exclusivamente por valores humanitários e sociais. Não apoiamos candidatos, partidos ou causas políticas. Nossa missão é servir comunidades em necessidade, independentemente de suas afiliações ou crenças políticas.",
+    },
+    partners: {
+      title: "Nossos Parceiros",
+      subtitle: "Organizações que acreditam na nossa missão e apoiam nosso trabalho para levar água potável a quem mais precisa.",
+      thanks: "Obrigado por tornar nosso trabalho possível.",
     },
     footer: {
       description: "Mudando vidas, um poço por vez. Levando água potável e tecnologia sustentável para comunidades que mais precisam.",
@@ -486,6 +496,11 @@ const translations: Record<Language, any> = {
       nonPartisanTitle: "Declaración de Apartidarismo",
       nonPartisanText: "Wells of Change se declara completamente independiente de cualquier partido político, movimiento político o ideología partidaria. Nuestro trabajo está guiado exclusivamente por valores humanitarios y sociales. No apoyamos candidatos, partidos o causas políticas. Nuestra misión es servir a comunidades necesitadas, independientemente de sus afiliaciones o creencias políticas.",
     },
+    partners: {
+      title: "Nuestros Socios",
+      subtitle: "Organizaciones que creen en nuestra misión y apoyan nuestro trabajo para llevar agua potable a quienes más lo necesitan.",
+      thanks: "Gracias por hacer posible nuestro trabajo.",
+    },
     footer: {
       description: "Cambiando vidas, un pozo a la vez. Llevando agua potable y tecnología sostenible a las comunidades que más lo necesitan.",
       navTitle: "Navegación",
@@ -633,6 +648,11 @@ const translations: Record<Language, any> = {
       
       nonPartisanTitle: "Déclaration de Non-Partisanerie",
       nonPartisanText: "Wells of Change se déclare complètement indépendant de tout parti politique, mouvement politique ou idéologie partisane. Notre travail est guidé exclusivement par des valeurs humanitaires et sociales. Nous ne soutenons pas de candidats, partis ou causes politiques. Notre mission est de servir les communautés dans le besoin, indépendamment de leurs affiliations ou croyances politiques.",
+    },
+    partners: {
+      title: "Nos Partenaires",
+      subtitle: "Des organisations qui croient en notre mission et soutiennent notre travail pour apporter de l'eau potable à ceux qui en ont le plus besoin.",
+      thanks: "Merci de rendre notre travail possible.",
     },
     footer: {
       description: "Changer des vies, un puits à la fois. Apporter de l'eau potable et une technologie durable aux communautés qui en ont le plus besoin.",
