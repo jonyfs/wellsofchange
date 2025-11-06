@@ -49,24 +49,24 @@ fi
 echo ""
 echo "🔍 Checking paths in index.html:"
 
-if grep -q 'href="/assets/' dist/public/index.html; then
-    echo "  ✅ CSS path uses root-relative path (/assets/)"
+if grep -q 'href="/wellsofchange/' dist/public/index.html; then
+    echo "  ✅ CSS path uses /wellsofchange/ base"
 else
-    echo "  ❌ CSS path incorrect!"
+    echo "  ❌ CSS path doesn't use /wellsofchange/ base!"
     all_found=false
 fi
 
-if grep -q 'src="/assets/' dist/public/index.html; then
-    echo "  ✅ JS path uses root-relative path (/assets/)"
+if grep -q 'src="/wellsofchange/' dist/public/index.html; then
+    echo "  ✅ JS path uses /wellsofchange/ base"
 else
-    echo "  ❌ JS path incorrect!"
+    echo "  ❌ JS path doesn't use /wellsofchange/ base!"
     all_found=false
 fi
 
-if grep -q 'href="/favicon.png"' dist/public/index.html; then
-    echo "  ✅ Favicon path uses root-relative path (/favicon.png)"
+if grep -q 'href="/wellsofchange/favicon.png"' dist/public/index.html; then
+    echo "  ✅ Favicon path uses /wellsofchange/ base"
 else
-    echo "  ❌ Favicon path incorrect!"
+    echo "  ❌ Favicon path doesn't use /wellsofchange/ base!"
     all_found=false
 fi
 
@@ -74,11 +74,11 @@ fi
 echo ""
 echo "📝 Asset paths in index.html:"
 echo "  CSS:"
-grep -o 'href="/[^"]*\.css"' dist/public/index.html | head -1
+grep -o 'href="/wellsofchange/[^"]*\.css"' dist/public/index.html | head -1
 echo "  JS:"
-grep -o 'src="/[^"]*\.js"' dist/public/index.html | head -1
+grep -o 'src="/wellsofchange/[^"]*\.js"' dist/public/index.html | head -1
 echo "  Favicon:"
-grep -o 'href="/favicon.png"' dist/public/index.html
+grep -o 'href="/wellsofchange/favicon.png"' dist/public/index.html
 
 # Check file sizes
 echo ""
@@ -94,21 +94,16 @@ if [ "$all_found" = true ]; then
     echo ""
     echo "✅ All tests passed!"
     echo ""
-    echo "⚠️  IMPORTANT: Base path removed!"
-    echo "   Paths use root-relative format (/assets/...)"
-    echo ""
-    echo "✅ Compatible with:"
-    echo "   - Custom domains"
-    echo "   - User sites (username.github.io repository)"
-    echo ""
-    echo "❌ NOT compatible with:"
-    echo "   - Project sites (username.github.io/repo-name/)"
+    echo "🚀 Build is ready for GitHub Pages deployment!"
     echo ""
     echo "To preview locally:"
     echo "  npx serve dist/public -p 3000"
-    echo "  Then open: http://localhost:3000/"
+    echo "  Then open: http://localhost:3000/wellsofchange/"
     echo ""
-    echo "See DEPLOYMENT_UPDATE.md for deployment options"
+    echo "To deploy:"
+    echo "  git add ."
+    echo "  git commit -m \"Update site\""
+    echo "  git push origin main"
     echo ""
 else
     echo ""
