@@ -37,6 +37,9 @@ else
         # Handle both absolute and relative URLs
         if [[ $css == http* ]]; then
             CSS_URL="$css"
+        elif [[ $css == /wellsofchange/* ]]; then
+            # Path already includes base, use site root
+            CSS_URL="https://jonyfs.github.io$css"
         else
             CSS_URL="${SITE_URL%/}$css"
         fi
@@ -68,6 +71,9 @@ else
         # Handle both absolute and relative URLs
         if [[ $js == http* ]]; then
             JS_URL="$js"
+        elif [[ $js == /wellsofchange/* ]]; then
+            # Path already includes base, use site root
+            JS_URL="https://jonyfs.github.io$js"
         else
             JS_URL="${SITE_URL%/}$js"
         fi
@@ -94,6 +100,9 @@ if [ -n "$FAVICON" ]; then
     TOTAL_TESTS=$((TOTAL_TESTS + 1))
     if [[ $FAVICON == http* ]]; then
         FAVICON_URL="$FAVICON"
+    elif [[ $FAVICON == /wellsofchange/* ]]; then
+        # Path already includes base, use site root
+        FAVICON_URL="https://jonyfs.github.io$FAVICON"
     else
         FAVICON_URL="${SITE_URL%/}$FAVICON"
     fi
