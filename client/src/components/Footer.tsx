@@ -1,13 +1,22 @@
 import { Droplet, Mail, MapPin } from "lucide-react";
+import { FaFacebook, FaInstagram, FaTiktok, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "@/lib/i18n";
 
 export default function Footer() {
   const { t } = useLanguage();
 
+  const socialLinks = [
+    { icon: FaFacebook, url: "https://facebook.com/wellsofchange", label: "Facebook", testId: "link-facebook" },
+    { icon: FaInstagram, url: "https://instagram.com/wellsofchange", label: "Instagram", testId: "link-instagram" },
+    { icon: FaTiktok, url: "https://tiktok.com/@wellsofchange", label: "TikTok", testId: "link-tiktok" },
+    { icon: FaYoutube, url: "https://youtube.com/@wellsofchange", label: "YouTube", testId: "link-youtube" },
+    { icon: FaLinkedin, url: "https://linkedin.com/company/wellsofchange", label: "LinkedIn", testId: "link-linkedin" },
+  ];
+
   return (
     <footer className="bg-muted/50 border-t py-12">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="grid md:grid-cols-3 gap-12 mb-8">
+        <div className="grid md:grid-cols-4 gap-12 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Droplet className="w-6 h-6 text-primary" />
@@ -80,6 +89,25 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-lg mb-4" data-testid="text-footer-social-title">{t("footer.socialTitle")}</h3>
+            <div className="flex gap-3">
+              {socialLinks.map(({ icon: Icon, url, label, testId }) => (
+                <a
+                  key={label}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-md bg-muted hover-elevate active-elevate-2 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={label}
+                  data-testid={testId}
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
