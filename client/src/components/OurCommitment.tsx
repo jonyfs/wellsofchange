@@ -1,6 +1,6 @@
 import StatCard from "./StatCard";
 import { useLanguage } from "@/lib/i18n";
-import waterTanksImage from "@assets/markus-spiske-sFydXGrt5OA-unsplash_1762442531909.jpg";
+import waterTanksImage from "@assets/20201129_170751_1762441207202.jpg";
 import techniciansImage from "@assets/20191002_125711_1762442531910.jpg";
 
 export default function OurCommitment() {
@@ -14,19 +14,19 @@ export default function OurCommitment() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="rounded-md overflow-hidden">
+          <div className="rounded-md overflow-hidden h-[400px]">
             <img
               src={waterTanksImage}
               alt="Community with water storage tanks in Campo Formoso"
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
               data-testid="img-water-tanks"
             />
           </div>
-          <div className="rounded-md overflow-hidden">
+          <div className="rounded-md overflow-hidden h-[400px]">
             <img
               src={techniciansImage}
               alt="Technicians working on water well monitoring system"
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
               data-testid="img-technicians"
             />
           </div>
