@@ -48,7 +48,7 @@ If you're seeing a **markdown file** instead of the website in Replit:
 
 ### ⭐ Deploy Automático com GitHub Actions (Recomendado)
 
-O site usa **GitHub Actions** para build e deploy automáticos.
+**✅ Build testado e pronto!** Todos os testes passaram.
 
 **IMPORTANTE - Configure primeiro** (apenas uma vez):
 1. Vá para: **https://github.com/jonyfs/wellsofchange/settings/pages**
@@ -66,8 +66,26 @@ git push origin main
 # ✅ Build → Deploy → Site online em 2-5 minutos
 ```
 
-📖 **Guia completo**: [docs/CHECK_GITHUB_PAGES.md](./docs/CHECK_GITHUB_PAGES.md)  
-🔧 **Troubleshooting**: [docs/TROUBLESHOOTING_GITHUB_PAGES.md](./docs/TROUBLESHOOTING_GITHUB_PAGES.md)
+### 🛠️ Build e Testes Locais
+
+```bash
+# Build para GitHub Pages
+./build-github-pages.sh
+
+# Testar build
+./test-github-pages.sh
+
+# Preview local
+npx serve dist/public -p 3000
+# Abra: http://localhost:3000/wellsofchange/
+```
+
+### 📚 Documentação
+
+⚡ **Quick Start**: [docs/QUICK_START.md](./docs/QUICK_START.md)  
+📖 **Guia Completo**: [docs/GITHUB_PAGES_DEPLOYMENT_GUIDE.md](./docs/GITHUB_PAGES_DEPLOYMENT_GUIDE.md)  
+🔧 **Troubleshooting**: [docs/TROUBLESHOOTING_GITHUB_PAGES.md](./docs/TROUBLESHOOTING_GITHUB_PAGES.md)  
+✅ **Checklist**: [docs/CHECK_GITHUB_PAGES.md](./docs/CHECK_GITHUB_PAGES.md)
 
 ### Opção 2: Deploy Manual com Build Local
 
