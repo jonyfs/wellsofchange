@@ -50,25 +50,24 @@ If you're seeing a **markdown file** instead of the website in Replit:
 
 O site usa **GitHub Actions** para build e deploy automáticos.
 
+**IMPORTANTE - Configure primeiro** (apenas uma vez):
+1. Vá para: **https://github.com/jonyfs/wellsofchange/settings/pages**
+2. Em **"Source"**, selecione: **"GitHub Actions"** (não "Deploy from a branch")
+3. Em **Settings → Actions → General** → **Workflow permissions**: **"Read and write permissions"**
+
+Depois, para fazer deploy:
+
 ```bash
-# 1. Faça suas mudanças em client/src/
-# 2. Commit e push
 git add .
 git commit -m "Update website"
 git push origin main
 
-# 3. GitHub Actions faz o resto automaticamente!
-# ✅ Build com vite
-# ✅ Deploy para GitHub Pages
-# ✅ Site online em 2-5 minutos
+# GitHub Actions faz o resto automaticamente!
+# ✅ Build → Deploy → Site online em 2-5 minutos
 ```
 
-**Configure GitHub Pages** (primeira vez):
-- Vá para: Settings → Pages
-- Source: **GitHub Actions** (não "Deploy from a branch")
-- Save
-
-📖 **Guia completo**: [docs/GITHUB_ACTIONS_DEPLOY.md](./docs/GITHUB_ACTIONS_DEPLOY.md)
+📖 **Guia completo**: [docs/CHECK_GITHUB_PAGES.md](./docs/CHECK_GITHUB_PAGES.md)  
+🔧 **Troubleshooting**: [docs/TROUBLESHOOTING_GITHUB_PAGES.md](./docs/TROUBLESHOOTING_GITHUB_PAGES.md)
 
 ### Opção 2: Deploy Manual com Build Local
 
