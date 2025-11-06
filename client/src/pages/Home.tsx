@@ -4,6 +4,7 @@ import MissionStatement from "@/components/MissionStatement";
 import OurStory from "@/components/OurStory";
 import WhatWeDo from "@/components/WhatWeDo";
 import OurCommitment from "@/components/OurCommitment";
+import WhoWeAre from "@/components/WhoWeAre";
 import CodeOfEthics from "@/components/CodeOfEthics";
 import TogetherForChange from "@/components/TogetherForChange";
 import Footer from "@/components/Footer";
@@ -18,6 +19,7 @@ export default function Home() {
         <OurStory />
         <WhatWeDo />
         <OurCommitment />
+        <WhoWeAre />
         <CodeOfEthics />
         <TogetherForChange />
       </main>

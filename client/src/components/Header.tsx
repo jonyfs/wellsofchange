@@ -54,6 +54,13 @@ export default function Header() {
             </Button>
             <Button
               variant="ghost"
+              onClick={() => scrollToSection("quem-somos")}
+              data-testid="button-nav-quem-somos"
+            >
+              {t("nav.whoWeAre")}
+            </Button>
+            <Button
+              variant="ghost"
               onClick={() => scrollToSection("etica")}
               data-testid="button-nav-etica"
             >
@@ -116,6 +123,14 @@ export default function Header() {
                 data-testid="button-mobile-compromisso"
               >
                 {t("nav.ourCommitment")}
+              </Button>
+              <Button
+                variant="ghost"
+                onClick={() => scrollToSection("quem-somos")}
+                className="justify-start"
+                data-testid="button-mobile-quem-somos"
+              >
+                {t("nav.whoWeAre")}
               </Button>
               <Button
                 variant="ghost"

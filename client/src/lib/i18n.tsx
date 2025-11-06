@@ -58,6 +58,7 @@ const translations: Record<Language, any> = {
       ourStory: "Our Story",
       whatWeDo: "What We Do",
       ourCommitment: "Our Commitment",
+      whoWeAre: "Who We Are",
       ethics: "Code of Ethics",
       joinUs: "Join Us",
       donate: "Donate",
@@ -155,6 +156,12 @@ const translations: Record<Language, any> = {
       manifestoClosing: "Together, we drill more than soil. We drill through barriers. We open paths. We plant future.",
       manifestoFinal: "The change starts here. Drop by drop. Well by well.",
     },
+    whoWeAre: {
+      title: "Who We Are",
+      intro: "Wells of Change is driven by a diverse team of dedicated professionals united by a common purpose: transforming lives through access to clean water.",
+      leadership: "Leadership",
+      advisors: "Advisory Board",
+    },
     ethics: {
       title: "Code of Ethics",
       intro: "Wells of Change operates with the highest standards of transparency, integrity, and social commitment. Our code of ethics guides all our actions and decisions.",
@@ -198,6 +205,7 @@ const translations: Record<Language, any> = {
       ourStory: "Nossa História",
       whatWeDo: "O Que Fazemos",
       ourCommitment: "Nosso Compromisso",
+      whoWeAre: "Quem Somos",
       ethics: "Código de Ética",
       joinUs: "Junte-se a Nós",
       donate: "Doar",
@@ -267,6 +275,12 @@ const translations: Record<Language, any> = {
       lasting: "E não paramos quando a água começa a jorrar. Ficamos. Ensinamos. Empoderamos.",
       tools: "Garantimos que cada comunidade tenha as ferramentas e o conhecimento para manter viva a sua própria fonte de vida.",
       need: "Porque este é apenas o começo. Precisamos de você para continuar.",
+    },
+    whoWeAre: {
+      title: "Quem Somos",
+      intro: "A Wells of Change é movida por uma equipe diversificada de profissionais dedicados, unidos por um propósito comum: transformar vidas através do acesso à água potável.",
+      leadership: "Liderança",
+      advisors: "Conselho Consultivo",
     },
     change: {
       title: "Juntos Pela Mudança",
@@ -338,6 +352,7 @@ const translations: Record<Language, any> = {
       ourStory: "Nuestra Historia",
       whatWeDo: "Lo Que Hacemos",
       ourCommitment: "Nuestro Compromiso",
+      whoWeAre: "Quiénes Somos",
       ethics: "Código de Ética",
       joinUs: "Únete a Nosotros",
       donate: "Donar",
@@ -407,6 +422,12 @@ const translations: Record<Language, any> = {
       lasting: "Y no nos detenemos cuando el agua comienza a fluir. Nos quedamos. Enseñamos. Empoderamos.",
       tools: "Garantizamos que cada comunidad tenga las herramientas y el conocimiento para mantener viva su propia fuente de vida.",
       need: "Porque esto es solo el comienzo. Te necesitamos para continuar.",
+    },
+    whoWeAre: {
+      title: "Quiénes Somos",
+      intro: "Wells of Change está impulsada por un equipo diverso de profesionales dedicados, unidos por un propósito común: transformar vidas a través del acceso al agua potable.",
+      leadership: "Liderazgo",
+      advisors: "Consejo Asesor",
     },
     change: {
       title: "Juntos Por el Cambio",
@@ -478,6 +499,7 @@ const translations: Record<Language, any> = {
       ourStory: "Notre Histoire",
       whatWeDo: "Ce Que Nous Faisons",
       ourCommitment: "Notre Engagement",
+      whoWeAre: "Qui Nous Sommes",
       ethics: "Code d'Éthique",
       joinUs: "Rejoignez-nous",
       donate: "Faire un Don",
@@ -547,6 +569,12 @@ const translations: Record<Language, any> = {
       lasting: "Et nous ne nous arrêtons pas quand l'eau commence à couler. Nous restons. Nous enseignons. Nous autonomisons.",
       tools: "Nous veillons à ce que chaque communauté dispose des outils et des connaissances pour maintenir sa propre source de vie.",
       need: "Parce que ce n'est que le début. Nous avons besoin de vous pour continuer.",
+    },
+    whoWeAre: {
+      title: "Qui Nous Sommes",
+      intro: "Wells of Change est porté par une équipe diversifiée de professionnels dévoués, unis par un objectif commun : transformer des vies grâce à l'accès à l'eau potable.",
+      leadership: "Direction",
+      advisors: "Conseil Consultatif",
     },
     change: {
       title: "Ensemble Pour le Changement",
