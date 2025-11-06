@@ -10,10 +10,46 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+/**
+ * Detects the user's browser language and maps it to a supported language
+ * @returns The detected language code or 'en' as default
+ */
+function detectBrowserLanguage(): Language {
+  // Get browser language(s)
+  const browserLang = navigator.language || (navigator.languages && navigator.languages[0]);
+  
+  if (!browserLang) {
+    return "en";
+  }
+
+  // Normalize to lowercase for comparison
+  const lang = browserLang.toLowerCase();
+
+  // Map browser language codes to our supported languages
+  if (lang.startsWith("pt")) {
+    return "pt-BR"; // Portuguese (any variant) → Brazilian Portuguese
+  } else if (lang.startsWith("es")) {
+    return "es"; // Spanish (any variant) → Spanish
+  } else if (lang.startsWith("fr")) {
+    return "fr"; // French (any variant) → French
+  } else if (lang.startsWith("en")) {
+    return "en"; // English (any variant) → English
+  }
+
+  // Default to English for unsupported languages
+  return "en";
+}
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
+    // Check for saved user preference first
     const saved = localStorage.getItem("wellsofchange-language");
-    return (saved as Language) || "en";
+    if (saved) {
+      return saved as Language;
+    }
+    
+    // No saved preference - detect from browser
+    return detectBrowserLanguage();
   });
 
   const setLanguage = (lang: Language) => {
