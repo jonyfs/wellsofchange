@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build frontend
+      - name: Build frontend for GitHub Pages
         run: npx vite build --base=/wellsofchange/
         env:
           NODE_ENV: production

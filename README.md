@@ -1,101 +1,181 @@
-# Wells of Change - NGO Website
+# Wells of Change - Static Landing Page 🌊
 
-🌊 **Static multilingual website for Wells of Change NGO**
+**Multilingual NGO website** bringing clean water to underserved communities through solar-powered wells.
 
-Clean water solutions through solar-powered wells with real-time monitoring.
+---
 
 ## 🚀 Quick Start
 
-### Development
+### View in Development (with Hot Reload)
 ```bash
 npm install
 npm run dev
 ```
-
 Visit: **http://localhost:5000**
 
-### Production Build
+### View Static Build (Production Preview)
 ```bash
-npm run build
+./preview-build.sh
+```
+Visit: **http://localhost:8080**
+
+---
+
+## 📺 **IMPORTANT: How to View the Website**
+
+If you're seeing a **markdown file** instead of the website in Replit:
+
+1. Click the **"Webview"** tab at the top
+2. Or click **"Open in new tab"** button
+3. The website is running at **http://localhost:5000**
+
+**You should see**: Hero image, language selector, donation button, all sections styled beautifully!
+
+📖 **More help**: See [docs/HOW_TO_VIEW_THE_WEBSITE.md](./docs/HOW_TO_VIEW_THE_WEBSITE.md)
+
+---
+
+## 🌐 GitHub Pages Deployment
+
+**Live Site**: https://jonyfs.github.io/wellsofchange/
+
+### Deploy Steps:
+```bash
+git add .
+git commit -m "Update Wells of Change website"
+git push origin main
 ```
 
-Output: `dist/public/` (~19MB) ready for GitHub Pages
+**That's it!** GitHub Actions will automatically build and deploy in 2-5 minutes.
 
-## 🌐 Deploy to GitHub Pages
+📖 **Detailed guide**: See [docs/DEPLOYMENT_INSTRUCTIONS.md](./docs/DEPLOYMENT_INSTRUCTIONS.md)
 
-**Current configuration**: https://jonyfs.github.io/wellsofchange/
-
-**Important**: If your repository name is **not** "wellsofchange", update the base URL in `.github/workflows/deploy.yml`:
-```yaml
-run: npx vite build --base=/YOUR-REPO-NAME/
-```
-
-**Steps:**
-1. Push to GitHub: `git push origin main`
-2. Enable GitHub Pages: Settings → Pages → Source: **GitHub Actions**
-3. Done! Site deploys automatically
-
-## 📚 Documentation
-
-All documentation has been moved to the `docs/` folder:
-
-- 📘 [Quick Start Guide](./docs/QUICK_START.md)
-- 📗 [GitHub Pages Setup](./docs/GITHUB_PAGES_SETUP.md)
-- 📕 [Deployment Guide (PT-BR)](./docs/DEPLOY_GITHUB_PAGES.pt-BR.md)
-- 🔧 [GitHub Pages Fix](./docs/GITHUB_PAGES_FIX.md)
-- 📊 [Deployment Summary](./docs/DEPLOYMENT_SUMMARY.md)
-- 📋 [What Was Fixed](./docs/WHAT_WAS_FIXED.md)
-- 📖 [Static Site Guide](./docs/STATIC_SITE_GUIDE.md)
-- 📝 [Fix Summary](./docs/FIX_SUMMARY.md)
-- 🎨 [Design Guidelines](./docs/design_guidelines.md)
+---
 
 ## 🎯 Features
 
-- ✅ **4 Languages**: English, Portuguese (BR), Spanish, French
-- ✅ **Static Site**: No backend required - perfect for GitHub Pages
-- ✅ **Responsive Design**: Mobile-first approach
-- ✅ **9 Real Photos**: From Campo Formoso, Bahia project
-- ✅ **Partners Section**: Intelie, 2Solve, Viasat, Vale do Sol
-- ✅ **FAB Navigation**: Language selector + Donation button
-- ✅ **Auto Deploy**: GitHub Actions workflow included
+✅ **4 Languages**: English, Portuguese (BR), Spanish, French  
+✅ **Static Site**: No backend - perfect for GitHub Pages  
+✅ **Responsive**: Mobile-first design  
+✅ **9 Real Photos**: From Campo Formoso, Bahia project  
+✅ **Partners**: Intelie, 2Solve, Viasat, Vale do Sol  
+✅ **SEO Optimized**: Meta tags and Open Graph  
+✅ **Auto Deploy**: GitHub Actions workflow  
 
-## 🛠️ Tech Stack
-
-- **Frontend**: React + TypeScript + Vite
-- **Styling**: Tailwind CSS + shadcn/ui
-- **Routing**: Wouter (client-side)
-- **i18n**: Custom React Context
-- **Deployment**: GitHub Pages
-- **CI/CD**: GitHub Actions
+---
 
 ## 📂 Project Structure
 
 ```
-├── client/               # Frontend React application
-│   ├── public/          # Static assets (favicon, 404.html)
-│   └── src/
-│       ├── components/  # React components
-│       ├── pages/       # Page components
-│       └── lib/         # i18n and utilities
-├── attached_assets/     # Project images
-├── .github/workflows/   # GitHub Actions
+wellsofchange/
+├── client/              # React frontend
+│   ├── public/         # Static assets
+│   └── src/            # Components, pages, i18n
+├── dist/public/        # Build output (static files)
 ├── docs/               # Documentation
-└── dist/public/        # Build output
+├── .github/workflows/  # Auto-deployment
+└── preview-build.sh    # Local preview script
 ```
+
+---
+
+## 🛠️ Build Commands
+
+| Command | Purpose | Output |
+|---------|---------|--------|
+| `npm run dev` | Development with hot reload | http://localhost:5000 |
+| `npm run build:local` | Build for local preview | `dist/public/` with relative paths |
+| `npm run build:github` | Build for GitHub Pages | `dist/public/` with `/wellsofchange/` base |
+| `npm run preview` | Preview built site | http://localhost:4173 |
+
+---
+
+## 📚 Documentation
+
+All documentation is in the `docs/` folder:
+
+- 📘 [How to View the Website](./docs/HOW_TO_VIEW_THE_WEBSITE.md)
+- 🚀 [Deployment Instructions](./docs/DEPLOYMENT_INSTRUCTIONS.md)
+- 📗 [View Static Site Guide](./docs/VIEW_STATIC_SITE.md)
+- 📕 [Quick Start Guide](./docs/QUICK_START.md)
+- 🔧 [GitHub Pages Fix](./docs/GITHUB_PAGES_FIX.md)
+- 📊 [Deployment Summary](./docs/DEPLOYMENT_SUMMARY.md)
+- 📖 [Static Site Guide](./docs/STATIC_SITE_GUIDE.md)
+- 📝 [What Was Fixed](./docs/WHAT_WAS_FIXED.md)
+- 🎨 [Design Guidelines](./docs/design_guidelines.md)
+
+---
 
 ## 🌍 Live Site
 
-**Deployed at**: https://jonyfs.github.io/wellsofchange/
+**Production**: https://jonyfs.github.io/wellsofchange/
+
+The site automatically deploys when you push to the `main` branch.
+
+---
+
+## 🔧 Technical Stack
+
+- **Frontend**: React 18 + TypeScript
+- **Build**: Vite 5
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Routing**: Wouter (client-side)
+- **i18n**: Custom React Context
+- **Deployment**: GitHub Pages via GitHub Actions
+
+---
 
 ## 📧 Contact
 
 **Email**: wellsofchange@gmail.com  
 **Location**: Rio de Janeiro, Brazil
 
-## 📝 License
+---
 
-Copyright © 2024 Wells of Change NGO
+## 🎨 What You'll See
+
+When you open the website (either locally or on GitHub Pages):
+
+✅ **Hero Section** - Stunning background with water project imagery  
+✅ **Our Story** - Mission and vision of Wells of Change  
+✅ **Impact Stats** - Lives changed, wells built, water provided  
+✅ **Projects** - Campo Formoso (Brazil) and future expansion to Senegal  
+✅ **Partners** - Technology and engineering partners  
+✅ **Language Selector** - Switch between 4 languages (bottom-right)  
+✅ **Donation Button** - Support the cause (bottom-right)  
 
 ---
 
-**Built with ❤️ to bring clean water to communities in need** 🌊
+## 📊 Static Site Details
+
+The built static site (`dist/public/`):
+
+- **Size**: ~19MB (optimized)
+- **Files**: 1 HTML, 1 CSS, 1 JS + images
+- **Paths**: Relative (`./ `) for local, absolute (`/wellsofchange/`) for GitHub Pages
+- **Routing**: Client-side with 404.html fallback
+- **Browsers**: All modern browsers supported
+
+---
+
+## ✅ Deployment Status
+
+Current configuration:
+- ✅ GitHub Actions workflow configured
+- ✅ Base URL set to `/wellsofchange/`
+- ✅ 404.html for SPA routing
+- ✅ .nojekyll file created
+- ✅ All assets optimized
+- ✅ Ready for production
+
+---
+
+**Built with ❤️ to bring clean water to communities in need** 🌊💙
+
+---
+
+## 🆘 Need Help?
+
+- **Can't see the website?** → [How to View Guide](./docs/HOW_TO_VIEW_THE_WEBSITE.md)
+- **Want to deploy?** → [Deployment Instructions](./docs/DEPLOYMENT_INSTRUCTIONS.md)
+- **Issues with static build?** → [View Static Site Guide](./docs/VIEW_STATIC_SITE.md)
