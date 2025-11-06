@@ -2,7 +2,7 @@ import FeatureCard from "./FeatureCard";
 import { Baby, Heart, Sprout, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import waterHandsImage from "@assets/mrjn-photography-YpZ2cj4s0oo-unsplash_1762441207201.jpg";
-import wateringImage from "@assets/markus-spiske-sFydXGrt5OA-unsplash_1762441207202.jpg";
+import familyImage from "@assets/20201129_170751_1762441207202.jpg";
 import cropImage from "@assets/corn-1841271_1762441207202.jpg";
 import communityImage from "@assets/20191002_124421_1762441207202.jpg";
 import solarPanelsImage from "@assets/panel-2562240_1762441207201.jpg";
@@ -36,7 +36,7 @@ export default function WhatWeDo() {
             icon={Heart}
             title={t("whatWeDo.motherTitle")}
             description={t("whatWeDo.motherDesc")}
-            image={wateringImage}
+            image={familyImage}
           />
           <FeatureCard
             icon={Sprout}
