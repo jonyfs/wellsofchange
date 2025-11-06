@@ -1,6 +1,7 @@
-import { Droplet, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { FaFacebook, FaInstagram, FaTiktok, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "@/lib/i18n";
+import logoImage from "@assets/download_1762440360234.png";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -18,8 +19,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Droplet className="w-6 h-6 text-primary" />
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logoImage} alt="Wells of Change Logo" className="h-12 w-auto" />
               <span className="font-display font-bold text-lg">Wells of Change</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-footer-description">

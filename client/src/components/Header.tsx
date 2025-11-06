@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Droplet } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import LanguageSelector from "./LanguageSelector";
+import logoImage from "@assets/download_1762440360234.png";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,11 +23,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <button
             onClick={() => scrollToSection("hero")}
-            className="flex items-center gap-2 hover-elevate active-elevate-2 rounded-md px-2 py-1"
+            className="flex items-center gap-3 hover-elevate active-elevate-2 rounded-md px-2 py-1"
             data-testid="button-logo"
           >
-            <Droplet className="w-7 h-7 text-primary" />
-            <span className="font-display font-bold text-lg">Wells of Change</span>
+            <img src={logoImage} alt="Wells of Change Logo" className="h-10 w-auto" />
+            <span className="font-display font-bold text-lg hidden sm:inline">Wells of Change</span>
           </button>
 
           <nav className="hidden md:flex items-center gap-1">
