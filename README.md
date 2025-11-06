@@ -44,13 +44,24 @@ If you're seeing a **markdown file** instead of the website in Replit:
 
 ## 🌐 GitHub Pages Deployment
 
-**Live Site**: https://jonyfs.github.io/wellsofchange/
+### ⚠️ Important: Base Path Removed
 
-### ⭐ Deploy Automático com GitHub Actions (Recomendado)
+This build uses **root-relative paths** (`/assets/...` instead of `/wellsofchange/assets/...`).
 
-**✅ Build testado e pronto!** Todos os testes passaram.
+**✅ Compatible with:**
+- Custom domains (wellsofchange.org)
+- User sites (`jonyfs.github.io` repository)
 
-**IMPORTANTE - Configure primeiro** (apenas uma vez):
+**❌ NOT compatible with:**
+- Project sites (`jonyfs.github.io/wellsofchange/`)
+
+📖 **See [DEPLOYMENT_UPDATE.md](./DEPLOYMENT_UPDATE.md) for deployment options**
+
+---
+
+### ⭐ Deploy Automático com GitHub Actions
+
+**Configure primeiro** (apenas uma vez):
 1. Vá para: **https://github.com/jonyfs/wellsofchange/settings/pages**
 2. Em **"Source"**, selecione: **"GitHub Actions"** (não "Deploy from a branch")
 3. Em **Settings → Actions → General** → **Workflow permissions**: **"Read and write permissions"**
@@ -77,15 +88,15 @@ git push origin main
 
 # Preview local
 npx serve dist/public -p 3000
-# Abra: http://localhost:3000/wellsofchange/
+# Abra: http://localhost:3000/
 ```
 
 ### 📚 Documentação
 
+⚠️ **Deployment Options**: [DEPLOYMENT_UPDATE.md](./DEPLOYMENT_UPDATE.md) ← **Start here!**  
 ⚡ **Quick Start**: [docs/QUICK_START.md](./docs/QUICK_START.md)  
 📖 **Guia Completo**: [docs/GITHUB_PAGES_DEPLOYMENT_GUIDE.md](./docs/GITHUB_PAGES_DEPLOYMENT_GUIDE.md)  
-🔧 **Troubleshooting**: [docs/TROUBLESHOOTING_GITHUB_PAGES.md](./docs/TROUBLESHOOTING_GITHUB_PAGES.md)  
-✅ **Checklist**: [docs/CHECK_GITHUB_PAGES.md](./docs/CHECK_GITHUB_PAGES.md)
+🔧 **Troubleshooting**: [docs/TROUBLESHOOTING_GITHUB_PAGES.md](./docs/TROUBLESHOOTING_GITHUB_PAGES.md)
 
 ### Opção 2: Deploy Manual com Build Local
 

@@ -8,9 +8,9 @@ set -e
 echo "🚀 Building for GitHub Pages..."
 echo ""
 
-# Build with GitHub Pages base path
-echo "📦 Running vite build with base path /wellsofchange/..."
-npx vite build --base=/wellsofchange/
+# Build for GitHub Pages
+echo "📦 Running vite build..."
+npx vite build
 
 # Create .nojekyll file to bypass Jekyll processing
 echo "📝 Creating .nojekyll file..."
@@ -28,11 +28,20 @@ echo "📊 Build output:"
 ls -lh dist/public/ | grep -E "(index|404|nojekyll|favicon|assets)"
 echo ""
 echo "📁 Build directory: dist/public/"
-echo "🌐 Ready for GitHub Pages deployment at: https://jonyfs.github.io/wellsofchange/"
+echo ""
+echo "⚠️  IMPORTANT: Base path removed!"
+echo "   This build uses root-relative paths (/assets/...)"
+echo ""
+echo "✅ Compatible with:"
+echo "   - Custom domains (wellsofchange.org)"
+echo "   - User sites (jonyfs.github.io repository)"
+echo ""
+echo "❌ NOT compatible with:"
+echo "   - Project sites (jonyfs.github.io/wellsofchange/)"
 echo ""
 echo "To preview locally:"
 echo "  npx serve dist/public -p 3000"
+echo "  Open: http://localhost:3000/"
 echo ""
-echo "To deploy manually:"
-echo "  npx gh-pages -d dist/public -t true"
+echo "See DEPLOYMENT_UPDATE.md for deployment options"
 echo ""
