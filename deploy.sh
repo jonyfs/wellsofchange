@@ -6,8 +6,8 @@
 echo "🔨 Building the static site for GitHub Pages..."
 echo ""
 
-# Build with GitHub Pages base URL
-npx vite build --base=/wellsofchange/
+# Build and move to root
+./build-to-root.sh --github
 
 if [ $? -ne 0 ]; then
     echo "❌ Build failed!"
@@ -15,13 +15,11 @@ if [ $? -ne 0 ]; then
 fi
 
 echo ""
-echo "✅ Build completed successfully!"
-echo ""
 echo "📦 Deploying to GitHub Pages..."
 echo ""
 
-# Deploy using gh-pages
-npx gh-pages --dist dist/public --branch gh-pages
+# Deploy from root directory
+npx gh-pages --dist . --branch gh-pages --src '{index.html,404.html,favicon.png,.nojekyll,assets/**/*}'
 
 if [ $? -eq 0 ]; then
     echo ""

@@ -13,11 +13,18 @@ npm run dev
 ```
 Visit: **http://localhost:5000**
 
+### Build to Root (Generate Assets)
+```bash
+./build-to-root.sh --github   # For GitHub Pages
+./build-to-root.sh --local    # For local testing
+```
+**Builds and moves assets to root**: index.html, 404.html, favicon.png, assets/
+
 ### View Static Build (Production Preview)
 ```bash
 ./preview-build.sh
 ```
-Visit: **http://localhost:8080**
+Visit: **http://localhost:8080** (served from root directory)
 
 ---
 
