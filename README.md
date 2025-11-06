@@ -1,164 +1,101 @@
-# 🌊 Wells of Change - NGO Website
+# Wells of Change - NGO Website
 
-**Static multilingual landing page for Wells of Change NGO** - Bringing clean water and sustainable technology to underserved communities.
+🌊 **Static multilingual website for Wells of Change NGO**
 
-> 📌 **This is a static site** optimized for GitHub Pages deployment. No backend required!
+Clean water solutions through solar-powered wells with real-time monitoring.
 
-## 🌍 Available in 4 Languages
+## 🚀 Quick Start
 
-- 🇺🇸 English
-- 🇧🇷 Português (Brasil)
-- 🇪🇸 Español
-- 🇫🇷 Français
-
-## 🚀 Quick Start (Development)
-
+### Development
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npx vite --port 5000
+npm run dev
 ```
 
-The site will be available at `http://localhost:5000`
+Visit: **http://localhost:5000**
 
-## 📦 Build for Production
-
+### Production Build
 ```bash
-# Build static files for deployment
-npx vite build
-
-# Preview production build locally
-npx vite preview
+npm run build
 ```
 
-Built files will be in `dist/public/` (~19MB) ready for GitHub Pages deployment.
+Output: `dist/public/` (~19MB) ready for GitHub Pages
 
-## 🌐 Deploy to GitHub Pages (3 Steps)
+## 🌐 Deploy to GitHub Pages
+
+**Current configuration**: https://jonyfs.github.io/wellsofchange/
 
 **Important**: If your repository name is **not** "wellsofchange", update the base URL in `.github/workflows/deploy.yml`:
 ```yaml
 run: npx vite build --base=/YOUR-REPO-NAME/
 ```
 
-**1. Push to GitHub:**
-```bash
-git add .
-git commit -m "Wells of Change website"
-git push origin main
-```
+**Steps:**
+1. Push to GitHub: `git push origin main`
+2. Enable GitHub Pages: Settings → Pages → Source: **GitHub Actions**
+3. Done! Site deploys automatically
 
-**2. Enable GitHub Pages:**
-- Go to: Repository → Settings → Pages
-- Source: Select **"GitHub Actions"**
+## 📚 Documentation
 
-**3. Done!** Site deploys automatically to: `https://USERNAME.github.io/REPO/`
+All documentation has been moved to the `docs/` folder:
 
-Current configuration: **https://jonyfs.github.io/wellsofchange/**
-
-📚 See [QUICK_START.md](./QUICK_START.md) for detailed instructions.  
-🔧 Having issues? See [GITHUB_PAGES_FIX.md](./GITHUB_PAGES_FIX.md) for troubleshooting.
+- 📘 [Quick Start Guide](./docs/QUICK_START.md)
+- 📗 [GitHub Pages Setup](./docs/GITHUB_PAGES_SETUP.md)
+- 📕 [Deployment Guide (PT-BR)](./docs/DEPLOY_GITHUB_PAGES.pt-BR.md)
+- 🔧 [GitHub Pages Fix](./docs/GITHUB_PAGES_FIX.md)
+- 📊 [Deployment Summary](./docs/DEPLOYMENT_SUMMARY.md)
+- 📋 [What Was Fixed](./docs/WHAT_WAS_FIXED.md)
+- 📖 [Static Site Guide](./docs/STATIC_SITE_GUIDE.md)
+- 📝 [Fix Summary](./docs/FIX_SUMMARY.md)
+- 🎨 [Design Guidelines](./docs/design_guidelines.md)
 
 ## 🎯 Features
 
-- ✅ **Static Landing Page**: No backend required - perfect for GitHub Pages
-- ✅ **Multilingual Support**: Complete translations in 4 languages
-- ✅ **Responsive Design**: Mobile-first approach with Tailwind CSS
-- ✅ **Modern Stack**: React + Vite + TypeScript
-- ✅ **Interactive Components**: Donation and language selector FABs
-- ✅ **Real Project Photos**: 9 unique images from Campo Formoso, Bahia
-- ✅ **Partners Section**: Showcasing Intelie, 2Solve, Viasat, and Vale do Sol Engenharia
-- ✅ **GitHub Pages Ready**: Automated deployment via GitHub Actions
-
-## 📦 Deployment to GitHub Pages
-
-### Automated Deployment
-
-Every push to the `main` branch automatically deploys to GitHub Pages via GitHub Actions.
-
-**Setup Instructions:**
-
-1. **Enable GitHub Pages in Repository Settings**
-   - Go to: Settings → Pages
-   - Source: **GitHub Actions**
-
-2. **Push to Main Branch**
-   ```bash
-   git push origin main
-   ```
-
-3. **Access Your Site**
-   - User/Org repo: `https://username.github.io/`
-   - Project repo: `https://username.github.io/repository-name/`
-
-For detailed deployment instructions, see [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md)
-
-## 🏗️ Project Structure
-
-```
-wells-of-change/
-├── client/
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── pages/          # Page components
-│   │   ├── lib/            # i18n and utilities
-│   │   └── App.tsx         # Main app component
-│   └── public/             # Static assets
-├── attached_assets/        # Project images
-├── .github/
-│   └── workflows/
-│       └── deploy.yml      # GitHub Actions workflow
-└── package.json
-```
-
-## 🎨 Key Sections
-
-- **Hero**: Introduction with project imagery
-- **Mission Statement**: Core values and objectives
-- **Our Story**: Journey from Campo Formoso to future expansion in Senegal
-- **What We Do**: 4 pillars of impact + technology showcase
-- **Our Commitment**: Project statistics and guarantees
-- **Who We Are**: Team presentation
-- **Partners**: Supporting organizations
-- **Code of Ethics**: Transparency and non-partisanship declaration
-- **Together for Change**: Call to action
+- ✅ **4 Languages**: English, Portuguese (BR), Spanish, French
+- ✅ **Static Site**: No backend required - perfect for GitHub Pages
+- ✅ **Responsive Design**: Mobile-first approach
+- ✅ **9 Real Photos**: From Campo Formoso, Bahia project
+- ✅ **Partners Section**: Intelie, 2Solve, Viasat, Vale do Sol
+- ✅ **FAB Navigation**: Language selector + Donation button
+- ✅ **Auto Deploy**: GitHub Actions workflow included
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18, TypeScript
-- **Styling**: Tailwind CSS, shadcn/ui components
-- **Build Tool**: Vite
+- **Frontend**: React + TypeScript + Vite
+- **Styling**: Tailwind CSS + shadcn/ui
 - **Routing**: Wouter (client-side)
-- **i18n**: Custom hook with localStorage
-- **Icons**: Lucide React
-- **Deployment**: GitHub Actions → GitHub Pages
+- **i18n**: Custom React Context
+- **Deployment**: GitHub Pages
+- **CI/CD**: GitHub Actions
 
-## 📖 Documentation
+## 📂 Project Structure
 
-- 📘 [Quick Start Guide](./QUICK_START.md) - Get started in 3 steps
-- 📗 [GitHub Pages Setup](./GITHUB_PAGES_SETUP.md) - Full deployment guide
-- 📕 [Guia em Português](./DEPLOY_GITHUB_PAGES.pt-BR.md) - Instruções em português
-- 📙 [Static Site Architecture](./STATIC_SITE_GUIDE.md) - How it works
+```
+├── client/               # Frontend React application
+│   ├── public/          # Static assets (favicon, 404.html)
+│   └── src/
+│       ├── components/  # React components
+│       ├── pages/       # Page components
+│       └── lib/         # i18n and utilities
+├── attached_assets/     # Project images
+├── .github/workflows/   # GitHub Actions
+├── docs/               # Documentation
+└── dist/public/        # Build output
+```
 
-## 📞 Contact
+## 🌍 Live Site
 
-- **Email**: wellsofchange@gmail.com
-- **Headquarters**: Rio de Janeiro, Brazil
+**Deployed at**: https://jonyfs.github.io/wellsofchange/
 
-## 🤝 Partners
+## 📧 Contact
 
-- **Intelie** - Technology and data analytics
-- **2Solve** - Technology solutions
-- **Viasat** - Satellite communications
-- **Vale do Sol Engenharia** - Engineering and infrastructure
+**Email**: wellsofchange@gmail.com  
+**Location**: Rio de Janeiro, Brazil
 
-## 📄 License
+## 📝 License
 
-MIT
+Copyright © 2024 Wells of Change NGO
 
 ---
 
-**Built with ❤️ for communities in need**
-
-🌊 Transforming lives, one well at a time.
+**Built with ❤️ to bring clean water to communities in need** 🌊
