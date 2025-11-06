@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MissionStatement from "@/components/MissionStatement";
 import OurStory from "@/components/OurStory";
@@ -8,11 +7,11 @@ import WhoWeAre from "@/components/WhoWeAre";
 import CodeOfEthics from "@/components/CodeOfEthics";
 import TogetherForChange from "@/components/TogetherForChange";
 import Footer from "@/components/Footer";
+import LanguageFAB from "@/components/LanguageFAB";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Header />
       <main>
         <Hero />
         <MissionStatement />
@@ -24,6 +23,7 @@ export default function Home() {
         <TogetherForChange />
       </main>
       <Footer />
+      <LanguageFAB />
     </div>
   );
 }
