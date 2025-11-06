@@ -46,33 +46,28 @@ If you're seeing a **markdown file** instead of the website in Replit:
 
 **Live Site**: https://jonyfs.github.io/wellsofchange/
 
-### ⭐ Método 1: Deploy com gh-pages (Recomendado)
+### ✅ Static Site - Deploy Direto (Recomendado)
+
+O site está configurado como **static site** com index.html na raiz.
 
 ```bash
-./deploy.sh
-```
+# 1. Build para raiz
+./build-to-root.sh --github
 
-**Vantagens**:
-- ✅ Deploy sob demanda (você controla quando)
-- ✅ Build local (mais rápido)
-- ✅ Um comando simples
-
-📖 **Guia completo**: [docs/DEPLOY_WITH_GH_PAGES.md](./docs/DEPLOY_WITH_GH_PAGES.md)
-
-### Método 2: Deploy Automático (GitHub Actions)
-
-```bash
-git add .
-git commit -m "Update Wells of Change website"
+# 2. Commit e push
+git add index.html 404.html favicon.png .nojekyll assets/
+git commit -m "Deploy static site"
 git push origin main
 ```
 
-**Vantagens**:
-- ✅ Totalmente automático
-- ✅ CI/CD configurado
-- ✅ Deploy a cada push
+**Configure GitHub Pages** (primeira vez):
+- Vá para: Settings → Pages
+- Source: Branch `main`, folder `/ (root)`
+- Save
 
-📖 **Guia completo**: [docs/DEPLOYMENT_INSTRUCTIONS.md](./docs/DEPLOYMENT_INSTRUCTIONS.md)
+**Aguarde 1-2 minutos** → Site estará online! 🎉
+
+📖 **Guia completo**: [docs/GITHUB_PAGES_STATIC_SETUP.md](./docs/GITHUB_PAGES_STATIC_SETUP.md)
 
 ---
 
