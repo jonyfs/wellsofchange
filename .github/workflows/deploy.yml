@@ -39,7 +39,7 @@ jobs:
           NODE_ENV: production
 
       - name: Create .nojekyll file
-        run: touch dist/.nojekyll
+        run: touch dist/public/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -47,7 +47,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./dist/public
 
   deploy:
     name: Deploy

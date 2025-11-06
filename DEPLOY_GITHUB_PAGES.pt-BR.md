@@ -1,5 +1,7 @@
 # 🚀 Guia Rápido - Deploy no GitHub Pages
 
+> ✨ **Este é um site estático** - não requer backend ou servidor. Perfeito para GitHub Pages!
+
 ## ⚡ Início Rápido
 
 ### 1️⃣ Configure o Repositório GitHub

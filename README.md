@@ -1,6 +1,8 @@
 # 🌊 Wells of Change - NGO Website
 
-**Multilingual institutional website for Wells of Change NGO** - Bringing clean water and sustainable technology to underserved communities.
+**Static multilingual landing page for Wells of Change NGO** - Bringing clean water and sustainable technology to underserved communities.
+
+> 📌 **This is a static site** optimized for GitHub Pages deployment. No backend required!
 
 ## 🌍 Available in 4 Languages
 
@@ -16,19 +18,53 @@
 npm install
 
 # Start development server
-npm run dev
+npx vite --port 5000
 ```
 
 The site will be available at `http://localhost:5000`
 
+## 📦 Build for Production
+
+```bash
+# Build static files for deployment
+npx vite build
+
+# Preview production build locally
+npx vite preview
+```
+
+Built files will be in `dist/public/` (~19MB) ready for GitHub Pages deployment.
+
+## 🌐 Deploy to GitHub Pages (3 Steps)
+
+**1. Push to GitHub:**
+```bash
+git init
+git add .
+git commit -m "Wells of Change website"
+git branch -M main
+git remote add origin https://github.com/USERNAME/REPO.git
+git push -u origin main
+```
+
+**2. Enable GitHub Pages:**
+- Go to: Repository → Settings → Pages
+- Source: Select **"GitHub Actions"**
+
+**3. Done!** Site deploys automatically to: `https://USERNAME.github.io/REPO/`
+
+📚 See [QUICK_START.md](./QUICK_START.md) for detailed instructions.
+
 ## 🎯 Features
 
+- ✅ **Static Landing Page**: No backend required - perfect for GitHub Pages
 - ✅ **Multilingual Support**: Complete translations in 4 languages
 - ✅ **Responsive Design**: Mobile-first approach with Tailwind CSS
 - ✅ **Modern Stack**: React + Vite + TypeScript
 - ✅ **Interactive Components**: Donation and language selector FABs
 - ✅ **Real Project Photos**: 9 unique images from Campo Formoso, Bahia
 - ✅ **Partners Section**: Showcasing Intelie, 2Solve, Viasat, and Vale do Sol Engenharia
+- ✅ **GitHub Pages Ready**: Automated deployment via GitHub Actions
 
 ## 📦 Deployment to GitHub Pages
 
@@ -88,9 +124,17 @@ wells-of-change/
 - **Frontend**: React 18, TypeScript
 - **Styling**: Tailwind CSS, shadcn/ui components
 - **Build Tool**: Vite
-- **Routing**: Wouter
+- **Routing**: Wouter (client-side)
+- **i18n**: Custom hook with localStorage
 - **Icons**: Lucide React
 - **Deployment**: GitHub Actions → GitHub Pages
+
+## 📖 Documentation
+
+- 📘 [Quick Start Guide](./QUICK_START.md) - Get started in 3 steps
+- 📗 [GitHub Pages Setup](./GITHUB_PAGES_SETUP.md) - Full deployment guide
+- 📕 [Guia em Português](./DEPLOY_GITHUB_PAGES.pt-BR.md) - Instruções em português
+- 📙 [Static Site Architecture](./STATIC_SITE_GUIDE.md) - How it works
 
 ## 📞 Contact
 

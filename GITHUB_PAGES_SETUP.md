@@ -1,11 +1,14 @@
 # 🚀 GitHub Pages Deployment Guide - Wells of Change
 
-Este guia explica como configurar e fazer deploy do site da Wells of Change no GitHub Pages.
+This guide explains how to configure and deploy the Wells of Change static website to GitHub Pages.
 
-## 📋 Pré-requisitos
+> 📌 **This is a static site** - No backend server required! Perfect for GitHub Pages.
 
-- Repositório no GitHub
-- Node.js 20+ instalado localmente (para desenvolvimento)
+## 📋 Prerequisites
+
+- GitHub account and repository
+- Node.js 20+ installed locally (for development)
+- Git installed
 
 ## ⚙️ Configuração Inicial
 
