@@ -8,6 +8,7 @@ import CodeOfEthics from "@/components/CodeOfEthics";
 import TogetherForChange from "@/components/TogetherForChange";
 import Footer from "@/components/Footer";
 import LanguageFAB from "@/components/LanguageFAB";
+import DonateFAB from "@/components/DonateFAB";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
         <TogetherForChange />
       </main>
       <Footer />
+      <DonateFAB />
       <LanguageFAB />
     </div>
   );
