@@ -1,6 +1,9 @@
 import { Droplet, Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-muted/50 border-t py-12">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -11,12 +14,12 @@ export default function Footer() {
               <span className="font-display font-bold text-lg">Wells of Change</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-footer-description">
-              Mudando vidas, um poço por vez. Levando água potável e tecnologia sustentável para comunidades que mais precisam.
+              {t("footer.description")}
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4" data-testid="text-footer-nav-title">Navegação</h3>
+            <h3 className="font-semibold text-lg mb-4" data-testid="text-footer-nav-title">{t("footer.navTitle")}</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <button
@@ -24,7 +27,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-historia"
                 >
-                  Nossa História
+                  {t("nav.ourStory")}
                 </button>
               </li>
               <li>
@@ -33,7 +36,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-fazemos"
                 >
-                  O Que Fazemos
+                  {t("nav.whatWeDo")}
                 </button>
               </li>
               <li>
@@ -42,7 +45,7 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-compromisso"
                 >
-                  Nosso Compromisso
+                  {t("nav.ourCommitment")}
                 </button>
               </li>
               <li>
@@ -51,19 +54,19 @@ export default function Footer() {
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-mudanca"
                 >
-                  Junte-se a Nós
+                  {t("nav.joinUs")}
                 </button>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4" data-testid="text-footer-contact-title">Contato</h3>
+            <h3 className="font-semibold text-lg mb-4" data-testid="text-footer-contact-title">{t("footer.contactTitle")}</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground" data-testid="text-footer-location">
-                  Campo Formoso, Bahia, Brasil
+                  {t("footer.location")}
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -82,10 +85,10 @@ export default function Footer() {
 
         <div className="border-t pt-8 text-center text-sm text-muted-foreground">
           <p data-testid="text-footer-copyright">
-            © {new Date().getFullYear()} Wells of Change. Transformando vidas através da tecnologia e água potável.
+            © {new Date().getFullYear()} {t("footer.copyright")}
           </p>
           <p className="mt-2 text-xs" data-testid="text-footer-transparency">
-            Comprometidos com a transparência total. Cada doação é rastreada e cada impacto é documentado.
+            {t("footer.transparency")}
           </p>
         </div>
       </div>

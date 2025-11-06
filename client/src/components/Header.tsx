@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Droplet } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
+import LanguageSelector from "./LanguageSelector";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -32,48 +35,51 @@ export default function Header() {
               onClick={() => scrollToSection("historia")}
               data-testid="button-nav-historia"
             >
-              Nossa História
+              {t("nav.ourStory")}
             </Button>
             <Button
               variant="ghost"
               onClick={() => scrollToSection("fazemos")}
               data-testid="button-nav-fazemos"
             >
-              O Que Fazemos
+              {t("nav.whatWeDo")}
             </Button>
             <Button
               variant="ghost"
               onClick={() => scrollToSection("compromisso")}
               data-testid="button-nav-compromisso"
             >
-              Nosso Compromisso
+              {t("nav.ourCommitment")}
             </Button>
             <Button
               variant="ghost"
               onClick={() => scrollToSection("mudanca")}
               data-testid="button-nav-mudanca"
             >
-              Junte-se a Nós
+              {t("nav.joinUs")}
             </Button>
+            <LanguageSelector />
             <Button
               variant="default"
               onClick={() => scrollToSection("mudanca")}
               className="ml-2"
               data-testid="button-doar"
             >
-              Doar
+              {t("nav.donate")}
             </Button>
           </nav>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            data-testid="button-mobile-menu"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </Button>
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageSelector />
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              data-testid="button-mobile-menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
+          </div>
         </div>
 
         {mobileMenuOpen && (
@@ -85,7 +91,7 @@ export default function Header() {
                 className="justify-start"
                 data-testid="button-mobile-historia"
               >
-                Nossa História
+                {t("nav.ourStory")}
               </Button>
               <Button
                 variant="ghost"
@@ -93,7 +99,7 @@ export default function Header() {
                 className="justify-start"
                 data-testid="button-mobile-fazemos"
               >
-                O Que Fazemos
+                {t("nav.whatWeDo")}
               </Button>
               <Button
                 variant="ghost"
@@ -101,7 +107,7 @@ export default function Header() {
                 className="justify-start"
                 data-testid="button-mobile-compromisso"
               >
-                Nosso Compromisso
+                {t("nav.ourCommitment")}
               </Button>
               <Button
                 variant="ghost"
@@ -109,7 +115,7 @@ export default function Header() {
                 className="justify-start"
                 data-testid="button-mobile-mudanca"
               >
-                Junte-se a Nós
+                {t("nav.joinUs")}
               </Button>
               <Button
                 variant="default"
@@ -117,7 +123,7 @@ export default function Header() {
                 className="justify-start"
                 data-testid="button-mobile-doar"
               >
-                Doar
+                {t("nav.donate")}
               </Button>
             </nav>
           </div>

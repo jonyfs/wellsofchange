@@ -1,11 +1,14 @@
 import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
+import { useLanguage } from "@/lib/i18n";
 import volunteerImage from "@assets/generated_images/Volunteer_team_working_together_8438e21a.png";
 
 export default function TogetherForChange() {
+  const { t } = useLanguage();
+
   const handleDonate = () => {
     console.log("Donate action triggered");
-    alert("Funcionalidade de doação será implementada em breve!");
+    alert(t("change.investButton") + " - Coming soon!");
   };
 
   const handleShare = () => {
@@ -13,17 +16,17 @@ export default function TogetherForChange() {
     if (navigator.share) {
       navigator.share({
         title: "Wells of Change",
-        text: "Mudando vidas, um poço por vez",
+        text: t("hero.title"),
         url: window.location.href,
       });
     } else {
-      alert("Compartilhe: " + window.location.href);
+      alert("Share: " + window.location.href);
     }
   };
 
   const handleVolunteer = () => {
     console.log("Volunteer action triggered");
-    alert("Funcionalidade de cadastro de voluntários será implementada em breve!");
+    alert(t("change.volunteerButton") + " - Coming soon!");
   };
 
   return (
@@ -31,15 +34,15 @@ export default function TogetherForChange() {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-6" data-testid="text-change-title">
-            Juntos Pela Mudança
+            {t("change.title")}
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8" data-testid="text-change-intro">
-            Somos voluntários — engenheiros, desenvolvedores, geólogos, administradores, comunicadores — unidos por uma certeza simples e profunda: <strong>podemos fazer melhor</strong>.
+            <span dangerouslySetInnerHTML={{ __html: t("change.intro") }} />
           </p>
           <div className="rounded-md overflow-hidden mb-8">
             <img
               src={volunteerImage}
-              alt="Equipe de voluntários trabalhando em projeto de poço"
+              alt="Volunteer team working on well project"
               className="w-full h-auto max-h-96 object-cover"
               data-testid="img-volunteers"
             />
@@ -49,61 +52,61 @@ export default function TogetherForChange() {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <CTACard
             icon={Heart}
-            title="Investir Recursos"
-            description="Cada doação se transforma em água, saúde e dignidade para comunidades que mais precisam."
-            buttonText="Fazer Doação"
+            title={t("change.investTitle")}
+            description={t("change.investDesc")}
+            buttonText={t("change.investButton")}
             onClick={handleDonate}
           />
           <CTACard
             icon={Share2}
-            title="Compartilhar a Causa"
-            description="Ajude a espalhar nossa missão. Quanto mais pessoas souberem, mais vidas podemos transformar."
-            buttonText="Compartilhar"
+            title={t("change.shareTitle")}
+            description={t("change.shareDesc")}
+            buttonText={t("change.shareButton")}
             onClick={handleShare}
           />
           <CTACard
             icon={Users}
-            title="Ser Voluntário"
-            description="Junte-se ao nosso time de especialistas e contribua com seu conhecimento e habilidades."
-            buttonText="Quero Participar"
+            title={t("change.volunteerTitle")}
+            description={t("change.volunteerDesc")}
+            buttonText={t("change.volunteerButton")}
             onClick={handleVolunteer}
           />
         </div>
 
         <div className="bg-primary/5 rounded-md p-8 md:p-12 space-y-6">
           <h3 className="font-display font-semibold text-2xl md:text-3xl text-center mb-8" data-testid="text-transformation-title">
-            Porque quando a água chega, tudo se transforma:
+            {t("change.transformationTitle")}
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
             <div>
               <p className="text-lg font-semibold" data-testid="text-transform-1">
-                Sede → Saciedade
+                {t("change.transform1")}
               </p>
             </div>
             <div>
               <p className="text-lg font-semibold" data-testid="text-transform-2">
-                Doença → Saúde
+                {t("change.transform2")}
               </p>
             </div>
             <div>
               <p className="text-lg font-semibold" data-testid="text-transform-3">
-                Migração → Permanência
+                {t("change.transform3")}
               </p>
             </div>
             <div>
               <p className="text-lg font-semibold" data-testid="text-transform-4">
-                Sobrevivência → Prosperidade
+                {t("change.transform4")}
               </p>
             </div>
             <div>
               <p className="text-lg font-semibold" data-testid="text-transform-5">
-                Desespero → Dignidade
+                {t("change.transform5")}
               </p>
             </div>
             <div>
               <p className="text-lg font-semibold text-primary" data-testid="text-transform-6">
-                E você pode ver isso acontecer em tempo real.
+                {t("change.transform6")}
               </p>
             </div>
           </div>
@@ -111,21 +114,27 @@ export default function TogetherForChange() {
 
         <div className="mt-16 text-center max-w-3xl mx-auto space-y-4">
           <h3 className="font-display font-bold text-3xl md:text-4xl mb-6" data-testid="text-manifesto-title">
-            WELLS OF CHANGE
+            {t("change.manifestoTitle")}
           </h3>
           <p className="text-xl font-semibold text-primary mb-4" data-testid="text-manifesto-tagline">
-            Mudando vidas, um poço por vez.
+            {t("change.manifestoTagline")}
           </p>
           <div className="space-y-3 text-base md:text-lg">
-            <p data-testid="text-manifesto-1">Porque água não é favor. <strong>É direito.</strong></p>
-            <p data-testid="text-manifesto-2">Porque tecnologia não é privilégio. <strong>É ferramenta.</strong></p>
-            <p data-testid="text-manifesto-3">Porque comunidade não é estatística. <strong>É vida.</strong></p>
+            <p data-testid="text-manifesto-1">
+              <span dangerouslySetInnerHTML={{ __html: t("change.manifesto1") }} />
+            </p>
+            <p data-testid="text-manifesto-2">
+              <span dangerouslySetInnerHTML={{ __html: t("change.manifesto2") }} />
+            </p>
+            <p data-testid="text-manifesto-3">
+              <span dangerouslySetInnerHTML={{ __html: t("change.manifesto3") }} />
+            </p>
           </div>
           <p className="text-lg font-semibold mt-8" data-testid="text-manifesto-closing">
-            Juntos, perfuramos mais que solo. Perfuramos barreiras. Abrimos caminhos. Plantamos futuro.
+            {t("change.manifestoClosing")}
           </p>
           <p className="text-xl font-bold text-primary" data-testid="text-manifesto-final">
-            A mudança começa aqui. Gota por gota. Poço por poço.
+            {t("change.manifestoFinal")}
           </p>
         </div>
       </div>
