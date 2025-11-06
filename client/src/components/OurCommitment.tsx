@@ -1,7 +1,7 @@
 import StatCard from "./StatCard";
 import { useLanguage } from "@/lib/i18n";
-import waterTanksImage from "@assets/20191002_124421_1762441207202.jpg";
-import techniciansImage from "@assets/20191002_125711_1762441207202.jpg";
+import waterTanksImage from "@assets/markus-spiske-sFydXGrt5OA-unsplash_1762442531909.jpg";
+import techniciansImage from "@assets/20191002_125711_1762442531910.jpg";
 
 export default function OurCommitment() {
   const { t } = useLanguage();

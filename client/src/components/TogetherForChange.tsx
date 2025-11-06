@@ -1,7 +1,7 @@
 import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
-import teamImage from "@assets/20201129_170751_1762441207202.jpg";
+import teamImage from "@assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910.jpg";
 
 export default function TogetherForChange() {
   const { t } = useLanguage();

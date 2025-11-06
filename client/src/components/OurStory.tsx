@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/lib/i18n";
-import solarPanelsImage from "@assets/alternative-21761_1762441207202.jpg";
+import solarPanelsImage from "@assets/alternative-21761_1762442531910.jpg";
 
 export default function OurStory() {
   const { t } = useLanguage();
