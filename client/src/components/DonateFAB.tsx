@@ -16,7 +16,7 @@ export default function DonateFAB() {
     <Button
       size="icon"
       onClick={scrollToDonate}
-      className="fixed bottom-6 left-6 z-50 h-14 w-14 rounded-full shadow-lg"
+      className="fixed bottom-6 right-24 z-50 h-14 w-14 rounded-full shadow-lg"
       data-testid="button-donate-fab"
     >
       <Heart className="w-6 h-6" />
