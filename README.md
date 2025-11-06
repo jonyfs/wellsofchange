@@ -46,9 +46,31 @@ If you're seeing a **markdown file** instead of the website in Replit:
 
 **Live Site**: https://jonyfs.github.io/wellsofchange/
 
-### ✅ Static Site - Deploy Direto (Recomendado)
+### ⭐ Deploy Automático com GitHub Actions (Recomendado)
 
-O site está configurado como **static site** com index.html na raiz.
+O site usa **GitHub Actions** para build e deploy automáticos.
+
+```bash
+# 1. Faça suas mudanças em client/src/
+# 2. Commit e push
+git add .
+git commit -m "Update website"
+git push origin main
+
+# 3. GitHub Actions faz o resto automaticamente!
+# ✅ Build com vite
+# ✅ Deploy para GitHub Pages
+# ✅ Site online em 2-5 minutos
+```
+
+**Configure GitHub Pages** (primeira vez):
+- Vá para: Settings → Pages
+- Source: **GitHub Actions** (não "Deploy from a branch")
+- Save
+
+📖 **Guia completo**: [docs/GITHUB_ACTIONS_DEPLOY.md](./docs/GITHUB_ACTIONS_DEPLOY.md)
+
+### Opção 2: Deploy Manual com Build Local
 
 ```bash
 # 1. Build para raiz
@@ -60,14 +82,7 @@ git commit -m "Deploy static site"
 git push origin main
 ```
 
-**Configure GitHub Pages** (primeira vez):
-- Vá para: Settings → Pages
-- Source: Branch `main`, folder `/ (root)`
-- Save
-
-**Aguarde 1-2 minutos** → Site estará online! 🎉
-
-📖 **Guia completo**: [docs/GITHUB_PAGES_STATIC_SETUP.md](./docs/GITHUB_PAGES_STATIC_SETUP.md)
+📖 **Guia**: [docs/GITHUB_PAGES_STATIC_SETUP.md](./docs/GITHUB_PAGES_STATIC_SETUP.md)
 
 ---
 
