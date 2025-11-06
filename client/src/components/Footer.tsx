@@ -100,11 +100,11 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <a
-                  href="mailto:contato@wellsofchange.org"
+                  href="mailto:wellsofchange@gmail.com"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-email"
                 >
-                  contato@wellsofchange.org
+                  wellsofchange@gmail.com
                 </a>
               </li>
             </ul>
