@@ -199,6 +199,7 @@ const translations: Record<Language, any> = {
       copyright: "Wells of Change. Transforming lives through technology and clean water.",
       transparency: "Committed to total transparency. Every donation is tracked and every impact is documented.",
     },
+    donate: "Donate",
   },
   "pt-BR": {
     nav: {
@@ -346,6 +347,7 @@ const translations: Record<Language, any> = {
       copyright: "Wells of Change. Transformando vidas através da tecnologia e água potável.",
       transparency: "Comprometidos com a transparência total. Cada doação é rastreada e cada impacto é documentado.",
     },
+    donate: "Doe",
   },
   es: {
     nav: {
@@ -493,6 +495,7 @@ const translations: Record<Language, any> = {
       copyright: "Wells of Change. Transformando vidas a través de la tecnología y el agua potable.",
       transparency: "Comprometidos con la transparencia total. Cada donación se rastrea y cada impacto se documenta.",
     },
+    donate: "Donar",
   },
   fr: {
     nav: {
@@ -640,5 +643,6 @@ const translations: Record<Language, any> = {
       copyright: "Wells of Change. Transformer des vies grâce à la technologie et à l'eau potable.",
       transparency: "Engagés pour une transparence totale. Chaque don est suivi et chaque impact est documenté.",
     },
+    donate: "Donner",
   },
 };
