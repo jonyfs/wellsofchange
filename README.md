@@ -37,14 +37,16 @@ Built files will be in `dist/public/` (~19MB) ready for GitHub Pages deployment.
 
 ## 🌐 Deploy to GitHub Pages (3 Steps)
 
+**Important**: If your repository name is **not** "wellsofchange", update the base URL in `.github/workflows/deploy.yml`:
+```yaml
+run: npx vite build --base=/YOUR-REPO-NAME/
+```
+
 **1. Push to GitHub:**
 ```bash
-git init
 git add .
 git commit -m "Wells of Change website"
-git branch -M main
-git remote add origin https://github.com/USERNAME/REPO.git
-git push -u origin main
+git push origin main
 ```
 
 **2. Enable GitHub Pages:**
@@ -53,7 +55,10 @@ git push -u origin main
 
 **3. Done!** Site deploys automatically to: `https://USERNAME.github.io/REPO/`
 
-📚 See [QUICK_START.md](./QUICK_START.md) for detailed instructions.
+Current configuration: **https://jonyfs.github.io/wellsofchange/**
+
+📚 See [QUICK_START.md](./QUICK_START.md) for detailed instructions.  
+🔧 Having issues? See [GITHUB_PAGES_FIX.md](./GITHUB_PAGES_FIX.md) for troubleshooting.
 
 ## 🎯 Features
 

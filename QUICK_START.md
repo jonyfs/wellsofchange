@@ -67,15 +67,24 @@ git push
 
 ## 🔧 Customization
 
-### Change Base URL (if needed)
+### Change Base URL (IMPORTANT!)
 
-If deploying to a project repo (not username.github.io):
+**Current configuration**: `/wellsofchange/` (for repo "wellsofchange")
+
+If your repository name is different, you MUST update this:
 
 Edit `.github/workflows/deploy.yml`:
 ```yaml
 - name: Build frontend
-  run: npx vite build --base=/REPO-NAME/
+  run: npx vite build --base=/YOUR-REPO-NAME/
 ```
+
+**Examples**:
+- Repo: `my-ngo-site` → use `--base=/my-ngo-site/`
+- Repo: `wells` → use `--base=/wells/`
+- User site: `username.github.io` → use `--base=/` or omit --base
+
+**Why this matters**: Without the correct base URL, assets (CSS, JS, images) won't load on GitHub Pages!
 
 ### Add Custom Domain
 
