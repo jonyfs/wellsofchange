@@ -1,7 +1,7 @@
 import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
-import volunteerImage from "@assets/generated_images/Volunteer_team_working_together_8438e21a.png";
+import teamImage from "@assets/20201129_170751_1762441207202.jpg";
 
 export default function TogetherForChange() {
   const { t } = useLanguage();
@@ -41,8 +41,8 @@ export default function TogetherForChange() {
           </p>
           <div className="rounded-md overflow-hidden mb-8">
             <img
-              src={volunteerImage}
-              alt="Volunteer team working on well project"
+              src={teamImage}
+              alt="Wells of Change team with solar panels in Campo Formoso"
               className="w-full h-auto max-h-96 object-cover"
               data-testid="img-volunteers"
             />

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
-import heroImage from "@assets/generated_images/Community_celebrating_new_water_well_6071ed4f.png";
+import heroImage from "@assets/image (2)_1762441207202.png";
 
 export default function Hero() {
   const { t } = useLanguage();

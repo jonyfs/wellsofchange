@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/lib/i18n";
-import solarPumpImage from "@assets/generated_images/Solar_water_pump_technology_13afdd21.png";
+import solarPanelsImage from "@assets/alternative-21761_1762441207202.jpg";
 
 export default function OurStory() {
   const { t } = useLanguage();
@@ -39,8 +39,8 @@ export default function OurStory() {
           
           <div className="relative">
             <img
-              src={solarPumpImage}
-              alt="Solar-powered water pump with real-time monitoring"
+              src={solarPanelsImage}
+              alt="Solar panels powering water wells"
               className="rounded-md w-full h-auto"
               data-testid="img-solar-pump"
             />

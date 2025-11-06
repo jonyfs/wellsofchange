@@ -1,5 +1,7 @@
 import StatCard from "./StatCard";
 import { useLanguage } from "@/lib/i18n";
+import waterTanksImage from "@assets/20191002_124421_1762441207202.jpg";
+import techniciansImage from "@assets/20191002_125711_1762441207202.jpg";
 
 export default function OurCommitment() {
   const { t } = useLanguage();
@@ -10,6 +12,25 @@ export default function OurCommitment() {
         <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-12 text-center" data-testid="text-commitment-title">
           {t("commitment.title")}
         </h2>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="rounded-md overflow-hidden">
+            <img
+              src={waterTanksImage}
+              alt="Community with water storage tanks in Campo Formoso"
+              className="w-full h-auto object-cover"
+              data-testid="img-water-tanks"
+            />
+          </div>
+          <div className="rounded-md overflow-hidden">
+            <img
+              src={techniciansImage}
+              alt="Technicians working on water well monitoring system"
+              className="w-full h-auto object-cover"
+              data-testid="img-technicians"
+            />
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <StatCard value="1" label={t("commitment.wellComplete")} description={t("commitment.wellLocation")} />

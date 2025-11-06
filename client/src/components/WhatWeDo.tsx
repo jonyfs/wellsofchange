@@ -1,9 +1,10 @@
 import FeatureCard from "./FeatureCard";
 import { Baby, Heart, Sprout, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
-import childImage from "@assets/generated_images/Child_drinking_clean_water_62c93c11.png";
-import motherImage from "@assets/generated_images/Mother_accessing_clean_water_94be181a.png";
-import farmerImage from "@assets/generated_images/Farmer_with_irrigated_crops_17c8f849.png";
+import waterHandsImage from "@assets/mrjn-photography-YpZ2cj4s0oo-unsplash_1762441207201.jpg";
+import wateringImage from "@assets/markus-spiske-sFydXGrt5OA-unsplash_1762441207202.jpg";
+import cropImage from "@assets/corn-1841271_1762441207202.jpg";
+import solarPanelsImage from "@assets/panel-2562240_1762441207201.jpg";
 
 export default function WhatWeDo() {
   const { t } = useLanguage();
@@ -28,19 +29,19 @@ export default function WhatWeDo() {
             icon={Baby}
             title={t("whatWeDo.childTitle")}
             description={t("whatWeDo.childDesc")}
-            image={childImage}
+            image={waterHandsImage}
           />
           <FeatureCard
             icon={Heart}
             title={t("whatWeDo.motherTitle")}
             description={t("whatWeDo.motherDesc")}
-            image={motherImage}
+            image={wateringImage}
           />
           <FeatureCard
             icon={Sprout}
             title={t("whatWeDo.farmerTitle")}
             description={t("whatWeDo.farmerDesc")}
-            image={farmerImage}
+            image={cropImage}
           />
           <FeatureCard
             icon={Users}
@@ -49,11 +50,26 @@ export default function WhatWeDo() {
           />
         </div>
 
+        <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
+          <div className="rounded-md overflow-hidden">
+            <img
+              src={solarPanelsImage}
+              alt="Solar panels technology powering water wells"
+              className="w-full h-auto object-cover"
+              data-testid="img-solar-tech"
+            />
+          </div>
+          <div className="space-y-6">
+            <p className="text-foreground text-base md:text-lg" data-testid="text-tech-1">
+              <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech1") }} />
+            </p>
+            <p className="text-foreground text-base md:text-lg" data-testid="text-tech-2">
+              <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech2") }} />
+            </p>
+          </div>
+        </div>
+
         <div className="bg-accent/20 rounded-md p-8 md:p-12 space-y-6 text-base md:text-lg">
-          <p className="text-foreground" data-testid="text-tech-1">
-            <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech1") }} />
-          </p>
-          
           <div className="grid md:grid-cols-3 gap-6 my-8">
             <div className="text-center">
               <p className="font-mono text-3xl font-bold text-primary mb-2" data-testid="text-metric-water">{t("whatWeDo.metricWater")}</p>
@@ -68,10 +84,6 @@ export default function WhatWeDo() {
               <p className="text-muted-foreground">{t("whatWeDo.metricStoryLabel")}</p>
             </div>
           </div>
-
-          <p className="text-foreground" data-testid="text-tech-2">
-            <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech2") }} />
-          </p>
           
           <p className="text-center font-semibold text-lg text-primary whitespace-pre-line" data-testid="text-visibility">
             {t("whatWeDo.visibility")}
