@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
-import heroImage from "@assets/image (2)_1762441207202.png";
+import heroImage from "@assets/20201129_170751_1762441521443.jpg";
 
 export default function Hero() {
   const { t } = useLanguage();
