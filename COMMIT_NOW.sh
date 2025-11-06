@@ -14,10 +14,12 @@ git add COMPLETE_FIX_SUMMARY.md
 git add DEPLOY_NOW.md
 git add README.md
 git add verify-deployment.sh
+git add COMMIT_NOW.sh
 
 # Commit
-git commit -m "Fix GitHub Pages asset loading with 4-layer verification system
+git commit -m "Fix GitHub Pages deployment with correct base path
 
+- Changed vite build --base=/wellsofchange/ to --base=wellsofchange/
 - Fixed test-deployed-site.sh to handle absolute paths correctly
 - Added verification to build-github-pages.sh
 - Added verification step to GitHub Actions workflow
