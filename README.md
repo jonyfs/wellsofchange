@@ -39,16 +39,33 @@ If you're seeing a **markdown file** instead of the website in Replit:
 
 **Live Site**: https://jonyfs.github.io/wellsofchange/
 
-### Deploy Steps:
+### ⭐ Método 1: Deploy com gh-pages (Recomendado)
+
+```bash
+./deploy.sh
+```
+
+**Vantagens**:
+- ✅ Deploy sob demanda (você controla quando)
+- ✅ Build local (mais rápido)
+- ✅ Um comando simples
+
+📖 **Guia completo**: [docs/DEPLOY_WITH_GH_PAGES.md](./docs/DEPLOY_WITH_GH_PAGES.md)
+
+### Método 2: Deploy Automático (GitHub Actions)
+
 ```bash
 git add .
 git commit -m "Update Wells of Change website"
 git push origin main
 ```
 
-**That's it!** GitHub Actions will automatically build and deploy in 2-5 minutes.
+**Vantagens**:
+- ✅ Totalmente automático
+- ✅ CI/CD configurado
+- ✅ Deploy a cada push
 
-📖 **Detailed guide**: See [docs/DEPLOYMENT_INSTRUCTIONS.md](./docs/DEPLOYMENT_INSTRUCTIONS.md)
+📖 **Guia completo**: [docs/DEPLOYMENT_INSTRUCTIONS.md](./docs/DEPLOYMENT_INSTRUCTIONS.md)
 
 ---
 
