@@ -58,6 +58,7 @@ const translations: Record<Language, any> = {
       ourStory: "Our Story",
       whatWeDo: "What We Do",
       ourCommitment: "Our Commitment",
+      ethics: "Code of Ethics",
       joinUs: "Join Us",
       donate: "Donate",
     },
@@ -154,6 +155,34 @@ const translations: Record<Language, any> = {
       manifestoClosing: "Together, we drill more than soil. We drill through barriers. We open paths. We plant future.",
       manifestoFinal: "The change starts here. Drop by drop. Well by well.",
     },
+    ethics: {
+      title: "Code of Ethics",
+      intro: "Wells of Change operates with the highest standards of transparency, integrity, and social commitment. Our code of ethics guides all our actions and decisions.",
+      
+      principle1Title: "Total Transparency",
+      principle1Text: "Every donation received is publicly documented. All our financial operations are subject to independent audits, and detailed reports are available to the public. We believe transparency builds trust and demonstrates our commitment to the efficient use of resources.",
+      
+      principle2Title: "Non-Partisanship",
+      principle2Text: "Wells of Change is completely independent and non-partisan. We have no affiliation with political parties or movements. Our mission is exclusively humanitarian and social, serving communities in need regardless of political, religious, or ideological affiliations.",
+      
+      principle3Title: "Independent Auditing",
+      principle3Text: "Our accounts are audited annually by independent certified auditors. All financial reports, impact assessments, and operational activities are reviewed and validated by third parties to ensure integrity and accountability.",
+      
+      principle4Title: "Efficient Resource Use",
+      principle4Text: "We commit to maximizing the impact of every dollar donated. Our operational costs are minimized through volunteerism and strategic partnerships, ensuring that the maximum amount possible is directed to projects that directly transform lives.",
+      
+      principle5Title: "Social Commitment",
+      principle5Text: "Our sole purpose is to provide access to clean water and sustainable technology to communities in extreme need. We work with dignity and respect, empowering communities to maintain their own infrastructure and build a sustainable future.",
+      
+      principle6Title: "Professional Ethics",
+      principle6Text: "All our volunteers and partners adhere to the highest ethical standards. We do not tolerate any form of discrimination, corruption, or unethical conduct. Decisions are made collectively and documented.",
+      
+      auditTitle: "Audits and Accountability",
+      auditText: "Wells of Change is committed to absolute transparency. Our accounts are audited annually by independent auditors, and all reports are publicly available. We believe that accountability is fundamental to building trust with our donors and the communities we serve.",
+      
+      nonPartisanTitle: "Declaration of Non-Partisanship",
+      nonPartisanText: "Wells of Change declares itself completely independent of any political party, political movement, or partisan ideology. Our work is guided exclusively by humanitarian and social values. We do not support candidates, parties, or political causes. Our mission is to serve communities in need, regardless of their political affiliations or beliefs.",
+    },
     footer: {
       description: "Changing lives, one well at a time. Bringing clean water and sustainable technology to communities that need it most.",
       navTitle: "Navigation",
@@ -169,6 +198,7 @@ const translations: Record<Language, any> = {
       ourStory: "Nossa História",
       whatWeDo: "O Que Fazemos",
       ourCommitment: "Nosso Compromisso",
+      ethics: "Código de Ética",
       joinUs: "Junte-se a Nós",
       donate: "Doar",
     },
@@ -265,6 +295,34 @@ const translations: Record<Language, any> = {
       manifestoClosing: "Juntos, perfuramos mais que solo. Perfuramos barreiras. Abrimos caminhos. Plantamos futuro.",
       manifestoFinal: "A mudança começa aqui. Gota por gota. Poço por poço.",
     },
+    ethics: {
+      title: "Código de Ética",
+      intro: "A Wells of Change opera com os mais altos padrões de transparência, integridade e compromisso social. Nosso código de ética orienta todas as nossas ações e decisões.",
+      
+      principle1Title: "Transparência Total",
+      principle1Text: "Cada doação recebida é publicamente documentada. Todas as nossas operações financeiras são submetidas a auditorias independentes, e relatórios detalhados estão disponíveis ao público. Acreditamos que a transparência constrói confiança e demonstra nosso compromisso com o uso eficiente dos recursos.",
+      
+      principle2Title: "Apartidarismo",
+      principle2Text: "A Wells of Change é completamente independente e apartidária. Não possuímos vínculos com partidos ou movimentos políticos. Nossa missão é exclusivamente humanitária e social, atendendo comunidades em necessidade independentemente de afiliações políticas, religiosas ou ideológicas.",
+      
+      principle3Title: "Auditoria Independente",
+      principle3Text: "Nossas contas são auditadas anualmente por auditores independentes certificados. Todos os relatórios financeiros, avaliações de impacto e atividades operacionais são revisados e validados por terceiros para garantir integridade e prestação de contas.",
+      
+      principle4Title: "Uso Eficiente de Recursos",
+      principle4Text: "Comprometemo-nos a maximizar o impacto de cada real doado. Nossos custos operacionais são minimizados através do voluntariado e parcerias estratégicas, garantindo que o máximo possível seja direcionado aos projetos que transformam vidas diretamente.",
+      
+      principle5Title: "Compromisso Social",
+      principle5Text: "Nosso único propósito é proporcionar acesso à água potável e tecnologia sustentável a comunidades em extrema necessidade. Trabalhamos com dignidade e respeito, empoderando as comunidades para manterem sua própria infraestrutura e construírem um futuro sustentável.",
+      
+      principle6Title: "Ética Profissional",
+      principle6Text: "Todos os nossos voluntários e parceiros aderem aos mais altos padrões éticos. Não toleramos qualquer forma de discriminação, corrupção ou conduta antiética. As decisões são tomadas coletivamente e documentadas.",
+      
+      auditTitle: "Auditorias e Prestação de Contas",
+      auditText: "A Wells of Change está comprometida com a transparência absoluta. Nossas contas são auditadas anualmente por auditores independentes, e todos os relatórios são disponibilizados publicamente. Acreditamos que a prestação de contas é fundamental para construir confiança com nossos doadores e as comunidades que servimos.",
+      
+      nonPartisanTitle: "Declaração de Apartidarismo",
+      nonPartisanText: "A Wells of Change declara-se completamente independente de qualquer partido político, movimento político ou ideologia partidária. Nosso trabalho é guiado exclusivamente por valores humanitários e sociais. Não apoiamos candidatos, partidos ou causas políticas. Nossa missão é servir comunidades em necessidade, independentemente de suas afiliações ou crenças políticas.",
+    },
     footer: {
       description: "Mudando vidas, um poço por vez. Levando água potável e tecnologia sustentável para comunidades que mais precisam.",
       navTitle: "Navegação",
@@ -280,6 +338,7 @@ const translations: Record<Language, any> = {
       ourStory: "Nuestra Historia",
       whatWeDo: "Lo Que Hacemos",
       ourCommitment: "Nuestro Compromiso",
+      ethics: "Código de Ética",
       joinUs: "Únete a Nosotros",
       donate: "Donar",
     },
@@ -376,6 +435,34 @@ const translations: Record<Language, any> = {
       manifestoClosing: "Juntos, perforamos más que suelo. Perforamos barreras. Abrimos caminos. Plantamos futuro.",
       manifestoFinal: "El cambio comienza aquí. Gota a gota. Pozo por pozo.",
     },
+    ethics: {
+      title: "Código de Ética",
+      intro: "Wells of Change opera con los más altos estándares de transparencia, integridad y compromiso social. Nuestro código de ética guía todas nuestras acciones y decisiones.",
+      
+      principle1Title: "Transparencia Total",
+      principle1Text: "Cada donación recibida es documentada públicamente. Todas nuestras operaciones financieras están sujetas a auditorías independientes, y los informes detallados están disponibles para el público. Creemos que la transparencia construye confianza y demuestra nuestro compromiso con el uso eficiente de los recursos.",
+      
+      principle2Title: "Apartidarismo",
+      principle2Text: "Wells of Change es completamente independiente y apartidista. No tenemos vínculos con partidos o movimientos políticos. Nuestra misión es exclusivamente humanitaria y social, sirviendo a comunidades necesitadas independientemente de afiliaciones políticas, religiosas o ideológicas.",
+      
+      principle3Title: "Auditoría Independiente",
+      principle3Text: "Nuestras cuentas son auditadas anualmente por auditores independientes certificados. Todos los informes financieros, evaluaciones de impacto y actividades operacionales son revisados y validados por terceros para garantizar integridad y rendición de cuentas.",
+      
+      principle4Title: "Uso Eficiente de Recursos",
+      principle4Text: "Nos comprometemos a maximizar el impacto de cada dólar donado. Nuestros costos operativos se minimizan a través del voluntariado y alianzas estratégicas, asegurando que la máxima cantidad posible se dirija a proyectos que transforman vidas directamente.",
+      
+      principle5Title: "Compromiso Social",
+      principle5Text: "Nuestro único propósito es proporcionar acceso al agua potable y tecnología sostenible a comunidades en extrema necesidad. Trabajamos con dignidad y respeto, empoderando a las comunidades para mantener su propia infraestructura y construir un futuro sostenible.",
+      
+      principle6Title: "Ética Profesional",
+      principle6Text: "Todos nuestros voluntarios y socios adhieren a los más altos estándares éticos. No toleramos ninguna forma de discriminación, corrupción o conducta no ética. Las decisiones se toman colectivamente y se documentan.",
+      
+      auditTitle: "Auditorías y Rendición de Cuentas",
+      auditText: "Wells of Change está comprometida con la transparencia absoluta. Nuestras cuentas son auditadas anualmente por auditores independientes, y todos los informes están disponibles públicamente. Creemos que la rendición de cuentas es fundamental para construir confianza con nuestros donantes y las comunidades que servimos.",
+      
+      nonPartisanTitle: "Declaración de Apartidarismo",
+      nonPartisanText: "Wells of Change se declara completamente independiente de cualquier partido político, movimiento político o ideología partidaria. Nuestro trabajo está guiado exclusivamente por valores humanitarios y sociales. No apoyamos candidatos, partidos o causas políticas. Nuestra misión es servir a comunidades necesitadas, independientemente de sus afiliaciones o creencias políticas.",
+    },
     footer: {
       description: "Cambiando vidas, un pozo a la vez. Llevando agua potable y tecnología sostenible a las comunidades que más lo necesitan.",
       navTitle: "Navegación",
@@ -391,6 +478,7 @@ const translations: Record<Language, any> = {
       ourStory: "Notre Histoire",
       whatWeDo: "Ce Que Nous Faisons",
       ourCommitment: "Notre Engagement",
+      ethics: "Code d'Éthique",
       joinUs: "Rejoignez-nous",
       donate: "Faire un Don",
     },
@@ -486,6 +574,34 @@ const translations: Record<Language, any> = {
       manifesto3: "Parce que la communauté n'est pas une statistique. C'est la vie.",
       manifestoClosing: "Ensemble, nous forons plus que le sol. Nous perçons des barrières. Nous ouvrons des chemins. Nous plantons l'avenir.",
       manifestoFinal: "Le changement commence ici. Goutte par goutte. Puits par puits.",
+    },
+    ethics: {
+      title: "Code d'Éthique",
+      intro: "Wells of Change fonctionne selon les normes les plus élevées de transparence, d'intégrité et d'engagement social. Notre code d'éthique guide toutes nos actions et décisions.",
+      
+      principle1Title: "Transparence Totale",
+      principle1Text: "Chaque don reçu est documenté publiquement. Toutes nos opérations financières sont soumises à des audits indépendants, et des rapports détaillés sont disponibles au public. Nous croyons que la transparence construit la confiance et démontre notre engagement envers l'utilisation efficace des ressources.",
+      
+      principle2Title: "Non-Partisanerie",
+      principle2Text: "Wells of Change est complètement indépendant et non partisan. Nous n'avons aucun lien avec des partis ou mouvements politiques. Notre mission est exclusivement humanitaire et sociale, servant les communautés dans le besoin indépendamment de leurs affiliations politiques, religieuses ou idéologiques.",
+      
+      principle3Title: "Audit Indépendant",
+      principle3Text: "Nos comptes sont audités annuellement par des auditeurs indépendants certifiés. Tous les rapports financiers, évaluations d'impact et activités opérationnelles sont examinés et validés par des tiers pour garantir l'intégrité et la responsabilité.",
+      
+      principle4Title: "Utilisation Efficace des Ressources",
+      principle4Text: "Nous nous engageons à maximiser l'impact de chaque dollar donné. Nos coûts opérationnels sont minimisés grâce au bénévolat et aux partenariats stratégiques, garantissant que le maximum possible soit dirigé vers des projets qui transforment directement des vies.",
+      
+      principle5Title: "Engagement Social",
+      principle5Text: "Notre seul but est de fournir l'accès à l'eau potable et à la technologie durable aux communautés en extrême besoin. Nous travaillons avec dignité et respect, en autonomisant les communautés pour maintenir leur propre infrastructure et construire un avenir durable.",
+      
+      principle6Title: "Éthique Professionnelle",
+      principle6Text: "Tous nos bénévoles et partenaires adhèrent aux normes éthiques les plus élevées. Nous ne tolérons aucune forme de discrimination, corruption ou conduite non éthique. Les décisions sont prises collectivement et documentées.",
+      
+      auditTitle: "Audits et Responsabilité",
+      auditText: "Wells of Change s'engage pour une transparence absolue. Nos comptes sont audités annuellement par des auditeurs indépendants, et tous les rapports sont disponibles publiquement. Nous croyons que la responsabilité est fondamentale pour construire la confiance avec nos donateurs et les communautés que nous servons.",
+      
+      nonPartisanTitle: "Déclaration de Non-Partisanerie",
+      nonPartisanText: "Wells of Change se déclare complètement indépendant de tout parti politique, mouvement politique ou idéologie partisane. Notre travail est guidé exclusivement par des valeurs humanitaires et sociales. Nous ne soutenons pas de candidats, partis ou causes politiques. Notre mission est de servir les communautés dans le besoin, indépendamment de leurs affiliations ou croyances politiques.",
     },
     footer: {
       description: "Changer des vies, un puits à la fois. Apporter de l'eau potable et une technologie durable aux communautés qui en ont le plus besoin.",

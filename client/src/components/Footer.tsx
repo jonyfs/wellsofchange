@@ -59,6 +59,15 @@ export default function Footer() {
               </li>
               <li>
                 <button
+                  onClick={() => document.getElementById("etica")?.scrollIntoView({ behavior: "smooth" })}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  data-testid="link-footer-etica"
+                >
+                  {t("nav.ethics")}
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={() => document.getElementById("mudanca")?.scrollIntoView({ behavior: "smooth" })}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-mudanca"
