@@ -36,3 +36,13 @@ echo ""
 echo "To deploy manually:"
 echo "  npx gh-pages -d dist/public -t true"
 echo ""
+echo "🔍 Verifying build..."
+if grep -q 'href="/wellsofchange/' dist/public/index.html; then
+    echo "✅ Base path verified: /wellsofchange/"
+else
+    echo "❌ ERROR: Base path missing! Assets will not load on GitHub Pages!"
+    echo "   Expected: /wellsofchange/assets/"
+    echo "   Check vite build command includes: --base=/wellsofchange/"
+    exit 1
+fi
+echo ""
