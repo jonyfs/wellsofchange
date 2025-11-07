@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             size="lg"
-            onClick={() => scrollToSection("mudanca")}
+            onClick={() => scrollToSection("join-us")}
             className="bg-primary text-primary-foreground border border-primary-border text-lg px-8"
             data-testid="button-hero-doar"
           >
@@ -47,7 +47,7 @@ export default function Hero() {
           <Button
             size="lg"
             variant="outline"
-            onClick={() => scrollToSection("historia")}
+            onClick={() => scrollToSection("our-story")}
             className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 text-lg px-8"
             data-testid="button-hero-historia"
           >
@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
 
         <button
-          onClick={() => scrollToSection("missao")}
+          onClick={() => scrollToSection("our-story")}
           className="mt-20 inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
           data-testid="button-scroll-down"
         >
