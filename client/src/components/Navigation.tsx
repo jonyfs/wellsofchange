@@ -152,8 +152,36 @@ export default function Navigation() {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          {/* Mobile Actions */}
+          <div className="lg:hidden flex items-center gap-2">
+            {/* Mobile Language Selector */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="gap-1"
+                  data-testid="button-language-selector-mobile"
+                >
+                  <span className="text-base">{currentLanguage?.flag}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {languages.map((lang) => (
+                  <DropdownMenuItem
+                    key={lang.code}
+                    onClick={() => setLanguage(lang.code)}
+                    className="gap-2"
+                    data-testid={`button-lang-mobile-dropdown-${lang.code}`}
+                  >
+                    <span className="text-base">{lang.flag}</span>
+                    <span>{lang.label}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
@@ -185,29 +213,6 @@ export default function Navigation() {
               ))}
 
               <div className="border-t border-border my-2" />
-
-              {/* Mobile Language Selector */}
-              <div className="px-4 py-2">
-                <p className="text-xs font-medium text-muted-foreground mb-2">
-                  <Globe className="w-3 h-3 inline mr-1" />
-                  Language / Idioma
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {languages.map((lang) => (
-                    <Button
-                      key={lang.code}
-                      variant={language === lang.code ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setLanguage(lang.code)}
-                      className="gap-1.5"
-                      data-testid={`button-lang-mobile-${lang.code}`}
-                    >
-                      <span className="text-base">{lang.flag}</span>
-                      <span className="text-xs">{lang.label}</span>
-                    </Button>
-                  ))}
-                </div>
-              </div>
 
               {/* Mobile Donate Button */}
               <div className="px-4 pt-2">
