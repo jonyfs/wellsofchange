@@ -73,23 +73,6 @@ export default function WhoWeAre() {
     },
   ];
 
-  const advisors: TeamMember[] = [
-    {
-      name: "[Nome do Conselheiro 1]",
-      role: "Conselheiro",
-      bio: "Experiência e contribuição ao conselho consultivo da ONG.",
-      linkedin: "https://linkedin.com/in/username",
-      initials: "C1",
-    },
-    {
-      name: "[Nome do Conselheiro 2]",
-      role: "Conselheiro",
-      bio: "Experiência e contribuição ao conselho consultivo da ONG.",
-      linkedin: "https://linkedin.com/in/username",
-      initials: "C2",
-    },
-  ];
-
   const renderTeamMember = (member: TeamMember, index: number) => (
     <Card
       key={index}
@@ -165,7 +148,7 @@ export default function WhoWeAre() {
           </p>
         </div>
 
-        <div className="mb-20">
+        <div>
           <h3
             className="font-display font-semibold text-2xl md:text-3xl mb-8 text-center"
             data-testid="text-leadership-title"
@@ -174,20 +157,6 @@ export default function WhoWeAre() {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {leadership.map((member, index) => renderTeamMember(member, index))}
-          </div>
-        </div>
-
-        <div>
-          <h3
-            className="font-display font-semibold text-2xl md:text-3xl mb-8 text-center"
-            data-testid="text-advisors-title"
-          >
-            {t("whoWeAre.advisors")}
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {advisors.map((member, index) =>
-              renderTeamMember(member, leadership.length + index),
-            )}
           </div>
         </div>
       </div>
