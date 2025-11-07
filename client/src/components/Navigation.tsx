@@ -82,7 +82,7 @@ export default function Navigation() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
                 setIsMobileMenuOpen(false);
               }}
-              className="flex items-center"
+              className="flex items-center gap-3"
               data-testid="link-logo"
             >
               <img
@@ -91,6 +91,9 @@ export default function Navigation() {
                 className="h-12 w-auto"
                 data-testid="img-logo"
               />
+              <span className="text-xl font-bold text-foreground hidden sm:inline">
+                Wells of Change
+              </span>
             </a>
           </div>
 
