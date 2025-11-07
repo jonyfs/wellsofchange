@@ -7,7 +7,7 @@ import healthImage from "@assets/Gemini_Generated_Image_fb0vhcfb0vhcfb0v_1762546
 import permanenceImage from "@assets/Gemini_Generated_Image_18n9en18n9en18n9_1762549321923.png";
 import prosperityImage from "@assets/Gemini_Generated_Image_zfl4lmzfl4lmzfl4_1762549484377.png";
 import dignityImage from "@assets/Gemini_Generated_Image_k16da4k16da4k16d_1762549738344.png";
-import realtimeImage from "@assets/stock_images/solar_panel_water_we_42190554.jpg";
+import realtimeImage from "@assets/Gemini_Generated_Image_ocwsv1ocwsv1ocws_1762551409906.png";
 
 export default function TogetherForChange() {
   const { t } = useLanguage();
