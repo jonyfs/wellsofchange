@@ -5,7 +5,7 @@ import { useLanguage } from "@/lib/i18n";
 import { Linkedin } from "lucide-react";
 import ricardoPhoto from "@assets/rc_1762534193303.jpeg";
 import jonyPhoto from "@assets/js_1762534479294.jpeg";
-import mamourPhoto from "@assets/mamour_1762535341266.jpeg";
+import mamourPhoto from "@assets/mamour3_1762535640025.png";
 
 interface TeamMember {
   name: string;
