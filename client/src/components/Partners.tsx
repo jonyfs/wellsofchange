@@ -49,13 +49,13 @@ export default function Partners() {
   }, [emblaApi]);
 
   return (
-    <section id="parceiros" className="py-16 md:py-24 bg-slate-900 dark:bg-slate-800">
+    <section id="parceiros" className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
-          <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-4 text-white" data-testid="text-partners-title">
+          <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-4" data-testid="text-partners-title">
             {t("partners.title")}
           </h2>
-          <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto" data-testid="text-partners-subtitle">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-partners-subtitle">
             {t("partners.subtitle")}
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Partners() {
                   href={partner.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center p-10 rounded-md bg-slate-800 dark:bg-slate-700 border border-slate-700 dark:border-slate-600 hover-elevate active-elevate-2 transition-all h-40 w-full"
+                  className="flex items-center justify-center p-10 rounded-md bg-card border hover-elevate active-elevate-2 transition-all h-40 w-full"
                   data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {partner.logo ? (
@@ -82,7 +82,7 @@ export default function Partners() {
                       data-testid={`img-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                     />
                   ) : (
-                    <span className="text-center font-semibold text-lg text-white">
+                    <span className="text-center font-semibold text-lg">
                       {partner.name}
                     </span>
                   )}
@@ -92,7 +92,7 @@ export default function Partners() {
           </div>
         </div>
 
-        <p className="text-center text-sm text-gray-400 mt-12" data-testid="text-partners-thanks">
+        <p className="text-center text-sm text-muted-foreground mt-12" data-testid="text-partners-thanks">
           {t("partners.thanks")}
         </p>
       </div>
