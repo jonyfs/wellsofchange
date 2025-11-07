@@ -7,6 +7,7 @@ import ricardoPhoto from "@assets/rc_1762534193303.jpeg";
 import jonyPhoto from "@assets/IMG_0725_1762536274752.jpeg";
 import mamourPhoto from "@assets/mamour3_1762535640025.png";
 import oliviaPhoto from "@assets/og_1762536682599.jpeg";
+import fabioPhoto from "@assets/fs_1762537229285.jpeg";
 
 interface TeamMember {
   name: string;
@@ -54,11 +55,12 @@ export default function WhoWeAre() {
       photo: oliviaPhoto,
     },
     {
-      name: "[Nome do Diretor Patrimonial]",
-      role: "Diretor Patrimonial",
-      bio: "Responsável pela gestão financeira e patrimonial da organização.",
-      linkedin: "https://linkedin.com/in/username",
-      initials: "DP",
+      name: "Fábio Silva",
+      role: t("whoWeAre.assetDirectorRole"),
+      bio: t("whoWeAre.assetDirectorBio"),
+      linkedin: "https://www.linkedin.com/in/devfabiosilva/",
+      initials: "FS",
+      photo: fabioPhoto,
     },
   ];
 
