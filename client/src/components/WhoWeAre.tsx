@@ -8,6 +8,7 @@ import jonyPhoto from "@assets/IMG_0725_1762536274752.jpeg";
 import mamourPhoto from "@assets/mamour3_1762535640025.png";
 import oliviaPhoto from "@assets/og_1762536682599.jpeg";
 import fabioPhoto from "@assets/fs_1762537229285.jpeg";
+import mariaPhoto from "@assets/duda_1762538284982.jpeg";
 
 interface TeamMember {
   name: string;
@@ -61,6 +62,14 @@ export default function WhoWeAre() {
       linkedin: "https://www.linkedin.com/in/devfabiosilva/",
       initials: "FS",
       photo: fabioPhoto,
+    },
+    {
+      name: "Maria Barreto",
+      role: t("whoWeAre.communicationsDirectorRole"),
+      bio: t("whoWeAre.communicationsDirectorBio"),
+      linkedin: "https://www.linkedin.com/in/dudabarreto/",
+      initials: "MB",
+      photo: mariaPhoto,
     },
   ];
 
