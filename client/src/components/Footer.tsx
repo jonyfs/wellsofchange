@@ -10,8 +10,8 @@ export default function Footer() {
     { icon: FaFacebook, url: "https://facebook.com/wellsofchange", label: "Facebook", testId: "link-facebook" },
     { icon: FaInstagram, url: "https://instagram.com/wellsofchange", label: "Instagram", testId: "link-instagram" },
     { icon: FaTiktok, url: "https://tiktok.com/@wellsofchange", label: "TikTok", testId: "link-tiktok" },
-    { icon: FaYoutube, url: "https://youtube.com/@wellsofchange", label: "YouTube", testId: "link-youtube" },
-    { icon: FaLinkedin, url: "https://linkedin.com/company/wellsofchange", label: "LinkedIn", testId: "link-linkedin" },
+    { icon: FaYoutube, url: "https://www.youtube.com/@wellsofchange8833", label: "YouTube", testId: "link-youtube" },
+    { icon: FaLinkedin, url: "https://www.linkedin.com/company/wellsofchange/", label: "LinkedIn", testId: "link-linkedin" },
   ];
 
   return (
