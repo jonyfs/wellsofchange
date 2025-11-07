@@ -5,6 +5,7 @@ import { useLanguage } from "@/lib/i18n";
 import { Linkedin } from "lucide-react";
 import ricardoPhoto from "@assets/rc_1762534193303.jpeg";
 import jonyPhoto from "@assets/js_1762534479294.jpeg";
+import mamourPhoto from "@assets/mamour_1762535341266.jpeg";
 
 interface TeamMember {
   name: string;
@@ -36,11 +37,12 @@ export default function WhoWeAre() {
       photo: jonyPhoto,
     },
     {
-      name: "[Nome do Vice-Presidente]",
-      role: "Vice-Presidente",
-      bio: "Experiência do vice-presidente e suas responsabilidades na ONG.",
-      linkedin: "https://linkedin.com/in/username",
-      initials: "VP",
+      name: "Mamour Ndiaye",
+      role: t("whoWeAre.vicePresidentRole"),
+      bio: t("whoWeAre.vicePresidentBio"),
+      linkedin: "https://www.linkedin.com/in/mamoursn/",
+      initials: "MN",
+      photo: mamourPhoto,
     },
     {
       name: "[Nome do Diretor de Marketing]",
