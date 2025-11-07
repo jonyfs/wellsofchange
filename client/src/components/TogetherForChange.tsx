@@ -2,12 +2,12 @@ import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import teamImage from "@assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910.jpg";
-import thirstImage from "@assets/stock_images/clean_water_drinking_a5cd0c04.jpg";
-import healthImage from "@assets/stock_images/healthy_happy_africa_edc4afaf.jpg";
-import permanenceImage from "@assets/stock_images/african_family_home__45f774e7.jpg";
-import prosperityImage from "@assets/stock_images/prosperous_african_f_66d388f6.jpg";
-import dignityImage from "@assets/stock_images/dignity_hope_african_a0d24957.jpg";
-import realtimeImage from "@assets/stock_images/solar_water_well_tec_d4640ea0.jpg";
+import thirstImage from "@assets/stock_images/brazilian_northeast__09ee88cd.jpg";
+import healthImage from "@assets/stock_images/healthy_brazilian_ch_ecc45da7.jpg";
+import permanenceImage from "@assets/stock_images/brazilian_northeast__937cc8c8.jpg";
+import prosperityImage from "@assets/stock_images/brazilian_northeast__af9eb6ed.jpg";
+import dignityImage from "@assets/stock_images/brazilian_woman_nort_b68e6528.jpg";
+import realtimeImage from "@assets/stock_images/solar_panel_water_we_42190554.jpg";
 
 export default function TogetherForChange() {
   const { t } = useLanguage();
