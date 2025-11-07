@@ -1,10 +1,13 @@
 import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
+import { useMouseParallax } from "@/hooks/useMouseParallax";
+import { motion } from "framer-motion";
 import teamImage from "@assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910.jpg";
 
 export default function TogetherForChange() {
   const { t } = useLanguage();
+  const { elementRef, transform } = useMouseParallax(10);
 
   const handleDonate = () => {
     console.log("Donate action triggered");
@@ -30,9 +33,9 @@ export default function TogetherForChange() {
   };
 
   return (
-    <section id="join-us" className="py-16 md:py-24 lg:py-32 bg-background">
+    <section id="join-us" className="py-16 md:py-24 lg:py-32 bg-background overflow-hidden" ref={elementRef}>
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="text-center mb-16">
+        <motion.div style={transform} className="text-center mb-16">
           <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-6" data-testid="text-change-title">
             {t("change.title")}
           </h2>
@@ -47,7 +50,7 @@ export default function TogetherForChange() {
               data-testid="img-volunteers"
             />
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <CTACard

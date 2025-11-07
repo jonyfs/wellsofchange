@@ -1,31 +1,38 @@
 import { useLanguage } from "@/lib/i18n";
+import { useMouseParallax } from "@/hooks/useMouseParallax";
+import { motion } from "framer-motion";
 
 export default function MissionStatement() {
   const { t } = useLanguage();
+  const { elementRef, transform } = useMouseParallax(15);
 
   return (
-    <section id="missao" className="py-16 md:py-24 lg:py-32 bg-background">
+    <section id="missao" className="py-16 md:py-24 lg:py-32 bg-background overflow-hidden" ref={elementRef}>
       <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
-        <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-12" data-testid="text-mission-title">
+        <motion.h2 
+          style={transform}
+          className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-12" 
+          data-testid="text-mission-title"
+        >
           {t("mission.title")}
-        </h2>
+        </motion.h2>
         
         <div className="space-y-6 text-base md:text-lg leading-relaxed">
-          <p className="text-foreground" data-testid="text-belief-1">
+          <motion.p style={transform} className="text-foreground" data-testid="text-belief-1">
             <span dangerouslySetInnerHTML={{ __html: t("mission.belief1") }} />
-          </p>
+          </motion.p>
           
-          <p className="text-foreground" data-testid="text-belief-2">
+          <motion.p style={transform} className="text-foreground" data-testid="text-belief-2">
             <span dangerouslySetInnerHTML={{ __html: t("mission.belief2") }} />
-          </p>
+          </motion.p>
           
-          <p className="text-foreground" data-testid="text-belief-3">
+          <motion.p style={transform} className="text-foreground" data-testid="text-belief-3">
             <span dangerouslySetInnerHTML={{ __html: t("mission.belief3") }} />
-          </p>
+          </motion.p>
           
-          <p className="text-foreground" data-testid="text-belief-4">
+          <motion.p style={transform} className="text-foreground" data-testid="text-belief-4">
             <span dangerouslySetInnerHTML={{ __html: t("mission.belief4") }} />
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>
