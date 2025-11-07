@@ -15,7 +15,7 @@ export default function Partners() {
     },
     { 
       name: "2Solve", 
-      website: "https://2solve.com.br",
+      website: "https://www.2solve.com/",
       logo: null,
     },
     { 
@@ -33,10 +33,11 @@ export default function Partners() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
       loop: true,
-      align: "start",
+      align: "center",
       skipSnaps: false,
+      slidesToScroll: 1,
     },
-    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+    [Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]
   );
 
   useEffect(() => {
@@ -57,29 +58,29 @@ export default function Partners() {
           </p>
         </div>
 
-        <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6">
+        <div className="overflow-hidden max-w-5xl mx-auto" ref={emblaRef}>
+          <div className="flex gap-8">
             {partners.map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 flex-grow-0 basis-[280px] md:basis-[320px]"
+                className="flex-shrink-0 flex-grow-0 basis-[90%] sm:basis-[70%] md:basis-[45%] lg:basis-[380px]"
               >
                 <a
                   href={partner.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center p-8 rounded-md bg-card border hover-elevate active-elevate-2 transition-all h-32"
+                  className="flex items-center justify-center p-10 rounded-md bg-card border hover-elevate active-elevate-2 transition-all h-40 w-full"
                   data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {partner.logo ? (
                     <img 
                       src={partner.logo} 
                       alt={partner.name}
-                      className="h-12 w-auto object-contain"
+                      className="h-16 w-auto max-w-full object-contain"
                       data-testid={`img-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                     />
                   ) : (
-                    <span className="text-center font-semibold text-foreground">
+                    <span className="text-center font-semibold text-lg text-foreground">
                       {partner.name}
                     </span>
                   )}
