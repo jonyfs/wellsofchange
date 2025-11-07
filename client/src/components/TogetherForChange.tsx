@@ -3,7 +3,7 @@ import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import teamImage from "@assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910.jpg";
 import thirstImage from "@assets/Gemini_Generated_Image_iwxnbdiwxnbdiwxn_1762546643721.png";
-import healthImage from "@assets/stock_images/healthy_brazilian_ch_ecc45da7.jpg";
+import healthImage from "@assets/Gemini_Generated_Image_fb0vhcfb0vhcfb0v_1762546768964.png";
 import permanenceImage from "@assets/stock_images/brazilian_northeast__937cc8c8.jpg";
 import prosperityImage from "@assets/stock_images/brazilian_northeast__af9eb6ed.jpg";
 import dignityImage from "@assets/stock_images/brazilian_woman_nort_b68e6528.jpg";
