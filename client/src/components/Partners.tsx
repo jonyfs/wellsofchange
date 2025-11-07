@@ -1,13 +1,15 @@
 import { useLanguage } from "@/lib/i18n";
+import intelieLogo from "@assets/Logo_Intelie-BzVPvjOp_1762540076118.png";
 
 export default function Partners() {
   const { t } = useLanguage();
 
   const partners = [
-    { name: "Intelie", website: "https://intelie.com" },
-    { name: "2Solve", website: "https://2solve.com.br" },
-    { name: "Viasat", website: "https://viasat.com" },
-    { name: "Vale do Sol Engenharia", website: "#" },
+    { 
+      name: "Intelie", 
+      website: "http://www.intelie.ai/",
+      logo: intelieLogo,
+    },
   ];
 
   return (
@@ -22,22 +24,29 @@ export default function Partners() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+        <div className="flex flex-wrap gap-8 items-center justify-center">
           {partners.map((partner, index) => (
-            <div
+            <a
               key={index}
-              className="flex items-center justify-center p-6 rounded-md bg-background border hover-elevate active-elevate-2 transition-all w-full h-32"
-              data-testid={`partner-${index}`}
+              href={partner.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-8 rounded-md bg-background border hover-elevate active-elevate-2 transition-all"
+              data-testid={`link-partner-${partner.name.toLowerCase()}`}
             >
-              <a
-                href={partner.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-center font-semibold text-foreground hover:text-primary transition-colors"
-              >
-                {partner.name}
-              </a>
-            </div>
+              {partner.logo ? (
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="h-12 w-auto object-contain"
+                  data-testid={`img-partner-${partner.name.toLowerCase()}`}
+                />
+              ) : (
+                <span className="text-center font-semibold text-foreground">
+                  {partner.name}
+                </span>
+              )}
+            </a>
           ))}
         </div>
 
