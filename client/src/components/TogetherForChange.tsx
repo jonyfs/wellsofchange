@@ -6,7 +6,7 @@ import thirstImage from "@assets/Gemini_Generated_Image_iwxnbdiwxnbdiwxn_1762546
 import healthImage from "@assets/Gemini_Generated_Image_fb0vhcfb0vhcfb0v_1762546768964.png";
 import permanenceImage from "@assets/Gemini_Generated_Image_18n9en18n9en18n9_1762549321923.png";
 import prosperityImage from "@assets/Gemini_Generated_Image_zfl4lmzfl4lmzfl4_1762549484377.png";
-import dignityImage from "@assets/stock_images/brazilian_woman_nort_b68e6528.jpg";
+import dignityImage from "@assets/Gemini_Generated_Image_k16da4k16da4k16d_1762549738344.png";
 import realtimeImage from "@assets/stock_images/solar_panel_water_we_42190554.jpg";
 
 export default function TogetherForChange() {
