@@ -2,7 +2,7 @@ import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import teamImage from "@assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910.jpg";
-import thirstImage from "@assets/stock_images/happy_brazilian_chil_f103acde.jpg";
+import thirstImage from "@assets/Gemini_Generated_Image_iwxnbdiwxnbdiwxn_1762546643721.png";
 import healthImage from "@assets/stock_images/healthy_brazilian_ch_ecc45da7.jpg";
 import permanenceImage from "@assets/stock_images/brazilian_northeast__937cc8c8.jpg";
 import prosperityImage from "@assets/stock_images/brazilian_northeast__af9eb6ed.jpg";
