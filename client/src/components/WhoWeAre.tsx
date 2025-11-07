@@ -67,7 +67,7 @@ export default function WhoWeAre() {
       name: "Maria Barreto",
       role: t("whoWeAre.communicationsDirectorRole"),
       bio: t("whoWeAre.communicationsDirectorBio"),
-      linkedin: "https://www.linkedin.com/in/dudabarreto/",
+      linkedin: "https://www.linkedin.com/in/mariaeduardabarreto/",
       initials: "MB",
       photo: mariaPhoto,
     },
