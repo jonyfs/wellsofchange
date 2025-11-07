@@ -1,6 +1,7 @@
 import { useLanguage } from "@/lib/i18n";
 import intelieLogo from "@assets/Logo_Intelie-BzVPvjOp_1762540076118.png";
 import twoSolveLogo from "@assets/2solve_1762540601387.png";
+import viasatLogo from "@assets/viasat_1762540690817.png";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect } from "react";
@@ -21,8 +22,8 @@ export default function Partners() {
     },
     { 
       name: "Viasat", 
-      website: "https://viasat.com",
-      logo: null,
+      website: "https://www.viasat.com/",
+      logo: viasatLogo,
     },
     { 
       name: "Vale do Sol Engenharia", 
