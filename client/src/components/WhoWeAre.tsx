@@ -17,11 +17,11 @@ export default function WhoWeAre() {
 
   const leadership: TeamMember[] = [
     {
-      name: "[Nome do Fundador]",
-      role: "Fundador",
-      bio: "Breve apresentação profissional do fundador, experiência e motivação para criar a Wells of Change.",
-      linkedin: "https://linkedin.com/in/username",
-      initials: "FD",
+      name: "Ricardo Clemente",
+      role: t("whoWeAre.founderRole"),
+      bio: t("whoWeAre.founderBio"),
+      linkedin: "https://www.linkedin.com/in/ricardo-clemente-05a3a52/",
+      initials: "RC",
     },
     {
       name: "[Nome do Presidente]",
@@ -71,22 +71,35 @@ export default function WhoWeAre() {
   ];
 
   const renderTeamMember = (member: TeamMember, index: number) => (
-    <Card key={index} className="p-6 hover-elevate transition-all" data-testid={`card-member-${index}`}>
+    <Card
+      key={index}
+      className="p-6 hover-elevate transition-all"
+      data-testid={`card-member-${index}`}
+    >
       <div className="flex flex-col items-center text-center gap-4">
         <Avatar className="w-24 h-24">
           <AvatarFallback className="text-xl font-semibold bg-primary text-primary-foreground">
             {member.initials}
           </AvatarFallback>
         </Avatar>
-        
+
         <div>
-          <h3 className="font-semibold text-xl mb-1" data-testid={`text-name-${index}`}>
+          <h3
+            className="font-semibold text-xl mb-1"
+            data-testid={`text-name-${index}`}
+          >
             {member.name}
           </h3>
-          <p className="text-primary font-medium mb-3" data-testid={`text-role-${index}`}>
+          <p
+            className="text-primary font-medium mb-3"
+            data-testid={`text-role-${index}`}
+          >
             {member.role}
           </p>
-          <p className="text-muted-foreground text-sm leading-relaxed" data-testid={`text-bio-${index}`}>
+          <p
+            className="text-muted-foreground text-sm leading-relaxed"
+            data-testid={`text-bio-${index}`}
+          >
             {member.bio}
           </p>
         </div>
@@ -111,16 +124,25 @@ export default function WhoWeAre() {
     <section id="who-we-are" className="py-16 md:py-24 lg:py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-6" data-testid="text-whoweare-title">
+          <h2
+            className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-6"
+            data-testid="text-whoweare-title"
+          >
             {t("whoWeAre.title")}
           </h2>
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto" data-testid="text-whoweare-intro">
+          <p
+            className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto"
+            data-testid="text-whoweare-intro"
+          >
             {t("whoWeAre.intro")}
           </p>
         </div>
 
         <div className="mb-20">
-          <h3 className="font-display font-semibold text-2xl md:text-3xl mb-8 text-center" data-testid="text-leadership-title">
+          <h3
+            className="font-display font-semibold text-2xl md:text-3xl mb-8 text-center"
+            data-testid="text-leadership-title"
+          >
             {t("whoWeAre.leadership")}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -129,11 +151,16 @@ export default function WhoWeAre() {
         </div>
 
         <div>
-          <h3 className="font-display font-semibold text-2xl md:text-3xl mb-8 text-center" data-testid="text-advisors-title">
+          <h3
+            className="font-display font-semibold text-2xl md:text-3xl mb-8 text-center"
+            data-testid="text-advisors-title"
+          >
             {t("whoWeAre.advisors")}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {advisors.map((member, index) => renderTeamMember(member, leadership.length + index))}
+            {advisors.map((member, index) =>
+              renderTeamMember(member, leadership.length + index),
+            )}
           </div>
         </div>
       </div>

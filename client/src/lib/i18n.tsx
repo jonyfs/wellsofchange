@@ -197,6 +197,8 @@ const translations: Record<Language, any> = {
       intro: "Wells of Change is driven by a diverse team of dedicated professionals united by a common purpose: transforming lives through access to clean water.",
       leadership: "Leadership",
       advisors: "Advisory Board",
+      founderRole: "Founder",
+      founderBio: "Entrepreneur and technology leader with over 20 years of experience. Founded INTELIE in 2008, growing it from a startup in Rio de Janeiro to a global leader in operational intelligence, later acquired by Viasat. Currently President of Tabia Health and board member at multiple technology companies. Created Wells of Change driven by the conviction that advanced technology—like real-time monitoring and AI—should serve those who need it most, bringing the same innovation used in oil wells to ensure access to clean water.",
     },
     ethics: {
       title: "Code of Ethics",
@@ -323,6 +325,8 @@ const translations: Record<Language, any> = {
       intro: "A Wells of Change é movida por uma equipe diversificada de profissionais dedicados, unidos por um propósito comum: transformar vidas através do acesso à água potável.",
       leadership: "Liderança",
       advisors: "Conselho Consultivo",
+      founderRole: "Fundador",
+      founderBio: "Empreendedor e líder em tecnologia com mais de 20 anos de experiência. Fundou a INTELIE em 2008, transformando-a de uma startup no Rio de Janeiro em líder global em inteligência operacional, posteriormente adquirida pela Viasat. Atualmente Presidente da Tabia Health e membro de conselho em múltiplas empresas de tecnologia. Criou a Wells of Change motivado pela convicção de que tecnologia avançada—como monitoramento em tempo real e IA—deve servir a quem mais precisa, trazendo a mesma inovação usada em poços de petróleo para garantir acesso à água potável.",
     },
     change: {
       title: "Juntos Pela Mudança",
@@ -476,6 +480,8 @@ const translations: Record<Language, any> = {
       intro: "Wells of Change está impulsada por un equipo diverso de profesionales dedicados, unidos por un propósito común: transformar vidas a través del acceso al agua potable.",
       leadership: "Liderazgo",
       advisors: "Consejo Asesor",
+      founderRole: "Fundador",
+      founderBio: "Emprendedor y líder en tecnología con más de 20 años de experiencia. Fundó INTELIE en 2008, transformándola de una startup en Río de Janeiro en líder global en inteligencia operacional, posteriormente adquirida por Viasat. Actualmente Presidente de Tabia Health y miembro de consejo en múltiples empresas de tecnología. Creó Wells of Change impulsado por la convicción de que la tecnología avanzada—como monitoreo en tiempo real e IA—debe servir a quienes más lo necesitan, trayendo la misma innovación usada en pozos petroleros para garantizar acceso al agua potable.",
     },
     change: {
       title: "Juntos Por el Cambio",
@@ -629,6 +635,8 @@ const translations: Record<Language, any> = {
       intro: "Wells of Change est porté par une équipe diversifiée de professionnels dévoués, unis par un objectif commun : transformer des vies grâce à l'accès à l'eau potable.",
       leadership: "Direction",
       advisors: "Conseil Consultatif",
+      founderRole: "Fondateur",
+      founderBio: "Entrepreneur et leader en technologie avec plus de 20 ans d'expérience. A fondé INTELIE en 2008, la transformant d'une startup à Rio de Janeiro en leader mondial de l'intelligence opérationnelle, plus tard acquise par Viasat. Actuellement Président de Tabia Health et membre du conseil dans plusieurs entreprises technologiques. A créé Wells of Change motivé par la conviction que la technologie avancée—comme la surveillance en temps réel et l'IA—doit servir ceux qui en ont le plus besoin, apportant la même innovation utilisée dans les puits de pétrole pour garantir l'accès à l'eau potable.",
     },
     change: {
       title: "Ensemble Pour le Changement",
