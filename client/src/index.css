@@ -64,6 +64,10 @@
 
   --accent-foreground: 217 91% 25%;
 
+  --golden: 43 96% 56%;
+
+  --golden-foreground: 0 0% 9%;
+
   --destructive: 0 84% 35%;
 
   --destructive-foreground: 0 84% 98%;
@@ -117,6 +121,10 @@
   /* Fallback for older browsers */
   --accent-border: hsl(var(--accent));
   --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --golden-border: hsl(var(--golden));
+  --golden-border: hsl(from hsl(var(--golden)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 
   /* Fallback for older browsers */
   --destructive-border: hsl(var(--destructive));
@@ -183,6 +191,10 @@
 
   --accent-foreground: 200 70% 85%;
 
+  --golden: 43 96% 56%;
+
+  --golden-foreground: 0 0% 100%;
+
   --destructive: 0 84% 35%;
 
   --destructive-foreground: 0 84% 98%;
@@ -203,6 +215,10 @@
   --shadow-lg: 0px 10px 18px -3px hsl(0 0% 0% / 0.55), 0px 4px 10px -4px hsl(0 0% 0% / 0.50);
   --shadow-xl: 0px 20px 28px -5px hsl(0 0% 0% / 0.60), 0px 8px 16px -6px hsl(0 0% 0% / 0.55);
   --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.65);
+
+  /* Fallback for older browsers */
+  --golden-border: hsl(var(--golden));
+  --golden-border: hsl(from hsl(var(--golden)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 
   /* Fallback for older browsers */
   --sidebar-primary-border: hsl(var(--sidebar-primary));

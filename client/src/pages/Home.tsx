@@ -1,3 +1,4 @@
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import MissionStatement from "@/components/MissionStatement";
 import OurStory from "@/components/OurStory";
@@ -8,13 +9,13 @@ import Partners from "@/components/Partners";
 import CodeOfEthics from "@/components/CodeOfEthics";
 import TogetherForChange from "@/components/TogetherForChange";
 import Footer from "@/components/Footer";
-import LanguageFAB from "@/components/LanguageFAB";
 import DonateFAB from "@/components/DonateFAB";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <main>
+      <Navigation />
+      <main className="pt-20">
         <Hero />
         <MissionStatement />
         <OurStory />
@@ -27,7 +28,6 @@ export default function Home() {
       </main>
       <Footer />
       <DonateFAB />
-      <LanguageFAB />
     </div>
   );
 }

@@ -108,7 +108,7 @@ export default function WhoWeAre() {
   );
 
   return (
-    <section id="quem-somos" className="py-16 md:py-24 lg:py-32 bg-muted/30">
+    <section id="who-we-are" className="py-16 md:py-24 lg:py-32 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-6" data-testid="text-whoweare-title">
