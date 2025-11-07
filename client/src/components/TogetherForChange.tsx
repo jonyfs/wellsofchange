@@ -2,6 +2,12 @@ import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import teamImage from "@assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910.jpg";
+import thirstImage from "@assets/stock_images/clean_water_drinking_a5cd0c04.jpg";
+import healthImage from "@assets/stock_images/healthy_happy_africa_edc4afaf.jpg";
+import permanenceImage from "@assets/stock_images/african_family_home__45f774e7.jpg";
+import prosperityImage from "@assets/stock_images/prosperous_african_f_66d388f6.jpg";
+import dignityImage from "@assets/stock_images/dignity_hope_african_a0d24957.jpg";
+import realtimeImage from "@assets/stock_images/solar_water_well_tec_d4640ea0.jpg";
 
 export default function TogetherForChange() {
   const { t } = useLanguage();
@@ -78,34 +84,87 @@ export default function TogetherForChange() {
             {t("change.transformationTitle")}
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-            <div>
-              <p className="text-lg font-semibold" data-testid="text-transform-1">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full h-48 overflow-hidden">
+                <img
+                  src={thirstImage}
+                  alt="Clean water - Thirst to Satiety"
+                  className="w-full h-full object-cover rounded-md"
+                  data-testid="img-transform-1"
+                />
+              </div>
+              <p className="text-lg font-semibold text-center" data-testid="text-transform-1">
                 {t("change.transform1")}
               </p>
             </div>
-            <div>
-              <p className="text-lg font-semibold" data-testid="text-transform-2">
+            
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full h-48 overflow-hidden">
+                <img
+                  src={healthImage}
+                  alt="Health - Disease to Health"
+                  className="w-full h-full object-cover rounded-md"
+                  data-testid="img-transform-2"
+                />
+              </div>
+              <p className="text-lg font-semibold text-center" data-testid="text-transform-2">
                 {t("change.transform2")}
               </p>
             </div>
-            <div>
-              <p className="text-lg font-semibold" data-testid="text-transform-3">
+            
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full h-48 overflow-hidden">
+                <img
+                  src={permanenceImage}
+                  alt="Permanence - Migration to Permanence"
+                  className="w-full h-full object-cover rounded-md"
+                  data-testid="img-transform-3"
+                />
+              </div>
+              <p className="text-lg font-semibold text-center" data-testid="text-transform-3">
                 {t("change.transform3")}
               </p>
             </div>
-            <div>
-              <p className="text-lg font-semibold" data-testid="text-transform-4">
+            
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full h-48 overflow-hidden">
+                <img
+                  src={prosperityImage}
+                  alt="Prosperity - Survival to Prosperity"
+                  className="w-full h-full object-cover rounded-md"
+                  data-testid="img-transform-4"
+                />
+              </div>
+              <p className="text-lg font-semibold text-center" data-testid="text-transform-4">
                 {t("change.transform4")}
               </p>
             </div>
-            <div>
-              <p className="text-lg font-semibold" data-testid="text-transform-5">
+            
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full h-48 overflow-hidden">
+                <img
+                  src={dignityImage}
+                  alt="Dignity - Despair to Dignity"
+                  className="w-full h-full object-cover rounded-md"
+                  data-testid="img-transform-5"
+                />
+              </div>
+              <p className="text-lg font-semibold text-center" data-testid="text-transform-5">
                 {t("change.transform5")}
               </p>
             </div>
-            <div>
-              <p className="text-lg font-semibold text-primary" data-testid="text-transform-6">
+            
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-full h-48 overflow-hidden">
+                <img
+                  src={realtimeImage}
+                  alt="Real-time monitoring"
+                  className="w-full h-full object-cover rounded-md"
+                  data-testid="img-transform-6"
+                />
+              </div>
+              <p className="text-lg font-semibold text-primary text-center" data-testid="text-transform-6">
                 {t("change.transform6")}
               </p>
             </div>
