@@ -6,6 +6,7 @@ import { Linkedin } from "lucide-react";
 import ricardoPhoto from "@assets/rc_1762534193303.jpeg";
 import jonyPhoto from "@assets/IMG_0725_1762536274752.jpeg";
 import mamourPhoto from "@assets/mamour3_1762535640025.png";
+import oliviaPhoto from "@assets/og_1762536682599.jpeg";
 
 interface TeamMember {
   name: string;
@@ -45,11 +46,12 @@ export default function WhoWeAre() {
       photo: mamourPhoto,
     },
     {
-      name: "[Nome do Diretor de Marketing]",
-      role: "Diretor de Marketing",
-      bio: "Experiência em comunicação e estratégias para divulgar a missão da Wells of Change.",
-      linkedin: "https://linkedin.com/in/username",
-      initials: "DM",
+      name: "Olivia Giumelli",
+      role: t("whoWeAre.financialDirectorRole"),
+      bio: t("whoWeAre.financialDirectorBio"),
+      linkedin: "https://www.linkedin.com/in/olivia-duquia-giumelli-moro-69927026/",
+      initials: "OG",
+      photo: oliviaPhoto,
     },
     {
       name: "[Nome do Diretor Patrimonial]",
