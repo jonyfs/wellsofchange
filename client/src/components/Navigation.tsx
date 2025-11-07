@@ -91,7 +91,7 @@ export default function Navigation() {
                 className="h-12 w-auto"
                 data-testid="img-logo"
               />
-              <span className="text-xl font-bold text-foreground hidden sm:inline">
+              <span className="text-base sm:text-xl font-bold text-foreground">
                 Wells of Change
               </span>
             </a>
