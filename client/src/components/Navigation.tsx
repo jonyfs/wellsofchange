@@ -15,11 +15,11 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const languages: { code: Language; label: string; shortLabel: string }[] = [
-    { code: "en", label: "English", shortLabel: "EN" },
-    { code: "pt-BR", label: "Português", shortLabel: "PT" },
-    { code: "es", label: "Español", shortLabel: "ES" },
-    { code: "fr", label: "Français", shortLabel: "FR" },
+  const languages: { code: Language; label: string; flag: string }[] = [
+    { code: "en", label: "English", flag: "🇺🇸" },
+    { code: "pt-BR", label: "Português", flag: "🇧🇷" },
+    { code: "es", label: "Español", flag: "🇪🇸" },
+    { code: "fr", label: "Français", flag: "🇫🇷" },
   ];
 
   const currentLanguage = languages.find((lang) => lang.code === language);
@@ -121,7 +121,7 @@ export default function Navigation() {
                 >
                   <Globe className="w-4 h-4" />
                   <span className="hidden xl:inline">{currentLanguage?.label}</span>
-                  <span className="xl:hidden font-semibold">{currentLanguage?.shortLabel}</span>
+                  <span className="xl:hidden text-base">{currentLanguage?.flag}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
@@ -132,7 +132,7 @@ export default function Navigation() {
                     className="gap-2"
                     data-testid={`button-lang-${lang.code}`}
                   >
-                    <span className="font-semibold text-muted-foreground">{lang.shortLabel}</span>
+                    <span className="text-base">{lang.flag}</span>
                     <span>{lang.label}</span>
                   </DropdownMenuItem>
                 ))}
@@ -199,7 +199,7 @@ export default function Navigation() {
                       className="gap-1.5"
                       data-testid={`button-lang-mobile-${lang.code}`}
                     >
-                      <span className="font-bold text-xs">{lang.shortLabel}</span>
+                      <span className="text-base">{lang.flag}</span>
                       <span className="text-xs">{lang.label}</span>
                     </Button>
                   ))}
