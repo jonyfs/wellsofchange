@@ -25,11 +25,6 @@ export default function Partners() {
       website: "https://www.viasat.com/",
       logo: viasatLogo,
     },
-    { 
-      name: "Vale do Sol Engenharia", 
-      website: "#",
-      logo: null,
-    },
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
