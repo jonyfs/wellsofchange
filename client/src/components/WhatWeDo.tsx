@@ -1,8 +1,6 @@
 import FeatureCard from "./FeatureCard";
 import { Baby, Heart, Sprout, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
-import { useMouseParallax } from "@/hooks/useMouseParallax";
-import { motion } from "framer-motion";
 import waterHandsImage from "@assets/mrjn-photography-YpZ2cj4s0oo-unsplash_1762442531909.jpg";
 import familyImage from "@assets/image (2)_1762442531909.png";
 import cropImage from "@assets/corn-1841271_1762442531910.jpg";
@@ -11,12 +9,11 @@ import solarPanelsImage from "@assets/panel-2562240_1762442531909.jpg";
 
 export default function WhatWeDo() {
   const { t } = useLanguage();
-  const { elementRef, transform } = useMouseParallax(10);
 
   return (
-    <section id="what-we-do" className="py-16 md:py-24 lg:py-32 bg-background overflow-hidden" ref={elementRef}>
+    <section id="what-we-do" className="py-16 md:py-24 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <motion.div style={transform} className="text-center mb-16">
+        <div className="text-center mb-16">
           <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-6" data-testid="text-whatwedo-title">
             {t("whatWeDo.title")}
           </h2>
@@ -26,7 +23,7 @@ export default function WhatWeDo() {
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto" data-testid="text-whatwedo-intro">
             {t("whatWeDo.intro")}
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <FeatureCard
@@ -56,22 +53,22 @@ export default function WhatWeDo() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
-          <motion.div style={transform} className="rounded-md overflow-hidden">
+          <div className="rounded-md overflow-hidden">
             <img
               src={solarPanelsImage}
               alt="Solar panels technology powering water wells"
               className="w-full h-auto object-cover"
               data-testid="img-solar-tech"
             />
-          </motion.div>
-          <motion.div style={transform} className="space-y-6">
+          </div>
+          <div className="space-y-6">
             <p className="text-foreground text-base md:text-lg" data-testid="text-tech-1">
               <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech1") }} />
             </p>
             <p className="text-foreground text-base md:text-lg" data-testid="text-tech-2">
               <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech2") }} />
             </p>
-          </motion.div>
+          </div>
         </div>
 
         <div className="bg-accent/20 rounded-md p-8 md:p-12 space-y-6 text-base md:text-lg">
