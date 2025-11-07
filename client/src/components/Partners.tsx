@@ -1,7 +1,7 @@
 import { useLanguage } from "@/lib/i18n";
 import intelieLogo from "@assets/Logo_Intelie-BzVPvjOp_1762540076118.png";
 import twoSolveLogo from "@assets/2solve_1762540601387.png";
-import viasatLogo from "@assets/VSAT_BIG_1762542160304.png";
+import viasatLogo from "@assets/Untitled_1762542495167.png";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useEffect } from "react";
