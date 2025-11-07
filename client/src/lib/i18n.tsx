@@ -199,6 +199,8 @@ const translations: Record<Language, any> = {
       advisors: "Advisory Board",
       founderRole: "Founder",
       founderBio: "Entrepreneur and technology leader with over 20 years of experience. Founded INTELIE in 2008, growing it from a startup in Rio de Janeiro to a global leader in operational intelligence, later acquired by Viasat. Currently President of Tabia Health and board member at multiple technology companies. Created Wells of Change driven by the conviction that advanced technology—like real-time monitoring and AI—should serve those who need it most, bringing the same innovation used in oil wells to ensure access to clean water.",
+      presidentRole: "President",
+      presidentBio: "Software Development Manager at Intelie with over 20 years of experience in real-time data processing and monitoring systems. Expert in integration protocols (WITSML, OPC, MQTT) and database optimization. Led development of WITSML Store, certified by Energistics as official server. Joined Wells of Change to apply his expertise in real-time monitoring and data management—technologies used to optimize oil extraction—to ensure reliable access to clean water for communities in need, transforming lives through technology.",
     },
     ethics: {
       title: "Code of Ethics",
@@ -327,6 +329,8 @@ const translations: Record<Language, any> = {
       advisors: "Conselho Consultivo",
       founderRole: "Fundador",
       founderBio: "Empreendedor e líder em tecnologia com mais de 20 anos de experiência. Fundou a INTELIE em 2008, transformando-a de uma startup no Rio de Janeiro em líder global em inteligência operacional, posteriormente adquirida pela Viasat. Atualmente Presidente da Tabia Health e membro de conselho em múltiplas empresas de tecnologia. Criou a Wells of Change motivado pela convicção de que tecnologia avançada—como monitoramento em tempo real e IA—deve servir a quem mais precisa, trazendo a mesma inovação usada em poços de petróleo para garantir acesso à água potável.",
+      presidentRole: "Presidente",
+      presidentBio: "Gerente de Desenvolvimento de Software na Intelie com mais de 20 anos de experiência em processamento e monitoramento de dados em tempo real. Especialista em protocolos de integração (WITSML, OPC, MQTT) e otimização de bancos de dados. Liderou o desenvolvimento do WITSML Store, certificado pela Energistics como servidor oficial. Juntou-se à Wells of Change para aplicar sua expertise em monitoramento em tempo real e gestão de dados—tecnologias usadas para otimizar extração de petróleo—para garantir acesso confiável à água potável para comunidades necessitadas, transformando vidas através da tecnologia.",
     },
     change: {
       title: "Juntos Pela Mudança",
@@ -482,6 +486,8 @@ const translations: Record<Language, any> = {
       advisors: "Consejo Asesor",
       founderRole: "Fundador",
       founderBio: "Emprendedor y líder en tecnología con más de 20 años de experiencia. Fundó INTELIE en 2008, transformándola de una startup en Río de Janeiro en líder global en inteligencia operacional, posteriormente adquirida por Viasat. Actualmente Presidente de Tabia Health y miembro de consejo en múltiples empresas de tecnología. Creó Wells of Change impulsado por la convicción de que la tecnología avanzada—como monitoreo en tiempo real e IA—debe servir a quienes más lo necesitan, trayendo la misma innovación usada en pozos petroleros para garantizar acceso al agua potable.",
+      presidentRole: "Presidente",
+      presidentBio: "Gerente de Desarrollo de Software en Intelie con más de 20 años de experiencia en procesamiento y monitoreo de datos en tiempo real. Experto en protocolos de integración (WITSML, OPC, MQTT) y optimización de bases de datos. Lideró el desarrollo del WITSML Store, certificado por Energistics como servidor oficial. Se unió a Wells of Change para aplicar su experiencia en monitoreo en tiempo real y gestión de datos—tecnologías usadas para optimizar extracción de petróleo—para garantizar acceso confiable al agua potable para comunidades necesitadas, transformando vidas a través de la tecnología.",
     },
     change: {
       title: "Juntos Por el Cambio",
@@ -637,6 +643,8 @@ const translations: Record<Language, any> = {
       advisors: "Conseil Consultatif",
       founderRole: "Fondateur",
       founderBio: "Entrepreneur et leader en technologie avec plus de 20 ans d'expérience. A fondé INTELIE en 2008, la transformant d'une startup à Rio de Janeiro en leader mondial de l'intelligence opérationnelle, plus tard acquise par Viasat. Actuellement Président de Tabia Health et membre du conseil dans plusieurs entreprises technologiques. A créé Wells of Change motivé par la conviction que la technologie avancée—comme la surveillance en temps réel et l'IA—doit servir ceux qui en ont le plus besoin, apportant la même innovation utilisée dans les puits de pétrole pour garantir l'accès à l'eau potable.",
+      presidentRole: "Président",
+      presidentBio: "Responsable du Développement Logiciel chez Intelie avec plus de 20 ans d'expérience en traitement et surveillance de données en temps réel. Expert en protocoles d'intégration (WITSML, OPC, MQTT) et optimisation de bases de données. A dirigé le développement du WITSML Store, certifié par Energistics comme serveur officiel. A rejoint Wells of Change pour appliquer son expertise en surveillance en temps réel et gestion de données—technologies utilisées pour optimiser l'extraction pétrolière—pour garantir un accès fiable à l'eau potable pour les communautés dans le besoin, transformant des vies grâce à la technologie.",
     },
     change: {
       title: "Ensemble Pour le Changement",

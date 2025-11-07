@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 import { Linkedin } from "lucide-react";
 import ricardoPhoto from "@assets/rc_1762534193303.jpeg";
+import jonyPhoto from "@assets/js_1762534479294.jpeg";
 
 interface TeamMember {
   name: string;
@@ -27,11 +28,12 @@ export default function WhoWeAre() {
       photo: ricardoPhoto,
     },
     {
-      name: "[Nome do Presidente]",
-      role: "Presidente",
-      bio: "Apresentação do presidente, sua experiência em gestão e visão para a organização.",
-      linkedin: "https://linkedin.com/in/username",
-      initials: "PR",
+      name: "Jony Santos",
+      role: t("whoWeAre.presidentRole"),
+      bio: t("whoWeAre.presidentBio"),
+      linkedin: "https://www.linkedin.com/in/jonyfs/",
+      initials: "JS",
+      photo: jonyPhoto,
     },
     {
       name: "[Nome do Vice-Presidente]",
