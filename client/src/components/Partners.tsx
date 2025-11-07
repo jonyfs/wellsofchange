@@ -71,7 +71,7 @@ export default function Partners() {
                   href={partner.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center p-10 rounded-md bg-card border hover-elevate active-elevate-2 transition-all h-40 w-full"
+                  className="flex items-center justify-center p-10 rounded-md bg-slate-800 dark:bg-slate-700 border border-slate-700 dark:border-slate-600 hover-elevate active-elevate-2 transition-all h-40 w-full"
                   data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {partner.logo ? (
@@ -82,7 +82,7 @@ export default function Partners() {
                       data-testid={`img-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                     />
                   ) : (
-                    <span className="text-center font-semibold text-lg">
+                    <span className="text-center font-semibold text-lg text-white">
                       {partner.name}
                     </span>
                   )}
