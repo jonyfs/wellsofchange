@@ -1,0 +1,84 @@
+
+Intelie
+Intelie
+Tempo integral · 7 a 2 mTempo integral · 7 a 2 m
+HíbridaHíbrida
+Software Development Manager
+Software Development Manager
+jan de 2022 - o momento · 3 anos 11 mesesDe jan de 2022 até o momento · 3 anos 11 meses
+Rio de Janeiro, BrasilRio de Janeiro, Brasil
+Gerente da equipe de Protocols/Storage, com foco em integração, armazenamento e gerenciamento dos protocolos de dados suportados pela plataforma Intelie LIVE(software web personalizável para processamento de eventos em tempo real).
+ • Desenvolvimento do WITSML Store proprietário, certificado pela Energistics como servidor oficial WITSML, garantindo armazenamento e consulta eficientes dos dados WITSML (https://energistics.org/witsml-v1411-certified-products).
+ • Especialista em tecnologias essenciais do setor, incluindo WITSML, OPC, MQTT, Modbus e ETP.
+ • Gestão avançada das tecnologias de armazenamento MongoDB, PostgreSQL e TimescaleDB, otimizando o desempenho e a escalabilidade dos dados.Gerente da equipe de Protocols/Storage, com foco em integração, armazenamento e gerenciamento dos protocolos de dados suportados pela plataforma Intelie LIVE(software web personalizável para processamento de eventos em tempo real). • Desenvolvimento do WITSML Store proprietário, certificado pela Energistics como servidor oficial WITSML, garantindo armazenamento e consulta eficientes dos dados WITSML (https://energistics.org/witsml-v1411-certified-products). • Especialista em tecnologias essenciais do setor, incluindo WITSML, OPC, MQTT, Modbus e ETP. • Gestão avançada das tecnologias de armazenamento MongoDB, PostgreSQL e TimescaleDB, otimizando o desempenho e a escalabilidade dos dados.…ver mais
+Software Development Coordinator
+Software Development Coordinator
+mai de 2021 - jan de 2022 · 9 mesesDe mai de 2021 até jan de 2022 · 9 meses
+Rio de JaneiroRio de Janeiro
+Coordenador da equipe de Protocolos, focado na integração e gestão de dados utilizando protocolos específicos tais como WITSML e ETP (Energistics Transfer Protocol).Coordenador da equipe de Protocolos, focado na integração e gestão de dados utilizando protocolos específicos tais como WITSML e ETP (Energistics Transfer Protocol).
+Specialist Software Developer 
+Specialist Software Developer 
+out de 2018 - mai de 2021 · 2 anos 8 mesesDe out de 2018 até mai de 2021 · 2 anos 8 meses
+Rio de Janeiro e Região, BrasilRio de Janeiro e Região, Brasil
+Desenvolvimento avançado de soluções para coleta e transferência de dados utilizando os protocolos WITSML via SOAP e ETP (Energistics Transfer Protocol).Desenvolvimento avançado de soluções para coleta e transferência de dados utilizando os protocolos WITSML via SOAP e ETP (Energistics Transfer Protocol).
+Logo da empresa TOTVS
+Especialista de Sistemas
+Especialista de Sistemas
+TOTVSTOTVS
+jun de 2015 - out de 2018 · 3 anos 5 mesesDe jun de 2015 até out de 2018 · 3 anos 5 meses
+Rio de JaneiroRio de Janeiro
+Atuação como Especialista de Sistemas, Arquiteto e Líder Técnico em projeto estratégico de Cloud Computing.
+
+Desenvolvimento de soluções SOA, através de APIs Restful, para integração entre diversos sistemas.
+
+Implantação de práticas TDD visando melhorar a qualidade do software entregue.
+
+Aplicação de metodologia de melhores práticas de desenvolvimento visando uma solução de arquitetura robusta, confiável, performática, escalável e de alta disponibilidade.
+
+Utilização das Seguintes Ferramentas, Tecnologias, Técnicas e Frameworks: TFS 2015, AWS EC2, AWS S3, AWS SQS, AWS SES, AWS CloudWatch, Java 8, Jenkins, Docker, Sonar, Spring, Spring Boot, JQuery, AngulasJS e Bootstrap.Atuação como Especialista de Sistemas, Arquiteto e Líder Técnico em projeto estratégico de Cloud Computing. Desenvolvimento de soluções SOA, através de APIs Restful, para integração entre diversos sistemas. Implantação de práticas TDD visando melhorar a qualidade do software entregue. Aplicação de metodologia de melhores práticas de desenvolvimento visando uma solução de arquitetura robusta, confiável, performática, escalável e de alta disponibilidade. Utilização das Seguintes Ferramentas, Tecnologias, Técnicas e Frameworks: TFS 2015, AWS EC2, AWS S3, AWS SQS, AWS SES, AWS CloudWatch, Java 8, Jenkins, Docker, Sonar, Spring, Spring Boot, JQuery, AngulasJS e Bootstrap.…ver mais
+Logo da empresa Softtek
+Analista de Sistemas Sênior
+Analista de Sistemas Sênior
+SofttekSofttek
+mar de 2005 - mar de 2015 · 10 anos 1 mêsDe mar de 2005 até mar de 2015 · 10 anos 1 mês
+Rio de Janeiro e RegiãoRio de Janeiro e Região
+Atuação como analista de sistemas Java e líder técnico em sistema de nível nacional (sistema integrado com o SAP, responsável por manter as refinarias de petróleo, biodiesel e seus derivados).
+
+Liderança da equipe de desenvolvimento, atuando também como desenvolvedor, através da modelagem de novas funcionalidades, validação de requisitos e elaboração da arquitetura do sistema.
+
+Desenho de soluções para integrações SOA (via PI e OSB) e RESTful, bem como suporte aos analistas de testes, mentoring e coaching de analistas.
+
+Participação no projeto CC-Caminhão, no portal de vendas e logística da Petrobras (CanalCliente), participando das melhorias para otimização de usabilidade, performance e disponibilidade.
+
+Aplicação de melhorias e novas implantações do sistema CC-Caminhão, elevando número de agendamentos mensais de 4 mil para mais 120 mil.
+
+Implantação de melhorias na área de Logística para maior controle das transações realizadas, com satisfação dos clientes pela disponibilidade de sistema seguro e ágil, facilitando processo de vendas até a geração da Nota Fiscal no site da Secretaria da Fazenda.
+
+Participação no projeto CRM-Compartilhado, na implantação da integração entre usuários externos e CRM-SAP, através da pesquisa de satisfação de clientes.
+
+Colaboração no projeto Novo Portal (NOCC), através do refatoramento de funcionalidades antigas e arquitetura do sistema, atuando em melhorias para otimização de usabilidade, performance e disponibilidade.Atuação como analista de sistemas Java e líder técnico em sistema de nível nacional (sistema integrado com o SAP, responsável por manter as refinarias de petróleo, biodiesel e seus derivados). Liderança da equipe de desenvolvimento, atuando também como desenvolvedor, através da modelagem de novas funcionalidades, validação de requisitos e elaboração da arquitetura do sistema. Desenho de soluções para integrações SOA (via PI e OSB) e RESTful, bem como suporte aos analistas de testes, mentoring e coaching de analistas. Participação no projeto CC-Caminhão, no portal de vendas e logística da Petrobras (CanalCliente), participando das melhorias para otimização de usabilidade, performance e disponibilidade. Aplicação de melhorias e novas implantações do sistema CC-Caminhão, elevando número de agendamentos mensais de 4 mil para mais 120 mil. Implantação de melhorias na área de Logística para maior controle das transações realizadas, com satisfação dos clientes pela disponibilidade de sistema seguro e ágil, facilitando processo de vendas até a geração da Nota Fiscal no site da Secretaria da Fazenda. Participação no projeto CRM-Compartilhado, na implantação da integração entre usuários externos e CRM-SAP, através da pesquisa de satisfação de clientes. Colaboração no projeto Novo Portal (NOCC), através do refatoramento de funcionalidades antigas e arquitetura do sistema, atuando em melhorias para otimização de usabilidade, performance e disponibilidade.…ver mais
+
+Softtek - IT Services and Business Process SolutionsSofttek - IT Services and Business Process Solutions
+Softtek is a global provider of IT services and business process solutions with 7,000 associates across 30 offices in North America, Latin America, Europe and AsiaSofttek is a global provider of IT services and business process solutions with 7,000 associates across 30 offices in North America, Latin America, Europe and Asia
+Logo da empresa Accenture
+Analista de Sistemas
+Analista de Sistemas
+AccentureAccenture
+set de 2002 - fev de 2005 · 2 anos 6 mesesDe set de 2002 até fev de 2005 · 2 anos 6 meses
+Rio de Janeiro e RegiãoRio de Janeiro e Região
+Realização de trabalhos em diversos projetos referentes à combinação das tecnologias ASP + SQL Server, ASP + Oracle e Java + Oracle. 
+
+Participação em todas as fases de desenvolvimento de software, abrangendo levantamento inicial, documentação, elaboração e homologação com o cliente (Petrobras).
+
+Liderança de equipe de desenvolvimento.
+
+Participação em projetos na fábrica de software na área de auditoria, planejamento estratégico, SMS e comércio eletrônico.Realização de trabalhos em diversos projetos referentes à combinação das tecnologias ASP + SQL Server, ASP + Oracle e Java + Oracle. Participação em todas as fases de desenvolvimento de software, abrangendo levantamento inicial, documentação, elaboração e homologação com o cliente (Petrobras). Liderança de equipe de desenvolvimento. Participação em projetos na fábrica de software na área de auditoria, planejamento estratégico, SMS e comércio eletrônico.…ver mais
+Global Management Consulting, Technology and Outsourcing Services from AccentureGlobal Management Consulting, Technology and Outsourcing Services from Accenture
+Accenture is a global management consulting, technology services and outsourcing company helping clients become high-performance businesses and governments.Accenture is a global management consulting, technology services and outsourcing company helping clients become high-performance businesses and governments.
+Logo da empresa Druid
+Estagiário
+Estagiário
+DruidDruid
+fev de 2002 - ago de 2002 · 7 mesesDe fev de 2002 até ago de 2002 · 7 meses
+Rio de JaneiroRio de Janeiro
+Desenvolvimento de aplicações usando Java, ASP e PL / SQL

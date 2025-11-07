@@ -1,8 +1,9 @@
 import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/lib/i18n";
 import { Linkedin } from "lucide-react";
+import ricardoPhoto from "@assets/rc_1762534193303.jpeg";
 
 interface TeamMember {
   name: string;
@@ -10,6 +11,7 @@ interface TeamMember {
   bio: string;
   linkedin?: string;
   initials: string;
+  photo?: string;
 }
 
 export default function WhoWeAre() {
@@ -22,6 +24,7 @@ export default function WhoWeAre() {
       bio: t("whoWeAre.founderBio"),
       linkedin: "https://www.linkedin.com/in/ricardo-clemente-05a3a52/",
       initials: "RC",
+      photo: ricardoPhoto,
     },
     {
       name: "[Nome do Presidente]",
@@ -78,6 +81,13 @@ export default function WhoWeAre() {
     >
       <div className="flex flex-col items-center text-center gap-4">
         <Avatar className="w-24 h-24">
+          {member.photo && (
+            <AvatarImage 
+              src={member.photo} 
+              alt={member.name}
+              className="object-cover"
+            />
+          )}
           <AvatarFallback className="text-xl font-semibold bg-primary text-primary-foreground">
             {member.initials}
           </AvatarFallback>
