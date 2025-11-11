@@ -25,6 +25,25 @@ export default function WhatWeDo() {
           </p>
         </div>
 
+        <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
+          <div className="rounded-md overflow-hidden">
+            <img
+              src={solarPanelsImage}
+              alt="Solar panels technology powering water wells"
+              className="w-full h-auto object-cover"
+              data-testid="img-solar-tech"
+            />
+          </div>
+          <div className="space-y-6">
+            <p className="text-foreground text-base" data-testid="text-tech-1">
+              <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech1") }} />
+            </p>
+            <p className="text-foreground text-base md:text-lg" data-testid="text-tech-2">
+              <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech2") }} />
+            </p>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <FeatureCard
             icon={Baby}
@@ -51,26 +70,6 @@ export default function WhatWeDo() {
             image={communityImage}
           />
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
-          <div className="rounded-md overflow-hidden">
-            <img
-              src={solarPanelsImage}
-              alt="Solar panels technology powering water wells"
-              className="w-full h-auto object-cover"
-              data-testid="img-solar-tech"
-            />
-          </div>
-          <div className="space-y-6">
-            <p className="text-foreground text-base md:text-lg" data-testid="text-tech-1">
-              <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech1") }} />
-            </p>
-            <p className="text-foreground text-base md:text-lg" data-testid="text-tech-2">
-              <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech2") }} />
-            </p>
-          </div>
-        </div>
-
         <div className="bg-accent/20 rounded-md p-8 md:p-12 space-y-6 text-base md:text-lg">
           <div className="grid md:grid-cols-3 gap-6 my-8">
             <div className="text-center">
