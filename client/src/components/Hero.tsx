@@ -51,19 +51,10 @@ export default function Hero() {
           >
             {t("hero.donateButton")}
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            onClick={() => scrollToSection("our-story")}
-            className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20 text-lg px-8"
-            data-testid="button-hero-historia"
-          >
-            {t("hero.storyButton")}
-          </Button>
         </div>
 
         <button
-          onClick={() => scrollToSection("our-story")}
+          onClick={() => scrollToSection("what-we-do")}
           className="mt-20 inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
           data-testid="button-scroll-down"
         >
