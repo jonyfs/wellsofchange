@@ -25,9 +25,9 @@ export default function Navigation() {
   const currentLanguage = languages.find((lang) => lang.code === language);
 
   const navLinks = [
-    { key: "ourStory", href: "#our-story" },
     { key: "whatWeDo", href: "#what-we-do" },
     { key: "ourCommitment", href: "#our-commitment" },
+    { key: "ourStory", href: "#our-story" },
     { key: "whoWeAre", href: "#who-we-are" },
     { key: "ethics", href: "#ethics" },
     { key: "joinUs", href: "#join-us" },

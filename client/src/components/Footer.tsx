@@ -33,15 +33,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <button
-                  onClick={() => document.getElementById("historia")?.scrollIntoView({ behavior: "smooth" })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-footer-historia"
-                >
-                  {t("nav.ourStory")}
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => document.getElementById("fazemos")?.scrollIntoView({ behavior: "smooth" })}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-fazemos"
@@ -56,6 +47,15 @@ export default function Footer() {
                   data-testid="link-footer-compromisso"
                 >
                   {t("nav.ourCommitment")}
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => document.getElementById("historia")?.scrollIntoView({ behavior: "smooth" })}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  data-testid="link-footer-historia"
+                >
+                  {t("nav.ourStory")}
                 </button>
               </li>
               <li>
