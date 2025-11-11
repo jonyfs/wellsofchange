@@ -35,7 +35,7 @@ export default function WhatWeDo() {
             />
           </div>
           <div className="space-y-6">
-            <p className="text-foreground text-base" data-testid="text-tech-1">
+            <p className="text-foreground text-base md:text-lg" data-testid="text-tech-1">
               <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech1") }} />
             </p>
             <p className="text-foreground text-base md:text-lg" data-testid="text-tech-2">
