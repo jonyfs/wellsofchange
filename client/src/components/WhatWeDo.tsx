@@ -1,11 +1,11 @@
 import FeatureCard from "./FeatureCard";
 import { Baby, Heart, Sprout, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
+import { Card, CardContent } from "@/components/ui/card";
 import waterHandsImage from "@assets/mrjn-photography-YpZ2cj4s0oo-unsplash_1762442531909.jpg";
 import familyImage from "@assets/image (2)_1762442531909.png";
 import cropImage from "@assets/corn-1841271_1762442531910.jpg";
 import communityImage from "@assets/20191002_124421_1762442531910.jpg";
-import solarPanelsImage from "@assets/Gemini_Generated_Image_z0m031z0m031z0m0_1762553059692.png";
 
 export default function WhatWeDo() {
   const { t } = useLanguage();
@@ -25,23 +25,17 @@ export default function WhatWeDo() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12 items-center">
-          <div className="rounded-md overflow-hidden">
-            <img
-              src={solarPanelsImage}
-              alt="Complete solar-powered well system with Viasat monitoring, FORTLEV water tank, and thriving agriculture"
-              className="w-full h-auto object-cover"
-              data-testid="img-solar-tech"
-            />
-          </div>
-          <div className="space-y-6">
-            <p className="text-foreground text-base md:text-lg" data-testid="text-tech-1">
-              <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech1") }} />
-            </p>
-            <p className="text-foreground text-base md:text-lg" data-testid="text-tech-2">
-              <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech2") }} />
-            </p>
-          </div>
+        <div className="max-w-3xl mx-auto mb-12">
+          <Card className="hover-elevate">
+            <CardContent className="p-8 md:p-12 text-center space-y-6">
+              <p className="text-foreground text-lg md:text-xl" data-testid="text-tech-1">
+                <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech1") }} />
+              </p>
+              <p className="text-foreground text-lg md:text-xl" data-testid="text-tech-2">
+                <span dangerouslySetInnerHTML={{ __html: t("whatWeDo.tech2") }} />
+              </p>
+            </CardContent>
+          </Card>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
