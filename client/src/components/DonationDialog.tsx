@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import pixQRCode from "pix-qrcode-generator";
+import QRCode from "qrcode";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Copy, Building2, Hash, CreditCard } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
@@ -26,18 +26,22 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
 
   useEffect(() => {
     if (open) {
-      // Generate PIX QR Code using pix-qrcode-generator
-      console.log("Generating PIX QR code for CNPJ:", pixCNPJ);
+      // Generate PIX QR Code with CNPJ as key
+      const cnpjOnly = pixCNPJ.replace(/[^\d]/g, "");
+      console.log("Generating QR code for CNPJ:", cnpjOnly);
       
-      pixQRCode.generateStaticPixQRCode({
-        key: pixCNPJ,
-        description: 'Doação para Wells of Change'
-      }).then((qrcode) => {
-        console.log("PIX QR code generated successfully");
-        console.log("BR Code text:", qrcode.qrCodeText);
-        setQrCodeDataURL(qrcode.qrCodeImage);
-      }).catch((error: Error) => {
-        console.error("Error generating PIX QR code:", error);
+      QRCode.toDataURL(cnpjOnly, {
+        width: 160,
+        margin: 1,
+        color: {
+          dark: "#000000",
+          light: "#ffffff",
+        },
+      }).then(url => {
+        console.log("QR code generated successfully as data URL");
+        setQrCodeDataURL(url);
+      }).catch(error => {
+        console.error("Error generating QR code:", error);
       });
     }
   }, [open, pixCNPJ]);
