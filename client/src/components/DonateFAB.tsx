@@ -33,7 +33,7 @@ export default function DonateFAB() {
           <Button
             size="icon"
             onClick={() => setDialogOpen(true)}
-            className={`fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg transition-all duration-300 ${
+            className={`fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg transition-all duration-300 bg-[hsl(var(--golden))] hover:bg-[hsl(var(--golden))] text-[hsl(var(--golden-foreground))] border border-[hsl(var(--golden-border))] hover-elevate active-elevate-2 no-default-hover-elevate no-default-active-elevate ${
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"
             }`}
             aria-label={t("nav.donate")}
