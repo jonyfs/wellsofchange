@@ -3,9 +3,6 @@ import intelieLogo from "@assets/Logo_Intelie-BzVPvjOp_1762540076118.png";
 import twoSolveLogo from "@assets/2solve_1762540601387.png";
 import viasatLogo from "@assets/Gemini_Generated_Image_64x3x364x3x364x3_1762897361809.png";
 import valeDoSolLogo from "@assets/valedosol_1762896624544.png";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect } from "react";
 
 export default function Partners() {
   const { t } = useLanguage();
@@ -33,22 +30,6 @@ export default function Partners() {
     },
   ];
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { 
-      loop: true,
-      align: "center",
-      skipSnaps: false,
-      slidesToScroll: 1,
-    },
-    [Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]
-  );
-
-  useEffect(() => {
-    if (emblaApi) {
-      emblaApi.reInit();
-    }
-  }, [emblaApi]);
-
   return (
     <section id="parceiros" className="py-16 md:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -61,38 +42,32 @@ export default function Partners() {
           </p>
         </div>
 
-        <div className="overflow-hidden max-w-5xl mx-auto" ref={emblaRef}>
-          <div className="flex gap-8">
-            {partners.map((partner, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 flex-grow-0 basis-[90%] sm:basis-[70%] md:basis-[45%] lg:basis-[380px]"
-              >
-                <a
-                  href={partner.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center p-8 rounded-md bg-slate-800 dark:bg-slate-700 border border-slate-700 dark:border-slate-600 hover-elevate active-elevate-2 transition-all h-40 w-full"
-                  data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                >
-                  {partner.logo ? (
-                    <div className="flex items-center justify-center w-full h-full">
-                      <img 
-                        src={partner.logo} 
-                        alt={partner.name}
-                        className="max-h-20 max-w-full object-contain"
-                        data-testid={`img-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                      />
-                    </div>
-                  ) : (
-                    <span className="text-center font-semibold text-lg text-white">
-                      {partner.name}
-                    </span>
-                  )}
-                </a>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {partners.map((partner, index) => (
+            <a
+              key={index}
+              href={partner.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center p-8 rounded-md bg-white dark:bg-slate-900 border border-border hover-elevate active-elevate-2 transition-all h-40"
+              data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              {partner.logo ? (
+                <div className="flex items-center justify-center w-full h-full">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="max-h-20 max-w-full object-contain"
+                    data-testid={`img-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                  />
+                </div>
+              ) : (
+                <span className="text-center font-semibold text-lg">
+                  {partner.name}
+                </span>
+              )}
+            </a>
+          ))}
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-12" data-testid="text-partners-thanks">
