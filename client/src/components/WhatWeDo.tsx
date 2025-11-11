@@ -5,7 +5,7 @@ import waterHandsImage from "@assets/mrjn-photography-YpZ2cj4s0oo-unsplash_17624
 import familyImage from "@assets/image (2)_1762442531909.png";
 import cropImage from "@assets/corn-1841271_1762442531910.jpg";
 import communityImage from "@assets/20191002_124421_1762442531910.jpg";
-import solarPanelsImage from "@assets/panel-2562240_1762442531909.jpg";
+import solarPanelsImage from "@assets/Gemini_Generated_Image_z0m031z0m031z0m0_1762553059692.png";
 
 export default function WhatWeDo() {
   const { t } = useLanguage();
@@ -29,7 +29,7 @@ export default function WhatWeDo() {
           <div className="rounded-md overflow-hidden">
             <img
               src={solarPanelsImage}
-              alt="Solar panels technology powering water wells"
+              alt="Complete solar-powered well system with Viasat monitoring, FORTLEV water tank, and thriving agriculture"
               className="w-full h-auto object-cover"
               data-testid="img-solar-tech"
             />
