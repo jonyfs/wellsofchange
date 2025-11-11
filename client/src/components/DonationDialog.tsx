@@ -59,10 +59,10 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
       <DialogContent className="sm:max-w-md md:max-w-lg">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
-            {t("donate.title") || "Faça sua Doação"}
+            {t("donate.title")}
           </DialogTitle>
           <DialogDescription className="text-center">
-            {t("donate.subtitle") || "Sua contribuição transforma vidas. Escolha a forma de pagamento abaixo."}
+            {t("donate.subtitle")}
           </DialogDescription>
         </DialogHeader>
 
@@ -70,9 +70,9 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
           {/* PIX Section */}
           <div className="space-y-4">
             <div className="text-center">
-              <h3 className="font-semibold text-lg mb-2">{t("donate.pixTitle") || "PIX - QR Code"}</h3>
+              <h3 className="font-semibold text-lg mb-2">{t("donate.pixTitle")}</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                {t("donate.pixDescription") || "Escaneie o QR Code ou copie o CNPJ"}
+                {t("donate.pixDescription")}
               </p>
             </div>
 
@@ -139,10 +139,10 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
           <div className="space-y-4">
             <div className="text-center">
               <h3 className="font-semibold text-lg mb-2">
-                {t("donate.transferTitle") || "Transferência Bancária"}
+                {t("donate.transferTitle")}
               </h3>
               <p className="text-sm text-muted-foreground">
-                {t("donate.transferDescription") || "Use os dados abaixo para transferência"}
+                {t("donate.transferDescription")}
               </p>
             </div>
 
@@ -224,7 +224,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
           {/* Thank you message */}
           <div className="text-center pt-2">
             <p className="text-sm text-muted-foreground">
-              {t("donate.thankYou") || "Obrigado por fazer a diferença! Cada contribuição transforma vidas."}
+              {t("donate.thankYou")}
             </p>
           </div>
         </div>
