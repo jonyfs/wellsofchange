@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
@@ -8,13 +9,15 @@ import permanenceImage from "@assets/Gemini_Generated_Image_18n9en18n9en18n9_176
 import prosperityImage from "@assets/Gemini_Generated_Image_zfl4lmzfl4lmzfl4_1762549484377.png";
 import dignityImage from "@assets/Gemini_Generated_Image_k16da4k16da4k16d_1762549738344.png";
 import realtimeImage from "@assets/Gemini_Generated_Image_z0m031z0m031z0m0_1762553059692.png";
+import DonationDialog from "./DonationDialog";
 
 export default function TogetherForChange() {
   const { t } = useLanguage();
+  const [donationDialogOpen, setDonationDialogOpen] = useState(false);
 
   const handleDonate = () => {
     console.log("Donate action triggered");
-    alert(t("change.investButton") + " - Coming soon!");
+    setDonationDialogOpen(true);
   };
 
   const handleShare = () => {
@@ -197,6 +200,11 @@ export default function TogetherForChange() {
           </p>
         </div>
       </div>
+
+      <DonationDialog
+        open={donationDialogOpen}
+        onOpenChange={setDonationDialogOpen}
+      />
     </section>
   );
 }
