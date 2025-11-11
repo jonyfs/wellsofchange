@@ -18,9 +18,9 @@ export default function Home() {
       <main className="pt-20">
         <Hero />
         <WhatWeDo />
+        <OurCommitment />
         <MissionStatement />
         <OurStory />
-        <OurCommitment />
         <WhoWeAre />
         <Partners />
         <CodeOfEthics />
