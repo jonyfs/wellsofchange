@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import QRCode from "qrcode";
+import { createStaticPix, hasError } from "pix-utils";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Copy, Building2, Hash, CreditCard } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
@@ -15,6 +16,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
   const { t } = useLanguage();
   const { toast } = useToast();
   const [qrCodeDataURL, setQrCodeDataURL] = useState<string>("");
+  const [pixPayload, setPixPayload] = useState<string>("");
 
   const pixCNPJ = "43.933.784/0001-13";
   const bankDetails = {
@@ -26,22 +28,42 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
 
   useEffect(() => {
     if (open) {
-      // Generate QR Code for PIX CNPJ key
+      // Generate PIX BR Code using pix-utils
       const cnpjOnly = pixCNPJ.replace(/[^\d]/g, "");
-      console.log("Generating QR code for PIX CNPJ:", cnpjOnly);
+      console.log("Generating PIX BR Code for CNPJ:", cnpjOnly);
       
-      QRCode.toDataURL(cnpjOnly, {
+      const pix = createStaticPix({
+        merchantName: 'Wells of Change',
+        merchantCity: 'CAMPO FORMOSO',
+        pixKey: cnpjOnly,
+        infoAdicional: 'Doacao para Wells of Change',
+        txid: 'WOC' + Date.now().toString().slice(-8),
+        transactionAmount: 0, // Variable amount - donor chooses
+      });
+
+      if (hasError(pix)) {
+        console.error("Error creating PIX:", pix);
+        return;
+      }
+
+      const brCode = pix.toBRCode();
+      setPixPayload(brCode);
+      console.log("PIX BR Code generated:", brCode);
+      
+      // Generate QR Code from BR Code
+      QRCode.toDataURL(brCode, {
         width: 160,
         margin: 1,
+        errorCorrectionLevel: 'M',
         color: {
           dark: "#000000",
           light: "#ffffff",
         },
       }).then(url => {
-        console.log("QR code generated successfully");
+        console.log("PIX QR code image generated successfully");
         setQrCodeDataURL(url);
       }).catch(error => {
-        console.error("Error generating QR code:", error);
+        console.error("Error generating QR code image:", error);
       });
     }
   }, [open, pixCNPJ]);
