@@ -99,6 +99,21 @@ const translations: Record<Language, any> = {
       joinUs: "Join Us",
       donate: "Donate",
     },
+    donate: {
+      title: "Make Your Donation",
+      subtitle: "Your contribution transforms lives. Choose the payment method below.",
+      pixTitle: "PIX - QR Code",
+      pixDescription: "Scan the QR Code or copy the CNPJ",
+      transferTitle: "Bank Transfer",
+      transferDescription: "Use the details below for transfer",
+      or: "or",
+      copied: "Copied!",
+      copiedDescription: "{label} copied to clipboard.",
+      labelCNPJ: "CNPJ",
+      labelAgency: "Agency",
+      labelAccount: "Account",
+      thankYou: "Thank you for making a difference! Every contribution transforms lives.",
+    },
     hero: {
       title: "Changing lives, one well at a time",
       subtitle: "While some search for water on other planets, over a billion still struggle for a drop here on Earth.",
@@ -252,7 +267,6 @@ const translations: Record<Language, any> = {
       copyright: "Wells of Change. Transforming lives through technology and clean water.",
       transparency: "Committed to total transparency. Every donation is tracked and every impact is documented.",
     },
-    donate: "Donate",
   },
   "pt-BR": {
     nav: {
@@ -263,6 +277,21 @@ const translations: Record<Language, any> = {
       ethics: "Código de Ética",
       joinUs: "Junte-se a Nós",
       donate: "Doar",
+    },
+    donate: {
+      title: "Faça sua Doação",
+      subtitle: "Sua contribuição transforma vidas. Escolha a forma de pagamento abaixo.",
+      pixTitle: "PIX - QR Code",
+      pixDescription: "Escaneie o QR Code ou copie o CNPJ",
+      transferTitle: "Transferência Bancária",
+      transferDescription: "Use os dados abaixo para transferência",
+      or: "ou",
+      copied: "Copiado!",
+      copiedDescription: "{label} copiado para a área de transferência.",
+      labelCNPJ: "CNPJ",
+      labelAgency: "Agência",
+      labelAccount: "Conta",
+      thankYou: "Obrigado por fazer a diferença! Cada contribuição transforma vidas.",
     },
     hero: {
       title: "Mudando vidas, um poço por vez",
@@ -417,7 +446,6 @@ const translations: Record<Language, any> = {
       copyright: "Wells of Change. Transformando vidas através da tecnologia e água potável.",
       transparency: "Comprometidos com a transparência total. Cada doação é rastreada e cada impacto é documentado.",
     },
-    donate: "Doe",
   },
   es: {
     nav: {
@@ -428,6 +456,21 @@ const translations: Record<Language, any> = {
       ethics: "Código de Ética",
       joinUs: "Únete a Nosotros",
       donate: "Donar",
+    },
+    donate: {
+      title: "Haz tu Donación",
+      subtitle: "Tu contribución transforma vidas. Elige el método de pago a continuación.",
+      pixTitle: "PIX - Código QR",
+      pixDescription: "Escanea el código QR o copia el CNPJ",
+      transferTitle: "Transferencia Bancaria",
+      transferDescription: "Usa los datos a continuación para la transferencia",
+      or: "o",
+      copied: "¡Copiado!",
+      copiedDescription: "{label} copiado al portapapeles.",
+      labelCNPJ: "CNPJ",
+      labelAgency: "Agencia",
+      labelAccount: "Cuenta",
+      thankYou: "¡Gracias por marcar la diferencia! Cada contribución transforma vidas.",
     },
     hero: {
       title: "Cambiando vidas, un pozo a la vez",
@@ -582,7 +625,6 @@ const translations: Record<Language, any> = {
       copyright: "Wells of Change. Transformando vidas a través de la tecnología y el agua potable.",
       transparency: "Comprometidos con la transparencia total. Cada donación se rastrea y cada impacto se documenta.",
     },
-    donate: "Donar",
   },
   fr: {
     nav: {
@@ -593,6 +635,21 @@ const translations: Record<Language, any> = {
       ethics: "Code d'Éthique",
       joinUs: "Rejoignez-nous",
       donate: "Faire un Don",
+    },
+    donate: {
+      title: "Faites Votre Don",
+      subtitle: "Votre contribution transforme des vies. Choisissez le mode de paiement ci-dessous.",
+      pixTitle: "PIX - Code QR",
+      pixDescription: "Scannez le code QR ou copiez le CNPJ",
+      transferTitle: "Virement Bancaire",
+      transferDescription: "Utilisez les coordonnées ci-dessous pour le virement",
+      or: "ou",
+      copied: "Copié !",
+      copiedDescription: "{label} copié dans le presse-papiers.",
+      labelCNPJ: "CNPJ",
+      labelAgency: "Agence",
+      labelAccount: "Compte",
+      thankYou: "Merci de faire la différence ! Chaque contribution transforme des vies.",
     },
     hero: {
       title: "Changer des vies, un puits à la fois",
@@ -747,6 +804,5 @@ const translations: Record<Language, any> = {
       copyright: "Wells of Change. Transformer des vies grâce à la technologie et à l'eau potable.",
       transparency: "Engagés pour une transparence totale. Chaque don est suivi et chaque impact est documenté.",
     },
-    donate: "Donner",
   },
 };

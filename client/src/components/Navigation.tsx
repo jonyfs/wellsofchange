@@ -9,11 +9,13 @@ import {
 import { Menu, X, Globe } from "lucide-react";
 import { useLanguage, Language } from "@/lib/i18n";
 import logoImage from "@assets/logo.png";
+import DonationDialog from "./DonationDialog";
 
 export default function Navigation() {
   const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [donationDialogOpen, setDonationDialogOpen] = useState(false);
 
   const languages: { code: Language; label: string; flag: string }[] = [
     { code: "en", label: "English", flag: "🇺🇸" },
@@ -58,10 +60,7 @@ export default function Navigation() {
   };
 
   const handleDonateClick = () => {
-    const element = document.querySelector("#join-us");
-    if (element) {
-      scrollToSection("#join-us");
-    }
+    setDonationDialogOpen(true);
   };
 
   return (
@@ -228,6 +227,8 @@ export default function Navigation() {
           </div>
         )}
       </div>
+
+      <DonationDialog open={donationDialogOpen} onOpenChange={setDonationDialogOpen} />
     </nav>
   );
 }
