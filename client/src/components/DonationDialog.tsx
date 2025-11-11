@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import QRCode from "qrcode";
-import { createStaticPix, hasError } from "pix-utils";
+import { QrCodePix } from "qrcode-pix";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Copy, Building2, Hash, CreditCard } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
@@ -28,25 +28,21 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
 
   useEffect(() => {
     if (open) {
-      // Generate PIX BR Code using pix-utils
+      // Generate PIX BR Code using qrcode-pix (browser-compatible)
       const cnpjOnly = pixCNPJ.replace(/[^\d]/g, "");
       console.log("Generating PIX BR Code for CNPJ:", cnpjOnly);
       
-      const pix = createStaticPix({
-        merchantName: 'Wells of Change',
-        merchantCity: 'CAMPO FORMOSO',
-        pixKey: cnpjOnly,
-        infoAdicional: 'Doacao para Wells of Change',
-        txid: 'WOC' + Date.now().toString().slice(-8),
-        transactionAmount: 0, // Variable amount - donor chooses
+      const qrCodePix = QrCodePix({
+        version: '01',
+        key: cnpjOnly,
+        name: 'WELLS OF CHANGE',
+        city: 'CAMPO FORMOSO',
+        transactionId: 'WOC' + Date.now().toString().slice(-8),
+        message: 'Doacao para Wells of Change',
+        // No value parameter = variable amount (donor chooses)
       });
 
-      if (hasError(pix)) {
-        console.error("Error creating PIX:", pix);
-        return;
-      }
-
-      const brCode = pix.toBRCode();
+      const brCode = qrCodePix.payload();
       setPixPayload(brCode);
       console.log("PIX BR Code generated:", brCode);
       

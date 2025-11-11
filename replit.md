@@ -44,6 +44,17 @@ Preferred communication style: Simple, everyday language.
 - **Reusable UI components**: Navigation, Footer, FeatureCard, StatCard, CTACard, DonateFAB, LanguageFAB
 - **Layout components**: Navigation bar with sticky positioning, floating action buttons (FABs) for language selection and donations
 
+**Donation System**
+- **Brazilian PIX Integration**: QR code generation for instant bank transfers using CNPJ as PIX key
+- **Library**: `qrcode-pix` (browser-compatible, no Node.js dependencies)
+- **Features**: 
+  - Generates compliant PIX BR Code for Wells of Change (CNPJ: 43.933.784/0001-13)
+  - Variable donation amounts (donor chooses amount when scanning)
+  - QR code image rendering via `qrcode` library
+  - Traditional bank transfer details (Banco do Brasil, Agency 597-5, Account 42176-6)
+- **Smart FAB behavior**: Donation floating action button only appears when navbar donate button is not visible (handles mobile menu scenarios)
+- **Technical note**: Originally used `pix-utils` but replaced with `qrcode-pix` to resolve Node.js Buffer API incompatibility in Vite browser builds for GitHub Pages deployment
+
 **Asset Management**
 - **Static images** bundled at build time from `attached_assets/` directory
 - **Image imports** using Vite's `@assets` alias for compile-time resolution
