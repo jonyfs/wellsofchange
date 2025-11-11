@@ -1,7 +1,7 @@
 import { useLanguage } from "@/lib/i18n";
 import intelieLogo from "@assets/Logo_Intelie-BzVPvjOp_1762540076118.png";
 import twoSolveLogo from "@assets/2solve_1762540601387.png";
-import viasatLogo from "@assets/viasat-logo-official.png";
+import viasatLogo from "@assets/generated_images/Viasat_official_logo_white_background_c8cb92a3.png";
 import valeDoSolLogo from "@assets/valedosol_1762896624544.png";
 
 export default function Partners() {
