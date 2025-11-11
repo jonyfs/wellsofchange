@@ -36,6 +36,7 @@ export default function DonateFAB() {
             className={`fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg transition-all duration-300 ${
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"
             }`}
+            aria-label={t("nav.donate")}
             data-testid="button-donate-fab"
           >
             <Heart className="w-6 h-6" />
