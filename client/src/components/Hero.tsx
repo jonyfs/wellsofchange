@@ -1,16 +1,23 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import heroImage from "@assets/20201129_170751_1762441521443.jpg";
+import DonationDialog from "./DonationDialog";
 
 export default function Hero() {
   const { t } = useLanguage();
+  const [donationDialogOpen, setDonationDialogOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleDonateClick = () => {
+    setDonationDialogOpen(true);
   };
 
   return (
@@ -38,7 +45,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             size="lg"
-            onClick={() => scrollToSection("join-us")}
+            onClick={handleDonateClick}
             className="bg-primary text-primary-foreground border border-primary-border text-lg px-8"
             data-testid="button-hero-doar"
           >
@@ -64,6 +71,11 @@ export default function Hero() {
           <ArrowDown className="w-5 h-5 animate-bounce" />
         </button>
       </div>
+
+      <DonationDialog
+        open={donationDialogOpen}
+        onOpenChange={setDonationDialogOpen}
+      />
     </section>
   );
 }
