@@ -17,9 +17,9 @@ export default function Home() {
       <Navigation />
       <main className="pt-20">
         <Hero />
+        <WhatWeDo />
         <MissionStatement />
         <OurStory />
-        <WhatWeDo />
         <OurCommitment />
         <WhoWeAre />
         <Partners />
