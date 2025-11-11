@@ -49,8 +49,8 @@ export default function Partners() {
               href={partner.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center p-8 rounded-md border border-border hover-elevate active-elevate-2 transition-all h-40"
-              style={{ backgroundColor: 'rgb(173, 216, 230)' }}
+              className="flex items-center justify-center p-8 rounded-md border border-blue-800 hover-elevate active-elevate-2 transition-all h-40"
+              style={{ backgroundColor: 'rgb(0, 51, 153)' }}
               data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
             >
               {partner.logo ? (
