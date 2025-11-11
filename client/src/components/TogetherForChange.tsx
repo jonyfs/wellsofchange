@@ -8,7 +8,7 @@ import healthImage from "@assets/Gemini_Generated_Image_fb0vhcfb0vhcfb0v_1762546
 import permanenceImage from "@assets/Gemini_Generated_Image_18n9en18n9en18n9_1762549321923.png";
 import prosperityImage from "@assets/Gemini_Generated_Image_zfl4lmzfl4lmzfl4_1762549484377.png";
 import dignityImage from "@assets/Gemini_Generated_Image_k16da4k16da4k16d_1762549738344.png";
-import realtimeImage from "@assets/stock_images/real-time_impact_com_ed1a4c4c.jpg";
+import realtimeImage from "@assets/20201129_170751_1762899790160.jpg";
 import DonationDialog from "./DonationDialog";
 
 export default function TogetherForChange() {
