@@ -26,9 +26,9 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
 
   useEffect(() => {
     if (open) {
-      // Generate PIX QR Code with CNPJ as key
+      // Generate QR Code for PIX CNPJ key
       const cnpjOnly = pixCNPJ.replace(/[^\d]/g, "");
-      console.log("Generating QR code for CNPJ:", cnpjOnly);
+      console.log("Generating QR code for PIX CNPJ:", cnpjOnly);
       
       QRCode.toDataURL(cnpjOnly, {
         width: 160,
@@ -38,7 +38,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
           light: "#ffffff",
         },
       }).then(url => {
-        console.log("QR code generated successfully as data URL");
+        console.log("QR code generated successfully");
         setQrCodeDataURL(url);
       }).catch(error => {
         console.error("Error generating QR code:", error);
