@@ -31,7 +31,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
       console.log("Generating QR code for CNPJ:", cnpjOnly);
       
       QRCode.toDataURL(cnpjOnly, {
-        width: 256,
+        width: 180,
         margin: 2,
         color: {
           dark: "#000000",
@@ -56,41 +56,41 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md md:max-w-lg">
+      <DialogContent className="max-w-sm">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center">
+          <DialogTitle className="text-xl font-bold text-center">
             {t("donate.title")}
           </DialogTitle>
-          <DialogDescription className="text-center">
+          <DialogDescription className="text-center text-sm">
             {t("donate.subtitle")}
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-6 py-4">
+        <div className="space-y-4 py-2">
           {/* PIX Section */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="text-center">
-              <h3 className="font-semibold text-lg mb-2">{t("donate.pixTitle")}</h3>
-              <p className="text-sm text-muted-foreground mb-4">
+              <h3 className="font-semibold text-base mb-1">{t("donate.pixTitle")}</h3>
+              <p className="text-xs text-muted-foreground">
                 {t("donate.pixDescription")}
               </p>
             </div>
 
             {/* QR Code */}
             <div className="flex justify-center">
-              <div className="bg-white p-4 rounded-md border-2 border-primary/20">
+              <div className="bg-white p-3 rounded-md border border-primary/20">
                 {qrCodeDataURL ? (
                   <img 
                     src={qrCodeDataURL} 
                     alt="PIX QR Code"
-                    width={256}
-                    height={256}
+                    width={180}
+                    height={180}
                     className="block"
                     data-testid="img-pix-qrcode"
                   />
                 ) : (
                   <div 
-                    className="w-64 h-64 flex items-center justify-center text-muted-foreground"
+                    className="w-[180px] h-[180px] flex items-center justify-center text-muted-foreground text-xs"
                     data-testid="qrcode-loading"
                   >
                     Gerando QR Code...
@@ -100,13 +100,13 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
             </div>
 
             {/* PIX CNPJ */}
-            <div className="bg-muted/50 rounded-md p-4">
+            <div className="bg-muted/50 rounded-md p-3">
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2 flex-1 min-w-0">
-                  <Hash className="w-4 h-4 text-primary flex-shrink-0" />
+                  <Hash className="w-3.5 h-3.5 text-primary flex-shrink-0" />
                   <div className="flex-1 min-w-0">
                     <p className="text-xs text-muted-foreground">CNPJ</p>
-                    <p className="font-mono font-semibold truncate" data-testid="text-pix-cnpj">
+                    <p className="font-mono text-sm font-semibold truncate" data-testid="text-pix-cnpj">
                       {pixCNPJ}
                     </p>
                   </div>
@@ -117,7 +117,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   onClick={() => copyToClipboard(pixCNPJ, "donate.labelCNPJ")}
                   data-testid="button-copy-cnpj"
                 >
-                  <Copy className="w-4 h-4" />
+                  <Copy className="w-3.5 h-3.5" />
                 </Button>
               </div>
             </div>
@@ -136,94 +136,64 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
           </div>
 
           {/* Bank Transfer Section */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="text-center">
-              <h3 className="font-semibold text-lg mb-2">
+              <h3 className="font-semibold text-base mb-1">
                 {t("donate.transferTitle")}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs text-muted-foreground">
                 {t("donate.transferDescription")}
               </p>
             </div>
 
-            <div className="bg-muted/50 rounded-md p-4 space-y-3">
+            <div className="bg-muted/50 rounded-md p-3 space-y-2">
               {/* Bank */}
               <div className="flex items-center gap-2">
-                <Building2 className="w-4 h-4 text-primary flex-shrink-0" />
-                <div className="flex-1">
+                <Building2 className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                <div className="flex-1 min-w-0">
                   <p className="text-xs text-muted-foreground">Banco</p>
-                  <p className="font-semibold" data-testid="text-bank-name">{bankDetails.bank}</p>
+                  <p className="text-sm font-semibold truncate" data-testid="text-bank-name">{bankDetails.bank}</p>
                 </div>
               </div>
 
-              {/* Agency */}
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 flex-1">
-                  <Hash className="w-4 h-4 text-primary flex-shrink-0" />
-                  <div>
+              {/* Agency and Account on same line */}
+              <div className="grid grid-cols-2 gap-2">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <Hash className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                  <div className="flex-1 min-w-0">
                     <p className="text-xs text-muted-foreground">Agência</p>
-                    <p className="font-mono font-semibold" data-testid="text-bank-agency">
+                    <p className="font-mono text-sm font-semibold truncate" data-testid="text-bank-agency">
                       {bankDetails.agency}
                     </p>
                   </div>
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => copyToClipboard(bankDetails.agency, "donate.labelAgency")}
-                  data-testid="button-copy-agency"
-                >
-                  <Copy className="w-4 h-4" />
-                </Button>
-              </div>
-
-              {/* Account */}
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 flex-1">
-                  <CreditCard className="w-4 h-4 text-primary flex-shrink-0" />
-                  <div>
-                    <p className="text-xs text-muted-foreground">{bankDetails.accountType}</p>
-                    <p className="font-mono font-semibold" data-testid="text-bank-account">
+                <div className="flex items-center gap-1.5 min-w-0">
+                  <CreditCard className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-muted-foreground">Conta</p>
+                    <p className="font-mono text-sm font-semibold truncate" data-testid="text-bank-account">
                       {bankDetails.account}
                     </p>
                   </div>
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => copyToClipboard(bankDetails.account, "donate.labelAccount")}
-                  data-testid="button-copy-account"
-                >
-                  <Copy className="w-4 h-4" />
-                </Button>
               </div>
 
               {/* CNPJ */}
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 flex-1">
-                  <Hash className="w-4 h-4 text-primary flex-shrink-0" />
-                  <div>
-                    <p className="text-xs text-muted-foreground">CNPJ</p>
-                    <p className="font-mono font-semibold" data-testid="text-bank-cnpj">
-                      {pixCNPJ}
-                    </p>
-                  </div>
+              <div className="flex items-center gap-2">
+                <Hash className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-muted-foreground">CNPJ</p>
+                  <p className="font-mono text-sm font-semibold truncate" data-testid="text-bank-cnpj">
+                    {pixCNPJ}
+                  </p>
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => copyToClipboard(pixCNPJ, "donate.labelCNPJ")}
-                  data-testid="button-copy-bank-cnpj"
-                >
-                  <Copy className="w-4 h-4" />
-                </Button>
               </div>
             </div>
           </div>
 
           {/* Thank you message */}
-          <div className="text-center pt-2">
-            <p className="text-sm text-muted-foreground">
+          <div className="text-center pt-1">
+            <p className="text-xs text-muted-foreground">
               {t("donate.thankYou")}
             </p>
           </div>
