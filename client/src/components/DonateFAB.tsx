@@ -13,18 +13,56 @@ export default function DonateFAB() {
   const { t } = useLanguage();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isNavDonateVisible, setIsNavDonateVisible] = useState(true);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Show FAB when scrolled down more than 100px (navbar is hidden/minimized)
-      setIsVisible(window.scrollY > 100);
+    const checkNavDonateVisibility = () => {
+      const navDonateButton = document.querySelector('[data-testid="button-donate"]');
+      
+      if (!navDonateButton) {
+        // Button doesn't exist, show FAB
+        setIsNavDonateVisible(false);
+        return;
+      }
+
+      // Check if button is visible (not hidden by display:none or visibility:hidden)
+      const style = window.getComputedStyle(navDonateButton);
+      const isDisplayed = style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+      
+      // Also check if parent containers are visible (for mobile menu)
+      let parent = navDonateButton.parentElement;
+      let isParentVisible = true;
+      while (parent && parent !== document.body) {
+        const parentStyle = window.getComputedStyle(parent);
+        if (parentStyle.display === 'none' || parentStyle.visibility === 'hidden') {
+          isParentVisible = false;
+          break;
+        }
+        parent = parent.parentElement;
+      }
+
+      setIsNavDonateVisible(isDisplayed && isParentVisible);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial position
+    // Check initially
+    checkNavDonateVisibility();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Check on resize (for mobile/desktop changes)
+    window.addEventListener('resize', checkNavDonateVisibility);
+    
+    // Check periodically to catch menu open/close
+    const interval = setInterval(checkNavDonateVisibility, 500);
+
+    return () => {
+      window.removeEventListener('resize', checkNavDonateVisibility);
+      clearInterval(interval);
+    };
   }, []);
+
+  useEffect(() => {
+    // Show FAB only when navbar donate button is not visible
+    setIsVisible(!isNavDonateVisible);
+  }, [isNavDonateVisible]);
 
   return (
     <>
