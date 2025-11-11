@@ -72,16 +72,18 @@ export default function Partners() {
                   href={partner.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center p-10 rounded-md bg-slate-800 dark:bg-slate-700 border border-slate-700 dark:border-slate-600 hover-elevate active-elevate-2 transition-all h-40 w-full"
+                  className="flex items-center justify-center p-8 rounded-md bg-slate-800 dark:bg-slate-700 border border-slate-700 dark:border-slate-600 hover-elevate active-elevate-2 transition-all h-40 w-full"
                   data-testid={`link-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {partner.logo ? (
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="h-16 w-auto max-w-full object-contain"
-                      data-testid={`img-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                    />
+                    <div className="flex items-center justify-center w-full h-full">
+                      <img 
+                        src={partner.logo} 
+                        alt={partner.name}
+                        className="max-h-20 max-w-full object-contain"
+                        data-testid={`img-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      />
+                    </div>
                   ) : (
                     <span className="text-center font-semibold text-lg text-white">
                       {partner.name}
