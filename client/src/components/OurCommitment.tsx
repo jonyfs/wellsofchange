@@ -1,4 +1,3 @@
-import StatCard from "./StatCard";
 import { useLanguage } from "@/lib/i18n";
 import waterTanksImage from "@assets/20201129_170751_1762441207202.jpg";
 import techniciansImage from "@assets/20191002_125711_1762442531910.jpg";
@@ -30,12 +29,6 @@ export default function OurCommitment() {
               data-testid="img-technicians"
             />
           </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          <StatCard value="1" label={t("commitment.wellComplete")} description={t("commitment.wellLocation")} />
-          <StatCard value="100%" label={t("commitment.solar")} description={t("commitment.solarDesc")} />
-          <StatCard value="∞" label={t("commitment.impact")} description={t("commitment.impactDesc")} />
         </div>
 
         <div className="max-w-4xl mx-auto space-y-6 text-base md:text-lg leading-relaxed">
