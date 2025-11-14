@@ -60,6 +60,36 @@ Preferred communication style: Simple, everyday language.
 - **Image imports** using Vite's `@assets` alias for compile-time resolution
 - **Optimized loading** with proper image formats and sizing
 
+**Search Engine Optimization (SEO)**
+- **Traditional Search Engines (Google, Bing)**:
+  - Comprehensive meta tags: title with keywords, description, author, canonical URL
+  - Keywords meta tag optimized for clean water, solar wells, NGO, sustainable technology
+  - Robots meta tag with optimal crawling directives (index, follow, max-image-preview)
+  - Open Graph tags for rich social sharing (Facebook, LinkedIn)
+  - Twitter Card tags for enhanced Twitter/X previews
+  - Share image (1024×485) in public folder for social previews
+  - robots.txt for search engine crawler instructions
+  - sitemap.xml with proper URL structure and metadata
+  
+- **AI Search Engines (ChatGPT, Gemini, Perplexity)**:
+  - Schema.org JSON-LD structured data with @type: "NGO"
+  - Comprehensive organization metadata (name, description, mission, tax ID, founding date)
+  - Service area coverage (Campo Formoso/Bahia, Brazil, Senegal)
+  - Team member structured data (founder, president, vice-president)
+  - Service offerings (solar well installation, real-time monitoring, community training)
+  - Keywords array for topic coverage
+  - Contact information and social media links
+  
+- **Multilingual SEO**:
+  - Open Graph locale tags (pt-BR, en-US, es-ES, fr-FR)
+  - HTML lang attribute dynamically set based on user language selection
+  
+- **Accessibility & Semantic HTML**:
+  - All images have descriptive alt text
+  - Proper semantic HTML structure (main, section, article tags)
+  - Heading hierarchy (h1, h2, h3) properly structured
+  - ARIA labels on interactive elements
+
 ### Deployment Architecture
 
 **GitHub Pages Configuration**
