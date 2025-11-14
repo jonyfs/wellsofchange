@@ -31,7 +31,7 @@ jobs:
         run: npm ci
       
       - name: Build
-        run: npx vite build --base=wellsofchange/
+        run: npx vite build --base=/
         env:
           NODE_ENV: production
       
@@ -43,7 +43,7 @@ jobs:
       
       - name: Verify build has correct base path
         run: |
-          if ! grep -q 'href="/wellsofchange/' dist/public/index.html; then
+          if ! grep -q 'href="/' dist/public/index.html; then
             echo "❌ ERROR: Build missing /wellsofchange/ base path!"
             echo "Assets will not load on GitHub Pages!"
             exit 1
@@ -82,4 +82,4 @@ jobs:
       - name: Test deployed site
         run: |
           chmod +x test-deployed-site.sh
-          ./test-deployed-site.sh https://jonyfs.github.io/wellsofchange/
+          ./test-deployed-site.sh https://www.wellsofchange.com/
