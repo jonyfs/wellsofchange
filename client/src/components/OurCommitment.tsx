@@ -32,10 +32,9 @@ export default function OurCommitment() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <StatCard value="1" label={t("commitment.wellComplete")} description={t("commitment.wellLocation")} />
           <StatCard value="100%" label={t("commitment.solar")} description={t("commitment.solarDesc")} />
-          <StatCard value="24/7" label={t("commitment.monitoring")} description={t("commitment.monitoringDesc")} />
           <StatCard value="∞" label={t("commitment.impact")} description={t("commitment.impactDesc")} />
         </div>
 
