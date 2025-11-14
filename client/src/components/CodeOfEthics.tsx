@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/lib/i18n";
-import { ShieldCheck, Scale, FileCheck, TrendingUp, Heart, Users, CheckCircle } from "lucide-react";
+import { ShieldCheck, Scale, FileCheck, TrendingUp, Heart, Users } from "lucide-react";
 
 export default function CodeOfEthics() {
   const { t } = useLanguage();
@@ -50,7 +50,7 @@ export default function CodeOfEthics() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {principles.map(({ icon: Icon, titleKey, textKey }, index) => (
             <Card key={index} className="p-6 hover-elevate transition-all" data-testid={`card-principle-${index + 1}`}>
               <div className="flex items-start gap-4 mb-4">
@@ -66,22 +66,6 @@ export default function CodeOfEthics() {
               </p>
             </Card>
           ))}
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <Card className="p-8 bg-primary/5 border-primary/20">
-            <div className="flex items-start gap-4 mb-6">
-              <CheckCircle className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-display font-semibold text-2xl mb-4" data-testid="text-audit-title">
-                  {t("ethics.auditTitle")}
-                </h3>
-                <p className="text-foreground leading-relaxed" data-testid="text-audit-text">
-                  {t("ethics.auditText")}
-                </p>
-              </div>
-            </div>
-          </Card>
         </div>
       </div>
     </section>
