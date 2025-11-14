@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/lib/i18n";
-import { ShieldCheck, Scale, FileCheck, TrendingUp, Heart, Users, CheckCircle, AlertCircle } from "lucide-react";
+import { ShieldCheck, Scale, FileCheck, TrendingUp, Heart, Users, CheckCircle } from "lucide-react";
 
 export default function CodeOfEthics() {
   const { t } = useLanguage();
@@ -68,7 +68,7 @@ export default function CodeOfEthics() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Card className="p-8 bg-primary/5 border-primary/20">
             <div className="flex items-start gap-4 mb-6">
               <CheckCircle className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
@@ -78,20 +78,6 @@ export default function CodeOfEthics() {
                 </h3>
                 <p className="text-foreground leading-relaxed" data-testid="text-audit-text">
                   {t("ethics.auditText")}
-                </p>
-              </div>
-            </div>
-          </Card>
-
-          <Card className="p-8 bg-accent/20 border-accent/40">
-            <div className="flex items-start gap-4 mb-6">
-              <AlertCircle className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-display font-semibold text-2xl mb-4" data-testid="text-nonpartisan-title">
-                  {t("ethics.nonPartisanTitle")}
-                </h3>
-                <p className="text-foreground leading-relaxed" data-testid="text-nonpartisan-text">
-                  {t("ethics.nonPartisanText")}
                 </p>
               </div>
             </div>
