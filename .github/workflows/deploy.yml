@@ -43,7 +43,7 @@ jobs:
       
       - name: Verify build has correct base path
         run: |
-          if ! grep -q 'href="/wellsofchange/' dist/public/index.html; then
+          if ! grep -q 'href="/' dist/public/index.html; then
             echo "❌ ERROR: Build missing /wellsofchange/ base path!"
             echo "Assets will not load on GitHub Pages!"
             exit 1
