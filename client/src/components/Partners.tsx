@@ -31,7 +31,7 @@ export default function Partners() {
   ];
 
   return (
-    <section id="parceiros" className="py-16 md:py-24 bg-background">
+    <section id="parceiros" className="py-12 md:py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-12">
           <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-4" data-testid="text-partners-title">

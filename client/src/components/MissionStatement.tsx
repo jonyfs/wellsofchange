@@ -4,7 +4,7 @@ export default function MissionStatement() {
   const { t } = useLanguage();
 
   return (
-    <section id="missao" className="py-16 md:py-24 lg:py-32 bg-background">
+    <section id="missao" className="py-12 md:py-16 lg:py-20 bg-background">
       <div className="max-w-4xl mx-auto px-6 md:px-8 text-center">
         <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-12" data-testid="text-mission-title">
           {t("mission.title")}

@@ -129,7 +129,7 @@ Preferred communication style: Simple, everyday language.
 
 **Spacing System**
 - Consistent use of Tailwind units: 4, 6, 8, 12, 16, 20, 24
-- Section padding: py-16 to py-32 (responsive)
+- Section padding: py-12 md:py-16 lg:py-20 (responsive, reduced for tighter layout)
 - Container: max-w-7xl with responsive padding (px-6 to px-8)
 - Content width: max-w-3xl for text-focused sections
 
