@@ -51,8 +51,11 @@ data, host consistency, alt text, headings, robots and sitemap.
 Configured in `settings.json`.
 
 - `block-main-commit.sh` (PreToolUse on Bash) refuses commits, pushes, merges, and hard resets while
-  the current branch is `main`. A push to `main` deploys to the live site, and the constitution
-  requires a pull request for every change.
+  the current branch is the default branch, and refuses any push whose refspec targets it from any
+  branch, since a refspec push deploys just as surely as pushing from the branch itself. Only the
+  arguments of the push itself are inspected, so a command that merely mentions such a push, a
+  commit message for instance, is not blocked. A push to the default branch reaches the live site,
+  and the constitution requires a pull request for every change.
 - `typecheck-on-edit.sh` (PostToolUse on Edit and Write) runs `npm run check` after a `.ts` or `.tsx`
   file changes. The project has no linter and no test suite, so the compiler is the only automated
   gate.

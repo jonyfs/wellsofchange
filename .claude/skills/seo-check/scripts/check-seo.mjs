@@ -28,10 +28,19 @@ const robots = read(paths.robots);
 const sitemap = read(paths.sitemap);
 const llms = read(paths.llms);
 
-const meta = (name) =>
-  html.match(new RegExp(`<meta\\s+name=["']${name}["']\\s+content=["']([^"']*)["']`, "i"))?.[1] ?? null;
-const prop = (property) =>
-  html.match(new RegExp(`<meta\\s+property=["']${property}["']\\s+content=["']([^"']*)["']`, "i"))?.[1] ?? null;
+// Attribute order in a <meta> tag carries no meaning, so parse the tags rather than assuming
+// name comes before content.
+const metaTags = [...html.matchAll(/<meta\b([^>]*)>/gi)].map(([, attributes]) => {
+  const parsed = {};
+  for (const [, key, value] of attributes.matchAll(/([\w:-]+)\s*=\s*["']([^"']*)["']/g)) {
+    parsed[key.toLowerCase()] = value;
+  }
+  return parsed;
+});
+const byAttribute = (attribute, value) =>
+  metaTags.filter((tag) => tag[attribute]?.toLowerCase() === value.toLowerCase());
+const meta = (name) => byAttribute("name", name)[0]?.content ?? null;
+const prop = (property) => byAttribute("property", property)[0]?.content ?? null;
 
 // Title and description
 const title = html.match(/<title>([^<]*)<\/title>/i)?.[1]?.trim() ?? null;
@@ -96,7 +105,9 @@ for (const [index, block] of blocks.entries()) {
 // Language signals
 const lang = html.match(/<html[^>]*\blang=["']([^"']*)["']/i)?.[1] ?? null;
 const hreflang = [...html.matchAll(/<link[^>]*rel=["']alternate["'][^>]*hreflang=["']([^"']*)["']/gi)].map((m) => m[1]);
-const ogLocales = [...html.matchAll(/<meta\s+property=["']og:locale(?::alternate)?["']\s+content=["']([^"']*)["']/gi)].map((m) => m[1]);
+const ogLocales = metaTags
+  .filter((tag) => /^og:locale(:alternate)?$/i.test(tag.property ?? ""))
+  .map((tag) => tag.content);
 if (!hreflang.length && ogLocales.length > 1) {
   report("WARN", "language", `${ogLocales.length} og:locale values but no hreflang links. Search engines cannot index the other languages without distinct URLs.`);
 } else if (hreflang.length) {

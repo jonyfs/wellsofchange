@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Blocks commits, pushes, and history rewrites on the default branch.
+# Blocks commits, pushes, and history rewrites that would reach the default branch.
 #
 # The constitution requires every change to reach main through a pull request, because a push to
 # main deploys to wellsofchange.com within minutes. Branch protection on GitHub is the real
@@ -18,13 +18,39 @@ case "$command_line" in
 esac
 
 branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null) || exit 0
-[ "$branch" = "main" ] || exit 0
+
+# A push can target the default branch from any branch through a refspec, so the current branch is
+# not the whole picture: `git push origin HEAD:main` from a feature branch deploys just as surely.
+#
+# Only the line that invokes the push is inspected, and only the arguments after `push` on it.
+# Matching the whole command string would block anything that merely mentions such a push, a commit
+# message or a documentation edit included.
+targets_default=0
+while IFS= read -r line; do
+  case "$line" in
+    *git*push*) ;;
+    *) continue ;;
+  esac
+
+  seen_push=0
+  for token in $line; do
+    if [ "$seen_push" -eq 0 ]; then
+      [ "$token" = "push" ] && seen_push=1
+      continue
+    fi
+    case "$token" in
+      main|*:main|*:refs/heads/main) targets_default=1 ;;
+    esac
+  done
+done <<< "$command_line"
+
+[ "$branch" = "main" ] || [ "$targets_default" -eq 1 ] || exit 0
 
 cat >&2 <<'MESSAGE'
-Blocked: you are on main.
+Blocked: this targets the default branch.
 
-The constitution (principle VI) requires every change to land through a pull request. A push to
-main deploys to the live site.
+The constitution (principle VI) requires every change to land through a pull request. A push to the
+default branch reaches the live site.
 
 Create a branch first:
 
