@@ -17,11 +17,14 @@ Then read the diff for what the script cannot see.
 
 ## What matters most here
 
-The site serves `<div id="root"></div>` and renders in the browser. Google runs JavaScript; GPTBot,
-ClaudeBot, and PerplexityBot generally do not. For those crawlers the entire site is the `<head>` of
-`client/index.html`: title, description, and the JSON-LD block. That makes the structured data the
-highest-value text in the repository, and a regression there costs more than a wording change in a
-component.
+The build prerenders the page into `dist/public/index.html`, so crawlers that do not run JavaScript
+receive the copy rather than an empty div. That prerender is load-bearing: any change that breaks it,
+or that reads `window` during the first render, quietly returns the site to being invisible to
+GPTBot, ClaudeBot, and PerplexityBot. Flag anything touching `scripts/prerender.mjs`,
+`client/src/entry-server.tsx`, or module-scope browser API use.
+
+Only `PRERENDER_LANGUAGE`, currently `pt-BR`, is prerendered, so the structured data still carries
+the weight for anything the other three languages would say.
 
 ## Check
 
@@ -50,8 +53,8 @@ support.
 
 ## Do not flag
 
-The known architectural gaps, unless the diff makes them worse: client-side rendering, the single
-URL shared by four languages, the missing hreflang, and the Portuguese-only metadata tracked as
+The known architectural gaps, unless the diff makes them worse: the single URL shared by four
+languages, the missing hreflang, and the Portuguese-only metadata tracked as
 `TODO(INDEX_HTML_LANGUAGE)`. These are tracked decisions, not review findings.
 
 ## How to report

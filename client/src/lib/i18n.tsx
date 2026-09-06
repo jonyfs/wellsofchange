@@ -11,13 +11,19 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 /**
+ * The language rendered when there is no browser to ask: the build-time prerender.
+ * It matches the lang attribute and the metadata in index.html, which are Portuguese.
+ */
+export const PRERENDER_LANGUAGE: Language = "pt-BR";
+
+/**
  * Detects the user's browser language and maps it to a supported language
  * @returns The detected language code or 'en' as default
  */
 function detectBrowserLanguage(): Language {
   // Get browser language(s)
   const browserLang = navigator.language || (navigator.languages && navigator.languages[0]);
-  
+
   if (!browserLang) {
     return "en";
   }
@@ -42,12 +48,17 @@ function detectBrowserLanguage(): Language {
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>(() => {
+    // The build-time prerender runs in Node, where there is no localStorage and no navigator.
+    if (typeof window === "undefined") {
+      return PRERENDER_LANGUAGE;
+    }
+
     // Check for saved user preference first
     const saved = localStorage.getItem("wellsofchange-language");
     if (saved) {
       return saved as Language;
     }
-    
+
     // No saved preference - detect from browser
     return detectBrowserLanguage();
   });

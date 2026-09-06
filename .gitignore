@@ -4,3 +4,5 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+# Playwright MCP session artifacts
+.playwright-mcp/

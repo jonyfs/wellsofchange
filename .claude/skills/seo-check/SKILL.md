@@ -24,13 +24,14 @@ Google renders JavaScript. It can wait, run the bundle, and index what React pro
 mostly do not: GPTBot, ClaudeBot, PerplexityBot, and similar agents fetch the HTML and read what is
 in it.
 
-This site sends `<div id="root"></div>` and a script tag. Everything a visitor reads exists only
-after the bundle runs. An AI crawler therefore sees the `<head>`: the title, the description, and
-the JSON-LD block. Nothing about the wells, the project in Campo Formoso, the partners, or how to
-donate.
+This site used to send `<div id="root"></div>` and a script tag, which left those crawlers with only
+the `<head>`. It is now prerendered at build time by `scripts/prerender.mjs`, so the served HTML
+carries the page text in `PRERENDER_LANGUAGE`, currently `pt-BR`.
 
-That is why the structured data carries weight here out of proportion to its size. Until the site
-emits real HTML, the JSON-LD is most of what an answer engine can quote.
+That prerender is load-bearing for anything an answer engine can say about the organization. If it
+silently stops running, the audit's `crawlable-content` check is what catches it, and CI fails the
+build rather than deploying an empty page. The other three languages are still invisible to
+crawlers, since all four share one URL.
 
 ## Rules for this site
 

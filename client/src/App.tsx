@@ -12,7 +12,8 @@ const base = import.meta.env.BASE_URL || '/';
 
 function Router() {
   return (
-    <WouterRouter base={base}>
+    // ssrPath is used only by the build-time prerender, where there is no browser location.
+    <WouterRouter base={base} ssrPath="/">
       <Switch>
         <Route path="/" component={Home} />
         <Route component={NotFound} />

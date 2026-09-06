@@ -30,13 +30,14 @@ When copy needs a fact you do not have, ask for it. Leaving it out is better tha
 Search-facing text is split across two places, and this catches people out:
 
 - `client/index.html` holds the title, meta description, keywords, Open Graph and Twitter tags, and
-  the JSON-LD block. This is static HTML, present before any JavaScript runs, so it is what an AI
-  crawler reads. It is currently written in Portuguese only.
+  the JSON-LD block. This is static HTML, present before any JavaScript runs. It is currently
+  written in Portuguese only.
 - `client/src/lib/i18n.tsx` holds every visible string in four languages. Headings, body copy, and
-  button labels come from here at runtime.
+  button labels come from here.
 
-A visitor reads the second. A crawler that does not run JavaScript reads only the first. Changing a
-heading in the dictionaries does not change what an answer engine can see.
+The build prerenders the page in `PRERENDER_LANGUAGE`, currently `pt-BR`, so a crawler that does not
+run JavaScript sees the head plus the Portuguese copy from the dictionaries. Editing a heading in
+the other three dictionaries changes what visitors read but not what a crawler receives.
 
 The Portuguese-only metadata conflicts with the constitution's English-only rule and is tracked as
 `TODO(INDEX_HTML_LANGUAGE)`. Do not quietly resolve it while editing copy; it needs a decision about
@@ -73,7 +74,6 @@ Then check the structured data at `https://validator.schema.org/` and Google's R
 
 ## What copy cannot fix
 
-The site ships an empty `<div id="root">` and renders in the browser. No amount of rewriting makes
-the body text visible to a crawler that does not run JavaScript, and the four languages share one
-URL, so only the served language can be indexed. Both are build and routing problems, not writing
-problems. Say so rather than compensating with keyword-stuffed metadata.
+The four languages share one URL, and the page is prerendered in one of them, so only that language
+reaches a crawler. Rewriting copy does not change that; it is a routing problem. Say so rather than
+compensating with keyword-stuffed metadata.
