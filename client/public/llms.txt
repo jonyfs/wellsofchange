@@ -1,0 +1,47 @@
+# Wells of Change
+
+> A Brazilian NGO that brings drinking water to underserved communities through solar-powered
+> wells with real-time monitoring. Founded in 2020, based in Rio de Janeiro, Brazil.
+
+Wells of Change installs artesian wells driven by photovoltaic pumping, so a community gets water
+without a grid connection and without recurring fuel costs. Each well carries remote monitoring, so
+faults surface before the community loses supply.
+
+The organization's first completed well is in Campo Formoso, in the state of Bahia, northeastern
+Brazil. Work is planned for Senegal.
+
+## Facts
+
+- Legal name: Wells of Change
+- Tax ID (CNPJ): 43.933.784/0001-13
+- Founded: 2020
+- Headquarters: Rio de Janeiro, Brazil
+- Areas served: Campo Formoso (Bahia, Brazil), Brazil, Senegal
+- Contact: wellsofchange@gmail.com
+- Website: https://www.wellsofchange.com/
+- Languages: English, Portuguese (Brazil), Spanish, French
+
+## People
+
+- Ricardo Clemente, founder
+- Jony Santos, president
+- Mamour Ndiaye, vice-president and co-founder
+- Olivia Giumelli, finance director
+- Fábio Silva, assets director
+- Maria Barreto, communications director
+
+## Partners
+
+Intelie, 2Solve, Viasat, and Vale do Sol support the organization's work.
+
+## Donating
+
+Donations are accepted by PIX, Brazil's instant transfer system, using the organization's CNPJ
+(43.933.784/0001-13) as the PIX key. Bank transfers go to Banco do Brasil, agency 597-5, current
+account 42176-6. The donation dialog on the site generates a PIX QR code for a donor-chosen amount.
+
+## What the organization commits to
+
+Public documentation of every donation received, annual audits by independent certified auditors,
+and no affiliation with any political party or movement. Operating costs are kept low through
+volunteer work and partnerships, so that as much as possible reaches the projects.

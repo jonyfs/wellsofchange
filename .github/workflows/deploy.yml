@@ -40,6 +40,12 @@ jobs:
       
       - name: Copy 404.html
         run: cp dist/public/index.html dist/public/404.html
+
+      - name: Stamp sitemap lastmod with the deploy date
+        run: |
+          today=$(date -u +%Y-%m-%d)
+          sed -i "s|<lastmod>[^<]*</lastmod>|<lastmod>${today}</lastmod>|g" dist/public/sitemap.xml
+          grep -o '<lastmod>[^<]*</lastmod>' dist/public/sitemap.xml
       
       - name: Verify build has correct base path
         run: |
