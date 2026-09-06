@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
       
-      - name: Build
-        run: npx vite build --base=/
+      - name: Build and prerender
+        run: npm run build:site
         env:
           NODE_ENV: production
       
@@ -47,6 +47,15 @@ jobs:
           sed -i "s|<lastmod>[^<]*</lastmod>|<lastmod>${today}</lastmod>|g" dist/public/sitemap.xml
           grep -o '<lastmod>[^<]*</lastmod>' dist/public/sitemap.xml
       
+      - name: Verify the page carries text without JavaScript
+        run: |
+          text=$(sed -n 's/.*<div id="root">\(.*\)<\/div>.*/\1/p' dist/public/index.html | sed 's/<[^>]*>//g' | tr -s ' ' | wc -c)
+          echo "Body text: ${text} chars"
+          if [ "$text" -lt 500 ]; then
+            echo "The prerender produced almost no text. Crawlers that skip JavaScript would see an empty page."
+            exit 1
+          fi
+
       - name: Verify build has correct base path
         run: |
           if ! grep -q 'href="/' dist/public/index.html; then

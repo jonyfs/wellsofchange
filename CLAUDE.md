@@ -17,7 +17,7 @@ npm run dev          # Express + Vite middleware on http://localhost:5000
 ./start-dev.sh       # Pure Vite dev server, port 5000 (no Express), enough for all frontend work
 npm run check        # tsc typecheck (noEmit); there is no linter and no test suite
 
-npx vite build --base=/    # What CI actually builds; output in dist/public/
+npm run build:site         # What CI builds: vite build --base=/ then the prerender; output in dist/public/
 ./preview-build.sh         # Build with relative paths and serve on http://localhost:8080
 ./verify-deployment.sh     # Check a local build
 ./test-deployed-site.sh https://www.wellsofchange.com/   # Check the live site
@@ -40,6 +40,15 @@ GitHub Actions serves from `dist/public/`, so nothing in the root build output r
 Don't refresh those files as part of a normal change.
 
 ## Architecture
+
+**The page is prerendered at build time.** `scripts/prerender.mjs` builds an SSR bundle from
+`client/src/entry-server.tsx`, renders the app to a string, and injects it into
+`dist/public/index.html`. Crawlers that do not run JavaScript, which includes most AI crawlers,
+would otherwise receive an empty root div. The client still mounts with `createRoot`, which discards
+the server markup and renders from scratch, so there is no hydration step to mismatch. The
+prerendered language is `PRERENDER_LANGUAGE` in `i18n.tsx`, currently `pt-BR`, matching the `lang`
+attribute and the metadata in `client/index.html`. Anything running at module scope or during the
+first render must tolerate having no `window`.
 
 The site is frontend-only in practice. `client/src/pages/Home.tsx` renders every section in page
 order (Hero, WhatWeDo, OurCommitment, MissionStatement, OurStory, WhoWeAre, Partners, CodeOfEthics,
