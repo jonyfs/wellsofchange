@@ -19,12 +19,13 @@ esac
 
 branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null) || exit 0
 
+# Heredoc bodies are data, not commands. A commit message, a pull request comment, or a
+# documentation edit can quote a push to the default branch without performing one, so everything
+# from the first heredoc marker onward is ignored.
+invocation=${command_line%%<<*}
+
 # A push can target the default branch from any branch through a refspec, so the current branch is
-# not the whole picture: `git push origin HEAD:main` from a feature branch deploys just as surely.
-#
-# Only the line that invokes the push is inspected, and only the arguments after `push` on it.
-# Matching the whole command string would block anything that merely mentions such a push, a commit
-# message or a documentation edit included.
+# not the whole picture: a refspec push from a feature branch deploys just as surely.
 targets_default=0
 while IFS= read -r line; do
   case "$line" in
@@ -42,7 +43,7 @@ while IFS= read -r line; do
       main|*:main|*:refs/heads/main) targets_default=1 ;;
     esac
   done
-done <<< "$command_line"
+done <<< "$invocation"
 
 [ "$branch" = "main" ] || [ "$targets_default" -eq 1 ] || exit 0
 
