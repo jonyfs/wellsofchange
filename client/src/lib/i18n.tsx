@@ -161,14 +161,6 @@ const translations: Record<Language, any> = {
     },
     commitment: {
       title: "Our Commitment",
-      wellComplete: "Well Complete",
-      wellLocation: "Campo Formoso, Bahia",
-      solar: "Solar",
-      solarDesc: "Clean and sustainable energy",
-      monitoring: "Monitoring",
-      monitoringDesc: "Real-time data",
-      impact: "Impact",
-      impactDesc: "Lives transformed",
       location: "We started in Campo Formoso, in the interior of Bahia.",
       start: "The first well is complete. Life has already begun to change!",
       intro: "But this is just the beginning.",
@@ -247,11 +239,7 @@ const translations: Record<Language, any> = {
       principle6Title: "Professional Ethics",
       principle6Text: "All our volunteers and partners adhere to the highest ethical standards. We do not tolerate any form of discrimination, corruption, or unethical conduct. Decisions are made collectively and documented.",
       
-      auditTitle: "Audits and Accountability",
-      auditText: "Wells of Change is committed to absolute transparency. Our accounts are audited annually by independent auditors, and all reports are publicly available. We believe that accountability is fundamental to building trust with our donors and the communities we serve.",
       
-      nonPartisanTitle: "Declaration of Non-Partisanship",
-      nonPartisanText: "Wells of Change declares itself completely independent of any political party, political movement, or partisan ideology. Our work is guided exclusively by humanitarian and social values. We do not support candidates, parties, or political causes. Our mission is to serve communities in need, regardless of their political affiliations or beliefs.",
     },
     partners: {
       title: "Our Partners",
@@ -340,14 +328,6 @@ const translations: Record<Language, any> = {
     },
     commitment: {
       title: "Nosso Compromisso",
-      wellComplete: "Poço Completo",
-      wellLocation: "Campo Formoso, Bahia",
-      solar: "Solar",
-      solarDesc: "Energia limpa e sustentável",
-      monitoring: "Monitoramento",
-      monitoringDesc: "Dados em tempo real",
-      impact: "Impacto",
-      impactDesc: "Vidas transformadas",
       location: "Começamos em Campo Formoso, no interior da Bahia.",
       start: "O primeiro poço está completo. A vida já começou a mudar!",
       intro: "Mas este é apenas o começo.",
@@ -426,11 +406,7 @@ const translations: Record<Language, any> = {
       principle6Title: "Ética Profissional",
       principle6Text: "Todos os nossos voluntários e parceiros aderem aos mais altos padrões éticos. Não toleramos qualquer forma de discriminação, corrupção ou conduta antiética. As decisões são tomadas coletivamente e documentadas.",
       
-      auditTitle: "Auditorias e Prestação de Contas",
-      auditText: "A Wells of Change está comprometida com a transparência absoluta. Nossas contas são auditadas anualmente por auditores independentes, e todos os relatórios são disponibilizados publicamente. Acreditamos que a prestação de contas é fundamental para construir confiança com nossos doadores e as comunidades que servimos.",
       
-      nonPartisanTitle: "Declaração de Apartidarismo",
-      nonPartisanText: "A Wells of Change declara-se completamente independente de qualquer partido político, movimento político ou ideologia partidária. Nosso trabalho é guiado exclusivamente por valores humanitários e sociais. Não apoiamos candidatos, partidos ou causas políticas. Nossa missão é servir comunidades em necessidade, independentemente de suas afiliações ou crenças políticas.",
     },
     partners: {
       title: "Nossos Parceiros",
@@ -519,14 +495,6 @@ const translations: Record<Language, any> = {
     },
     commitment: {
       title: "Nuestro Compromiso",
-      wellComplete: "Pozo Completo",
-      wellLocation: "Campo Formoso, Bahía",
-      solar: "Solar",
-      solarDesc: "Energía limpia y sostenible",
-      monitoring: "Monitoreo",
-      monitoringDesc: "Datos en tiempo real",
-      impact: "Impacto",
-      impactDesc: "Vidas transformadas",
       location: "Comenzamos en Campo Formoso, en el interior de Bahía.",
       start: "El primer pozo está completo. ¡La vida ya ha comenzado a cambiar!",
       intro: "Pero esto es solo el comienzo.",
@@ -605,11 +573,7 @@ const translations: Record<Language, any> = {
       principle6Title: "Ética Profesional",
       principle6Text: "Todos nuestros voluntarios y socios adhieren a los más altos estándares éticos. No toleramos ninguna forma de discriminación, corrupción o conducta no ética. Las decisiones se toman colectivamente y se documentan.",
       
-      auditTitle: "Auditorías y Rendición de Cuentas",
-      auditText: "Wells of Change está comprometida con la transparencia absoluta. Nuestras cuentas son auditadas anualmente por auditores independientes, y todos los informes están disponibles públicamente. Creemos que la rendición de cuentas es fundamental para construir confianza con nuestros donantes y las comunidades que servimos.",
       
-      nonPartisanTitle: "Declaración de Apartidarismo",
-      nonPartisanText: "Wells of Change se declara completamente independiente de cualquier partido político, movimiento político o ideología partidaria. Nuestro trabajo está guiado exclusivamente por valores humanitarios y sociales. No apoyamos candidatos, partidos o causas políticas. Nuestra misión es servir a comunidades necesitadas, independientemente de sus afiliaciones o creencias políticas.",
     },
     partners: {
       title: "Nuestros Socios",
@@ -698,14 +662,6 @@ const translations: Record<Language, any> = {
     },
     commitment: {
       title: "Notre Engagement",
-      wellComplete: "Puits Complet",
-      wellLocation: "Campo Formoso, Bahia",
-      solar: "Solaire",
-      solarDesc: "Énergie propre et durable",
-      monitoring: "Surveillance",
-      monitoringDesc: "Données en temps réel",
-      impact: "Impact",
-      impactDesc: "Vies transformées",
       location: "Nous avons commencé à Campo Formoso, à l'intérieur de Bahia.",
       start: "Le premier puits est complet. La vie a déjà commencé à changer !",
       intro: "Mais ce n'est que le début.",
@@ -784,11 +740,7 @@ const translations: Record<Language, any> = {
       principle6Title: "Éthique Professionnelle",
       principle6Text: "Tous nos bénévoles et partenaires adhèrent aux normes éthiques les plus élevées. Nous ne tolérons aucune forme de discrimination, corruption ou conduite non éthique. Les décisions sont prises collectivement et documentées.",
       
-      auditTitle: "Audits et Responsabilité",
-      auditText: "Wells of Change s'engage pour une transparence absolue. Nos comptes sont audités annuellement par des auditeurs indépendants, et tous les rapports sont disponibles publiquement. Nous croyons que la responsabilité est fondamentale pour construire la confiance avec nos donateurs et les communautés que nous servons.",
       
-      nonPartisanTitle: "Déclaration de Non-Partisanerie",
-      nonPartisanText: "Wells of Change se déclare complètement indépendant de tout parti politique, mouvement politique ou idéologie partisane. Notre travail est guidé exclusivement par des valeurs humanitaires et sociales. Nous ne soutenons pas de candidats, partis ou causes politiques. Notre mission est de servir les communautés dans le besoin, indépendamment de leurs affiliations ou croyances politiques.",
     },
     partners: {
       title: "Nos Partenaires",
