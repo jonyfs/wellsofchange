@@ -47,5 +47,16 @@ the tools and knowledge to maintain its own water source.
 
 ## Code of ethics
 
-Wells of Change states that it operates to standards of transparency, integrity, and social
-commitment, and that its code of ethics guides its actions and decisions.
+The site publishes six principles:
+
+- Total transparency. Every donation received is publicly documented, financial operations are
+  subject to independent audits, and detailed reports are available to the public.
+- Non-partisanship. The organization states that it is independent of any political party or
+  movement, and serves communities regardless of political, religious, or ideological affiliation.
+- Independent auditing. Accounts are audited annually by independent certified auditors.
+- Efficient resource use. Operating costs are kept low through volunteer work and partnerships, so
+  that as much as possible reaches the projects.
+- Social commitment. The stated sole purpose is access to drinking water and sustainable technology
+  for communities in extreme need.
+- Professional ethics. Volunteers and partners are held to the organization's ethical standards, and
+  decisions are taken collectively and documented.
