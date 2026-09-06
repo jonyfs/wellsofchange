@@ -73,22 +73,37 @@ function collectKeys(source) {
   return perLanguage;
 }
 
-function collectUsedKeys() {
-  const used = new Set();
+// A key can reach t() three ways, and counting only the first reports live keys as dead:
+//   t("section.key")                          - the literal call
+//   copyToClipboard(value, "donate.labelCNPJ") - passed as an argument, resolved later
+//   t(`nav.${link.key}`)                       - built from a prefix at runtime
+function collectUsage() {
+  const literals = new Set();
+  const dynamicPrefixes = new Set();
+
   for (const file of walk(SOURCE_DIR)) {
     if (![".ts", ".tsx"].includes(extname(file))) continue;
     if (file.endsWith("i18n.tsx")) continue;
     const source = readFileSync(file, "utf8");
-    for (const match of source.matchAll(/\bt\(\s*["'`]([A-Za-z0-9_.-]+)["'`]/g)) {
-      used.add(match[1]);
+
+    // Any dotted string literal anywhere in the file, not only inside a t() call.
+    for (const match of source.matchAll(/["'`]([A-Za-z0-9_-]+(?:\.[A-Za-z0-9_-]+)+)["'`]/g)) {
+      literals.add(match[1]);
+    }
+    // t(`prefix.${...}`) makes every key under that prefix reachable.
+    for (const match of source.matchAll(/\bt\(\s*`([A-Za-z0-9_.-]*?)\$\{/g)) {
+      dynamicPrefixes.add(match[1]);
     }
   }
-  return used;
+
+  return { literals, dynamicPrefixes };
 }
 
 const source = readFileSync(I18N_FILE, "utf8");
 const perLanguage = collectKeys(source);
-const used = collectUsedKeys();
+const { literals, dynamicPrefixes } = collectUsage();
+const isUsed = (key) =>
+  literals.has(key) || [...dynamicPrefixes].some((prefix) => prefix && key.startsWith(prefix));
 
 for (const lang of LANGUAGES) {
   const count = perLanguage.get(lang).size;
@@ -106,8 +121,13 @@ for (const key of [...allKeys].sort()) {
   if (absent.length) missing.push({ key, absent });
 }
 
-const undefinedKeys = [...used].filter((key) => !allKeys.has(key)).sort();
-const orphans = [...allKeys].filter((key) => !used.has(key)).sort();
+// Only literals that look like translation keys are worth reporting as undefined; a dotted string
+// in the source can be many other things.
+const undefinedKeys = [...literals]
+  .filter((key) => !allKeys.has(key))
+  .filter((key) => [...allKeys].some((defined) => defined.split(".")[0] === key.split(".")[0]))
+  .sort();
+const orphans = [...allKeys].filter((key) => !isUsed(key)).sort();
 
 if (missing.length) {
   console.log(`\nMissing translations (${missing.length}):`);
