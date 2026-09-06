@@ -40,8 +40,12 @@ Donations are accepted by PIX, Brazil's instant transfer system, using the organ
 (43.933.784/0001-13) as the PIX key. Bank transfers go to Banco do Brasil, agency 597-5, current
 account 42176-6. The donation dialog on the site generates a PIX QR code for a donor-chosen amount.
 
-## What the organization commits to
+## After the well is built
 
-Public documentation of every donation received, annual audits by independent certified auditors,
-and no affiliation with any political party or movement. Operating costs are kept low through
-volunteer work and partnerships, so that as much as possible reaches the projects.
+The organization stays with the community after water starts flowing, so that each community has
+the tools and knowledge to maintain its own water source.
+
+## Code of ethics
+
+Wells of Change states that it operates to standards of transparency, integrity, and social
+commitment, and that its code of ethics guides its actions and decisions.
