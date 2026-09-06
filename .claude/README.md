@@ -14,6 +14,8 @@ every machine gets the same behavior, rather than relying on personal global con
 | `humanizer` | Claude or user | Removes AI writing patterns from prose. Vendored from the upstream skill; preserves the document's language. |
 | `frontend-design` | Claude or user | General guidance on aesthetic direction, typography, and avoiding templated defaults. Vendored from the `frontend-design` plugin, Apache 2.0, `LICENSE.txt` included. |
 | `ui-ux-pro-max` | Claude or user | Searchable design database: styles, palettes, font pairings, product patterns, UX guidelines, and per-stack notes. Driven by `scripts/search.py`, Python 3, no dependencies. |
+| `seo-check` | Claude or user | Audits the search and AI discoverability surface: metadata, structured data, host consistency, hreflang, crawlable text, sitemap freshness. Ships a script. |
+| `seo-content` | Claude or user | How to write the site's search-facing text so both Google and AI answer engines can use it. |
 | `speckit-*` | User only | Spec-driven development flow: specify, clarify, plan, tasks, implement. |
 
 ### Which design skill answers what
@@ -40,6 +42,9 @@ disagree.
 
 `i18n-reviewer` reviews a diff for the two rules nothing else checks: English as the authoring
 language, and four-language parity for every key.
+
+`seo-reviewer` reviews a diff for search and AI discoverability regressions: metadata, structured
+data, host consistency, alt text, headings, robots and sitemap.
 
 ## Hooks
 
