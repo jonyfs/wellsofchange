@@ -77,9 +77,9 @@ without scrolling past new content.
 
 ### Functional Requirements
 
-- **FR-001**: The donation dialog MUST include a section with the details required for an
-  international transfer, placed after the Brazilian bank transfer block and before the closing
-  thank-you message.
+- **FR-001**: The donation dialog MUST separate the two audiences into tabs, one for donors in
+  Brazil and one for donors abroad, with the Brazilian tab selected when the dialog opens. The
+  closing thank-you message stays below both tabs.
 - **FR-002**: The section MUST show: bank name, bank address, SWIFT/BIC code, IBAN, branch, account
   number, beneficiary legal name, and beneficiary address.
 - **FR-003**: Each value a donor has to enter at their own bank MUST be copyable in one action, in
@@ -108,16 +108,40 @@ These values come from the organization's bank. They are published as provided:
 | Bank name | Banco do Brasil |
 | Bank address | SAUN Quadra 5 Lote B, Edifício Banco do Brasil, 15º andar, Brasília, DF, Brasil, CEP 70040-250 |
 | SWIFT/BIC | BRASBRRJBHE |
-| IBAN | 33000000000005970000421766C1 (see the open question below) |
+| IBAN | BR3300000000005970000421766C1 |
 | Branch | 597-5 |
 | Account | 42176-6 |
 | Beneficiary | Associação Internacional, Poços Mudando as Vidas nas Sociedades |
 | Beneficiary address | Rua das Laranjeiras 29, loja 218, Laranjeiras, Rio de Janeiro, RJ, Brasil, CEP 22240-000 |
 
-- **FR-010**: The IBAN MUST be confirmed with the bank before this section is published.
-  [NEEDS CLARIFICATION: the value provided is 28 characters. A Brazilian IBAN is 29 and begins with
-  "BR". Prefixing "BR" gives 30. One character is missing or extra somewhere, and publishing a wrong
-  IBAN sends a donor's money nowhere or bounces it back with fees deducted.]
+- **FR-010**: The IBAN published MUST be `BR3300000000005970000421766C1`.
+
+  The value first supplied read `33000000000005970000421766C1`: 28 characters, no country prefix,
+  one character too many. A Brazilian IBAN is 29 characters, structured as `BR`, two check digits,
+  an 8-digit ISPB bank code, a 5-digit branch, a 10-digit account, an account type letter, and an
+  account holder digit.
+
+  Deleting one character from the supplied string gives 26 candidates. Exactly one passes the mod-97
+  check, and its fields match what the site already publishes:
+
+  | Segment | Value | Matches |
+  |---|---|---|
+  | ISPB | `00000000` | Banco do Brasil |
+  | Branch | `00597` | agency 597-5 |
+  | Account | `0000421766` | account 42176-6 |
+  | Type | `C` | checking account |
+  | Holder | `1` | |
+
+  The check digits computed from the bank data alone come to `33`, the same pair the supplied string
+  opens with. That agreement has a 1 in 97 chance of being coincidence, which is what identifies the
+  defect as a single stray zero rather than a wrong account.
+
+  The SWIFT code was checked separately: `BRASBRRJBHE` is registered to Banco do Brasil, GECEX Belo
+  Horizonte.
+
+- **FR-011**: The IBAN MUST still be confirmed against the organization's own bank statement before
+  release. The check above proves the number is well formed and consistent with the published branch
+  and account. It cannot prove the bank issued that number for this account.
 
 ## Success Criteria *(mandatory)*
 
@@ -151,5 +175,5 @@ These values come from the organization's bank. They are published as provided:
 
 ## Dependencies
 
-- Confirmation of the IBAN from Banco do Brasil.
-- The visual design of the section, approved before implementation.
+- Confirmation of the IBAN against the organization's bank statement, per FR-011.
+- The visual design of the section. Approved: variant C, separate tabs for Brazil and abroad.
