@@ -20,7 +20,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logoImage} alt="Wells of Change Logo" className="h-12 w-auto" />
+              <img
+                src={logoImage}
+                alt="Wells of Change Logo"
+                width={400}
+                height={341}
+                loading="lazy"
+                decoding="async"
+                className="h-12 w-auto"
+              />
               <span className="font-display font-bold text-lg">Wells of Change</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed" data-testid="text-footer-description">

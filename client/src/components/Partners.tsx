@@ -60,7 +60,11 @@ export default function Partners() {
                     alt={partner.name}
                     className="max-h-20 max-w-full object-contain"
                     data-testid={`img-partner-${partner.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  />
+              width={400}
+              height={200}
+              loading="lazy"
+              decoding="async"
+            />
                 </div>
               ) : (
                 <span className="text-center font-semibold text-lg">

@@ -107,6 +107,8 @@ const translations: Record<Language, any> = {
       ogLocale: "en_US",
     },
     nav: {
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
       ourStory: "Our Story",
       whatWeDo: "What We Do",
       ourCommitment: "Our Commitment",
@@ -292,6 +294,8 @@ const translations: Record<Language, any> = {
       ogLocale: "pt_BR",
     },
     nav: {
+      openMenu: "Abrir menu",
+      closeMenu: "Fechar menu",
       ourStory: "Nossa História",
       whatWeDo: "O Que Fazemos",
       ourCommitment: "Nosso Compromisso",
@@ -477,6 +481,8 @@ const translations: Record<Language, any> = {
       ogLocale: "es_ES",
     },
     nav: {
+      openMenu: "Abrir menú",
+      closeMenu: "Cerrar menú",
       ourStory: "Nuestra Historia",
       whatWeDo: "Lo Que Hacemos",
       ourCommitment: "Nuestro Compromiso",
@@ -662,6 +668,8 @@ const translations: Record<Language, any> = {
       ogLocale: "fr_FR",
     },
     nav: {
+      openMenu: "Ouvrir le menu",
+      closeMenu: "Fermer le menu",
       ourStory: "Notre Histoire",
       whatWeDo: "Ce Que Nous Faisons",
       ourCommitment: "Notre Engagement",

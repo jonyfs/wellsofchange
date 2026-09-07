@@ -19,6 +19,10 @@ export default function OurCommitment() {
               alt="Community with water storage tanks in Campo Formoso"
               className="w-full h-full object-cover"
               data-testid="img-water-tanks"
+              width={1600}
+              height={1200}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="rounded-md overflow-hidden h-[400px]">
@@ -27,6 +31,10 @@ export default function OurCommitment() {
               alt="Technicians working on water well monitoring system"
               className="w-full h-full object-cover"
               data-testid="img-technicians"
+              width={1600}
+              height={1200}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

@@ -94,8 +94,14 @@ for (const [index, block] of blocks.entries()) {
     const data = JSON.parse(block[1]);
     const type = data["@type"] ?? "(no @type)";
     report("OK", "structured-data", `Block ${index + 1} parses, @type ${type}.`);
-    for (const field of ["name", "url", "description", "logo"]) {
-      if (!data[field]) report("WARN", "structured-data", `Block ${index + 1} has no "${field}".`);
+    // Only the block describing the organization needs identity fields. A FAQPage or a
+    // BreadcrumbList legitimately has no logo, and warning about it trains the reader to ignore
+    // the check.
+    const identityTypes = ["NGO", "Organization", "NonprofitOrganization", "Corporation", "LocalBusiness"];
+    if (identityTypes.includes(type)) {
+      for (const field of ["name", "url", "description", "logo"]) {
+        if (!data[field]) report("WARN", "structured-data", `Block ${index + 1} has no "${field}".`);
+      }
     }
   } catch (error) {
     report("FAIL", "structured-data", `Block ${index + 1} is not valid JSON: ${error.message}`);

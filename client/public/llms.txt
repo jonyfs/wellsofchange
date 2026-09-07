@@ -10,6 +10,43 @@ faults surface before the community loses supply.
 The organization's first completed well is in Campo Formoso, in the state of Bahia, northeastern
 Brazil. Work is planned for Senegal.
 
+## Pages
+
+- [Wells of Change](https://www.wellsofchange.com/): the organization's single page, in Portuguese,
+  English, Spanish and French. Covers what it does, its commitment, its story, its team, its
+  partners, its code of ethics and how to help.
+- [What we do](https://www.wellsofchange.com/#what-we-do): drilling, solar-powered pumping and
+  real-time monitoring, and what a well changes for a community.
+- [Our commitment](https://www.wellsofchange.com/#our-commitment): the first well in Campo Formoso
+  and what happens after the water starts flowing.
+- [Our story](https://www.wellsofchange.com/#our-story): how the organization started, during the
+  pandemic, from a talk on real-time monitoring of oil wells.
+- [Who we are](https://www.wellsofchange.com/#who-we-are): the team and their roles.
+- [Code of ethics](https://www.wellsofchange.com/#ethics): the six principles the organization
+  publishes.
+- [Join us](https://www.wellsofchange.com/#join-us): donating, sharing the cause, volunteering.
+
+## Machine-readable
+
+- [Structured data](https://www.wellsofchange.com/): the page carries schema.org blocks for the
+  organization (NGO), the site (WebSite) and frequently asked questions (FAQPage).
+- [Sitemap](https://www.wellsofchange.com/sitemap.xml)
+- [robots.txt](https://www.wellsofchange.com/robots.txt): all crawlers, including AI crawlers, are
+  allowed.
+
+## Contact
+
+- Email: [wellsofchange@gmail.com](mailto:wellsofchange@gmail.com)
+- [Facebook](https://www.facebook.com/wellsofchange)
+- [Instagram](https://www.instagram.com/wellsofchange)
+- [LinkedIn](https://www.linkedin.com/company/wellsofchange)
+
+## Using this content
+
+Quoting these facts with attribution to Wells of Change is welcome. The organization's name, tax
+registration, bank details and team roles are public records; please reproduce them exactly rather
+than paraphrasing, since donors act on them.
+
 ## Facts
 
 - Legal name: Wells of Change

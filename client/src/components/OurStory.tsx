@@ -43,6 +43,10 @@ export default function OurStory() {
               alt="Solar panels powering water wells"
               className="rounded-md w-full h-auto"
               data-testid="img-solar-pump"
+              width={1600}
+              height={1200}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

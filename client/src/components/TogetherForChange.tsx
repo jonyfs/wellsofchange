@@ -3,11 +3,11 @@ import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import teamImage from "@assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910.jpg";
-import thirstImage from "@assets/Gemini_Generated_Image_iwxnbdiwxnbdiwxn_1762546643721.png";
-import healthImage from "@assets/Gemini_Generated_Image_fb0vhcfb0vhcfb0v_1762546768964.png";
-import permanenceImage from "@assets/Gemini_Generated_Image_18n9en18n9en18n9_1762549321923.png";
-import prosperityImage from "@assets/Gemini_Generated_Image_zfl4lmzfl4lmzfl4_1762549484377.png";
-import dignityImage from "@assets/Gemini_Generated_Image_k16da4k16da4k16d_1762549738344.png";
+import thirstImage from "@assets/Gemini_Generated_Image_iwxnbdiwxnbdiwxn_1762546643721.jpg";
+import healthImage from "@assets/Gemini_Generated_Image_fb0vhcfb0vhcfb0v_1762546768964.jpg";
+import permanenceImage from "@assets/Gemini_Generated_Image_18n9en18n9en18n9_1762549321923.jpg";
+import prosperityImage from "@assets/Gemini_Generated_Image_zfl4lmzfl4lmzfl4_1762549484377.jpg";
+import dignityImage from "@assets/Gemini_Generated_Image_k16da4k16da4k16d_1762549738344.jpg";
 import realtimeImage from "@assets/20201129_170751_1762899790160.jpg";
 import DonationDialog from "./DonationDialog";
 
@@ -54,6 +54,10 @@ export default function TogetherForChange() {
               alt="Wells of Change team with solar panels in Campo Formoso"
               className="w-full h-auto max-h-96 object-cover"
               data-testid="img-volunteers"
+              width={1024}
+              height={1024}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
@@ -95,7 +99,11 @@ export default function TogetherForChange() {
                   alt="Clean water - Thirst to Satiety"
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-1"
-                />
+              width={1024}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+            />
               </div>
               <p className="text-lg font-semibold text-center" data-testid="text-transform-1">
                 {t("change.transform1")}
@@ -109,7 +117,11 @@ export default function TogetherForChange() {
                   alt="Health - Disease to Health"
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-2"
-                />
+              width={1024}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+            />
               </div>
               <p className="text-lg font-semibold text-center" data-testid="text-transform-2">
                 {t("change.transform2")}
@@ -123,7 +135,11 @@ export default function TogetherForChange() {
                   alt="Permanence - Migration to Permanence"
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-3"
-                />
+              width={1024}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+            />
               </div>
               <p className="text-lg font-semibold text-center" data-testid="text-transform-3">
                 {t("change.transform3")}
@@ -137,7 +153,11 @@ export default function TogetherForChange() {
                   alt="Prosperity - Survival to Prosperity"
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-4"
-                />
+              width={1024}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+            />
               </div>
               <p className="text-lg font-semibold text-center" data-testid="text-transform-4">
                 {t("change.transform4")}
@@ -151,7 +171,11 @@ export default function TogetherForChange() {
                   alt="Dignity - Despair to Dignity"
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-5"
-                />
+              width={1024}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+            />
               </div>
               <p className="text-lg font-semibold text-center" data-testid="text-transform-5">
                 {t("change.transform5")}
@@ -165,7 +189,11 @@ export default function TogetherForChange() {
                   alt="Real-time monitoring"
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-6"
-                />
+              width={1024}
+              height={1024}
+              loading="lazy"
+              decoding="async"
+            />
               </div>
               <p className="text-lg font-semibold text-primary text-center" data-testid="text-transform-6">
                 {t("change.transform6")}
