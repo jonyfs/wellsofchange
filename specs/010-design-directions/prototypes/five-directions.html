@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wells of Change — cinco direções de design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#0842A1; --primary-700:#06327a; --golden:#FBBD23; --accent:#BEE2F4;
+  --muted:#DDE6EE; --card:#F8FAFC; --border:#DBE3EB; --fg:#171717; --fg-soft:#4C5A68;
+  --sans:Inter,system-ui,sans-serif; --display:Poppins,system-ui,sans-serif;
+  --serif:Fraunces,Georgia,serif; --mono:"Space Mono",monospace; --geo:Outfit,system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--fg);background:#EEF2F7}
+img{display:block;max-width:100%}
+/* chrome */
+.bar{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border);padding:10px 16px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;box-shadow:0 1px 3px rgba(8,66,161,.06)}
+.bar strong{font-family:var(--display);font-size:14px;margin-right:6px}
+.bar button{font:inherit;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;color:var(--fg-soft);cursor:pointer;transition:all .15s}
+.bar button:hover{border-color:var(--primary);color:var(--primary)}
+.bar button[aria-pressed=true]{background:var(--primary);border-color:var(--primary);color:#fff}
+.note{max-width:1100px;margin:22px auto 0;padding:0 20px;font-size:14px;line-height:1.65;color:var(--fg-soft)}
+.note b{color:var(--fg)}
+.stage{max-width:1100px;margin:16px auto 60px;padding:0 20px}
+.frame{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(8,42,80,.10)}
+.variant{display:none}
+.variant.on{display:block}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-soft);border:1px solid var(--border);border-radius:999px;padding:3px 9px;margin-bottom:8px}
+h2.opt{font-family:var(--display);font-size:22px;margin:0 0 4px}
+.why{font-size:14px;line-height:1.6;color:var(--fg-soft);max-width:75ch;margin-bottom:14px}
+.why em{color:var(--primary);font-style:normal;font-weight:600}
+.cost{font-size:13px;color:#8a5a00;background:#FFF7E3;border-left:3px solid var(--golden);padding:8px 12px;border-radius:0 6px 6px 0;margin:12px 0 18px;max-width:75ch;line-height:1.55}
+
+/* ---------- 1. EDITORIAL ---------- */
+.ed{font-family:var(--sans);color:#12212f}
+.ed .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 40px;border-bottom:2px solid #12212f}
+.ed .brand{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-.01em}
+.ed .nav nav{display:flex;gap:20px;font-size:13px;letter-spacing:.02em}
+.ed .give{background:var(--golden);color:#12212f;font-weight:700;padding:8px 16px;border-radius:2px;font-size:13px}
+.ed .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:0;border-bottom:1px solid #d8dee5}
+.ed .hero .txt{padding:52px 40px 44px}
+.ed .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary);margin-bottom:14px}
+.ed h1{font-family:var(--serif);font-weight:600;font-size:52px;line-height:1.03;letter-spacing:-.02em;margin-bottom:18px}
+.ed .lede{font-size:17px;line-height:1.6;color:#2b3b4a;max-width:44ch}
+.ed .lede::first-letter{float:left;font-family:var(--serif);font-size:58px;line-height:.82;padding:6px 10px 0 0;color:var(--primary)}
+.ed .hero img{height:100%;object-fit:cover;min-height:420px}
+.ed .strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #d8dee5}
+.ed .strip div{padding:22px 28px;border-right:1px solid #d8dee5}
+.ed .strip div:last-child{border-right:0}
+.ed .strip b{display:block;font-family:var(--serif);font-size:26px;color:var(--primary)}
+.ed .strip span{font-size:13px;color:#5b6b7a}
+.ed .body{display:grid;grid-template-columns:1.6fr .9fr;gap:38px;padding:44px 40px}
+.ed .body p{font-size:16px;line-height:1.72;margin-bottom:15px;color:#22303e}
+.ed blockquote{font-family:var(--serif);font-size:23px;line-height:1.35;color:var(--primary);border-left:3px solid var(--golden);padding-left:18px;margin:8px 0 18px}
+.ed figure figcaption{font-family:var(--mono);font-size:11px;color:#6b7a89;margin-top:7px;line-height:1.5}
+.ed .cta{background:#12212f;color:#fff;padding:34px 40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.ed .cta h3{font-family:var(--serif);font-size:26px;font-weight:600}
+.ed .cta p{color:#b9c6d3;font-size:14px;margin-top:5px}
+.ed .cta a{background:var(--golden);color:#12212f;font-weight:700;padding:13px 24px;border-radius:2px;font-size:15px;text-decoration:none}
+
+/* ---------- 2. CHAPTERS ---------- */
+.ch{background:#08172b;color:#fff;position:relative}
+.ch .rail{position:absolute;left:26px;top:0;bottom:0;width:2px;background:rgba(255,255,255,.14)}
+.ch .rail i{position:absolute;left:-4px;width:10px;height:10px;border-radius:50%;background:var(--golden)}
+.ch .chap{padding:0 0 0 68px;border-bottom:1px solid rgba(255,255,255,.10)}
+.ch .inner{padding:44px 40px 44px 0;max-width:760px}
+.ch .num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--golden);margin-bottom:12px}
+.ch h1{font-family:var(--display);font-size:44px;line-height:1.06;letter-spacing:-.02em;margin-bottom:16px}
+.ch h3{font-family:var(--display);font-size:27px;margin-bottom:12px;line-height:1.15}
+.ch p{font-size:16px;line-height:1.7;color:#c6d4e4;max-width:56ch}
+.ch .shot{margin:22px 0 0;border-radius:8px;overflow:hidden;max-width:620px}
+.ch .shot img{width:100%;height:230px;object-fit:cover}
+.ch .end{padding:46px 40px 46px 68px;background:linear-gradient(90deg,#0842A1,#08172b)}
+.ch .end a{display:inline-block;margin-top:16px;background:var(--golden);color:#12212f;font-weight:700;padding:13px 26px;border-radius:6px;text-decoration:none}
+.ch .mini{display:inline-block;margin-top:14px;font-size:13px;color:var(--golden);border-bottom:1px solid rgba(251,189,35,.5);padding-bottom:2px}
+
+/* ---------- 3. TRANSPARENCY ---------- */
+.tr{font-family:var(--geo);background:#fff}
+.tr .top{background:var(--primary);color:#fff;padding:40px}
+.tr .top h1{font-size:40px;line-height:1.08;font-weight:700;letter-spacing:-.02em;max-width:18ch}
+.tr .top p{margin-top:12px;color:#cfe0f7;max-width:52ch;line-height:1.6}
+.tr .kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}
+.tr .kpi{padding:24px;border-right:1px solid var(--border)}
+.tr .kpi:last-child{border-right:0}
+.tr .kpi b{display:block;font-size:30px;color:var(--primary);font-weight:700;letter-spacing:-.02em}
+.tr .kpi span{font-size:13px;color:var(--fg-soft);line-height:1.4;display:block;margin-top:4px}
+.tr .panel{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.tr .col{padding:32px}
+.tr .col:first-child{border-right:1px solid var(--border)}
+.tr h3{font-size:15px;text-transform:uppercase;letter-spacing:.07em;color:var(--fg-soft);margin-bottom:16px;font-weight:600}
+.tr .row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border);font-size:14px}
+.tr .row:last-child{border-bottom:0}
+.tr .bar2{height:7px;border-radius:4px;background:var(--muted);overflow:hidden;margin-top:7px}
+.tr .bar2 i{display:block;height:100%;background:var(--primary)}
+.tr .live{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;color:#0a7a3d;background:#e7f7ee;padding:3px 9px;border-radius:999px}
+.tr .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#0a7a3d}
+.tr .give{margin:0;padding:28px 32px;background:var(--card);border-top:1px solid var(--border);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.tr .give a{background:var(--primary);color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;font-weight:600}
+.tr .give span{font-size:13px;color:var(--fg-soft)}
+
+/* ---------- 4. BENTO ---------- */
+.be{padding:32px;background:#F2F6FB}
+.be .grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:14px}
+.be .t{border-radius:16px;overflow:hidden;position:relative;background:#fff;border:1px solid var(--border);padding:20px;display:flex;flex-direction:column;justify-content:flex-end}
+.be .t.photo{padding:0}
+.be .t.photo img{width:100%;height:100%;object-fit:cover}
+.be .t.wide{grid-column:span 2}
+.be .t.tall{grid-row:span 2}
+.be .t.hero{grid-column:span 3;grid-row:span 2;background:var(--primary);color:#fff;justify-content:center}
+.be .t.hero h1{font-family:var(--display);font-size:38px;line-height:1.08;letter-spacing:-.02em;max-width:16ch}
+.be .t.hero p{margin-top:10px;color:#cfe0f7;max-width:44ch;line-height:1.55}
+.be .t.gold{background:var(--golden);color:#12212f}
+.be .t b{font-family:var(--display);font-size:28px;letter-spacing:-.02em}
+.be .t span{font-size:13px;color:var(--fg-soft);line-height:1.45}
+.be .t.gold span{color:#4a3800}
+.be .t .lbl{position:absolute;left:14px;bottom:12px;background:rgba(8,23,43,.72);color:#fff;font-size:12px;padding:5px 10px;border-radius:8px;backdrop-filter:blur(4px)}
+.be .t.cta{background:#12212f;color:#fff;justify-content:center}
+.be .t.cta a{display:inline-block;margin-top:10px;background:var(--golden);color:#12212f;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;font-size:14px;width:fit-content}
+
+/* ---------- 5. DOCUMENTARY ---------- */
+.doc{background:#fff}
+.doc .nav{display:flex;justify-content:space-between;align-items:center;padding:22px 44px;font-size:13px;letter-spacing:.04em;color:var(--fg-soft)}
+.doc .nav b{font-family:var(--display);color:var(--fg);font-size:16px;letter-spacing:0}
+.doc .full{position:relative}
+.doc .full img{width:100%;height:440px;object-fit:cover;filter:saturate(1.02)}
+.doc .cap{position:absolute;left:44px;bottom:34px;right:44px;color:#fff}
+.doc .cap h1{font-family:var(--display);font-weight:600;font-size:46px;line-height:1.05;letter-spacing:-.025em;text-shadow:0 2px 24px rgba(0,0,0,.45);max-width:20ch}
+.doc .cap p{margin-top:10px;font-size:15px;max-width:48ch;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.doc .meta{font-family:var(--mono);font-size:11px;color:var(--fg-soft);padding:16px 44px;border-bottom:1px solid var(--border);display:flex;gap:26px;flex-wrap:wrap}
+.doc .txt{padding:46px 44px;max-width:66ch}
+.doc .txt p{font-size:17px;line-height:1.75;color:#2a3744;margin-bottom:16px}
+.doc .txt p.first{font-size:21px;line-height:1.6;color:#12212f}
+.doc .pair{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border)}
+.doc .pair img{width:100%;height:250px;object-fit:cover}
+.doc .quiet{padding:40px 44px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.doc .quiet h3{font-family:var(--display);font-size:24px;font-weight:600;max-width:22ch;line-height:1.2}
+.doc .quiet a{border:1.5px solid var(--primary);color:var(--primary);padding:11px 22px;text-decoration:none;font-weight:600;border-radius:4px}
+@media(max-width:900px){
+ .ed .hero,.ed .body,.tr .panel,.doc .pair{grid-template-columns:1fr}
+ .tr .kpis{grid-template-columns:repeat(2,1fr)}
+ .be .grid{grid-template-columns:repeat(2,1fr)}
+ .be .t.hero{grid-column:span 2}
+ .ed h1{font-size:36px}
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <strong>Wells of Change · cinco direções</strong>
+  <button aria-pressed="true" data-v="1">1 · Editorial de campo</button>
+  <button aria-pressed="false" data-v="2">2 · Capítulos</button>
+  <button aria-pressed="false" data-v="3">3 · Transparência</button>
+  <button aria-pressed="false" data-v="4">4 · Bento</button>
+  <button aria-pressed="false" data-v="5">5 · Documental</button>
+</div>
+
+<p class="note">Mesmo conteúdo, mesmas fotos, mesma paleta do site (<b>#0842A1</b> azul, <b>#FBBD23</b> dourado, <b>#BEE2F4</b> apoio). O que muda é a linguagem visual e a ordem em que a página conta a história. Cada direção diz o que ganha e o que custa.</p>
+
+<div class="stage">
+
+<!-- 1 -->
+<section class="variant on" data-v="1">
+  <span class="tag">direção 1</span>
+  <h2 class="opt">Editorial de campo</h2>
+  <p class="why">A página lida como reportagem: manchete em serifada, capitular, olho de texto, foto com crédito. <em>Tira o cheiro de landing page</em> e coloca a ONG no registro de quem documenta o que faz. A tendência de 2026 puxa tipografia editorial como identidade, e serifada em campanha social sinaliza jornalismo, não venda.</p>
+  <div class="cost">Custo: exige texto bem escrito e fotos com legenda de verdade. Se a copy for fraca, o formato expõe.</div>
+  <div class="frame ed">
+    <div class="nav"><span class="brand">Wells of Change</span><nav><span>O que fazemos</span><span>Nossa história</span><span>Quem somos</span><span>Ética</span></nav><span class="give">Doar</span></div>
+    <div class="hero">
+      <div class="txt">
+        <div class="kicker">Campo Formoso · Bahia · reportagem</div>
+        <h1>Mudando vidas, um poço por vez</h1>
+        <p class="lede">Enquanto alguns procuram água em outros planetas, mais de um bilhão ainda lutam por uma gota aqui na Terra. Perfuramos o solo, instalamos bombas movidas a energia solar e monitoramos cada poço em tempo real.</p>
+      </div>
+      <img src="https://www.wellsofchange.com/assets/20201129_170751_1762441207202-D2YMQ1y4.jpg" alt="Comunidade em frente ao painel solar em Campo Formoso">
+    </div>
+    <div class="strip">
+      <div><b>1º poço</b><span>concluído em Campo Formoso, interior da Bahia</span></div>
+      <div><b>Tempo real</b><span>monitoramento remoto de cada poço instalado</span></div>
+      <div><b>Senegal</b><span>próximo destino do projeto</span></div>
+    </div>
+    <div class="body">
+      <div>
+        <p>A Wells of Change nasceu na pandemia, a partir de uma palestra sobre monitoramento de poços de petróleo em tempo real. A pergunta que ficou foi simples: se dá para usar dados e inteligência artificial para otimizar extração de petróleo, por que não para garantir acesso à água?</p>
+        <blockquote>Não paramos quando a água começa a correr. Ficamos, ensinamos, capacitamos.</blockquote>
+        <p>Cada poço é mais do que um ponto de acesso à água potável. É a criança que não caminha quilômetros com um balde na cabeça, a família que cuida da higiene com dignidade, o agricultor que planeja a colheita sem depender só da chuva.</p>
+      </div>
+      <figure>
+        <img src="https://www.wellsofchange.com/assets/20191002_125711_1762442531910-Dy5mdzX0.jpg" alt="Reservatórios de água da comunidade">
+        <figcaption>Reservatórios instalados na comunidade. Foto: acervo Wells of Change.</figcaption>
+      </figure>
+    </div>
+    <div class="cta">
+      <div><h3>Cada doação vira água, saúde e dignidade</h3><p>PIX, transferência ou envio internacional por SWIFT.</p></div>
+      <a href="#">Fazer doação</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="variant" data-v="2">
+  <span class="tag">direção 2</span>
+  <h2 class="opt">Capítulos com trilha de leitura</h2>
+  <p class="why">A página vira uma narrativa em quatro capítulos com uma trilha à esquerda marcando onde o leitor está: problema, jornada, solução, chamada. <em>É o padrão que a base de UX aponta para causas sociais</em>, e o que a charity: water popularizou. Fundo escuro deixa a foto e o dourado do CTA carregarem a atenção.</p>
+  <div class="cost">Custo: página mais longa e dependente de rolagem. Quem chega decidido a doar precisa do botão fixo, senão rola demais.</div>
+  <div class="frame ch">
+    <div class="rail"><i style="top:60px"></i><i style="top:300px"></i><i style="top:560px"></i></div>
+    <div class="chap"><div class="inner">
+      <div class="num">Capítulo 01 · O problema</div>
+      <h1>Mais de um bilhão de pessoas lutam por uma gota</h1>
+      <p>Enquanto alguns procuram água em outros planetas, comunidades inteiras no interior do Brasil caminham quilômetros por um balde. Isso precisa mudar, e está nas nossas mãos.</p>
+    </div></div>
+    <div class="chap"><div class="inner">
+      <div class="num">Capítulo 02 · A jornada</div>
+      <h3>De uma palestra sobre petróleo a um poço no sertão</h3>
+      <p>A ideia nasceu na pandemia: se dados em tempo real otimizam a extração de petróleo, por que não garantir água? Perfuramos o solo, instalamos bombas solares e monitoramos cada poço remotamente.</p>
+      <div class="shot"><img src="https://www.wellsofchange.com/assets/20191002_124421_1762442531910-CkBEVg3_.jpg" alt="Trabalho de campo na comunidade"></div>
+      <span class="mini">Ver como funciona o monitoramento →</span>
+    </div></div>
+    <div class="chap"><div class="inner">
+      <div class="num">Capítulo 03 · O que muda</div>
+      <h3>O primeiro poço está pronto. A vida já começou a mudar.</h3>
+      <p>Campo Formoso, interior da Bahia. Depois que a água chega, ficamos com a comunidade: ensinamos, capacitamos, e garantimos que ela cuide da própria fonte. Do Nordeste ao Senegal, vamos onde a sede é mais urgente.</p>
+    </div></div>
+    <div class="end">
+      <div class="num">Capítulo 04 · Sua parte</div>
+      <h3 style="font-family:var(--display);font-size:28px">Uma doação vira um poço, um poço vira um futuro</h3>
+      <p style="color:#dbe7f7">PIX pelo CNPJ, transferência bancária ou envio internacional por SWIFT.</p>
+      <a href="#">Fazer doação</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="variant" data-v="3">
+  <span class="tag">direção 3</span>
+  <h2 class="opt">Transparência em primeiro plano</h2>
+  <p class="why">Abre com número, não com adjetivo: quantos poços, onde, status do monitoramento, para onde vai o dinheiro. <em>É o argumento que a própria ONG já usa</em> — "cada gota é medida, cada impacto é documentado" — virando a estrutura da página. Doador cauteloso decide por evidência, e a pesquisa de 2026 coloca rastreamento de impacto como o diferencial das melhores páginas de doação.</p>
+  <div class="cost">Custo: só funciona com dados reais e atualizados. Um painel com número velho é pior do que não ter painel.</div>
+  <div class="frame tr">
+    <div class="top">
+      <h1>Cada gota é medida. Cada impacto é documentado.</h1>
+      <p>Poços movidos a energia solar com monitoramento em tempo real, para comunidades que hoje caminham quilômetros por água.</p>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>1</b><span>poço concluído<br>Campo Formoso, BA</span></div>
+      <div class="kpi"><b>24/7</b><span>monitoramento remoto<br>de vazão e bombeamento</span></div>
+      <div class="kpi"><b>2</b><span>países no plano<br>Brasil e Senegal</span></div>
+      <div class="kpi"><b>4</b><span>parceiros técnicos<br>Intelie, 2Solve, Viasat, Vale do Sol</span></div>
+    </div>
+    <div class="panel">
+      <div class="col">
+        <h3>Para onde vai a doação</h3>
+        <div class="row"><span>Perfuração e estrutura do poço</span><b>—</b></div>
+        <div class="bar2"><i style="width:52%"></i></div>
+        <div class="row" style="margin-top:14px"><span>Bombeamento solar</span><b>—</b></div>
+        <div class="bar2"><i style="width:28%"></i></div>
+        <div class="row" style="margin-top:14px"><span>Monitoramento e manutenção</span><b>—</b></div>
+        <div class="bar2"><i style="width:20%"></i></div>
+        <p style="font-size:12.5px;color:var(--fg-soft);margin-top:16px;line-height:1.5">Percentuais ilustrativos. Publicar só com os números auditados do exercício.</p>
+      </div>
+      <div class="col">
+        <h3>Poço 01 · Campo Formoso</h3>
+        <div class="row"><span>Status</span><span class="live">operando</span></div>
+        <div class="row"><span>Energia</span><span>fotovoltaica</span></div>
+        <div class="row"><span>Telemetria</span><span>ativa</span></div>
+        <div class="row"><span>Comunidade</span><span>capacitada para manutenção</span></div>
+        <img src="https://www.wellsofchange.com/assets/20191002_125711_1762442531910-Dy5mdzX0.jpg" alt="Reservatórios da comunidade" style="margin-top:18px;border-radius:10px;height:150px;width:100%;object-fit:cover">
+      </div>
+    </div>
+    <div class="give"><a href="#">Fazer doação</a><span>PIX, transferência ou SWIFT · CNPJ 43.933.784/0001-13</span></div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section class="variant" data-v="4">
+  <span class="tag">direção 4</span>
+  <h2 class="opt">Bento modular</h2>
+  <p class="why">Blocos de tamanhos diferentes: manchete, foto, número, depoimento, doação. <em>O visitante escolhe por onde entrar</em> em vez de rolar linearmente, e o mesmo grid reempilha bem no celular, que é de onde vem a maior parte do tráfego. Formato moderno sem ser modinha: cada bloco é um pedaço de conteúdo que a ONG já tem.</p>
+  <div class="cost">Custo: fragmenta a narrativa. Quem não conhece a ONG pode sair sem entender a história inteira.</div>
+  <div class="frame be">
+    <div class="grid">
+      <div class="t hero"><h1>Mudando vidas, um poço por vez</h1><p>Água potável e tecnologia sustentável para comunidades carentes, do Nordeste brasileiro ao Senegal.</p></div>
+      <div class="t photo tall"><img src="https://www.wellsofchange.com/assets/20201129_170751_1762441207202-D2YMQ1y4.jpg" alt="Comunidade e painel solar"><span class="lbl">Campo Formoso · BA</span></div>
+      <div class="t gold"><b>1º poço</b><span>concluído. A vida já começou a mudar.</span></div>
+      <div class="t"><b>Tempo real</b><span>cada poço monitorado remotamente</span></div>
+      <div class="t photo wide"><img src="https://www.wellsofchange.com/assets/20191002_124421_1762442531910-CkBEVg3_.jpg" alt="Equipe em campo"><span class="lbl">Instalação e capacitação</span></div>
+      <div class="t"><b>Senegal</b><span>próximo destino</span></div>
+      <div class="t cta"><b style="font-size:20px">Doe agora</b><span style="color:#b9c6d3">PIX · transferência · SWIFT</span><a href="#">Fazer doação</a></div>
+      <div class="t wide"><span style="font-size:15px;color:#22303e;line-height:1.55">“Não paramos quando a água começa a correr. Ficamos, ensinamos, capacitamos.”</span></div>
+      <div class="t photo"><img src="https://www.wellsofchange.com/assets/corn-1841271_1762442531910-KrQd4c_d.jpg" alt="Plantação irrigada"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="variant" data-v="5">
+  <span class="tag">direção 5</span>
+  <h2 class="opt">Documental sóbrio</h2>
+  <p class="why">Quase nenhuma interface: foto grande, tipografia contida, muito respiro, uma linha fina separando as partes. <em>A foto do sertão é o argumento</em>, e o design sai da frente. É a direção que menos parece gerada por máquina, porque depende inteiramente do material real da ONG.</p>
+  <div class="cost">Custo: exige fotos boas em toda a página. Onde a imagem for fraca, o vazio aparece.</div>
+  <div class="frame doc">
+    <div class="nav"><b>Wells of Change</b><span>O que fazemos · Nossa história · Quem somos · Doar</span></div>
+    <div class="full">
+      <img src="https://www.wellsofchange.com/assets/20201129_170751_1762441207202-D2YMQ1y4.jpg" alt="Comunidade em frente ao painel solar">
+      <div class="cap"><h1>Mudando vidas, um poço por vez</h1><p>Campo Formoso, Bahia. O primeiro poço movido a energia solar, com monitoramento em tempo real.</p></div>
+    </div>
+    <div class="meta"><span>Projeto 01</span><span>Bahia, Brasil</span><span>Bombeamento fotovoltaico</span><span>Monitoramento remoto</span></div>
+    <div class="txt">
+      <p class="first">Enquanto alguns procuram água em outros planetas, mais de um bilhão de pessoas ainda lutam por uma gota aqui na Terra.</p>
+      <p>Perfuramos o solo, instalamos bombas movidas a energia solar e aplicamos monitoramento em tempo real. Quando a água começa a correr, continuamos com a comunidade, para que ela cuide da própria fonte.</p>
+    </div>
+    <div class="pair">
+      <img src="https://www.wellsofchange.com/assets/20191002_124421_1762442531910-CkBEVg3_.jpg" alt="Trabalho de campo">
+      <img src="https://www.wellsofchange.com/assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910-C71Fc1Je.jpg" alt="Criança carregando água">
+    </div>
+    <div class="quiet"><h3>Do Nordeste brasileiro ao Senegal, onde a sede é mais urgente</h3><a href="#">Fazer doação</a></div>
+  </div>
+</section>
+
+</div>
+<script>
+const btns=[...document.querySelectorAll('.bar button')];
+btns.forEach(b=>b.addEventListener('click',()=>{
+  btns.forEach(x=>x.setAttribute('aria-pressed', x===b));
+  document.querySelectorAll('.variant').forEach(v=>v.classList.toggle('on', v.dataset.v===b.dataset.v));
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+</script>
+</body>
+</html>
