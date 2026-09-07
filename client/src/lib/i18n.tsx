@@ -101,6 +101,11 @@ export function useLanguage() {
 
 const translations: Record<Language, any> = {
   en: {
+    meta: {
+      title: "Wells of Change - Changing lives, one well at a time",
+      description: "Solar-powered wells with real-time monitoring bring drinking water to underserved communities, from northeastern Brazil to sub-Saharan Africa.",
+      ogLocale: "en_US",
+    },
     nav: {
       ourStory: "Our Story",
       whatWeDo: "What We Do",
@@ -268,6 +273,11 @@ const translations: Record<Language, any> = {
     },
   },
   "pt-BR": {
+    meta: {
+      title: "Wells of Change - Mudando vidas, um poço por vez",
+      description: "Poços com energia solar e monitoramento em tempo real levam água potável a comunidades carentes, do Nordeste brasileiro à África Subsaariana.",
+      ogLocale: "pt_BR",
+    },
     nav: {
       ourStory: "Nossa História",
       whatWeDo: "O Que Fazemos",
@@ -435,6 +445,11 @@ const translations: Record<Language, any> = {
     },
   },
   es: {
+    meta: {
+      title: "Wells of Change - Cambiando vidas, un pozo a la vez",
+      description: "Pozos con energía solar y monitoreo en tiempo real llevan agua potable a comunidades desatendidas, del nordeste brasileño al África subsahariana.",
+      ogLocale: "es_ES",
+    },
     nav: {
       ourStory: "Nuestra Historia",
       whatWeDo: "Lo Que Hacemos",
@@ -602,6 +617,11 @@ const translations: Record<Language, any> = {
     },
   },
   fr: {
+    meta: {
+      title: "Wells of Change - Changer des vies, un puits à la fois",
+      description: "Des puits à énergie solaire avec suivi en temps réel apportent de l'eau potable à des communautés démunies, du Nordeste brésilien à l'Afrique subsaharienne.",
+      ogLocale: "fr_FR",
+    },
     nav: {
       ourStory: "Notre Histoire",
       whatWeDo: "Ce Que Nous Faisons",
