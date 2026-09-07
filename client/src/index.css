@@ -257,6 +257,35 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  /*
+   * Section links scroll rather than jump. Doing it here instead of in each click handler means the
+   * same behaviour applies to a link followed from outside the page, to the back button, and to the
+   * navigation, and it means the preference below is honoured in all of them at once.
+   */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /*
+   * Some people get motion sick from scrolling animation, and some simply asked their system not to
+   * animate. Every animation on the site is switched off here rather than in the component that
+   * happens to own it, so a new animation cannot forget to ask.
+   */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 /**

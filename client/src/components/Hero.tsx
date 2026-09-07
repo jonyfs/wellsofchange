@@ -4,24 +4,18 @@ import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import heroImage from "@assets/20201129_170751_1762441521443.jpg";
 import DonationDialog from "./DonationDialog";
+import { goToSection } from "@/lib/sections";
 
 export default function Hero() {
   const { t } = useLanguage();
   const [donationDialogOpen, setDonationDialogOpen] = useState(false);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const handleDonateClick = () => {
     setDonationDialogOpen(true);
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="scroll-mt-20 relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
@@ -54,7 +48,7 @@ export default function Hero() {
         </div>
 
         <button
-          onClick={() => scrollToSection("what-we-do")}
+          onClick={() => goToSection("what-we-do")}
           className="mt-20 inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
           data-testid="button-scroll-down"
         >
