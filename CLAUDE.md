@@ -60,6 +60,12 @@ reordering that file. Wouter routes only `/` and a 404, with `base={import.meta.
 running nor deploying the site needs `DATABASE_URL`. `npm run dev` uses the server only to host Vite
 middleware. Don't build features on it without a deliberate decision to add a backend.
 
+All four languages share one URL, by decision. `DocumentMetadata` in `client/src/lib/` keeps the
+document title, description, Open Graph and Twitter tags in step with the selected language, so a
+visitor reading in Spanish gets a Spanish tab and share card. It does not make the other languages
+indexable: a search engine indexes one document per URL, so only the prerendered language reaches an
+index. Changing that needs per-language URLs, which the project has chosen not to do for now.
+
 All text lives in `client/src/lib/i18n.tsx` (~800 lines): a `LanguageProvider` context plus one
 translation dictionary per language. Components read copy with `const { t } = useLanguage()` and
 `t("section.key")`. Any user-visible string needs an entry in all four languages, since a miss falls

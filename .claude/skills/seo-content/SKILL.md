@@ -74,6 +74,9 @@ Then check the structured data at `https://validator.schema.org/` and Google's R
 
 ## What copy cannot fix
 
-The four languages share one URL, and the page is prerendered in one of them, so only that language
-reaches a crawler. Rewriting copy does not change that; it is a routing problem. Say so rather than
-compensating with keyword-stuffed metadata.
+The four languages share one URL by decision, and the page is prerendered in one of them, so only
+that language reaches a crawler. `DocumentMetadata` translates the title and social tags in the live
+document, which serves visitors and share previews but not indexing: a search engine indexes one
+document per URL. The audit will keep reporting the missing hreflang, correctly, because hreflang
+requires a distinct URL per language. Say so rather than compensating with keyword-stuffed
+metadata.
