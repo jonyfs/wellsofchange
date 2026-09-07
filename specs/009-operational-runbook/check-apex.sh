@@ -51,12 +51,21 @@ verify=$(curl -s -o /dev/null -w '%{ssl_verify_result}' --max-time 15 https://$D
 [ "$verify" = "0" ] && say OK "Browsers will accept https://$D" || say "PROBLEM" "Certificate does not validate (code ${verify:-connect-failed})."
 
 echo
-echo "--- Redirect ---"
+echo "--- Redirects ---"
 r=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' --max-time 15 http://$D/ 2>/dev/null)
-echo "http://$D -> $r"
+echo "http://$D  -> $r"
 case "$r" in
-  301*www.wellsofchange.com*) say OK "The apex redirects to www." ;;
+  301*www.$D*) say OK "The apex redirects to www." ;;
   *) say "PROBLEM" "The apex does not redirect to www." ;;
+esac
+
+# Whether Enforce HTTPS is on in the Pages settings shows up here: with it off, this answers 200
+# over plain HTTP instead of sending the visitor to the encrypted address.
+w=$(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' --max-time 15 http://www.$D/ 2>/dev/null)
+echo "http://www.$D -> $w"
+case "$w" in
+  301*https://www.$D*) say OK "Plain HTTP is redirected to HTTPS. Enforce HTTPS is on." ;;
+  *) say "PROBLEM" "Plain HTTP is served as-is. Turn on Enforce HTTPS in Settings, Pages." ;;
 esac
 
 echo
@@ -67,4 +76,4 @@ echo "$wsub"
 
 echo
 echo "$ok ok, $bad to fix"
-[ "$bad" -eq 0 ] && echo "Done. Turn on Enforce HTTPS in the Pages settings if it is not on."
+[ "$bad" -eq 0 ] && echo "Done. Nothing to fix."
