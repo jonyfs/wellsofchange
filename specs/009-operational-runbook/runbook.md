@@ -3,6 +3,9 @@
 Two tasks, both outside this repository. Each step says where to go, what to change, and how to
 check it worked. Times are what to expect, not promises.
 
+Both were completed on 2026-09-07. The steps stay because each failure can return, and because the
+check in Part 1 is worth running whenever the certificate renews.
+
 The GitHub Pages settings for this domain live in the **`wellsofchange` account**, not in
 `jonyfs/wellsofchange`. Part 1, step 2 has to be done there.
 
@@ -85,8 +88,37 @@ names.
 
 ## Part 2: verify the site in Bing
 
-Google Search Console is already verified for this site, through `googlea0d834dab3e06773.html` in
-the site root. Bing can import that, which avoids adding any DNS record or file.
+**Done on 2026-09-07**, through the Search Console import. The steps are kept for whoever needs to
+add another property or re-verify later.
+
+Verification state is not visible from outside the account, so nothing here confirms it
+independently. What can be watched is whether Bing starts returning the site:
+
+```
+https://www.bing.com/search?q=site%3Awellsofchange.com
+```
+
+Expect that to stay empty for a while. Verifying a property tells Bing the site exists; it does not
+schedule a crawl.
+
+Two things are worth confirming inside the account, since the import does not guarantee either:
+
+- The sitemap is listed under Sitemaps as `https://www.wellsofchange.com/sitemap.xml`.
+- The property is the `www` host, matching the canonical the site declares.
+
+### Why the import was the right route
+
+The other two verification methods put a file or a meta tag on the site, and neither can be done
+from this repository. Everything in `client/public/` publishes to `jonyfs.github.io/wellsofchange/`,
+not to `www.wellsofchange.com`, so a verification file committed here never reaches the host being
+verified. `googlea0d834dab3e06773.html` answers on the live site because the other account published
+it.
+
+The DNS TXT method avoids that problem too, since it is done in the Hostinger panel rather than in
+the site. The Search Console import avoids it and needs no token at all.
+
+Google Search Console is verified for this site, through `googlea0d834dab3e06773.html` in the site
+root. Bing imports that, which is why no DNS record or file was needed.
 
 ### The quick path, about five minutes
 
@@ -123,6 +155,8 @@ Then check Bing has the page:
 ```
 https://www.bing.com/search?q=site%3Awellsofchange.com
 ```
+
+Indexing takes time and is not a sign the verification failed.
 
 ## Links, collected
 
