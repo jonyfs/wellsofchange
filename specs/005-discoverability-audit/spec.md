@@ -156,8 +156,9 @@ impression for an organization asking for money.
 
 ### Reach
 
-- **FR-013**: The site MUST be verifiable in Bing Webmaster Tools. Google verification is in place;
-  Bing is not, and Bing feeds Copilot and several answer engines.
+- **FR-013**: The site MUST be verifiable in Bing Webmaster Tools, which feeds Copilot and several
+  answer engines. Done on 2026-09-07 by importing the Google Search Console property, so no DNS
+  record or file was needed.
 - **FR-014**: The apex host MUST serve a valid certificate over HTTPS, or the DNS MUST stop
   answering for it. A certificate error is worse than a name that does not resolve.
 

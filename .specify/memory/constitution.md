@@ -1,11 +1,14 @@
 <!--
 Sync Impact Report
-Version change: 2.0.0 → 2.1.0
-Bump rationale: MINOR. Principle VII was added. Nothing was removed or redefined.
+Version change: 2.1.0 → 2.1.1
+Bump rationale: PATCH. A deferred item was resolved and removed. No principle changed.
 Modified principles: none
-Added sections:
-  - VII. Prose Is Edited Before It Ships
+Added sections: none
 Removed sections: none
+Resolved deferred items:
+  - TODO(APEX_TLS), on 2026-09-07. The apex AAAA record pointed at a Hostinger CDN address that
+    refused connections, which blocked certificate validation over IPv6. It now points at GitHub's
+    four addresses, and the certificate covers wellsofchange.com and www.wellsofchange.com.
 Templates requiring updates: none. Dependent Spec Kit templates read this file at runtime.
 Deferred items:
   - TODO(DOMAIN_OWNERSHIP): wellsofchange.com points at wellsofchange.github.io, an account other
@@ -19,8 +22,6 @@ Deferred items:
   - TODO(CI_TEST_JOB): the post-deploy test job runs test-deployed-site.sh against
     www.wellsofchange.com, a site this repository does not publish, and asserts a base path the
     build no longer uses. Every run is therefore red. Accepted for now as known noise.
-  - TODO(APEX_TLS): https://wellsofchange.com fails certificate verification. http:// redirects to
-    https://www., so only visitors who type the apex with https see the error.
   - TODO(BRANCH_PROTECTION): principle VI is enforced by convention and a local hook. Branch
     protection on main is the enforcement that does not depend on either.
   - TODO(INDEX_HTML_LANGUAGE): client/index.html carries Portuguese-first SEO metadata outside the
@@ -206,4 +207,4 @@ Every pull request review MUST verify compliance with the principles above. A ch
 principle is either revised or accompanied by an amendment in the same pull request. Deviations MUST
 NOT be merged on the promise of a later cleanup.
 
-**Version**: 2.1.0 | **Ratified**: 2026-09-06 | **Last Amended**: 2026-09-06
+**Version**: 2.1.1 | **Ratified**: 2026-09-06 | **Last Amended**: 2026-09-07
