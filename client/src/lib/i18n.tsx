@@ -17,6 +17,23 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const PRERENDER_LANGUAGE: Language = "pt-BR";
 
 /**
+ * The languages the site is published in, in the order the selector shows them.
+ *
+ * Each name is written in its own language, which is what someone looking for their language
+ * actually scans for, and `code` is used as the option's `lang` attribute so a screen reader
+ * pronounces the name rather than reading it through the current language's rules.
+ *
+ * No flags. A flag names a country, and these four languages are spoken across far more countries
+ * than four flags can stand for, including the ones this organization works in.
+ */
+export const LANGUAGES: { code: Language; label: string }[] = [
+  { code: "en", label: "English" },
+  { code: "pt-BR", label: "Português" },
+  { code: "es", label: "Español" },
+  { code: "fr", label: "Français" },
+];
+
+/**
  * Detects the user's browser language and maps it to a supported language
  * @returns The detected language code or 'en' as default
  */
@@ -106,9 +123,24 @@ const translations: Record<Language, any> = {
       description: "Solar-powered wells with real-time monitoring bring drinking water to underserved communities, from northeastern Brazil to sub-Saharan Africa.",
       ogLocale: "en_US",
     },
+    alt: {
+      pixQrCode: "QR Code for a PIX donation to Wells of Change",
+      team: "The Wells of Change team beside solar panels in Campo Formoso",
+      thirst: "Clean water running from a well, ending the walk for a drink",
+      health: "A child drinking safe water instead of water that carries disease",
+      permanence: "A family staying on their land now that water reaches it",
+      prosperity: "Crops growing on land that a well made farmable",
+      dignity: "A community with water of its own, and the dignity that brings",
+      monitoring: "A well being monitored remotely, so a fault is found before the water stops",
+      waterTanks: "Water storage tanks serving the community in Campo Formoso",
+      technicians: "Technicians installing the monitoring system on a water well",
+      solarPanels: "Solar panels powering the pump of an artesian well",
+    },
     nav: {
       openMenu: "Open menu",
       closeMenu: "Close menu",
+      changeLanguage: "Change language",
+      skipToContent: "Skip to content",
       ourStory: "Our Story",
       whatWeBelieve: "What We Believe",
       partners: "Our Partners",
@@ -145,6 +177,7 @@ const translations: Record<Language, any> = {
       copiedDescription: "{label} copied to clipboard.",
       labelCNPJ: "CNPJ",
       labelAgency: "Agency",
+      qrLoading: "Generating QR Code...",
       labelAccount: "Account",
       thankYou: "Thank you for making a difference! Every contribution transforms lives.",
     },
@@ -215,6 +248,8 @@ const translations: Record<Language, any> = {
       shareTitle: "Share the Cause",
       shareDesc: "Help spread our mission. The more people know, the more lives we can transform.",
       shareButton: "Share",
+      shareCopied: "Link copied",
+      shareFailed: "Copy this link to share",
       volunteerTitle: "Become a Volunteer",
       volunteerDesc: "Join our team of specialists and contribute your knowledge and skills.",
       volunteerButton: "I Want to Participate",
@@ -296,9 +331,24 @@ const translations: Record<Language, any> = {
       description: "Poços com energia solar e monitoramento em tempo real levam água potável a comunidades carentes, do Nordeste brasileiro à África Subsaariana.",
       ogLocale: "pt_BR",
     },
+    alt: {
+      pixQrCode: "QR Code para doação via PIX à Wells of Change",
+      team: "A equipe da Wells of Change ao lado de painéis solares em Campo Formoso",
+      thirst: "Água limpa saindo de um poço, encerrando a caminhada por um gole",
+      health: "Uma criança bebendo água segura em vez de água que transmite doença",
+      permanence: "Uma família permanecendo em sua terra agora que a água chega até ela",
+      prosperity: "Plantação crescendo em terra que um poço tornou cultivável",
+      dignity: "Uma comunidade com água própria, e a dignidade que isso traz",
+      monitoring: "Um poço monitorado à distância, para que a falha apareça antes de faltar água",
+      waterTanks: "Caixas d'água atendendo a comunidade em Campo Formoso",
+      technicians: "Técnicos instalando o sistema de monitoramento em um poço",
+      solarPanels: "Painéis solares alimentando a bomba de um poço artesiano",
+    },
     nav: {
       openMenu: "Abrir menu",
       closeMenu: "Fechar menu",
+      changeLanguage: "Mudar de idioma",
+      skipToContent: "Ir para o conteúdo",
       ourStory: "Nossa História",
       whatWeBelieve: "O Que Nós Acreditamos",
       partners: "Nossos Parceiros",
@@ -335,6 +385,7 @@ const translations: Record<Language, any> = {
       copiedDescription: "{label} copiado para a área de transferência.",
       labelCNPJ: "CNPJ",
       labelAgency: "Agência",
+      qrLoading: "Gerando QR Code...",
       labelAccount: "Conta",
       thankYou: "Obrigado por fazer a diferença! Cada contribuição transforma vidas.",
     },
@@ -423,6 +474,8 @@ const translations: Record<Language, any> = {
       shareTitle: "Compartilhar a Causa",
       shareDesc: "Ajude a espalhar nossa missão. Quanto mais pessoas souberem, mais vidas podemos transformar.",
       shareButton: "Compartilhar",
+      shareCopied: "Link copiado",
+      shareFailed: "Copie este link para compartilhar",
       volunteerTitle: "Ser Voluntário",
       volunteerDesc: "Junte-se ao nosso time de especialistas e contribua com seu conhecimento e habilidades.",
       volunteerButton: "Quero Participar",
@@ -486,9 +539,24 @@ const translations: Record<Language, any> = {
       description: "Pozos con energía solar y monitoreo en tiempo real llevan agua potable a comunidades desatendidas, del nordeste brasileño al África subsahariana.",
       ogLocale: "es_ES",
     },
+    alt: {
+      pixQrCode: "Código QR para donar por PIX a Wells of Change",
+      team: "El equipo de Wells of Change junto a paneles solares en Campo Formoso",
+      thirst: "Agua limpia saliendo de un pozo, poniendo fin a la caminata por un trago",
+      health: "Una niña bebiendo agua segura en lugar de agua que transmite enfermedades",
+      permanence: "Una familia que permanece en su tierra ahora que el agua llega a ella",
+      prosperity: "Cultivos creciendo en tierra que un pozo volvió cultivable",
+      dignity: "Una comunidad con agua propia, y la dignidad que eso trae",
+      monitoring: "Un pozo monitoreado a distancia, para detectar la falla antes de que falte el agua",
+      waterTanks: "Tanques de agua que abastecen a la comunidad en Campo Formoso",
+      technicians: "Técnicos instalando el sistema de monitoreo en un pozo",
+      solarPanels: "Paneles solares alimentando la bomba de un pozo artesiano",
+    },
     nav: {
       openMenu: "Abrir menú",
       closeMenu: "Cerrar menú",
+      changeLanguage: "Cambiar de idioma",
+      skipToContent: "Ir al contenido",
       ourStory: "Nuestra Historia",
       whatWeBelieve: "En Qué Creemos",
       partners: "Nuestros Socios",
@@ -525,6 +593,7 @@ const translations: Record<Language, any> = {
       copiedDescription: "{label} copiado al portapapeles.",
       labelCNPJ: "CNPJ",
       labelAgency: "Agencia",
+      qrLoading: "Generando código QR...",
       labelAccount: "Cuenta",
       thankYou: "¡Gracias por marcar la diferencia! Cada contribución transforma vidas.",
     },
@@ -613,6 +682,8 @@ const translations: Record<Language, any> = {
       shareTitle: "Compartir la Causa",
       shareDesc: "Ayuda a difundir nuestra misión. Cuantas más personas sepan, más vidas podemos transformar.",
       shareButton: "Compartir",
+      shareCopied: "Enlace copiado",
+      shareFailed: "Copia este enlace para compartir",
       volunteerTitle: "Ser Voluntario",
       volunteerDesc: "Únete a nuestro equipo de especialistas y contribuye con tu conocimiento y habilidades.",
       volunteerButton: "Quiero Participar",
@@ -676,9 +747,24 @@ const translations: Record<Language, any> = {
       description: "Des puits à énergie solaire avec suivi en temps réel apportent de l'eau potable à des communautés démunies, du Nordeste brésilien à l'Afrique subsaharienne.",
       ogLocale: "fr_FR",
     },
+    alt: {
+      pixQrCode: "QR Code pour un don PIX à Wells of Change",
+      team: "L'équipe de Wells of Change près de panneaux solaires à Campo Formoso",
+      thirst: "De l'eau propre sortant d'un puits, mettant fin à la marche pour une gorgée",
+      health: "Un enfant buvant une eau sûre plutôt qu'une eau porteuse de maladies",
+      permanence: "Une famille qui reste sur sa terre maintenant que l'eau y arrive",
+      prosperity: "Des cultures poussant sur une terre qu'un puits a rendue cultivable",
+      dignity: "Une communauté qui a son eau, et la dignité qui vient avec",
+      monitoring: "Un puits surveillé à distance, pour repérer la panne avant la coupure d'eau",
+      waterTanks: "Réservoirs d'eau desservant la communauté de Campo Formoso",
+      technicians: "Des techniciens installant le système de surveillance sur un puits",
+      solarPanels: "Des panneaux solaires alimentant la pompe d'un puits artésien",
+    },
     nav: {
       openMenu: "Ouvrir le menu",
       closeMenu: "Fermer le menu",
+      changeLanguage: "Changer de langue",
+      skipToContent: "Aller au contenu",
       ourStory: "Notre Histoire",
       whatWeBelieve: "Ce En Quoi Nous Croyons",
       partners: "Nos Partenaires",
@@ -715,6 +801,7 @@ const translations: Record<Language, any> = {
       copiedDescription: "{label} copié dans le presse-papiers.",
       labelCNPJ: "CNPJ",
       labelAgency: "Agence",
+      qrLoading: "Génération du QR Code...",
       labelAccount: "Compte",
       thankYou: "Merci de faire la différence ! Chaque contribution transforme des vies.",
     },
@@ -803,6 +890,8 @@ const translations: Record<Language, any> = {
       shareTitle: "Partager la Cause",
       shareDesc: "Aidez à diffuser notre mission. Plus il y a de personnes qui savent, plus nous pouvons transformer de vies.",
       shareButton: "Partager",
+      shareCopied: "Lien copié",
+      shareFailed: "Copiez ce lien pour partager",
       volunteerTitle: "Devenir Bénévole",
       volunteerDesc: "Rejoignez notre équipe de spécialistes et contribuez avec vos connaissances et compétences.",
       volunteerButton: "Je Veux Participer",

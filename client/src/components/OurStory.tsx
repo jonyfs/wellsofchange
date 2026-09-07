@@ -40,7 +40,7 @@ export default function OurStory() {
           <div className="relative">
             <img
               src={solarPanelsImage}
-              alt="Solar panels powering water wells"
+              alt={t("alt.solarPanels")}
               className="rounded-md w-full h-auto"
               data-testid="img-solar-pump"
               width={1600}

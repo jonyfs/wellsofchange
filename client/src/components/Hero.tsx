@@ -49,7 +49,7 @@ export default function Hero() {
 
         <button
           onClick={() => goToSection("what-we-do")}
-          className="mt-20 inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+          className="mt-20 inline-flex min-h-11 items-center gap-2 px-2 text-white/80 hover:text-white transition-colors"
           data-testid="button-scroll-down"
         >
           <span className="text-sm uppercase tracking-wide">{t("hero.scrollDown")}</span>

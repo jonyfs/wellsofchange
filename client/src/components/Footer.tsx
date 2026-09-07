@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img
                 src={logoImage}
-                alt="Wells of Change Logo"
+                alt="Wells of Change"
                 width={400}
                 height={341}
                 loading="lazy"
@@ -71,7 +71,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                 <a
                   href="mailto:wellsofchange@gmail.com"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="inline-flex min-h-11 items-center text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-email"
                 >
                   wellsofchange@gmail.com
@@ -89,7 +89,7 @@ export default function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-md bg-muted hover-elevate active-elevate-2 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+                  className="w-11 h-11 rounded-md bg-muted hover-elevate active-elevate-2 flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
                   aria-label={label}
                   data-testid={testId}
                 >

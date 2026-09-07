@@ -16,7 +16,7 @@ export default function OurCommitment() {
           <div className="rounded-md overflow-hidden h-[400px]">
             <img
               src={waterTanksImage}
-              alt="Community with water storage tanks in Campo Formoso"
+              alt={t("alt.waterTanks")}
               className="w-full h-full object-cover"
               data-testid="img-water-tanks"
               width={1600}
@@ -28,7 +28,7 @@ export default function OurCommitment() {
           <div className="rounded-md overflow-hidden h-[400px]">
             <img
               src={techniciansImage}
-              alt="Technicians working on water well monitoring system"
+              alt={t("alt.technicians")}
               className="w-full h-full object-cover"
               data-testid="img-technicians"
               width={1600}
