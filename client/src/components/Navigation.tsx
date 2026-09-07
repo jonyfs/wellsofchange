@@ -89,7 +89,11 @@ export default function Navigation() {
                 alt="Wells of Change"
                 className="h-12 w-auto"
                 data-testid="img-logo"
-              />
+                  width={400}
+                  height={341}
+                  fetchPriority="high"
+                  decoding="async"
+                />
               <span className="text-base sm:text-xl font-bold text-foreground">
                 Wells of Change
               </span>
@@ -185,6 +189,8 @@ export default function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? t("nav.closeMenu") : t("nav.openMenu")}
+              aria-expanded={isMobileMenuOpen}
               data-testid="button-mobile-menu"
             >
               {isMobileMenuOpen ? (

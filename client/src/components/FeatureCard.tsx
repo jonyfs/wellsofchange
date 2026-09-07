@@ -13,7 +13,15 @@ export default function FeatureCard({ icon: Icon, title, description, image }: F
     <Card className="p-6 hover-elevate transition-all" data-testid={`card-feature-${title.toLowerCase().replace(/\s+/g, '-')}`}>
       {image && (
         <div className="mb-4 rounded-md overflow-hidden">
-          <img src={image} alt={title} className="w-full h-48 object-cover" />
+          <img
+            src={image}
+            alt={title}
+            width={1600}
+            height={1200}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-48 object-cover"
+          />
         </div>
       )}
       <div className="flex items-start gap-4">
