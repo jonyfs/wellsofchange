@@ -33,9 +33,12 @@ export default function TogetherForChange() {
     }
   };
 
+  // The volunteer form is a Google Form, opened in a new tab so a visitor who fills it in does not
+  // lose their place on the page.
+  const VOLUNTEER_FORM_URL = "https://forms.gle/6sTcfRC1rZhisUARA";
+
   const handleVolunteer = () => {
-    console.log("Volunteer action triggered");
-    alert(t("change.volunteerButton") + " - Coming soon!");
+    window.open(VOLUNTEER_FORM_URL, "_blank", "noopener,noreferrer");
   };
 
   return (
