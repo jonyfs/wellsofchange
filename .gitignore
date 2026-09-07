@@ -6,3 +6,7 @@ vite.config.ts.*
 *.tar.gz
 # Playwright MCP session artifacts
 .playwright-mcp/
+
+# Python bytecode from the bundled skill scripts
+__pycache__/
+*.pyc
