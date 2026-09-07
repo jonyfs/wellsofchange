@@ -8,14 +8,32 @@ The GitHub Pages settings for this domain live in the **`wellsofchange` account*
 
 ## Part 1: make https://wellsofchange.com stop showing a certificate warning
 
-### What is wrong
+**Done on 2026-09-07.** The steps below are kept because the same failure can return whenever the
+apex DNS changes, and because the check in step 3 is worth running when a certificate is due to
+renew. What the fix looked like, measured before and after:
 
-The apex answers on IPv4 from GitHub Pages and on IPv6 from Hostinger's CDN. Certificate issuance
-validates over whichever address answers, so the mismatched IPv6 record blocks it.
+```
+before   AAAA  2a02:4780:84::32                    Hostinger CDN, refused connections on 443
+         cert  CN=*.github.io                      no certificate existed for the apex
+
+after    AAAA  2606:50c0:8000::153 .8001 .8002 .8003
+         cert  CN=www.wellsofchange.com, SAN: wellsofchange.com, www.wellsofchange.com
+               issued 2026-09-07, valid to 2026-12-06
+         https://wellsofchange.com   301 to www, over IPv4 and IPv6, certificate validates
+```
+
+Enforce HTTPS in the Pages settings is the one thing left, and it belongs to the account that serves
+the domain.
+
+### What was wrong
+
+The apex answered on IPv4 from GitHub Pages and on IPv6 from Hostinger's CDN, at an address that
+refused connections on port 443. Let's Encrypt tries the IPv6 address when an AAAA record exists, so
+validation for the apex failed and only `www` ever got a certificate.
 
 ```
 wellsofchange.com     A     185.199.108.153  185.199.109.153  185.199.110.153  185.199.111.153
-wellsofchange.com     AAAA  2a02:4780:84::32          <- Hostinger CDN, has to go
+wellsofchange.com     AAAA  2a02:4780:84::32          <- Hostinger CDN, had to go
 www.wellsofchange.com CNAME wellsofchange.github.io
 ```
 
@@ -49,15 +67,21 @@ GitHub says that can take up to 24 hours.
 
 ### Step 3, check it
 
-Wait for the DNS change to propagate, usually under an hour with a 3600 TTL, then run:
+Wait for the DNS change to propagate, usually under an hour with a 3600 TTL, then run the script
+next to this file:
 
 ```bash
-dig +short wellsofchange.com AAAA          # empty, or 2606:50c0:800x::153
-curl -sI https://wellsofchange.com/        # 301 to https://www.wellsofchange.com/
-curl -s -o /dev/null -w '%{ssl_verify_result}\n' https://wellsofchange.com/   # 0 means the certificate is valid
+bash specs/009-operational-runbook/check-apex.sh
 ```
 
-Or open `https://wellsofchange.com` in a browser and confirm there is no warning.
+It checks both record sets, reads the names on the certificate the apex actually serves, confirms a
+browser would accept it, and confirms the redirect to `www`. Five checks; anything short of five is
+printed with what to fix. It reads DNS and makes HTTP requests and changes nothing.
+
+Read the certificate's names, not its subject. A certificate issued for `www.wellsofchange.com`
+contains `wellsofchange.com` inside its own subject, so a substring test passes on a certificate
+that does not cover the apex at all. The script compares whole entries in the subject alternative
+names.
 
 ## Part 2: verify the site in Bing
 
@@ -111,3 +135,4 @@ https://www.bing.com/search?q=site%3Awellsofchange.com
 | Google Search Console | https://search.google.com/search-console |
 | Check what Bing has indexed | https://www.bing.com/search?q=site%3Awellsofchange.com |
 | Check the certificate | https://www.ssllabs.com/ssltest/analyze.html?d=wellsofchange.com |
+| The check script in this folder | `bash specs/009-operational-runbook/check-apex.sh` |

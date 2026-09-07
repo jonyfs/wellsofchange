@@ -43,7 +43,8 @@ real organization, so treat a wrong one as a defect, not a typo. Validate a chan
 
 **One host.** Canonical, `og:url`, `sitemap.xml`, and `robots.txt` must agree, and must match the
 host the site actually serves from. Two hosts answering the same content splits ranking signals
-between them. The apex and `www` question is tracked as `TODO(CANONICAL_HOST)` in the constitution.
+between them. The canonical host is `www.wellsofchange.com`. The apex redirects to it and shares its
+certificate, so nothing is split.
 
 **Update `lastmod`.** A sitemap claiming the page has not changed since 2024 tells crawlers to skip
 it. Set it to the deploy date whenever content changes.
