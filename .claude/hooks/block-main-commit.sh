@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Blocks commits, pushes, and history rewrites that would reach the default branch.
 #
-# The constitution requires every change to reach main through a pull request, because a push to
-# main deploys to wellsofchange.com within minutes. Branch protection on GitHub is the real
-# enforcement; this hook catches the mistake locally, before the push exists.
+# The constitution requires every change to reach main through a pull request, because main is what
+# gets deployed and later published. Branch protection on GitHub is the real enforcement; this hook
+# catches the mistake locally, before the push exists.
 #
 # Wired as a PreToolUse hook on Bash. Exit code 2 blocks the call and returns the message to Claude.
 
@@ -55,8 +55,8 @@ done <<< "$invocation"
 cat >&2 <<'MESSAGE'
 Blocked: this targets the default branch.
 
-The constitution (principle VI) requires every change to land through a pull request. A push to the
-default branch reaches the live site.
+The constitution (principle VI) requires every change to land through a pull request. The default
+branch is what gets deployed and later published.
 
 Create a branch first:
 

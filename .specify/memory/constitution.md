@@ -1,40 +1,57 @@
 <!--
 Sync Impact Report
-Version change: 1.1.0 → 1.2.0
-Bump rationale: MINOR. Principle VI was added, promoting the pull request rule from a workflow
-note to a non-negotiable principle. Nothing was removed or redefined incompatibly.
+Version change: 1.2.0 → 2.0.0
+Bump rationale: MAJOR. Principle IV is redefined. It stated that a merge to main deploys to
+production, which is false: the domain wellsofchange.com resolves to a different GitHub account,
+and this repository publishes only to jonyfs.github.io/wellsofchange/. The Purpose section made
+the same claim. Anyone following the old text would have believed a merge reaches donors.
 Modified principles:
-  - none renamed or redefined
-Added sections:
-  - VI. Every Change Ships as a Pull Request (NON-NEGOTIABLE)
+  - IV. Deployment Happens Only Through CI → IV. Publishing Is Two Steps, and Only the First Is
+    Automated
+Modified sections:
+  - Purpose and Public Surface: names the actual publishing topology
+Added sections: none
 Removed sections: none
 Templates requiring updates: none. Dependent Spec Kit templates read this file at runtime.
 Deferred items:
-  - TODO(BRANCH_PROTECTION): Principle VI is currently enforced by convention only. Enable branch
-    protection on `main` (require a pull request, block force pushes and deletions) so the rule is
-    enforced by GitHub rather than by discipline.
-  - TODO(CANONICAL_HOST): CNAME holds the apex host wellsofchange.com, while the canonical link
-    tag, sitemap.xml, robots.txt, Open Graph tags, and the CI smoke test all use
-    https://www.wellsofchange.com/. Decide which host is authoritative and make the other redirect
-    to it, then state the answer here.
-  - TODO(INDEX_HTML_LANGUAGE): client/index.html carries Portuguese-first SEO metadata
-    (title, description, keywords, Open Graph) that is user-facing copy but lives outside the
-    i18n dictionaries. Principle I forbids it as written. Decide whether to translate it to
-    English, move it under an i18n-driven mechanism, or record a scoped exception.
+  - TODO(DOMAIN_OWNERSHIP): wellsofchange.com points at wellsofchange.github.io, an account other
+    than the one holding this repository, and its copy of the site is older than this repository's
+    main. Whoever owns that account has to publish for a change here to reach donors. Moving the
+    domain onto this repository would remove the manual step; the project has chosen to keep the
+    current arrangement for now.
+  - TODO(PREVIEW_BASE_PATH): CI builds with --base=/ while publishing under
+    jonyfs.github.io/wellsofchange/, so the preview's asset URLs 404 and its JavaScript never runs.
+    The prerendered text hides this. A relative base would serve both mount points.
+  - TODO(CI_TEST_JOB): the post-deploy test job runs test-deployed-site.sh against
+    www.wellsofchange.com, a site this repository does not publish, and asserts a base path the
+    build no longer uses. Every run is therefore red. Accepted for now as known noise.
+  - TODO(APEX_TLS): https://wellsofchange.com fails certificate verification. http:// redirects to
+    https://www., so only visitors who type the apex with https see the error.
+  - TODO(BRANCH_PROTECTION): principle VI is enforced by convention and a local hook. Branch
+    protection on main is the enforcement that does not depend on either.
+  - TODO(INDEX_HTML_LANGUAGE): client/index.html carries Portuguese-first SEO metadata outside the
+    i18n dictionaries, which principle I forbids as written. The prerender makes the question
+    sharper, since the prerendered language is what a crawler receives.
   - TODO(EXISTING_PORTUGUESE_PROSE): README.md and several files under docs/ contain Portuguese
-    sections written before this constitution. They violate Principle I and need a migration pass.
+    sections written before this constitution.
 -->
 
 # Wells of Change Constitution
 
 ## Purpose and Public Surface
 
-This repository holds the static landing page of the Wells of Change project. It is built from
-React sources, published to GitHub Pages, and served to the public at wellsofchange.com. There is
-no other deployment target and no staging environment: what lands on `main` is what visitors see.
+This repository holds the source of the Wells of Change static landing page. It does not publish
+the public site.
 
-The site is the organization's public face, so a broken build, a missing translation, or an
-incorrect bank detail is visible to donors immediately. Every principle below follows from that.
+`www.wellsofchange.com` resolves to `wellsofchange.github.io`, a GitHub account separate from the
+one holding this repository. A merge to `main` here builds and deploys to
+`jonyfs.github.io/wellsofchange/` and stops there. For a change to reach donors, someone with access
+to that other account has to publish it.
+
+Treat this repository as the source of truth for the site's content and the staging ground for its
+changes, and treat publishing as a manual step that happens elsewhere. The site is the
+organization's public face, so a broken build, a missing translation, or an incorrect bank detail
+reaches donors once it is published. Every principle below follows from that.
 
 ## Core Principles
 
@@ -64,7 +81,8 @@ the raw key string to the visitor.
 
 ### III. The Site Stays Static
 
-The deployed artifact is static files on GitHub Pages, served at wellsofchange.com. Features MUST
+The deployed artifact is static files on GitHub Pages, served from the root of whichever host
+publishes them. Features MUST
 NOT introduce runtime API calls, server-rendered routes, or a database dependency. Anything a
 feature needs at runtime MUST be resolvable in the browser or bundled at build time.
 
@@ -72,23 +90,27 @@ feature needs at runtime MUST be resolvable in the browser or bundled at build t
 Replit template; `npm run dev` uses the Express process only to host Vite middleware. Building on
 that scaffolding requires an explicit amendment to this constitution, not an incidental commit.
 
-### IV. Deployment Happens Only Through CI
+### IV. Publishing Is Two Steps, and Only the First Is Automated
 
-Production deploys MUST come from `.github/workflows/deploy.yml` on a push to `main`. Manual deploy
-paths (`deploy.sh`, `build-to-root.sh`, `move-to-root.sh`, `npx gh-pages`) MUST NOT be used to
-publish.
+A merge to `main` triggers `.github/workflows/deploy.yml`, which builds and deploys to
+`jonyfs.github.io/wellsofchange/`. That is the whole of what this repository can do on its own.
 
-Local and CI builds MUST use `--base=/`, because the site is served from the root of its own
-domain. The legacy `--base=/wellsofchange/` value produces asset URLs that return 404 in
-production, and it MUST NOT be reintroduced.
+The public site at `www.wellsofchange.com` is served from `wellsofchange.github.io`, a different
+account. Reaching donors requires someone with access to it to publish. A pull request description
+MUST NOT claim a change is live, and "merged" MUST NOT be read as "published".
 
-The custom domain is configured in the repository's GitHub Pages settings; the root `CNAME` file
-records it. Changing either one without the other breaks the public URL. Absolute URLs in
-`client/index.html`, `client/public/sitemap.xml`, and `client/public/robots.txt` MUST point at the
-host the site is actually served from.
+Within this repository, deploys still happen only through the workflow. The manual paths
+(`deploy.sh`, `build-to-root.sh`, `move-to-root.sh`, `npx gh-pages`) MUST NOT be used, and the
+committed build output in the repository root (`assets/`, `404.html`, `.nojekyll`) is stale and MUST
+NOT be refreshed as part of feature work.
 
-Committed build output in the repository root (`assets/`, `404.html`, `.nojekyll`) is stale and
-MUST NOT be refreshed as part of feature work.
+Absolute URLs in `client/index.html`, `client/public/sitemap.xml`, and `client/public/robots.txt`
+name `www.wellsofchange.com`, the host visitors reach, not the address CI deploys to. That is
+deliberate: those files travel to production with the content.
+
+The build's base path is unresolved and tracked as `TODO(PREVIEW_BASE_PATH)`. `--base=/` matches the
+production domain root and breaks the preview, whose assets sit under `/wellsofchange/`. Do not
+change it in one direction without accounting for the other.
 
 ### V. Typecheck Is the Quality Gate
 
@@ -112,11 +134,12 @@ Concretely:
 - Every pull request states what changed and why, and MUST satisfy Principle V before review is
   requested.
 - The author does not merge a pull request that no one has reviewed, other than in an outage where
-  the live site is broken. Such an emergency merge MUST be stated in the pull request description.
+  the published site is broken. Such an emergency merge MUST be stated in the pull request
+  description.
 
-Rationale: a push to `main` triggers `.github/workflows/deploy.yml` and reaches visitors within
-minutes. The pull request is the only point where a second pair of eyes, the typecheck, and the
-diff itself can catch a mistake before donors see it.
+Rationale: `main` is what gets published, whether that happens minutes or weeks later, and the
+pull request is the only point where a second pair of eyes, the typecheck, and the diff itself can
+catch a mistake before it becomes what someone copies to production.
 
 ## Technology and Content Constraints
 
@@ -166,4 +189,4 @@ Every pull request review MUST verify compliance with the principles above. A ch
 principle is either revised or accompanied by an amendment in the same pull request. Deviations MUST
 NOT be merged on the promise of a later cleanup.
 
-**Version**: 1.2.0 | **Ratified**: 2026-09-06 | **Last Amended**: 2026-09-06
+**Version**: 2.0.0 | **Ratified**: 2026-09-06 | **Last Amended**: 2026-09-06
