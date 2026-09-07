@@ -4,6 +4,16 @@ import { useLanguage } from "@/lib/i18n";
 import logoImage from "@assets/download_1762440360234.png";
 
 export default function Footer() {
+  // The header is fixed and 80px tall, so scrolling a section to the top of the viewport hides its
+  // heading behind it. The top navigation applies the same offset.
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+    const navHeight = 80;
+    const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+  };
+
   const { t } = useLanguage();
 
   const socialLinks = [
@@ -41,7 +51,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <button
-                  onClick={() => document.getElementById("fazemos")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => scrollToSection("what-we-do")}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-fazemos"
                 >
@@ -50,7 +60,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("compromisso")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => scrollToSection("our-commitment")}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-compromisso"
                 >
@@ -59,7 +69,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("historia")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => scrollToSection("our-story")}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-historia"
                 >
@@ -68,7 +78,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("quem-somos")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => scrollToSection("who-we-are")}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-quem-somos"
                 >
@@ -77,7 +87,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("etica")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => scrollToSection("ethics")}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-etica"
                 >
@@ -86,7 +96,7 @@ export default function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => document.getElementById("mudanca")?.scrollIntoView({ behavior: "smooth" })}
+                  onClick={() => scrollToSection("join-us")}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                   data-testid="link-footer-mudanca"
                 >
