@@ -1,19 +1,10 @@
 import { Mail, MapPin } from "lucide-react";
 import { FaFacebook, FaInstagram, FaTiktok, FaYoutube, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "@/lib/i18n";
+import { NAV_SECTIONS, goToSection } from "@/lib/sections";
 import logoImage from "@assets/download_1762440360234.png";
 
 export default function Footer() {
-  // The header is fixed and 80px tall, so scrolling a section to the top of the viewport hides its
-  // heading behind it. The top navigation applies the same offset.
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (!element) return;
-    const navHeight = 80;
-    const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - navHeight;
-    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-  };
-
   const { t } = useLanguage();
 
   const socialLinks = [
@@ -48,61 +39,22 @@ export default function Footer() {
 
           <div>
             <h3 className="font-semibold text-lg mb-4" data-testid="text-footer-nav-title">{t("footer.navTitle")}</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <button
-                  onClick={() => scrollToSection("what-we-do")}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-footer-fazemos"
-                >
-                  {t("nav.whatWeDo")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("our-commitment")}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-footer-compromisso"
-                >
-                  {t("nav.ourCommitment")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("our-story")}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-footer-historia"
-                >
-                  {t("nav.ourStory")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("who-we-are")}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-footer-quem-somos"
-                >
-                  {t("nav.whoWeAre")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("ethics")}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-footer-etica"
-                >
-                  {t("nav.ethics")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => scrollToSection("join-us")}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  data-testid="link-footer-mudanca"
-                >
-                  {t("nav.joinUs")}
-                </button>
-              </li>
+            <ul className="space-y-1 text-sm">
+              {NAV_SECTIONS.map((section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      goToSection(section.id);
+                    }}
+                    className="flex min-h-11 items-center text-muted-foreground hover:text-foreground transition-colors"
+                    data-testid={`link-footer-${section.id}`}
+                  >
+                    {t(section.labelKey)}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

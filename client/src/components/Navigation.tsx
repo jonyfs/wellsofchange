@@ -10,6 +10,7 @@ import { Menu, X, Globe } from "lucide-react";
 import { useLanguage, Language } from "@/lib/i18n";
 import logoImage from "@assets/logo.png";
 import DonationDialog from "./DonationDialog";
+import { NAV_SECTIONS, goToSection, goToTop } from "@/lib/sections";
 
 export default function Navigation() {
   const { language, setLanguage, t } = useLanguage();
@@ -26,14 +27,6 @@ export default function Navigation() {
 
   const currentLanguage = languages.find((lang) => lang.code === language);
 
-  const navLinks = [
-    { key: "whatWeDo", href: "#what-we-do" },
-    { key: "ourCommitment", href: "#our-commitment" },
-    { key: "ourStory", href: "#our-story" },
-    { key: "whoWeAre", href: "#who-we-are" },
-    { key: "ethics", href: "#ethics" },
-    { key: "joinUs", href: "#join-us" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,19 +37,9 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      const navHeight = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-      setIsMobileMenuOpen(false);
-    }
+  const scrollToSection = (id: string) => {
+    goToSection(id);
+    setIsMobileMenuOpen(false);
   };
 
   const handleDonateClick = () => {
@@ -78,7 +61,7 @@ export default function Navigation() {
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                goToTop();
                 setIsMobileMenuOpen(false);
               }}
               className="flex items-center gap-3"
@@ -102,15 +85,19 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:gap-6">
-            {navLinks.map((link) => (
-              <button
-                key={link.key}
-                onClick={() => scrollToSection(link.href)}
+            {NAV_SECTIONS.map((section) => (
+              <a
+                key={section.id}
+                href={`#${section.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(section.id);
+                }}
                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                data-testid={`button-nav-${link.key}`}
+                data-testid={`button-nav-${section.id}`}
               >
-                {t(`nav.${link.key}`)}
-              </button>
+                {t(section.labelKey)}
+              </a>
             ))}
           </div>
 
@@ -206,15 +193,19 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-border py-4 animate-in fade-in slide-in-from-top-2">
             <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <button
-                  key={link.key}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-left px-4 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
-                  data-testid={`button-nav-mobile-${link.key}`}
+              {NAV_SECTIONS.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(section.id);
+                  }}
+                  className="flex min-h-11 items-center px-4 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
+                  data-testid={`button-nav-mobile-${section.id}`}
                 >
-                  {t(`nav.${link.key}`)}
-                </button>
+                  {t(section.labelKey)}
+                </a>
               ))}
 
               <div className="border-t border-border my-2" />

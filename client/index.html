@@ -180,6 +180,30 @@
     }
     </script>
 
+    <!--
+      The page's sections, named and addressable. The site is one document, so this is what lets a
+      crawler or an answer engine say which parts exist and link to one of them directly. The names
+      are in the prerendered language, matching the headings on the page. Keep this list in step
+      with client/src/lib/sections.ts and with llms.txt.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Seções do site",
+      "itemListElement": [
+        { "@type": "SiteNavigationElement", "position": 1, "name": "O Que Fazemos", "url": "https://www.wellsofchange.com/#what-we-do" },
+        { "@type": "SiteNavigationElement", "position": 2, "name": "Nosso Compromisso", "url": "https://www.wellsofchange.com/#our-commitment" },
+        { "@type": "SiteNavigationElement", "position": 3, "name": "O Que Nós Acreditamos", "url": "https://www.wellsofchange.com/#what-we-believe" },
+        { "@type": "SiteNavigationElement", "position": 4, "name": "Nossa História", "url": "https://www.wellsofchange.com/#our-story" },
+        { "@type": "SiteNavigationElement", "position": 5, "name": "Quem Somos", "url": "https://www.wellsofchange.com/#who-we-are" },
+        { "@type": "SiteNavigationElement", "position": 6, "name": "Nossos Parceiros", "url": "https://www.wellsofchange.com/#partners" },
+        { "@type": "SiteNavigationElement", "position": 7, "name": "Código de Ética", "url": "https://www.wellsofchange.com/#ethics" },
+        { "@type": "SiteNavigationElement", "position": 8, "name": "Juntos Pela Mudança", "url": "https://www.wellsofchange.com/#join-us" }
+      ]
+    }
+    </script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

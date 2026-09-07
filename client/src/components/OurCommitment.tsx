@@ -6,7 +6,7 @@ export default function OurCommitment() {
   const { t } = useLanguage();
 
   return (
-    <section id="our-commitment" className="py-12 md:py-16 lg:py-20 bg-muted/30">
+    <section id="our-commitment" className="scroll-mt-20 py-12 md:py-16 lg:py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <h2 className="font-display font-semibold text-3xl md:text-4xl lg:text-5xl mb-12 text-center" data-testid="text-commitment-title">
           {t("commitment.title")}

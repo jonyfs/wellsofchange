@@ -10,8 +10,12 @@ import CodeOfEthics from "@/components/CodeOfEthics";
 import TogetherForChange from "@/components/TogetherForChange";
 import Footer from "@/components/Footer";
 import DonateFAB from "@/components/DonateFAB";
+import { useSectionHash } from "@/hooks/use-section-hash";
 
 export default function Home() {
+  // A visitor arriving from a search result or a shared link asked for a section, not the top.
+  useSectionHash();
+
   return (
     <div className="min-h-screen">
       <Navigation />
