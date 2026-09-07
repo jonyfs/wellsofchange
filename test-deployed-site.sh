@@ -1,21 +1,61 @@
 #!/bin/bash
 
-# Test script to verify deployed GitHub Pages site loads all assets correctly
-# This script will FAIL if any asset returns 404
+# Checks a deployed site: every asset the page references loads, the asset paths match the address
+# the site is served from, and the page carries text without JavaScript.
+#
+#   ./test-deployed-site.sh                                  # production
+#   ./test-deployed-site.sh https://user.github.io/project/   # any other deployment
+#
+# The expected asset prefix is taken from the URL being tested, so the same script works for a site
+# at a domain root and for one under a project path.
 
-set -e
+set -uo pipefail
 
-SITE_URL="${1:-https://jonyfs.github.io/wellsofchange/}"
+SITE_URL="${1:-https://www.wellsofchange.com/}"
+[[ $SITE_URL == */ ]] || SITE_URL="$SITE_URL/"
+
+ORIGIN=$(sed -E 's#^(https?://[^/]+).*#\1#' <<<"$SITE_URL")
+BASE_PATH=${SITE_URL#"$ORIGIN"}
+
 FAIL_COUNT=0
 TOTAL_TESTS=0
 
 echo "🧪 Testing Deployed Site: $SITE_URL"
+echo "   Origin: $ORIGIN"
+echo "   Expected asset prefix: $BASE_PATH"
 echo "=========================================="
 echo ""
 
-# Fetch the index.html
+# Resolves a URL found in the HTML against the site being tested.
+resolve_url() {
+    local path="$1"
+    case "$path" in
+        http*) echo "$path" ;;
+        /*)    echo "${ORIGIN}${path}" ;;
+        ./*)   echo "${SITE_URL}${path#./}" ;;
+        *)     echo "${SITE_URL}${path}" ;;
+    esac
+}
+
+check_asset() {
+    local label="$1" path="$2"
+    local url status
+    url=$(resolve_url "$path")
+    TOTAL_TESTS=$((TOTAL_TESTS + 1))
+
+    echo -n "  Testing: $path ... "
+    status=$(curl -s -o /dev/null -w "%{http_code}" -L "$url")
+    if [ "$status" = "200" ]; then
+        echo "✅ OK"
+    else
+        echo "❌ FAILED (HTTP $status)"
+        echo "    URL: $url"
+        FAIL_COUNT=$((FAIL_COUNT + 1))
+    fi
+}
+
 echo "📄 Fetching index.html..."
-INDEX_HTML=$(curl -s -L "$SITE_URL" 2>&1)
+INDEX_HTML=$(curl -s -L "$SITE_URL")
 
 if [ -z "$INDEX_HTML" ]; then
     echo "❌ FAILED: Could not fetch index.html from $SITE_URL"
@@ -25,117 +65,76 @@ fi
 echo "✅ index.html fetched successfully"
 echo ""
 
-# Extract and test CSS files
 echo "🎨 Testing CSS files..."
-CSS_FILES=$(echo "$INDEX_HTML" | grep -o 'href="[^"]*\.css"' | sed 's/href="//g' | sed 's/"//g' || true)
-
+CSS_FILES=$(grep -o 'href="[^"]*\.css"' <<<"$INDEX_HTML" | sed 's/href="//;s/"$//' || true)
 if [ -z "$CSS_FILES" ]; then
     echo "⚠️  No CSS files found in index.html"
 else
-    for css in $CSS_FILES; do
-        TOTAL_TESTS=$((TOTAL_TESTS + 1))
-        # Handle both absolute and relative URLs
-        if [[ $css == http* ]]; then
-            CSS_URL="$css"
-        elif [[ $css == /wellsofchange/* ]]; then
-            # Path already includes base, use site root
-            CSS_URL="https://jonyfs.github.io$css"
-        else
-            CSS_URL="${SITE_URL%/}$css"
-        fi
-        
-        echo -n "  Testing: $css ... "
-        STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$CSS_URL")
-        
-        if [ "$STATUS" = "200" ]; then
-            echo "✅ OK"
-        else
-            echo "❌ FAILED (HTTP $STATUS)"
-            echo "    URL: $CSS_URL"
-            FAIL_COUNT=$((FAIL_COUNT + 1))
-        fi
-    done
+    for css in $CSS_FILES; do check_asset "css" "$css"; done
 fi
 echo ""
 
-# Extract and test JS files
 echo "📦 Testing JavaScript files..."
-JS_FILES=$(echo "$INDEX_HTML" | grep -o 'src="[^"]*\.js"' | sed 's/src="//g' | sed 's/"//g' || true)
-
+JS_FILES=$(grep -o 'src="[^"]*\.js"' <<<"$INDEX_HTML" | sed 's/src="//;s/"$//' || true)
 if [ -z "$JS_FILES" ]; then
     echo "❌ FAILED: No JavaScript files found in index.html"
     FAIL_COUNT=$((FAIL_COUNT + 1))
+    TOTAL_TESTS=$((TOTAL_TESTS + 1))
 else
-    for js in $JS_FILES; do
-        TOTAL_TESTS=$((TOTAL_TESTS + 1))
-        # Handle both absolute and relative URLs
-        if [[ $js == http* ]]; then
-            JS_URL="$js"
-        elif [[ $js == /wellsofchange/* ]]; then
-            # Path already includes base, use site root
-            JS_URL="https://jonyfs.github.io$js"
-        else
-            JS_URL="${SITE_URL%/}$js"
-        fi
-        
-        echo -n "  Testing: $js ... "
-        STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$JS_URL")
-        
-        if [ "$STATUS" = "200" ]; then
-            echo "✅ OK"
-        else
-            echo "❌ FAILED (HTTP $STATUS)"
-            echo "    URL: $JS_URL"
-            FAIL_COUNT=$((FAIL_COUNT + 1))
-        fi
-    done
+    for js in $JS_FILES; do check_asset "js" "$js"; done
 fi
 echo ""
 
-# Test favicon
 echo "🎯 Testing favicon..."
-FAVICON=$(echo "$INDEX_HTML" | grep -o 'href="[^"]*favicon[^"]*"' | sed 's/href="//g' | sed 's/"//g' | head -1 || true)
-
+FAVICON=$(grep -o 'href="[^"]*favicon[^"]*"' <<<"$INDEX_HTML" | sed 's/href="//;s/"$//' | head -1 || true)
 if [ -n "$FAVICON" ]; then
-    TOTAL_TESTS=$((TOTAL_TESTS + 1))
-    if [[ $FAVICON == http* ]]; then
-        FAVICON_URL="$FAVICON"
-    elif [[ $FAVICON == /wellsofchange/* ]]; then
-        # Path already includes base, use site root
-        FAVICON_URL="https://jonyfs.github.io$FAVICON"
-    else
-        FAVICON_URL="${SITE_URL%/}$FAVICON"
-    fi
-    
-    echo -n "  Testing: $FAVICON ... "
-    STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$FAVICON_URL")
-    
-    if [ "$STATUS" = "200" ]; then
-        echo "✅ OK"
-    else
-        echo "❌ FAILED (HTTP $STATUS)"
-        echo "    URL: $FAVICON_URL"
-        FAIL_COUNT=$((FAIL_COUNT + 1))
-    fi
+    check_asset "favicon" "$FAVICON"
 else
     echo "⚠️  No favicon found"
 fi
 echo ""
 
-# Check for correct base path
-echo "🔍 Checking base path..."
-if echo "$INDEX_HTML" | grep -q 'href="/wellsofchange/'; then
-    echo "✅ Base path /wellsofchange/ found in HTML"
-elif echo "$INDEX_HTML" | grep -q 'href="/assets/'; then
-    echo "❌ FAILED: Found /assets/ instead of /wellsofchange/assets/"
-    echo "   This means the site was built without --base=/wellsofchange/"
-    FAIL_COUNT=$((FAIL_COUNT + 1))
+# The asset prefix has to match where the site is served from. A site at a domain root references
+# /assets/; one under a project path references /project/assets/. Neither is right in the abstract.
+echo "🔍 Checking asset paths against the site address..."
+TOTAL_TESTS=$((TOTAL_TESTS + 1))
+ROOTED_ASSETS=$(grep -oE '(href|src)="/[^"]*"' <<<"$INDEX_HTML" | sed -E 's/^(href|src)="//;s/"$//' | grep -v '^//' || true)
+MISMATCHED=$(awk -v prefix="$BASE_PATH" '$0 !~ "^" prefix' <<<"$ROOTED_ASSETS" || true)
+
+if [ -z "$ROOTED_ASSETS" ]; then
+    echo "✅ No absolute asset paths; the build uses relative URLs, which work at any address"
+elif [ -z "$MISMATCHED" ]; then
+    echo "✅ Every absolute path starts with $BASE_PATH"
 else
-    echo "⚠️  Could not determine base path"
+    echo "❌ FAILED: these paths do not start with $BASE_PATH and will 404:"
+    sed 's/^/    /' <<<"$MISMATCHED"
+    echo "   Rebuild with a base matching the address, or use a relative base."
+    FAIL_COUNT=$((FAIL_COUNT + 1))
 fi
 echo ""
 
-# Summary
+# The prerender is what crawlers that skip JavaScript receive. If it stops running, the page still
+# looks right in a browser, so nothing else would catch it.
+echo "🤖 Checking the page carries text without JavaScript..."
+TOTAL_TESTS=$((TOTAL_TESTS + 1))
+BODY_TEXT_CHARS=$(python3 -c '
+import re, sys
+html = sys.stdin.read()
+body = re.search(r"<body[^>]*>(.*)</body>", html, re.S)
+text = re.sub(r"<script.*?</script>", " ", body.group(1), flags=re.S) if body else ""
+text = re.sub(r"<[^>]+>", " ", text)
+print(len(re.sub(r"\s+", " ", text).strip()))
+' <<<"$INDEX_HTML")
+
+if [ "${BODY_TEXT_CHARS:-0}" -ge 500 ]; then
+    echo "✅ $BODY_TEXT_CHARS characters of text in the served HTML"
+else
+    echo "❌ FAILED: only ${BODY_TEXT_CHARS:-0} characters of text in the served HTML"
+    echo "   Crawlers that do not run JavaScript, including most AI crawlers, would see an empty page."
+    FAIL_COUNT=$((FAIL_COUNT + 1))
+fi
+echo ""
+
 echo "=========================================="
 echo "📊 Test Summary"
 echo "=========================================="
@@ -144,20 +143,10 @@ echo "  Failed: $FAIL_COUNT"
 echo "  Passed: $((TOTAL_TESTS - FAIL_COUNT))"
 echo ""
 
-if [ $FAIL_COUNT -gt 0 ]; then
-    echo "❌ DEPLOYMENT TEST FAILED!"
-    echo ""
-    echo "🔧 How to fix:"
-    echo "  1. Ensure vite build uses: --base=/wellsofchange/"
-    echo "  2. Check .github/workflows/deploy.yml has correct build command"
-    echo "  3. Rebuild and redeploy:"
-    echo "     ./build-github-pages.sh"
-    echo "     git add . && git commit -m 'Fix base path' && git push"
-    echo ""
-    exit 1
-else
-    echo "✅ ALL TESTS PASSED!"
-    echo "   Site is deployed correctly and all assets load!"
-    echo ""
+if [ "$FAIL_COUNT" -eq 0 ]; then
+    echo "✅ ALL TESTS PASSED"
     exit 0
 fi
+
+echo "❌ DEPLOYMENT TEST FAILED"
+exit 1
