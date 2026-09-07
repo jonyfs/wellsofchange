@@ -5,9 +5,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What this is
 
 Wells of Change is a single-page, multilingual (en / pt-BR / es / fr) marketing site for an NGO that
-builds solar-powered water wells. It ships as static files to GitHub Pages under the custom domain
-`wellsofchange.com` (see `CNAME`). All content is hardcoded in React components, and nothing calls
-an API at runtime.
+builds solar-powered water wells. All content is hardcoded in React components, and nothing calls an
+API at runtime.
+
+**This repository does not publish the public site.** `www.wellsofchange.com` resolves to
+`wellsofchange.github.io`, a different GitHub account, and its copy currently lags this repository's
+`main`. Merging here deploys to `jonyfs.github.io/wellsofchange/` and no further; someone with
+access to that other account has to publish for a change to reach donors. Do not tell anyone a
+merged change is live.
+
+Two consequences worth knowing before you are confused by them:
+
+- CI builds with `--base=/`, which matches the production domain root but not the preview's
+  `/wellsofchange/` path, so the preview's assets 404 and its JavaScript never runs. The prerendered
+  text makes the page look fine anyway. Tracked as `TODO(PREVIEW_BASE_PATH)` in the constitution.
+- Every workflow run shows as failed. Build and deploy succeed; the post-deploy `test` job runs
+  `test-deployed-site.sh` against `www.wellsofchange.com`, which this repository does not publish,
+  and asserts a base path the build no longer uses. Known and accepted, tracked as
+  `TODO(CI_TEST_JOB)`.
 
 ## Commands
 
@@ -20,11 +35,12 @@ npm run check        # tsc typecheck (noEmit); there is no linter and no test su
 npm run build:site         # What CI builds: vite build --base=/ then the prerender; output in dist/public/
 ./preview-build.sh         # Build with relative paths and serve on http://localhost:8080
 ./verify-deployment.sh     # Check a local build
-./test-deployed-site.sh https://www.wellsofchange.com/   # Check the live site
+./test-deployed-site.sh <url>   # Post-deploy checks; its assertions are stale, see below
 ```
 
-Deploy happens on push to `main` through `.github/workflows/deploy.yml`, which builds, verifies the
-base path, deploys, then smoke-tests the live URL. Don't deploy by hand.
+A push to `main` runs `.github/workflows/deploy.yml`, which builds, prerenders, deploys to
+`jonyfs.github.io/wellsofchange/`, then smoke-tests a URL it does not publish. Don't deploy by
+hand.
 
 ### Base-path trap
 

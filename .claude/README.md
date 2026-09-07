@@ -55,8 +55,8 @@ Configured in `settings.json`.
   branch, since a refspec push deploys just as surely as pushing from the branch itself. Only the
   arguments of the push itself are inspected, and heredoc bodies are skipped, so a command that
   merely quotes such a push, a commit message or a pull request comment for instance, is not
-  blocked. A push to the default branch reaches the live site,
-  and the constitution requires a pull request for every change.
+  blocked. The default branch is what gets deployed and later published, and the constitution
+  requires a pull request for every change.
 - `typecheck-on-edit.sh` (PostToolUse on Edit and Write) runs `npm run check` after a `.ts` or `.tsx`
   file changes. The project has no linter and no test suite, so the compiler is the only automated
   gate.

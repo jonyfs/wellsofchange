@@ -1,13 +1,15 @@
 ---
 name: deploy-check
-description: Build the site the way CI does and verify the output before it reaches the live domain. Use before opening a pull request that touches components, assets, index.html, or build configuration.
+description: Build the site the way CI does and verify the output before it is merged and later published. Use before opening a pull request that touches components, assets, index.html, or build configuration.
 disable-model-invocation: true
 ---
 
 # Pre-deploy verification
 
-The site deploys to wellsofchange.com on merge to `main`. There is no staging environment, so this
-check is the last point where a broken build is cheap to fix.
+Merging to `main` deploys to `jonyfs.github.io/wellsofchange/`. It does not publish the public site:
+`www.wellsofchange.com` is served from a different GitHub account, and someone there has to copy the
+change across. This check is the last point where a broken build is cheap to fix, and the only one
+that happens automatically.
 
 ## The base path trap
 
@@ -55,8 +57,10 @@ Never publish with those scripts. They remain in the tree as history.
 ## What CI does that this does not
 
 `.github/workflows/deploy.yml` also writes `.nojekyll`, copies `index.html` to `404.html` for
-client-side routing, and runs `test-deployed-site.sh` against the live URL after deploying. Those
-steps need the deployment to exist, so they cannot run locally.
+client-side routing, stamps the sitemap date, and runs `test-deployed-site.sh` afterwards. That last
+job fails on every run: it targets `www.wellsofchange.com`, which this repository does not publish,
+and asserts the old `/wellsofchange/` base path. A red run does not mean the build broke; check the
+`build` and `deploy` jobs.
 
 ## Do not
 
