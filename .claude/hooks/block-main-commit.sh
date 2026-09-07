@@ -39,6 +39,11 @@ while IFS= read -r line; do
       [ "$token" = "push" ] && seen_push=1
       continue
     fi
+    # The push ends at the next shell operator. Beyond it is a different command, and a chained
+    # `gh pr create --base main` is not a push to main.
+    case "$token" in
+      "&&"|"||"|";"|"|"|"&") seen_push=0; continue ;;
+    esac
     case "$token" in
       main|*:main|*:refs/heads/main) targets_default=1 ;;
     esac
