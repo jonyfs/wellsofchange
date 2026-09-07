@@ -1,16 +1,10 @@
 <!--
 Sync Impact Report
-Version change: 1.2.0 → 2.0.0
-Bump rationale: MAJOR. Principle IV is redefined. It stated that a merge to main deploys to
-production, which is false: the domain wellsofchange.com resolves to a different GitHub account,
-and this repository publishes only to jonyfs.github.io/wellsofchange/. The Purpose section made
-the same claim. Anyone following the old text would have believed a merge reaches donors.
-Modified principles:
-  - IV. Deployment Happens Only Through CI → IV. Publishing Is Two Steps, and Only the First Is
-    Automated
-Modified sections:
-  - Purpose and Public Surface: names the actual publishing topology
-Added sections: none
+Version change: 2.0.0 → 2.1.0
+Bump rationale: MINOR. Principle VII was added. Nothing was removed or redefined.
+Modified principles: none
+Added sections:
+  - VII. Prose Is Edited Before It Ships
 Removed sections: none
 Templates requiring updates: none. Dependent Spec Kit templates read this file at runtime.
 Deferred items:
@@ -141,6 +135,28 @@ Rationale: `main` is what gets published, whether that happens minutes or weeks 
 pull request is the only point where a second pair of eyes, the typecheck, and the diff itself can
 catch a mistake before it becomes what someone copies to production.
 
+### VII. Prose Is Edited Before It Ships
+
+Text written for a person to read MUST be passed through the `humanizer` skill before it is
+committed. That covers site copy in every language, the translation dictionaries, documentation,
+specifications, README files, pull request and issue text, and anything else a reader encounters as
+writing rather than as code.
+
+The skill removes the patterns that mark text as machine-produced: inflated claims about
+significance, sales language, vague attributions, forced groups of three, stock transitions, hedging
+piled on hedging, and headings that repeat themselves in the first sentence. It preserves the
+document's language, so a Portuguese page stays Portuguese, and it MUST NOT add a fact, a number, a
+date, or a source that the original did not contain.
+
+Exempt: code and its comments, configuration, machine-generated files, lockfiles, CHANGELOG entries,
+commit messages, and any text quoted verbatim from a source, including the bank's own wording and
+the organization's legal filings.
+
+Rationale: this site asks strangers to trust an organization with their money. Copy that reads as
+generated undercuts that before a word of it is judged on content, and an NGO's credibility is the
+only asset it has. The rule is on the artifact, not on the tool that produced it: text written by a
+person that reads as filler gets the same edit.
+
 ## Technology and Content Constraints
 
 The stack is React 18, TypeScript, Vite 5, Tailwind CSS, shadcn/ui over Radix, and Wouter for
@@ -169,7 +185,8 @@ then implement. Small, well-understood changes may skip straight to implementati
 All work lands through a pull request, as required by Principle VI.
 
 Before requesting review, the author MUST confirm that `npm run check` passes, that every new
-translation key exists in all four dictionaries, and that the change was viewed in a browser.
+translation key exists in all four dictionaries, that any prose in the change went through the
+`humanizer` skill, and that the change was viewed in a browser.
 
 `docs/` and the root `*_FIX*.md` and `DEPLOY*.md` files are a historical record of the GitHub Pages
 debugging period. They partly contradict the current configuration and MUST NOT be treated as the
@@ -189,4 +206,4 @@ Every pull request review MUST verify compliance with the principles above. A ch
 principle is either revised or accompanied by an amendment in the same pull request. Deviations MUST
 NOT be merged on the promise of a later cleanup.
 
-**Version**: 2.0.0 | **Ratified**: 2026-09-06 | **Last Amended**: 2026-09-06
+**Version**: 2.1.0 | **Ratified**: 2026-09-06 | **Last Amended**: 2026-09-06
