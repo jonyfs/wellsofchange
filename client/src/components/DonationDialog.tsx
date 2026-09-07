@@ -162,6 +162,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                     size="sm"
                     className="h-7 px-2"
                     onClick={() => copyToClipboard(pixCNPJ, "donate.labelCNPJ")}
+                    aria-label={`${t("donate.copyAction")} ${t("donate.labelCNPJ")}`}
                     data-testid="button-copy-cnpj"
                   >
                     <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
@@ -275,6 +276,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                     size="sm"
                     className="h-7 px-2"
                     onClick={() => copyToClipboard(internationalDetails.swift, "donate.labelSwift")}
+                    aria-label={`${t("donate.copyAction")} ${t("donate.labelSwift")}`}
                     data-testid="button-copy-swift"
                   >
                     <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
@@ -297,6 +299,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                     size="sm"
                     className="h-7 px-2"
                     onClick={() => copyToClipboard(internationalDetails.iban, "donate.labelIban")}
+                    aria-label={`${t("donate.copyAction")} ${t("donate.labelIban")}`}
                     data-testid="button-copy-iban"
                   >
                     <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
@@ -341,6 +344,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                     size="sm"
                     className="h-7 px-2 flex-shrink-0"
                     onClick={() => copyToClipboard(internationalDetails.beneficiary, "donate.labelBeneficiary")}
+                    aria-label={`${t("donate.copyAction")} ${t("donate.labelBeneficiary")}`}
                     data-testid="button-copy-beneficiary"
                   >
                     <Copy className="w-3 h-3 sm:w-3.5 sm:h-3.5" />

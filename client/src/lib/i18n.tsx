@@ -118,6 +118,7 @@ const translations: Record<Language, any> = {
       donate: "Donate",
     },
     donate: {
+      copyAction: "Copy",
       labelBank: "Bank",
       tabBrazil: "From Brazil",
       tabInternational: "From abroad",
@@ -305,6 +306,7 @@ const translations: Record<Language, any> = {
       donate: "Doar",
     },
     donate: {
+      copyAction: "Copiar",
       labelBank: "Banco",
       tabBrazil: "Do Brasil",
       tabInternational: "Do exterior",
@@ -492,6 +494,7 @@ const translations: Record<Language, any> = {
       donate: "Donar",
     },
     donate: {
+      copyAction: "Copiar",
       labelBank: "Banco",
       tabBrazil: "Desde Brasil",
       tabInternational: "Desde el exterior",
@@ -679,6 +682,7 @@ const translations: Record<Language, any> = {
       donate: "Faire un Don",
     },
     donate: {
+      copyAction: "Copier",
       labelBank: "Banque",
       tabBrazil: "Depuis le Brésil",
       tabInternational: "Depuis l'étranger",
