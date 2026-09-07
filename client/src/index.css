@@ -131,123 +131,18 @@
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
-.dark {
-  --button-outline: rgba(255,255,255, .10);
-  --badge-outline: rgba(255,255,255, .05);
-
-  --opaque-button-border-intensity: 9;  /* In terms of percentages */
-
-  /* Backgrounds applied on top of other backgrounds when hovered/active */
-  --elevate-1: rgba(255,255,255, .04);
-  --elevate-2: rgba(255,255,255, .09);
-
-  --background: 217 40% 8%;
-
-  --foreground: 0 0% 95%;
-
-  --border: 210 25% 20%;
-
-  --card: 217 35% 10%;
-
-  --card-foreground: 0 0% 95%;
-
-  --card-border: 210 30% 15%;
-
-  --sidebar: 217 40% 12%;
-
-  --sidebar-foreground: 0 0% 95%;
-
-  --sidebar-border: 210 30% 18%;
-
-  --sidebar-primary: 217 91% 45%;
-
-  --sidebar-primary-foreground: 0 0% 100%;
-
-  --sidebar-accent: 210 35% 18%;
-
-  --sidebar-accent-foreground: 200 70% 85%;
-
-  --sidebar-ring: 217 91% 45%;
-
-  --popover: 217 35% 13%;
-
-  --popover-foreground: 0 0% 95%;
-
-  --popover-border: 210 25% 20%;
-
-  --primary: 217 91% 45%;
-
-  --primary-foreground: 0 0% 100%;
-
-  --secondary: 210 30% 18%;
-
-  --secondary-foreground: 0 0% 95%;
-
-  --muted: 210 25% 20%;
-
-  --muted-foreground: 210 20% 70%;
-
-  --accent: 200 55% 25%;
-
-  --accent-foreground: 200 70% 85%;
-
-  --golden: 43 96% 56%;
-
-  --golden-foreground: 0 0% 100%;
-
-  --destructive: 0 84% 35%;
-
-  --destructive-foreground: 0 84% 98%;
-
-  --input: 210 25% 32%;
-  --ring: 217 91% 45%;
-  --chart-1: 217 91% 60%;
-  --chart-2: 200 65% 65%;
-  --chart-3: 45 100% 60%;
-  --chart-4: 200 55% 70%;
-  --chart-5: 210 45% 75%;
-
-  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.30);
-  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.35);
-  --shadow-sm: 0px 2px 4px -1px hsl(0 0% 0% / 0.40), 0px 1px 2px -1px hsl(0 0% 0% / 0.35);
-  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.45), 0px 2px 4px -2px hsl(0 0% 0% / 0.40);
-  --shadow-md: 0px 6px 12px -2px hsl(0 0% 0% / 0.50), 0px 3px 7px -3px hsl(0 0% 0% / 0.45);
-  --shadow-lg: 0px 10px 18px -3px hsl(0 0% 0% / 0.55), 0px 4px 10px -4px hsl(0 0% 0% / 0.50);
-  --shadow-xl: 0px 20px 28px -5px hsl(0 0% 0% / 0.60), 0px 8px 16px -6px hsl(0 0% 0% / 0.55);
-  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.65);
-
-  /* Fallback for older browsers */
-  --golden-border: hsl(var(--golden));
-  --golden-border: hsl(from hsl(var(--golden)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --sidebar-primary-border: hsl(var(--sidebar-primary));
-  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --sidebar-accent-border: hsl(var(--sidebar-accent));
-  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --primary-border: hsl(var(--primary));
-  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --secondary-border: hsl(var(--secondary));
-  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --muted-border: hsl(var(--muted));
-  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --accent-border: hsl(var(--accent));
-  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-
-  /* Fallback for older browsers */
-  --destructive-border: hsl(var(--destructive));
-  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
-}
+/*
+ * There is no dark palette here on purpose.
+ *
+ * One was defined and nothing could reach it: no control set the class Tailwind is configured to
+ * look for, and no rule followed the operating system's preference. Sixty lines of colours that
+ * could not appear on screen invite the belief that the site has a dark mode, and would drift out
+ * of step with the light palette above with nobody able to see it happen.
+ *
+ * Adding one back is a design decision, not a styling one: the hero's overlay, the photographs and
+ * the golden donate accent all have to be looked at in the dark. Until someone makes that decision,
+ * git holds the old values.
+ */
 
 @layer base {
   * {

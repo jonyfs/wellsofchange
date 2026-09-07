@@ -103,12 +103,12 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
 
         <div className="space-y-3 py-1">
           <Tabs defaultValue="brazil" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 h-9">
-              <TabsTrigger value="brazil" className="text-[11px] sm:text-xs" data-testid="tab-donate-brazil">
-                🇧🇷 {t("donate.tabBrazil")}
+            <TabsList className="grid w-full grid-cols-2 h-auto">
+              <TabsTrigger value="brazil" className="min-h-11 text-xs" data-testid="tab-donate-brazil">
+                <span aria-hidden="true">🇧🇷</span> {t("donate.tabBrazil")}
               </TabsTrigger>
-              <TabsTrigger value="international" className="text-[11px] sm:text-xs" data-testid="tab-donate-international">
-                🌎 {t("donate.tabInternational")}
+              <TabsTrigger value="international" className="min-h-11 text-xs" data-testid="tab-donate-international">
+                <span aria-hidden="true">🌎</span> {t("donate.tabInternational")}
               </TabsTrigger>
             </TabsList>
 
@@ -117,7 +117,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
             <div className="space-y-2">
               <div className="text-center">
                 <h3 className="font-semibold text-sm sm:text-base mb-0.5">{t("donate.pixTitle")}</h3>
-                <p className="text-[10px] sm:text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   {t("donate.pixDescription")}
                 </p>
               </div>
@@ -128,7 +128,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   {qrCodeDataURL ? (
                     <img 
                       src={qrCodeDataURL} 
-                      alt="PIX QR Code"
+                      alt={t("alt.pixQrCode")}
                       width={140}
                       height={140}
                       className="block w-[140px] h-[140px] sm:w-[160px] sm:h-[160px]"
@@ -136,10 +136,10 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                     />
                   ) : (
                     <div 
-                      className="w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] flex items-center justify-center text-muted-foreground text-[10px]"
+                      className="w-[140px] h-[140px] sm:w-[160px] sm:h-[160px] flex items-center justify-center text-muted-foreground text-xs"
                       data-testid="qrcode-loading"
                     >
-                      Gerando QR Code...
+                      {t("donate.qrLoading")}
                     </div>
                   )}
                 </div>
@@ -151,8 +151,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <div className="flex items-center gap-1.5 flex-1 min-w-0">
                     <Hash className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] sm:text-xs text-muted-foreground">CNPJ</p>
-                      <p className="font-mono text-xs sm:text-sm font-semibold truncate" data-testid="text-pix-cnpj">
+                      <p className="text-xs text-muted-foreground">{t("donate.labelCNPJ")}</p>
+                      <p className="font-mono text-xs sm:text-sm font-semibold break-all" data-testid="text-pix-cnpj">
                         {pixCNPJ}
                       </p>
                     </div>
@@ -160,7 +160,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <Button
                     variant="outline"
                     size="sm"
-                    className="h-7 px-2"
+                    className="px-3"
                     onClick={() => copyToClipboard(pixCNPJ, "donate.labelCNPJ")}
                     aria-label={`${t("donate.copyAction")} ${t("donate.labelCNPJ")}`}
                     data-testid="button-copy-cnpj"
@@ -176,9 +176,9 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
               <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t" />
               </div>
-              <div className="relative flex justify-center text-[10px] sm:text-xs uppercase">
+              <div className="relative flex justify-center text-xs uppercase">
                 <span className="bg-background px-2 text-muted-foreground">
-                  {t("donate.or") || "ou"}
+                  {t("donate.or")}
                 </span>
               </div>
             </div>
@@ -189,7 +189,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                 <h3 className="font-semibold text-sm sm:text-base mb-0.5">
                   {t("donate.transferTitle")}
                 </h3>
-                <p className="text-[10px] sm:text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   {t("donate.transferDescription")}
                 </p>
               </div>
@@ -199,8 +199,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                 <div className="flex items-center gap-1.5">
                   <Building2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">Banco</p>
-                    <p className="text-xs sm:text-sm font-semibold truncate" data-testid="text-bank-name">{bankDetails.bank}</p>
+                    <p className="text-xs text-muted-foreground">{t("donate.labelBank")}</p>
+                    <p className="text-xs sm:text-sm font-semibold break-words" data-testid="text-bank-name">{bankDetails.bank}</p>
                   </div>
                 </div>
 
@@ -209,8 +209,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <div className="flex items-center gap-1 min-w-0">
                     <Hash className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] sm:text-xs text-muted-foreground">Agência</p>
-                      <p className="font-mono text-xs sm:text-sm font-semibold truncate" data-testid="text-bank-agency">
+                      <p className="text-xs text-muted-foreground">{t("donate.labelAgency")}</p>
+                      <p className="font-mono text-xs sm:text-sm font-semibold break-all" data-testid="text-bank-agency">
                         {bankDetails.agency}
                       </p>
                     </div>
@@ -218,8 +218,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <div className="flex items-center gap-1 min-w-0">
                     <CreditCard className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] sm:text-xs text-muted-foreground">Conta</p>
-                      <p className="font-mono text-xs sm:text-sm font-semibold truncate" data-testid="text-bank-account">
+                      <p className="text-xs text-muted-foreground">{t("donate.labelAccount")}</p>
+                      <p className="font-mono text-xs sm:text-sm font-semibold break-all" data-testid="text-bank-account">
                         {bankDetails.account}
                       </p>
                     </div>
@@ -230,8 +230,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                 <div className="flex items-center gap-1.5">
                   <Hash className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">CNPJ</p>
-                    <p className="font-mono text-xs sm:text-sm font-semibold truncate" data-testid="text-bank-cnpj">
+                    <p className="text-xs text-muted-foreground">{t("donate.labelCNPJ")}</p>
+                    <p className="font-mono text-xs sm:text-sm font-semibold break-all" data-testid="text-bank-cnpj">
                       {pixCNPJ}
                     </p>
                   </div>
@@ -243,7 +243,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
             <TabsContent value="international" className="space-y-2 mt-3">
               <div className="text-center">
                 <h3 className="font-semibold text-sm sm:text-base mb-0.5">{t("donate.intlTitle")}</h3>
-                <p className="text-[10px] sm:text-xs text-muted-foreground">
+                <p className="text-xs text-muted-foreground">
                   {t("donate.intlDescription")}
                 </p>
               </div>
@@ -253,8 +253,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                 <div className="flex items-center gap-1.5">
                   <Building2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">{t("donate.labelBank")}</p>
-                    <p className="text-xs sm:text-sm font-semibold truncate" data-testid="text-intl-bank">
+                    <p className="text-xs text-muted-foreground">{t("donate.labelBank")}</p>
+                    <p className="text-xs sm:text-sm font-semibold break-words" data-testid="text-intl-bank">
                       {bankDetails.bank}
                     </p>
                   </div>
@@ -265,8 +265,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <div className="flex items-center gap-1.5 flex-1 min-w-0">
                     <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] sm:text-xs text-muted-foreground">{t("donate.labelSwift")}</p>
-                      <p className="font-mono text-xs sm:text-sm font-semibold truncate" data-testid="text-intl-swift">
+                      <p className="text-xs text-muted-foreground">{t("donate.labelSwift")}</p>
+                      <p className="font-mono text-xs sm:text-sm font-semibold break-all" data-testid="text-intl-swift">
                         {internationalDetails.swift}
                       </p>
                     </div>
@@ -274,7 +274,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <Button
                     variant="outline"
                     size="sm"
-                    className="h-7 px-2"
+                    className="px-3"
                     onClick={() => copyToClipboard(internationalDetails.swift, "donate.labelSwift")}
                     aria-label={`${t("donate.copyAction")} ${t("donate.labelSwift")}`}
                     data-testid="button-copy-swift"
@@ -288,8 +288,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <div className="flex items-center gap-1.5 flex-1 min-w-0">
                     <Hash className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] sm:text-xs text-muted-foreground">{t("donate.labelIban")}</p>
-                      <p className="font-mono text-[11px] sm:text-xs font-semibold break-all" data-testid="text-intl-iban">
+                      <p className="text-xs text-muted-foreground">{t("donate.labelIban")}</p>
+                      <p className="font-mono text-xs font-semibold break-all" data-testid="text-intl-iban">
                         {internationalDetails.iban}
                       </p>
                     </div>
@@ -297,7 +297,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <Button
                     variant="outline"
                     size="sm"
-                    className="h-7 px-2"
+                    className="px-3"
                     onClick={() => copyToClipboard(internationalDetails.iban, "donate.labelIban")}
                     aria-label={`${t("donate.copyAction")} ${t("donate.labelIban")}`}
                     data-testid="button-copy-iban"
@@ -311,8 +311,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <div className="flex items-center gap-1 min-w-0">
                     <Hash className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] sm:text-xs text-muted-foreground">{t("donate.labelBranch")}</p>
-                      <p className="font-mono text-xs sm:text-sm font-semibold truncate" data-testid="text-intl-branch">
+                      <p className="text-xs text-muted-foreground">{t("donate.labelBranch")}</p>
+                      <p className="font-mono text-xs sm:text-sm font-semibold break-all" data-testid="text-intl-branch">
                         {bankDetails.agency}
                       </p>
                     </div>
@@ -320,8 +320,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <div className="flex items-center gap-1 min-w-0">
                     <CreditCard className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] sm:text-xs text-muted-foreground">{t("donate.labelAccount")}</p>
-                      <p className="font-mono text-xs sm:text-sm font-semibold truncate" data-testid="text-intl-account">
+                      <p className="text-xs text-muted-foreground">{t("donate.labelAccount")}</p>
+                      <p className="font-mono text-xs sm:text-sm font-semibold break-all" data-testid="text-intl-account">
                         {bankDetails.account}
                       </p>
                     </div>
@@ -333,8 +333,8 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <div className="flex items-start gap-1.5 flex-1 min-w-0">
                     <User className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0 mt-0.5" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-[10px] sm:text-xs text-muted-foreground">{t("donate.labelBeneficiary")}</p>
-                      <p className="text-[11px] sm:text-xs font-semibold leading-snug" data-testid="text-intl-beneficiary">
+                      <p className="text-xs text-muted-foreground">{t("donate.labelBeneficiary")}</p>
+                      <p className="text-xs font-semibold leading-snug" data-testid="text-intl-beneficiary">
                         {internationalDetails.beneficiary}
                       </p>
                     </div>
@@ -342,7 +342,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                   <Button
                     variant="outline"
                     size="sm"
-                    className="h-7 px-2 flex-shrink-0"
+                    className="px-3 flex-shrink-0"
                     onClick={() => copyToClipboard(internationalDetails.beneficiary, "donate.labelBeneficiary")}
                     aria-label={`${t("donate.copyAction")} ${t("donate.labelBeneficiary")}`}
                     data-testid="button-copy-beneficiary"
@@ -355,10 +355,10 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                 <div className="flex items-start gap-1.5">
                   <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0 mt-0.5" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">
+                    <p className="text-xs text-muted-foreground">
                       {t("donate.labelBeneficiaryAddress")}
                     </p>
-                    <p className="text-[11px] sm:text-xs leading-snug" data-testid="text-intl-beneficiary-address">
+                    <p className="text-xs leading-snug" data-testid="text-intl-beneficiary-address">
                       {internationalDetails.beneficiaryAddress}
                     </p>
                   </div>
@@ -368,18 +368,18 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
                 <div className="flex items-start gap-1.5">
                   <Landmark className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary flex-shrink-0 mt-0.5" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] sm:text-xs text-muted-foreground">{t("donate.labelBankAddress")}</p>
-                    <p className="text-[11px] sm:text-xs leading-snug" data-testid="text-intl-bank-address">
+                    <p className="text-xs text-muted-foreground">{t("donate.labelBankAddress")}</p>
+                    <p className="text-xs leading-snug" data-testid="text-intl-bank-address">
                       {internationalDetails.bankAddress}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed" data-testid="text-intl-fee">
+              <p className="text-xs text-muted-foreground leading-relaxed" data-testid="text-intl-fee">
                 {t("donate.intlFee")}
               </p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed" data-testid="text-intl-help">
+              <p className="text-xs text-muted-foreground leading-relaxed" data-testid="text-intl-help">
                 {t("donate.intlHelp")}
               </p>
             </TabsContent>
@@ -387,7 +387,7 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
 
           {/* Thank you message */}
           <div className="text-center pt-0.5">
-            <p className="text-[10px] sm:text-xs text-muted-foreground">
+            <p className="text-xs text-muted-foreground">
               {t("donate.thankYou")}
             </p>
           </div>

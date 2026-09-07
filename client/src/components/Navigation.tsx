@@ -7,9 +7,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu, X, Globe } from "lucide-react";
-import { useLanguage, Language } from "@/lib/i18n";
+import { useLanguage, LANGUAGES } from "@/lib/i18n";
 import logoImage from "@assets/logo.png";
 import DonationDialog from "./DonationDialog";
+import DonateButton from "./DonateButton";
 import { NAV_SECTIONS, goToSection, goToTop } from "@/lib/sections";
 
 export default function Navigation() {
@@ -18,14 +19,7 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [donationDialogOpen, setDonationDialogOpen] = useState(false);
 
-  const languages: { code: Language; label: string; flag: string }[] = [
-    { code: "en", label: "English", flag: "🇺🇸" },
-    { code: "pt-BR", label: "Português", flag: "🇧🇷" },
-    { code: "es", label: "Español", flag: "🇪🇸" },
-    { code: "fr", label: "Français", flag: "🇫🇷" },
-  ];
-
-  const currentLanguage = languages.find((lang) => lang.code === language);
+  const currentLanguage = LANGUAGES.find((lang) => lang.code === language);
 
 
   useEffect(() => {
@@ -110,36 +104,31 @@ export default function Navigation() {
                   variant="ghost"
                   size="sm"
                   className="gap-2"
+                  aria-label={`${t("nav.changeLanguage")}: ${currentLanguage?.label}`}
                   data-testid="button-language-selector"
                 >
-                  <Globe className="w-4 h-4" />
-                  <span className="hidden xl:inline">{currentLanguage?.label}</span>
-                  <span className="xl:hidden text-base">{currentLanguage?.flag}</span>
+                  <Globe className="w-4 h-4" aria-hidden="true" />
+                  <span lang={currentLanguage?.code}>{currentLanguage?.label}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                {languages.map((lang) => (
+                {LANGUAGES.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => setLanguage(lang.code)}
-                    className="gap-2"
+                    className="min-h-11 gap-2"
+                    lang={lang.code}
+                    aria-current={lang.code === language}
                     data-testid={`button-lang-${lang.code}`}
                   >
-                    <span className="text-base">{lang.flag}</span>
-                    <span>{lang.label}</span>
+                    {lang.label}
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
             {/* Donate Button */}
-            <Button
-              onClick={handleDonateClick}
-              className="bg-[hsl(var(--golden))] hover:bg-[hsl(var(--golden))] text-[hsl(var(--golden-foreground))] border border-[hsl(var(--golden-border))] font-semibold shadow-md hover-elevate active-elevate-2 no-default-hover-elevate no-default-active-elevate"
-              data-testid="button-donate"
-            >
-              {t("nav.donate")}
-            </Button>
+            <DonateButton onClick={handleDonateClick} testId="button-donate" />
           </div>
 
           {/* Mobile Actions */}
@@ -151,21 +140,26 @@ export default function Navigation() {
                   variant="ghost"
                   size="sm"
                   className="gap-1"
+                  // The visible text has to appear in the accessible name, or someone driving the
+                  // page by voice says what they can see and nothing happens.
+                  aria-label={`${t("nav.changeLanguage")}: ${currentLanguage?.code.toUpperCase()}, ${currentLanguage?.label}`}
                   data-testid="button-language-selector-mobile"
                 >
-                  <span className="text-base">{currentLanguage?.flag}</span>
+                  <Globe className="w-4 h-4" aria-hidden="true" />
+                  <span className="text-xs font-semibold">{currentLanguage?.code.toUpperCase()}</span>
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                {languages.map((lang) => (
+                {LANGUAGES.map((lang) => (
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => setLanguage(lang.code)}
-                    className="gap-2"
+                    className="min-h-11 gap-2"
+                    lang={lang.code}
+                    aria-current={lang.code === language}
                     data-testid={`button-lang-mobile-dropdown-${lang.code}`}
                   >
-                    <span className="text-base">{lang.flag}</span>
-                    <span>{lang.label}</span>
+                    {lang.label}
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -212,13 +206,11 @@ export default function Navigation() {
 
               {/* Mobile Donate Button */}
               <div className="px-4 pt-2">
-                <Button
+                <DonateButton
                   onClick={handleDonateClick}
-                  className="w-full bg-[hsl(var(--golden))] hover:bg-[hsl(var(--golden))] text-[hsl(var(--golden-foreground))] border border-[hsl(var(--golden-border))] font-semibold shadow-md hover-elevate active-elevate-2 no-default-hover-elevate no-default-active-elevate"
-                  data-testid="button-donate-mobile"
-                >
-                  {t("nav.donate")}
-                </Button>
+                  className="w-full"
+                  testId="button-donate-mobile"
+                />
               </div>
             </div>
           </div>

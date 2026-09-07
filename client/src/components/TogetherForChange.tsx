@@ -2,6 +2,7 @@ import { useState } from "react";
 import CTACard from "./CTACard";
 import { Heart, Share2, Users } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
+import { useToast } from "@/hooks/use-toast";
 import teamImage from "@assets/geetanjal-khanna-8CwoHpZe3qE-unsplash_1762442531910.jpg";
 import thirstImage from "@assets/Gemini_Generated_Image_iwxnbdiwxnbdiwxn_1762546643721.jpg";
 import healthImage from "@assets/Gemini_Generated_Image_fb0vhcfb0vhcfb0v_1762546768964.jpg";
@@ -13,6 +14,7 @@ import DonationDialog from "./DonationDialog";
 
 export default function TogetherForChange() {
   const { t } = useLanguage();
+  const { toast } = useToast();
   const [donationDialogOpen, setDonationDialogOpen] = useState(false);
 
   const handleDonate = () => {
@@ -20,16 +22,25 @@ export default function TogetherForChange() {
     setDonationDialogOpen(true);
   };
 
-  const handleShare = () => {
-    console.log("Share action triggered");
+  const handleShare = async () => {
+    const url = window.location.href;
+
     if (navigator.share) {
-      navigator.share({
-        title: "Wells of Change",
-        text: t("hero.title"),
-        url: window.location.href,
-      });
-    } else {
-      alert("Share: " + window.location.href);
+      try {
+        await navigator.share({ title: "Wells of Change", text: t("hero.title"), url });
+      } catch {
+        // Dismissing the share sheet rejects, and that is not a failure worth reporting.
+      }
+      return;
+    }
+
+    // No share sheet, so the link goes to the clipboard and the page says so in its own voice.
+    // A browser alert cannot be translated and looks nothing like the rest of the site.
+    try {
+      await navigator.clipboard.writeText(url);
+      toast({ title: t("change.shareCopied"), description: url });
+    } catch {
+      toast({ title: t("change.shareFailed"), description: url });
     }
   };
 
@@ -54,7 +65,7 @@ export default function TogetherForChange() {
           <div className="rounded-md overflow-hidden mb-8">
             <img
               src={teamImage}
-              alt="Wells of Change team with solar panels in Campo Formoso"
+              alt={t("alt.team")}
               className="w-full h-auto max-h-96 object-cover"
               data-testid="img-volunteers"
               width={1024}
@@ -99,7 +110,7 @@ export default function TogetherForChange() {
               <div className="w-full h-48 overflow-hidden">
                 <img
                   src={thirstImage}
-                  alt="Clean water - Thirst to Satiety"
+                  alt={t("alt.thirst")}
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-1"
               width={1024}
@@ -117,7 +128,7 @@ export default function TogetherForChange() {
               <div className="w-full h-48 overflow-hidden">
                 <img
                   src={healthImage}
-                  alt="Health - Disease to Health"
+                  alt={t("alt.health")}
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-2"
               width={1024}
@@ -135,7 +146,7 @@ export default function TogetherForChange() {
               <div className="w-full h-48 overflow-hidden">
                 <img
                   src={permanenceImage}
-                  alt="Permanence - Migration to Permanence"
+                  alt={t("alt.permanence")}
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-3"
               width={1024}
@@ -153,7 +164,7 @@ export default function TogetherForChange() {
               <div className="w-full h-48 overflow-hidden">
                 <img
                   src={prosperityImage}
-                  alt="Prosperity - Survival to Prosperity"
+                  alt={t("alt.prosperity")}
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-4"
               width={1024}
@@ -171,7 +182,7 @@ export default function TogetherForChange() {
               <div className="w-full h-48 overflow-hidden">
                 <img
                   src={dignityImage}
-                  alt="Dignity - Despair to Dignity"
+                  alt={t("alt.dignity")}
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-5"
               width={1024}
@@ -189,7 +200,7 @@ export default function TogetherForChange() {
               <div className="w-full h-48 overflow-hidden">
                 <img
                   src={realtimeImage}
-                  alt="Real-time monitoring"
+                  alt={t("alt.monitoring")}
                   className="w-full h-full object-cover rounded-md"
                   data-testid="img-transform-6"
               width={1024}

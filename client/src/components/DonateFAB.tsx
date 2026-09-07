@@ -9,60 +9,37 @@ import { Heart } from "lucide-react";
 import { useLanguage } from "@/lib/i18n";
 import DonationDialog from "./DonationDialog";
 
+/**
+ * A floating donate button, shown only while the one in the navigation bar is out of sight.
+ *
+ * Visibility follows the navigation button's own position, watched by the browser and reported when
+ * it changes. The previous version asked the same question on a 500ms timer, reading computed
+ * styles and walking the parent chain, for as long as the page stayed open. That forced layout on a
+ * timer and kept a phone busy while its owner was only reading.
+ */
 export default function DonateFAB() {
   const { t } = useLanguage();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isNavDonateVisible, setIsNavDonateVisible] = useState(true);
 
   useEffect(() => {
-    const checkNavDonateVisibility = () => {
-      const navDonateButton = document.querySelector('[data-testid="button-donate"]');
-      
-      if (!navDonateButton) {
-        // Button doesn't exist, show FAB
-        setIsNavDonateVisible(false);
-        return;
-      }
+    const navDonateButton = document.querySelector('[data-testid="button-donate"]');
 
-      // Check if button is visible (not hidden by display:none or visibility:hidden)
-      const style = window.getComputedStyle(navDonateButton);
-      const isDisplayed = style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
-      
-      // Also check if parent containers are visible (for mobile menu)
-      let parent = navDonateButton.parentElement;
-      let isParentVisible = true;
-      while (parent && parent !== document.body) {
-        const parentStyle = window.getComputedStyle(parent);
-        if (parentStyle.display === 'none' || parentStyle.visibility === 'hidden') {
-          isParentVisible = false;
-          break;
-        }
-        parent = parent.parentElement;
-      }
+    // No button in the navigation means nothing can hide, so the floating one is the only way to
+    // donate and stays.
+    if (!navDonateButton) {
+      setIsVisible(true);
+      return;
+    }
 
-      setIsNavDonateVisible(isDisplayed && isParentVisible);
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(navDonateButton);
 
-    // Check initially
-    checkNavDonateVisibility();
-
-    // Check on resize (for mobile/desktop changes)
-    window.addEventListener('resize', checkNavDonateVisibility);
-    
-    // Check periodically to catch menu open/close
-    const interval = setInterval(checkNavDonateVisibility, 500);
-
-    return () => {
-      window.removeEventListener('resize', checkNavDonateVisibility);
-      clearInterval(interval);
-    };
+    return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    // Show FAB only when navbar donate button is not visible
-    setIsVisible(!isNavDonateVisible);
-  }, [isNavDonateVisible]);
 
   return (
     <>
@@ -75,9 +52,11 @@ export default function DonateFAB() {
               isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75 pointer-events-none"
             }`}
             aria-label={t("nav.donate")}
+            aria-hidden={!isVisible}
+            tabIndex={isVisible ? 0 : -1}
             data-testid="button-donate-fab"
           >
-            <Heart className="w-6 h-6" />
+            <Heart className="w-6 h-6" aria-hidden="true" />
           </Button>
         </TooltipTrigger>
         <TooltipContent side="left">
