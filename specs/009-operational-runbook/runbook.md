@@ -25,8 +25,19 @@ after    AAAA  2606:50c0:8000::153 .8001 .8002 .8003
          https://wellsofchange.com   301 to www, over IPv4 and IPv6, certificate validates
 ```
 
-Enforce HTTPS in the Pages settings is the one thing left, and it belongs to the account that serves
-the domain.
+Enforce HTTPS was turned on the same day. All four ways into the site now end at the canonical
+address:
+
+```
+http://wellsofchange.com       301  https://www.wellsofchange.com/
+http://www.wellsofchange.com   301  https://www.wellsofchange.com/
+https://wellsofchange.com      301  https://www.wellsofchange.com/   certificate validates
+https://www.wellsofchange.com  200                                   certificate validates
+```
+
+GitHub Pages sends no `Strict-Transport-Security` header on a custom domain, so a visitor's first
+request of the day still leaves over plain HTTP before the redirect. Nothing in this repository or
+in the Pages settings changes that.
 
 ### What was wrong
 
@@ -66,7 +77,7 @@ Settings, then Pages, in the `wellsofchange` account.
 
 Remove the custom domain, save, put it back, save again. That forces GitHub to request certificates
 for the domain now that DNS is consistent. Then tick **Enforce HTTPS** once it becomes available;
-GitHub says that can take up to 24 hours.
+GitHub says that can take up to 24 hours, and here it was available the same day.
 
 ### Step 3, check it
 
@@ -78,8 +89,8 @@ bash specs/009-operational-runbook/check-apex.sh
 ```
 
 It checks both record sets, reads the names on the certificate the apex actually serves, confirms a
-browser would accept it, and confirms the redirect to `www`. Five checks; anything short of five is
-printed with what to fix. It reads DNS and makes HTTP requests and changes nothing.
+browser would accept it, confirms the redirect to `www`, and confirms plain HTTP is redirected
+rather than served. Six checks; anything short of six is printed with what to fix. It reads DNS and makes HTTP requests and changes nothing.
 
 Read the certificate's names, not its subject. A certificate issued for `www.wellsofchange.com`
 contains `wellsofchange.com` inside its own subject, so a substring test passes on a certificate
