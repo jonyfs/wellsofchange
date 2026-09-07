@@ -45,13 +45,17 @@ export default function DonationDialog({ open, onOpenChange }: DonationDialogPro
       const cnpjOnly = pixCNPJ.replace(/[^\d]/g, "");
       console.log("Generating PIX BR Code for CNPJ:", cnpjOnly);
       
+      // Payload text is unaccented on purpose: bank apps normalise or mangle accents, and the
+      // donor reads these fields on the screen where they confirm the payment. The city is the
+      // organization's registered city, not a project location, and the BR Code caps it at 15
+      // characters.
       const qrCodePix = QrCodePix({
         version: '01',
         key: cnpjOnly,
         name: 'WELLS OF CHANGE',
-        city: 'CAMPO FORMOSO',
+        city: 'RIO DE JANEIRO',
         transactionId: 'WOC' + Date.now().toString().slice(-8),
-        message: 'Doacao para Wells of Change',
+        message: 'Doacao para a ONG Wells of Change',
         // No value parameter = variable amount (donor chooses)
       });
 
