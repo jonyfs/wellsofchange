@@ -1,7 +1,8 @@
 <!--
 Sync Impact Report
-Version change: 2.1.0 → 2.1.1
-Bump rationale: PATCH. A deferred item was resolved and removed. No principle changed.
+Version change: 2.1.1 → 2.1.2
+Bump rationale: PATCH. Two deferred items resolved, one deferred item given the evidence it lacked.
+No principle changed.
 Modified principles: none
 Added sections: none
 Removed sections: none
@@ -9,6 +10,11 @@ Resolved deferred items:
   - TODO(APEX_TLS), on 2026-09-07. The apex AAAA record pointed at a Hostinger CDN address that
     refused connections, which blocked certificate validation over IPv6. It now points at GitHub's
     four addresses, and the certificate covers wellsofchange.com and www.wellsofchange.com.
+  - TODO(CI_TEST_JOB), on 2026-09-08. The post-deploy job tested www.wellsofchange.com, a site this
+    repository does not publish. It was green, which was worse than red: it passed on another
+    account's deployment and would have kept passing had this one been empty. Running the same
+    script against the deployment this workflow actually makes failed four of five checks. The job
+    now tests its own deployment, for the two things that address can be held to.
 Templates requiring updates: none. Dependent Spec Kit templates read this file at runtime.
 Deferred items:
   - TODO(DOMAIN_OWNERSHIP): wellsofchange.com points at wellsofchange.github.io, an account other
@@ -18,10 +24,15 @@ Deferred items:
     current arrangement for now.
   - TODO(PREVIEW_BASE_PATH): CI builds with --base=/ while publishing under
     jonyfs.github.io/wellsofchange/, so the preview's asset URLs 404 and its JavaScript never runs.
-    The prerendered text hides this. A relative base would serve both mount points.
-  - TODO(CI_TEST_JOB): the post-deploy test job runs test-deployed-site.sh against
-    www.wellsofchange.com, a site this repository does not publish, and asserts a base path the
-    build no longer uses. Every run is therefore red. Accepted for now as known noise.
+    The prerendered text hides this. Measured on 2026-09-08: the entry script answers 200 under the
+    project path and 404 at the root the page asks for.
+    A relative base is not the one-line fix it looks like. Building with --base=./ was tried and
+    served under a project path: it correctly rewrites index.html's own script, stylesheet, manifest
+    and favicon references, and leaves three things broken. Images imported through @assets keep
+    absolute /assets/ URLs inside the bundle; the service worker registers /sw.js at scope /, which
+    404s and is rejected under a project path; and manifest.webmanifest names its icons absolutely.
+    Fixing those is a real change to production behaviour, and production currently works, so it
+    stays deferred rather than attempted in passing.
   - TODO(BRANCH_PROTECTION): principle VI is enforced by convention and a local hook. Branch
     protection on main is the enforcement that does not depend on either.
   - TODO(INDEX_HTML_LANGUAGE): client/index.html carries Portuguese-first SEO metadata outside the
@@ -207,4 +218,4 @@ Every pull request review MUST verify compliance with the principles above. A ch
 principle is either revised or accompanied by an amendment in the same pull request. Deviations MUST
 NOT be merged on the promise of a later cleanup.
 
-**Version**: 2.1.1 | **Ratified**: 2026-09-06 | **Last Amended**: 2026-09-07
+**Version**: 2.1.2 | **Ratified**: 2026-09-06 | **Last Amended**: 2026-09-08
