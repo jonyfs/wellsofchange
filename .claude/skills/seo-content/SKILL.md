@@ -60,9 +60,15 @@ collecting water from the new well in Campo Formoso" beats "well photo". Decorat
 
 **Structured data**, in the JSON-LD block. This is the highest-leverage text on the site, because it
 is machine-readable, present in the raw HTML, and describes the organization directly. Keep it
-consistent with the visible copy. A `FAQPage` block answering the questions donors actually ask
-(where the money goes, who runs the organization, how a well is maintained) would give answer
-engines material they can quote, and none exists yet.
+consistent with the visible copy. The `FAQPage` block answering the questions donors actually ask
+(where the money goes, who runs the organization, how a well is maintained) gives answer engines
+material they can quote.
+
+What it does not do is change how a Google result looks. Google removed FAQ rich results on
+7 May 2026, finishing a withdrawal begun in August 2023, and no site is eligible now. Google still
+parses the markup to understand a page, and answer engines still quote it, which is why the block
+stays. Write those answers for a reader and for a machine that will repeat them, not for a dropdown
+under the search result.
 
 ## Verify
 
