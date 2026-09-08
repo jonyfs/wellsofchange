@@ -56,14 +56,19 @@ jobs:
             exit 1
           fi
 
-      - name: Verify build has correct base path
+      # The site is built for the apex domain, so its assets are referenced from the root. The
+      # message this step used to print named /wellsofchange/, a base the build stopped using, while
+      # the check itself tested the opposite. Both now say the same thing.
+      - name: Verify assets are referenced from the root, as the apex domain needs
         run: |
-          if ! grep -q 'href="/' dist/public/index.html; then
-            echo "❌ ERROR: Build missing /wellsofchange/ base path!"
-            echo "Assets will not load on GitHub Pages!"
+          prefix=$(grep -oE 'src="[^"]*\.js"' dist/public/index.html | head -1)
+          echo "Entry script: $prefix"
+          if ! grep -q 'src="/assets/' dist/public/index.html; then
+            echo "The build does not reference /assets/. It was built for a different base than the"
+            echo "apex domain the site is served from, and its assets would 404 in production."
             exit 1
           fi
-          echo "✅ Base path verified in build"
+          echo "Assets are referenced from the root." 
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -79,22 +84,59 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
   
+  # Checks the deployment this run produced, which is the only thing this workflow is responsible
+  # for. It used to check https://www.wellsofchange.com/ instead, a site published from another
+  # account. That passed whenever the other account happened to be serving matching content, and it
+  # would have kept passing if this deployment had been empty.
+  #
+  # Only two things can be asserted here. The page has to answer, and it has to carry the
+  # prerendered text, which is what a crawler that does not run JavaScript receives and the one
+  # thing no browser check would catch if it stopped working.
+  #
+  # The assets cannot be checked at this address. The build targets the apex domain, so it
+  # references /assets/, and this deployment lives under a project path where that resolves to the
+  # wrong place. The preview therefore shows its prerendered text and never runs its JavaScript.
+  # That is TODO(PREVIEW_BASE_PATH) in the constitution, measured rather than assumed: the entry
+  # script answers 200 under the project path and 404 at the root the page asks for.
+  #
+  # To check the full asset graph, run ./test-deployed-site.sh against the address the site is
+  # actually served from.
   test:
     runs-on: ubuntu-latest
     needs: deploy
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
       - name: Wait for deployment to propagate
         run: sleep 30
-      
-      - name: Test deployed site
+
+      - name: The deployment answers and carries its prerendered text
+        env:
+          PAGE_URL: ${{ needs.deploy.outputs.page_url }}
         run: |
-          chmod +x test-deployed-site.sh
-          ./test-deployed-site.sh https://www.wellsofchange.com/
+          echo "Testing: $PAGE_URL"
+
+          status=$(curl -s -o /tmp/deployed.html -w '%{http_code}' -L "$PAGE_URL")
+          echo "HTTP $status"
+          [ "$status" = "200" ] || { echo "The deployment did not answer."; exit 1; }
+
+          chars=$(python3 - <<'PYTHON'
+          import re
+          html = open("/tmp/deployed.html", encoding="utf-8", errors="replace").read()
+          body = re.search(r"<body[^>]*>(.*)</body>", html, re.S)
+          text = re.sub(r"<script.*?</script>", " ", body.group(1), flags=re.S) if body else ""
+          text = re.sub(r"<[^>]+>", " ", text)
+          print(len(re.sub(r"\s+", " ", text).strip()))
+          PYTHON
+          )
+          echo "Prerendered text: ${chars} chars"
+          if [ "$chars" -lt 500 ]; then
+            echo "The deployed page carries almost no text. Crawlers that do not run JavaScript,"
+            echo "which includes most AI crawlers, would receive an empty page."
+            exit 1
+          fi

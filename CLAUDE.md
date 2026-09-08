@@ -8,21 +8,23 @@ Wells of Change is a single-page, multilingual (en / pt-BR / es / fr) marketing 
 builds solar-powered water wells. All content is hardcoded in React components, and nothing calls an
 API at runtime.
 
-**This repository does not publish the public site.** `www.wellsofchange.com` resolves to
-`wellsofchange.github.io`, a different GitHub account, and its copy currently lags this repository's
-`main`. Merging here deploys to `jonyfs.github.io/wellsofchange/` and no further; someone with
-access to that other account has to publish for a change to reach donors. Do not tell anyone a
-merged change is live.
+**This repository deploys to `jonyfs.github.io/wellsofchange/`.** `www.wellsofchange.com` resolves
+through a CNAME to `wellsofchange.github.io`, a different GitHub account, so this workflow does not
+put anything at the public address.
 
-Two consequences worth knowing before you are confused by them:
+What is served there is another matter. On 2026-09-08 the apex was serving this repository's current
+`main`, checked field by field: the renamed section ids, the section list in the structured data and
+the skip link were all present, and the page carried the same 10618 characters of prerendered text
+as a local build. How that happens is not documented anywhere in this repository. Check before you
+tell anyone a merged change reached donors, and do not assume either way.
 
-- CI builds with `--base=/`, which matches the production domain root but not the preview's
-  `/wellsofchange/` path, so the preview's assets 404 and its JavaScript never runs. The prerendered
-  text makes the page look fine anyway. Tracked as `TODO(PREVIEW_BASE_PATH)` in the constitution.
-- Every workflow run shows as failed. Build and deploy succeed; the post-deploy `test` job runs
-  `test-deployed-site.sh` against `www.wellsofchange.com`, which this repository does not publish,
-  and asserts a base path the build no longer uses. Known and accepted, tracked as
-  `TODO(CI_TEST_JOB)`.
+One consequence worth knowing before it confuses you: CI builds with `--base=/`, which matches the
+production domain root but not the preview's `/wellsofchange/` path. The preview's own entry script
+is a measured example. It answers 200 at
+`jonyfs.github.io/wellsofchange/assets/index-*.js` and 404 at `jonyfs.github.io/assets/index-*.js`,
+which is where the page asks for it, so the preview shows its prerendered text and never runs its
+JavaScript. Tracked as `TODO(PREVIEW_BASE_PATH)` in the constitution, where the note records what a
+relative base does and does not fix.
 
 ## Commands
 
