@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Wells of Change - Mudando vidas, um poço por vez</title>
-    <meta name="description" content="Poços com energia solar e monitoramento em tempo real levam água potável a comunidades carentes, do Nordeste brasileiro à África Subsaariana." />
+    <meta name="description" content="ONG brasileira: poços movidos a energia solar e monitorados em tempo real levam água potável a comunidades carentes. Primeiro poço no interior da Bahia." />
     <meta name="keywords" content="água potável, poços artesianos, ONG água, tecnologia sustentável, monitoramento em tempo real, Campo Formoso, Bahia, Senegal, acesso à água, energia solar, bombeamento fotovoltaico, comunidades carentes, impacto social, transparência, doação, voluntariado" />
     <meta name="author" content="Wells of Change" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -13,7 +13,7 @@
     
     <meta property="og:site_name" content="Wells of Change" />
     <meta property="og:title" content="Wells of Change - Mudando vidas, um poço por vez" />
-    <meta property="og:description" content="Poços com energia solar e monitoramento em tempo real. Primeiro poço completo em Campo Formoso, Bahia. Cada poço é dignidade, liberdade e futuro." />
+    <meta property="og:description" content="ONG brasileira. Poços movidos a energia solar e monitorados em tempo real. Primeiro poço completo em Campo Formoso, Bahia. Cada poço é dignidade, liberdade e futuro." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.wellsofchange.com/" />
     <meta property="og:image" content="https://www.wellsofchange.com/share-image.jpg" />
@@ -96,8 +96,30 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "General Inquiries",
-        "email": "wellsofchange@gmail.com"
+        "email": "wellsofchange@gmail.com",
+        "availableLanguage": ["pt-BR", "en", "es", "fr"]
       },
+      "potentialAction": [
+        {
+          "@type": "DonateAction",
+          "name": "Doar do Brasil por PIX",
+          "description": "Doação por PIX usando o CNPJ da organização. O valor é escolhido por quem doa.",
+          "recipient": { "@type": "NGO", "name": "Wells of Change" },
+          "instrument": { "@type": "Thing", "name": "PIX", "identifier": "43.933.784/0001-13" },
+          "target": "https://www.wellsofchange.com/#join-us"
+        },
+        {
+          "@type": "DonateAction",
+          "name": "Doar do exterior por transferência internacional",
+          "description": "Transferência internacional para o IBAN BR3300000000005970000421766C1 no Banco do Brasil. O beneficiário é a razão social registrada no banco, não o nome fantasia.",
+          "recipient": {
+            "@type": "NGO",
+            "name": "Associação Internacional, Poços Mudando as Vidas nas Sociedades"
+          },
+          "instrument": { "@type": "Thing", "name": "SWIFT", "identifier": "BRASBRRJBHE" },
+          "target": "https://www.wellsofchange.com/#join-us"
+        }
+      ],
       "sameAs": [
         "https://www.facebook.com/wellsofchange",
         "https://www.instagram.com/wellsofchange",
@@ -204,6 +226,17 @@
     }
     </script>
 
+    <!--
+      The six questions donors actually ask, in the format an engine can quote.
+
+      Google stopped displaying FAQ rich results on 7 May 2026, finishing a withdrawal begun in
+      August 2023, and no site is eligible now. Do not expect this block to change how a result
+      looks; the Rich Results Test reporting no eligible result for it is the correct outcome.
+
+      It stays because Google still parses FAQ markup to understand a page, and because these six
+      answers are exactly what an answer engine quotes. Every answer comes from what the page
+      already states, so a change here has to be a change there too.
+    -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

@@ -55,6 +55,25 @@ it is simply cut, and the cut usually lands mid-sentence.
 **Give every image alt text that describes the photograph**, not the file. These are real
 photographs of a real project, and the alt text is what an answer engine can quote about them.
 
+## Three things people keep asking for
+
+**Sitelinks cannot be requested.** Those are the shortcuts under a search result. Google generates
+them itself, picks them per query, shows up to six, and no markup asks for them. Its documentation
+asks for a site with several pages people want to visit, and this site is one page at one address by
+decision. Making the sections addressable, which is done, does not create pages: a fragment is a
+position inside a document and a search engine indexes documents.
+
+**FAQ markup no longer produces a search appearance.** Google removed FAQ rich results on
+7 May 2026, finishing a withdrawal begun in August 2023, and no site is eligible now, including the
+government and health publishers that had kept it. The `FAQPage` block in `client/index.html` stays
+because Google still parses it to understand the page and answer engines still quote its answers.
+The Rich Results Test reporting no eligible result for it is correct, not a regression.
+
+**`llms.txt` is not a search lever.** Perplexity fetches it. Google has said it does not support the
+file and does not plan to. Of 137,000 domains analysed, 97% of published `llms.txt` files received
+zero requests in May 2026. Ours stays because it costs nothing and one engine reads it. Do not
+enlarge it expecting search results.
+
 ## What this script does not check
 
 Live crawl behavior, Core Web Vitals, backlinks, Google Search Console coverage, and whether a

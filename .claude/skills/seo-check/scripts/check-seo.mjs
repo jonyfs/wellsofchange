@@ -42,16 +42,20 @@ const byAttribute = (attribute, value) =>
 const meta = (name) => byAttribute("name", name)[0]?.content ?? null;
 const prop = (property) => byAttribute("property", property)[0]?.content ?? null;
 
-// Title and description
+// Title and description.
+//
+// Over-length is a failure rather than a warning because these two lines are the only display
+// surface a one-page site controls, and a cut lands mid-word or mid-sentence. Under-length stays a
+// warning: a short title wastes room but still reads.
 const title = html.match(/<title>([^<]*)<\/title>/i)?.[1]?.trim() ?? null;
 if (!title) report("FAIL", "title", "No <title>.");
-else if (title.length > 60) report("WARN", "title", `${title.length} chars; Google truncates around 60.`);
+else if (title.length > 60) report("FAIL", "title", `${title.length} chars; the result cuts around 60, usually mid-word.`);
 else if (title.length < 30) report("WARN", "title", `${title.length} chars; short titles waste the result slot.`);
 else report("OK", "title", `${title.length} chars.`);
 
 const description = meta("description");
 if (!description) report("FAIL", "description", "No meta description.");
-else if (description.length > 160) report("WARN", "description", `${description.length} chars; truncated around 160.`);
+else if (description.length > 160) report("FAIL", "description", `${description.length} chars; the result cuts around 160, usually mid-sentence.`);
 else if (description.length < 70) report("WARN", "description", `${description.length} chars; under 70 leaves the snippet thin.`);
 else report("OK", "description", `${description.length} chars.`);
 
